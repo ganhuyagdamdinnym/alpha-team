@@ -1,12 +1,8 @@
 "use client";
-
 import Image from "next/image";
 import data from "../chocolate/data.json";
 import axios from "axios";
-
 export default function Home() {
-  console.log("");
-
   const first = async () => {
     try {
       const url = `http://localhost:8002/getchocolate`;
