@@ -14,6 +14,7 @@ export default function Home() {
           count_in_box: e.count_in_box,
           box_price: e.box_price,
           image: e.image,
+          sort: e.sort,
         });
       });
     } catch (err) {
@@ -25,6 +26,7 @@ export default function Home() {
       hello world
       <div className="h-40 w-40">
         <img src="https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509510/chocolate28_tq9tkx.webp" />
+        <div>ariuka</div>
       </div>
     </div>
   );

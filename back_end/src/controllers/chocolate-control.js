@@ -8,6 +8,7 @@ export const getChocolate = async (req, res) => {
     unit_price: body.unit_price,
     box_price: body.box_price,
     count_in_box: body.count_in_box,
+    sort: body.sort,
   });
   res.status(200).json({ newChocolate });
 };

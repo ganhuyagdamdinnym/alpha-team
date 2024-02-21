@@ -5,7 +5,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509005/chocolate1_yd3ghq.webp",
     "unit_price": "5500",
     "count_in_box": "10",
-    "box_price": "55000"
+    "box_price": "55000",
+    "sort": "variefy"
   },
   {
     "id": "2",
@@ -13,7 +14,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509121/chocolate2_ft3zuh.webp",
     "unit_price": "6600",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "variefy"
   },
   {
     "id": "3",
@@ -21,7 +23,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509136/chocolate3_xpetci.webp",
     "unit_price": "5500",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "variefy"
   },
   {
     "id": "4",
@@ -29,7 +32,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509163/chocolate4_jcumft.webp",
     "unit_price": "5500",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "variefy"
   },
   {
     "id": "5",
@@ -37,7 +41,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509175/chocolate5_zsvbkx.webp",
     "unit_price": "5500",
     "count_in_box": "13",
-    "box_price": "71500"
+    "box_price": "71500",
+    "sort": "variefy"
   },
   {
     "id": "6",
@@ -45,7 +50,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509191/chocolate6_lne6a2.webp",
     "unit_price": "5500",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "variefy"
   },
   {
     "id": "7",
@@ -53,7 +59,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509214/chocolate7_bog5vz.webp",
     "unit_price": "5500",
     "count_in_box": "11",
-    "box_price": "60500"
+    "box_price": "60500",
+    "sort": "variefy"
   },
   {
     "id": "8",
@@ -61,7 +68,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509238/chocolate8_hz1jss.webp",
     "unit_price": "5500",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "variefy"
   },
   {
     "id": "9",
@@ -69,7 +77,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509262/chocolate9_gthp27.webp",
     "unit_price": "5500",
     "count_in_box": "11",
-    "box_price": "60500"
+    "box_price": "60500",
+    "sort": "variefy"
   },
   {
     "id": "10",
@@ -77,7 +86,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509282/chocolate10_bcqstt.webp",
     "unit_price": "5500",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "variefy"
   },
   {
     "id": "11",
@@ -85,7 +95,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509299/chocolate11_bknffn.webp",
     "unit_price": "5500",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "variefy"
   },
   {
     "id": "12",
@@ -93,7 +104,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509332/chocolate12_oumktf.webp",
     "unit_price": "5500",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "variefy"
   },
   {
     "id": "13",
@@ -101,7 +113,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509386/chocolate13_cmrxmd.webp",
     "unit_price": "5500",
     "count_in_box": "10",
-    "box_price": "55000"
+    "box_price": "55000",
+    "sort": "nuts"
   },
   {
     "id": "14",
@@ -109,7 +122,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509397/chocolate14_hytx3d.webp",
     "unit_price": "5500",
     "count_in_box": "10",
-    "box_price": "55000"
+    "box_price": "55000",
+    "sort": "nuts"
   },
   {
     "id": "15",
@@ -117,7 +131,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509404/chocolate15_j2qo1v.webp",
     "unit_price": "5500",
     "count_in_box": "11",
-    "box_price": "60500"
+    "box_price": "60500",
+    "sort": "nuts"
   },
   {
     "id": "16",
@@ -125,7 +140,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509412/chocolate16_yuctbl.webp",
     "unit_price": "5500",
     "count_in_box": "11",
-    "box_price": "60500"
+    "box_price": "60500",
+    "sort": "nuts"
   },
   {
     "id": "17",
@@ -133,7 +149,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509421/chocolate17_qxbemz.webp",
     "unit_price": "5500",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "nuts"
   },
   {
     "id": "18",
@@ -141,7 +158,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509433/chocolate18_sok6ix.webp",
     "unit_price": "5500",
     "count_in_box": "11",
-    "box_price": "60500"
+    "box_price": "60500",
+    "sort": "nuts"
   },
   {
     "id": "19",
@@ -149,7 +167,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509442/chocolate19_cpzlxt.webp",
     "unit_price": "5500",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "cocoa"
   },
   {
     "id": "20",
@@ -157,7 +176,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509449/chocolate20_r9ya25.webp",
     "unit_price": "5500",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "cocoa"
   },
   {
     "id": "21",
@@ -165,30 +185,35 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509479/chocolate21_ba9isp.webp",
     "unit_price": "5500",
     "count_in_box": "12",
-    "box_price": "66000"
+    "box_price": "66000",
+    "sort": "cocoa"
   },
   {
     "id": "22",
     "name": "RITTER SPORT Alpine Milk Chocolate 250g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509489/chocolate26_w9yyo5.webp",
+    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509121/chocolate2_ft3zuh.webp",
     "unit_price": "13500",
     "count_in_box": "11",
-    "box_price": "119900"
+    "box_price": "119900",
+    "sort": "250g"
   },
   {
     "id": "23",
     "name": "RITTER SPORT Hazelnuts 250g",
-    "image": "chocolate10.png",
+    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509282/chocolate10_bcqstt.webp",
     "unit_price": "13500",
     "count_in_box": "11",
-    "box_price": "119900"
+    "box_price": "119900",
+    "sort": "250g"
   },
   {
     "id": "24",
     "name": "RITTER SPORT PRALINE 250g",
+    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509175/chocolate5_zsvbkx.webp",
     "unit_price": "10900",
     "count_in_box": "11",
-    "box_price": "119900"
+    "box_price": "119900",
+    "sort": "250g"
   },
   {
     "id": "25",
@@ -196,15 +221,17 @@
     "image": "chocolate25.png",
     "unit_price": "10900",
     "count_in_box": "11",
-    "box_price": "119900"
+    "box_price": "119900",
+    "sort": "250g"
   },
   {
     "id": "26",
     "name": "RITTER SPORT Yogurt Mix/Joghurt Schatz 176g",
-    "image": "chocolate26.png",
+    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509489/chocolate26_w9yyo5.webp",
     "unit_price": "13500",
     "count_in_box": "8",
-    "box_price": "108000"
+    "box_price": "108000",
+    "sort": "cubes"
   },
   {
     "id": "27",
@@ -212,7 +239,8 @@
     "image": "chocolate27.png",
     "unit_price": "13500",
     "count_in_box": "8",
-    "box_price": "108000"
+    "box_price": "108000",
+    "sort": "cubes"
   },
   {
     "id": "28",
@@ -220,7 +248,8 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509510/chocolate28_tq9tkx.webp",
     "unit_price": "2800",
     "count_in_box": "16",
-    "box_price": "44800"
+    "box_price": "44800",
+    "sort": "mini"
   },
   {
     "id": "29",
@@ -228,22 +257,25 @@
     "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509517/chocolate29_lszgnm.webp",
     "unit_price": "2800",
     "count_in_box": "16",
-    "box_price": "44800"
+    "box_price": "44800",
+    "sort": "mini"
   },
   {
     "id": "30",
     "name": "RITTER SPORT Mini Nut Selection 116,69g",
-    "image": "chocolate30.png",
+    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708515913/chocolate30_n8eqli.webp",
     "unit_price": "11000",
     "count_in_box": "8",
-    "box_price": "88000"
+    "box_price": "88000",
+    "sort": "mini"
   },
   {
     "id": "31",
     "name": "RITTER SPORT Mini Chocolate Mix 133,36g",
-    "image": "chocolate25.png",
+    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708515920/chocolate31_nrvamu.webp",
     "unit_price": "11000",
     "count_in_box": "8",
-    "box_price": "88000"
+    "box_price": "88000",
+    "sort": "mini"
   }
 ]
