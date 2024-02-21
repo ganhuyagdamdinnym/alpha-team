@@ -7,5 +7,6 @@ const chocolateSchema = new Schema({
   count_in_box: Number,
   box_price: Number,
   image: String,
+  sort: String,
 });
 export const ChocolateModel = model("Main", chocolateSchema);
