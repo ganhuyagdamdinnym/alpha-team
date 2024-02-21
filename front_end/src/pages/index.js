@@ -6,6 +6,7 @@ import axios from "axios";
 
 export default function Home() {
   console.log("");
+
   const first = async () => {
     try {
       const url = `http://localhost:8002/getchocolate`;
