@@ -1,0 +1,224 @@
+[
+    {
+        "id":"1",
+        "name":"RITTER SPORT Cornflakes 100g",
+        "image":"chocolate1.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },
+    {
+        "id":"2",
+        "name":"RITTER SPORT Alpine Milk Chocolate 100g",
+        "image":"chocolate2.png",
+        "unit_price":"6600",
+        "count_in_box":"12",
+        "box_price":"66000"
+    },{
+        "id":"3",
+        "name":"RITTER SPORT Raisins Hazelnuts 100g",
+        "image":"chocolate3.png",
+        "unit_price":"5500",
+        "count_in_box":"12",
+        "box_price":"66000"
+    },{
+        "id":"4",
+        "name":"RITTER SPORT Marzipan 100g",
+        "image":"chocolate4.png",
+        "unit_price":"5500",
+        "count_in_box":"12",
+        "box_price":"66000"
+    },{
+        "id":"5",
+        "name":"RITTER SPORT Praline 100g",
+        "image":"chocolate5.png",
+        "unit_price":"5500",
+        "count_in_box":"13",
+        "box_price":"71500"
+    },{
+        "id":"6",
+        "name":"RITTER SPORT Peppermint 100g",
+        "image":"chocolate6.png",
+        "unit_price":"5500",
+        "count_in_box":"12",
+        "box_price":"66000"
+    },{
+        "id":"7",
+        "name":"RITTER SPORT Butter Biscuit 100g",
+        "image":"chocolate7.png",
+        "unit_price":"5500",
+        "count_in_box":"11",
+        "box_price":"60500"
+    },{
+        "id":"8",
+        "name":"RITTER SPORT Strawberry Yoghurt 100g",
+        "image":"chocolate8.png",
+        "unit_price":"5500",
+        "count_in_box":"12",
+        "box_price":"66000"
+    },{
+        "id":"9",
+        "name":"RITTER SPORT Cocoa Mousse 100g",
+        "image":"chocolate9.png",
+        "unit_price":"5500",
+        "count_in_box":"11",
+        "box_price":"60500"
+    },{
+        "id":"10",
+        "name":"RITTER SPORT Hazelnuts 100g",
+        "image":"chocolate10.png",
+        "unit_price":"5500",
+        "count_in_box":"12",
+        "box_price":"66000"
+    },{
+        "id":"11",
+        "name":"RITTER SPORT Dark Almond Orange  100g",
+        "image":"chocolate11.png",
+        "unit_price":"5500",
+        "count_in_box":"12",
+        "box_price":"66000"
+    },{
+        "id":"12",
+        "name":"RITTER SPORT Rum Raisins Hazelnut 100g",
+        "image":"chocolate12.png",
+        "unit_price":"5500",
+        "count_in_box":"12",
+        "box_price":"66000"
+    },{
+        "id":"13",
+        "name":"RITTER SPORT Whole Hazelnuts 100g",
+        "image":"chocolate13.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"14",
+        "name":"RITTER SPORT Dark Whole Hazelnuts 100g",
+        "image":"chocolate14.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"15",
+        "name":"RITTER SPORT Whole Almonds 100g",
+        "image":"chocolate15.png",
+        "unit_price":"5500",
+        "count_in_box":"11",
+        "box_price":"60500"
+    },{
+        "id":"16",
+        "name":"RITTER SPORT Honey Salt Almonds 100g",
+        "image":"chocolate16.png",
+        "unit_price":"5500",
+        "count_in_box":"11",
+        "box_price":"60500"
+    },{
+        "id":"17",
+        "name":"RITTER SPORT Cashew 100g",
+        "image":"chocolate17.png",
+        "unit_price":"5500",
+        "count_in_box":"12",
+        "box_price":"66000"
+    },{
+        "id":"18",
+        "name":"RITTER SPORT Dark Whole Almonds 100g",
+        "image":"chocolate18.png",
+        "unit_price":"5500",
+        "count_in_box":"11",
+        "box_price":"60500"
+    },{
+        "id":"19",
+        "name":"RITTER SPORT 55% SMOOTH from Ghana 100g",
+        "image":"chocolate19.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"20",
+        "name":"RITTER SPORT 61% FINE from Nicaragua 100g",
+        "image":"chocolate20.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"21",
+        "name":"RITTER SPORT 74% INTENSE from Peru 100g",
+        "image":"chocolate21.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"22",
+        "name":"RITTER SPORT Alpine Milk Chocolate 250g",
+        "image":"chocolate2.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"23",
+        "name":"RITTER SPORT Hazelnuts 250g",
+        "image":"chocolate10.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"24",
+        "name":"RITTER SPORT PRALINE 250g",
+        "image":"chocolate5.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"25",
+        "name":"RITTER SPORT Gold Edition 250g",
+        "image":"chocolate25.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },
+    {
+        "id":"26",
+        "name":"RITTER SPORT Yogurt Mix/Joghurt Schatz 176g",
+        "image":"chocolate26.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"27",
+        "name":"RITTER SPORT Happy birthday/Lass Dich Feiern 176g ",
+        "image":"chocolate27.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"28",
+        "name":"RITTER SPORT Mini Alpine Milk 2 Pack 33.34g",
+        "image":"chocolate28.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"29",
+        "name":"RITTER SPORT Mini Whole Hazelnuts 2 Pack 33.34g",
+        "image":"chocolate29.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"30",
+        "name":"RITTER SPORT Mini Nut Selection 116,69g",
+        "image":"chocolate30.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    },{
+        "id":"31",
+        "name":"RITTER SPORT Mini Chocolate Mix 133,36g",
+        "image":"chocolate25.png",
+        "unit_price":"5500",
+        "count_in_box":"10",
+        "box_price":"55000"
+    }
+        
+
+]
