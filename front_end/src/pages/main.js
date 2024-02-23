@@ -17,8 +17,6 @@ export default function Main() {
       console.log("err", err);
     }
   };
-
-  console.log("helloo");
   useEffect(() => {
     fetchChocolateData();
   }, []);
