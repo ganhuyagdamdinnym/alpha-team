@@ -1,1 +1,5 @@
-export const HomeAllChoco = () => {};
+
+export const HomeAllChoco = () => {
+  return <div> </div>;
+};
+

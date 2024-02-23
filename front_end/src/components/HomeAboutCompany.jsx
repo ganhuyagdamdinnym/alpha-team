@@ -1,1 +1,5 @@
-export const HomeAboutCompany = () => {};
+
+export const HomeAboutCompany = () => {
+  return <div></div>;
+}
+
