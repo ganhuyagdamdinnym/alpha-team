@@ -1,3 +1,4 @@
+
 "use client";
 import { useEffect, useState, useRef } from "react";
 import { images } from "../chocolate/sort.js";
@@ -87,4 +88,5 @@ export const MainChocolateSort = () => {
       </div>
     </div>
   );
-};
+}
+

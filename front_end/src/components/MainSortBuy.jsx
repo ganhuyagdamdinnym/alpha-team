@@ -1,3 +1,1 @@
-export const MainSortBuy = () => {
-  return <div>hello </div>;
-};
+export const MainSortBuy = () => {};
