@@ -1,3 +1,1 @@
-export const MainWilley = () => {
-  return <div>hello </div>;
-};
+export const MainWilley = () => {};

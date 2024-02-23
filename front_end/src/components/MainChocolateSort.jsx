@@ -1,3 +1,1 @@
-export const MainChocolateSort = () => {
-  return <div>hello </div>;
-};
+export const MainChocolateSort = () => {};
