@@ -1,8 +1,10 @@
+"use client";
 import { HandleSort } from "@/components/HandleSort";
 import { MainChocolateSort } from "@/components/MainChocolateSort";
 import { MainSortBuy } from "@/components/mainSortBuy";
 import { MainWilley } from "@/components/mainWilley";
 import { useEffect, useState } from "react";
+import axios from "axios";
 export default function Main() {
   const [data, setData] = useState();
   const fetchChocolateData = async () => {

@@ -1,3 +1,4 @@
 export const HandleSort = () => {
-  return <div></div>;
+  const sortName = ["COLOURFUL VARIETY"];
+  return <div> </div>;
 };
