@@ -1,4 +1,8 @@
-import express from "express"
-import { getChocolate } from "../controllers/chocolate-control.js"
+import express from "express";
+import {
+  getChocolate,
+  getChocolatedata,
+} from "../controllers/chocolate-control.js";
 export const chocolateRouter = express.Router();
-chocolateRouter.post("/getchocolate",getChocolate)
+chocolateRouter.post("/getchocolate", getChocolate);
+chocolateRouter.get("/getchocolatedata", getChocolatedata);
