@@ -5,8 +5,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { HomeChocolate } from "../components/HomeChocolate";
 import { HomeAllChoco } from "../components/homeAllChoco";
-import { HomeAboutCompany } from "@/components/homeAboutCompany";
+import { HomeAboutCompany } from "../components/homeAboutCompany";
+import { Login } from "../components/Login";
+import { Header } from "../components/Header";
 export default function Home() {
+  const [loginStat, setLoginStat] = useState(false);
   const [data, setData] = useState();
   const fetchChocolateData = async () => {
     //alert("hi");
@@ -18,7 +21,6 @@ export default function Home() {
       console.log("err", err);
     }
   };
-  console.log(data);
   const first = async () => {
     // try {
     //   const url = `http://localhost:8002/getchocolate`;
@@ -37,6 +39,9 @@ export default function Home() {
     //   console.log(err);
     // }
   };
+  const LoginButtonPress = () => {
+    setLoginStat(!loginStat);
+  };
   useEffect(() => {
     fetchChocolateData();
   }, []);
@@ -48,7 +53,12 @@ export default function Home() {
   //   </div>
   // ))}
   return (
-    <div>
+    <div className="">
+      <div className="w-full h-20 px-2 flex items-center ">
+        <Header LoginButtonPress={LoginButtonPress} />
+      </div>
+      {console.log("loginStat", loginStat)}
+      {loginStat ? <Login /> : "sss"}
       <HomeChocolate />
       <HomeAllChoco />
       <HomeAboutCompany />
