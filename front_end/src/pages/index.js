@@ -4,6 +4,7 @@ import { HomeAllChoco } from "../components/homeAllChoco";
 import { HomeAboutCompany } from "../components/homeAboutCompany";
 import { Login } from "../components/Login";
 import { Header } from "../components/Header";
+import { useState, useEffect } from "react";
 export default function Home() {
   const [loginStat, setLoginStat] = useState(false);
   const [data, setData] = useState();

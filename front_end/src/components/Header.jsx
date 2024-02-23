@@ -5,9 +5,9 @@ export const Header = (props) => {
     <div className="w-full flex flex-row-reverse items-center">
       <button
         onClick={() => LoginButtonPress()}
-        className="px-2 py-1 rounded-3xl bg-red-500 text-2xl"
+        className="p-[10px] backdrop-blur-[20px] text-white rounded-[10px] text-2xl"
       >
-        Log in
+        <p>log in</p>
       </button>
     </div>
   );
