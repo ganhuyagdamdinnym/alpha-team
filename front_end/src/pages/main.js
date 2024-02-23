@@ -1,3 +1,6 @@
+"use client"
+import axios from "axios";
+import data from "../chocolate/data.json";
 import { HandleSort } from "@/components/HandleSort";
 import { MainChocolateSort } from "@/components/MainChocolateSort";
 import { MainSortBuy } from "@/components/mainSortBuy";
@@ -14,6 +17,8 @@ export default function Main() {
     } catch (err) {
       console.log("err", err);
     }
+    console.log(data);
+
   };
   useEffect(() => {
     fetchChocolateData();
