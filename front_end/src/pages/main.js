@@ -24,7 +24,7 @@ export default function Main() {
     fetchChocolateData();
   }, []);
   return (
-    <div>
+    <div className="w-[100vw] h-[100vh]">
       <MainWilley />
       <MainChocolateSort />
       <MainSortBuy />
