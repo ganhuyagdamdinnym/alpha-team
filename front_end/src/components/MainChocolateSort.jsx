@@ -64,6 +64,7 @@ export const MainChocolateSort = () => {
           {swiperPerScreen ? (
             <Swiper
               modules={[Virtual, Navigation, Pagination, Keyboard]}
+              // onSwiper={setSwiperRef}
               slidesPerView={swiperPerScreen}
               loop={true}
               centeredSlides={true}
