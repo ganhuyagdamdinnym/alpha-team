@@ -87,7 +87,7 @@ export default function Home() {
         <Header LoginButtonPress={LoginButtonPress} />
       </div>
       {console.log("loginStat", loginStat)}
-      {loginStat ? <Login /> : "sss"}
+      {loginStat ? <Login /> : ""}
       <HomeChocolate />
       <HomeAllChoco />
       <HomeAboutCompany />
