@@ -6,7 +6,6 @@ import { Login } from "../components/Login";
 import { Header } from "../components/Header";
 import { useState, useEffect } from "react";
 export default function Home() {
-  const [loginStat, setLoginStat] = useState(false);
   const [data, setData] = useState();
   const fetchChocolateData = async () => {
     //alert("hi");
@@ -36,9 +35,7 @@ export default function Home() {
     //   console.log(err);
     // }
   };
-  const LoginButtonPress = () => {
-    setLoginStat(!loginStat);
-  };
+  
   useEffect(() => {
     fetchChocolateData();
   }, []);
@@ -82,15 +79,11 @@ export default function Home() {
   //   </div>
   // ))}
   return (
-    <div className="">
-      <div className="w-full h-20 px-2 flex items-center ">
-        <Header LoginButtonPress={LoginButtonPress} />
-      </div>
-      {console.log("loginStat", loginStat)}
-      {loginStat ? <Login /> : "sss"}
+    <div className="h-screen w-screen overflow-auto">
+      
       <HomeChocolate />
-      <HomeAllChoco />
       <HomeAboutCompany />
+      <div className="w-[100vw] h-[100vh] bg-white">helloo</div>
     </div>
   );
 }
