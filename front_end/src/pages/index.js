@@ -5,6 +5,7 @@ import { HomeAboutCompany } from "../components/homeAboutCompany";
 import { Login } from "../components/Login";
 import { Header } from "../components/Header";
 import { useState, useEffect } from "react";
+import axios from "axios";
 export default function Home() {
   const [loginStat, setLoginStat] = useState(false);
   const [data, setData] = useState();
