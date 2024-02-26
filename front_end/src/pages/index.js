@@ -5,6 +5,7 @@ import { HomeAboutCompany } from "../components/homeAboutCompany";
 import { Login } from "../components/Login";
 import { Header } from "../components/Header";
 import { useState, useEffect } from "react";
+import axios from "axios";
 export default function Home() {
   const [data, setData] = useState();
 
@@ -39,6 +40,7 @@ export default function Home() {
   const LoginButtonPress = () => {
     setLoginStat(!loginStat);
   };
+
   useEffect(() => {
     fetchChocolateData();
   }, []);

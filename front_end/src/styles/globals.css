@@ -12,6 +12,11 @@
   position: relative;
 }
 body {
+<<<<<<< HEAD
+=======
+  position: relative;
+  z-index: -2;
+>>>>>>> bd278630b1313db6278e92642c1be8772b2ab762
 }
 .main {
   display: flex;

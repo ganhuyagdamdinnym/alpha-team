@@ -1,12 +1,11 @@
-"use client";
-// import { useEffect, useState, useRef } from "react";
-// import { images } from "../chocolate/sort.js";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Virtual, Navigation, Pagination } from "swiper/modules";
+import { useEffect, useState, useRef } from "react";
+import { images } from "../chocolate/sort.js";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Virtual, Navigation, Pagination } from "swiper/modules";
 
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 // export const MainChocolateSort = () => {
 //   const [color, setColor] = useState();
@@ -71,6 +70,32 @@ return (
         virtual
       >
         {images.map((image, index) => {
+          return (
+            <SwiperSlide key={image} virtualIndex={index}>
+              <div className="w-full h-full flex justify-center items-center ">
+                <img src={image.image} className="w-9/12 h-9/12" />
+              </div>
+            </SwiperSlide>
+            // <div className="w-2/6 flex shrink-0 justify-center items-center ">
+            //   {" "}
+            //   <img src={image.image} className="w-9/12 h-9/12" />
+            // </div>
+          );
+        })}
+      </Swiper>
+      <Swiper
+        modules={[Virtual, Navigation, Pagination]}
+        onSwiper={setSwiperRef}
+        slidesPerView={3}
+        centeredSlides={true}
+        spaceBetween={30}
+        pagination={{
+          type: "fraction",
+        }}
+        navigation={true}
+        virtual
+      >
+        {images?.map((image, index) => {
           return (
             <SwiperSlide key={image} virtualIndex={index}>
               <div className="w-full h-full flex justify-center items-center ">
