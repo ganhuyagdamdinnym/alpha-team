@@ -2,11 +2,13 @@
 
 import { Header } from "./Header";
 import { useState } from "react";
+import { Login } from "./Login";
 export const HomeChocolate = () => {
+  const [loginStat, setLoginStat] = useState(false);
   const LoginButtonPress = () => {
     setLoginStat(!loginStat);
   };
-  const [loginStat, setLoginStat] = useState(false);
+  //const [loginStat, setLoginStat] = useState(false);
 
   return (
     <div className="h-[100vh] w-[100vw]">

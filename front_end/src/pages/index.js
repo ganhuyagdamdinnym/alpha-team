@@ -7,6 +7,7 @@ import { Header } from "../components/Header";
 import { useState, useEffect } from "react";
 export default function Home() {
   const [data, setData] = useState();
+
   const fetchChocolateData = async () => {
     //alert("hi");
     try {
@@ -81,16 +82,7 @@ export default function Home() {
   //   </div>
   // ))}
   return (
-    <div className="">
-      <div
-        className={`w-full h-20 px-2 flex items-center ${
-          loginStat ? "opacity-25" : ""
-        }`}
-      >
-        <Header LoginButtonPress={LoginButtonPress} />
-      </div>
-      {console.log("loginStat", loginStat)}
-
+    <div className="overflow-y-auto">
       <HomeChocolate />
       <HomeAboutCompany />
       <div className="w-[100vw] h-[100vh] bg-white">helloo</div>
