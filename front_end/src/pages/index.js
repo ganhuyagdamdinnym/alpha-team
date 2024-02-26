@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 export default function Home() {
   const [data, setData] = useState();
-
+  const [loginStat, setLoginStat] = useState(false);
   const fetchChocolateData = async () => {
     //alert("hi");
     try {
@@ -84,8 +84,12 @@ export default function Home() {
   //   </div>
   // ))}
   return (
-    <div className="overflow-y-auto">
-      <HomeChocolate />
+    <div className={`overflow-y-auto`}>
+      {/* <div className={`overflow-y-auto ${loginStat ? "opacity-50" : ""}`}> */}
+      <HomeChocolate
+        LoginButtonPress={LoginButtonPress}
+        loginStat={loginStat}
+      />
       <HomeAboutCompany />
       <div className="w-[100vw] h-[100vh] bg-white">helloo</div>
     </div>
