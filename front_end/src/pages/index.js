@@ -7,8 +7,8 @@ import { Header } from "../components/Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
 export default function Home() {
-  const [loginStat, setLoginStat] = useState(false);
   const [data, setData] = useState();
+
   const fetchChocolateData = async () => {
     //alert("hi");
     try {
@@ -84,25 +84,10 @@ export default function Home() {
   //   </div>
   // ))}
   return (
-    <div className="">
-      <div
-        className={`w-full h-20 px-2 flex items-center ${
-          loginStat ? "opacity-25" : ""
-        }`}
-      >
-        <Header LoginButtonPress={LoginButtonPress} />
-      </div>
-      {console.log("loginStat", loginStat)}
-      {loginStat ? (
-        <div className="w-screen h-screen  flex justify-center items-center">
-          <Login />
-        </div>
-      ) : (
-        ""
-      )}
+    <div className="overflow-y-auto">
       <HomeChocolate />
-      <HomeAllChoco />
       <HomeAboutCompany />
+      <div className="w-[100vw] h-[100vh] bg-white">helloo</div>
     </div>
   );
 }
