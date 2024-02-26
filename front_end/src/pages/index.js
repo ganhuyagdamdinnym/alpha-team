@@ -35,7 +35,9 @@ export default function Home() {
     //   console.log(err);
     // }
   };
-  
+  const LoginButtonPress = () => {
+    setLoginStat(!loginStat);
+  };
   useEffect(() => {
     fetchChocolateData();
   }, []);
@@ -79,8 +81,16 @@ export default function Home() {
   //   </div>
   // ))}
   return (
-    <div className="h-screen w-screen overflow-auto">
-      
+    <div className="">
+      <div
+        className={`w-full h-20 px-2 flex items-center ${
+          loginStat ? "opacity-25" : ""
+        }`}
+      >
+        <Header LoginButtonPress={LoginButtonPress} />
+      </div>
+      {console.log("loginStat", loginStat)}
+
       <HomeChocolate />
       <HomeAboutCompany />
       <div className="w-[100vw] h-[100vh] bg-white">helloo</div>
