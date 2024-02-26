@@ -83,11 +83,21 @@ export default function Home() {
   // ))}
   return (
     <div className="">
-      <div className="w-full h-20 px-2 flex items-center ">
+      <div
+        className={`w-full h-20 px-2 flex items-center ${
+          loginStat ? "opacity-25" : ""
+        }`}
+      >
         <Header LoginButtonPress={LoginButtonPress} />
       </div>
       {console.log("loginStat", loginStat)}
-      {loginStat ? <Login /> : ""}
+      {loginStat ? (
+        <div className="w-screen h-screen  flex justify-center items-center">
+          <Login />
+        </div>
+      ) : (
+        ""
+      )}
       <HomeChocolate />
       <HomeAllChoco />
       <HomeAboutCompany />
