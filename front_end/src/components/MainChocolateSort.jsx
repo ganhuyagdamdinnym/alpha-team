@@ -40,14 +40,13 @@ export const MainChocolateSort = () => {
     ref.current.focus();
   }, []);
 
-  const handleKeyDown = (event, index) => {
+  const handleKeyDown = (event) => {
     if (event.key === "ArrowLeft") {
-      swiperRef.slideTo(index - 1, 0);
+      swiperRef.slideTo(1, 0);
     }
     if (event.key === "ArrowRight") {
-      swiperRef.slideTo(index + 1, 0);
+      swiperRef.slideTo(1, 0);
     }
-    console.log("User pressed: ", event.key);
   };
 
   return (
@@ -62,8 +61,8 @@ export const MainChocolateSort = () => {
           modules={[Virtual, Navigation, Pagination]}
           onSwiper={setSwiperRef}
           slidesPerView={3}
+          loop={true}
           centeredSlides={true}
-          spaceBetween={30}
           pagination={{
             type: "fraction",
           }}
@@ -73,7 +72,10 @@ export const MainChocolateSort = () => {
           {images?.map((image, index) => {
             return (
               <SwiperSlide key={image} virtualIndex={index}>
-                <div className="w-full h-full flex justify-center items-center ">
+                <div
+                  className="w-full h-full flex justify-center items-center"
+                  style={{ backgroundColor: `${image.color}` }}
+                >
                   <img src={image.image} className="w-9/12 h-9/12" />
                 </div>
               </SwiperSlide>
