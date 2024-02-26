@@ -1,13 +1,12 @@
-
 "use client";
 import { useEffect, useState, useRef } from "react";
 import { images } from "../chocolate/sort.js";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Virtual, Navigation, Pagination } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Virtual, Navigation, Pagination } from "swiper/modules";
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 
 export const MainChocolateSort = () => {
   const [color, setColor] = useState();
@@ -59,7 +58,7 @@ export const MainChocolateSort = () => {
         tabIndex={0}
         onKeyDown={handleKeyDown}
       >
-        <Swiper
+        {/* <Swiper
           modules={[Virtual, Navigation, Pagination]}
           onSwiper={setSwiperRef}
           slidesPerView={3}
@@ -71,7 +70,7 @@ export const MainChocolateSort = () => {
           navigation={true}
           virtual
         >
-          {images.map((image, index) => {
+          {images?.map((image, index) => {
             return (
               <SwiperSlide key={image} virtualIndex={index}>
                 <div className="w-full h-full flex justify-center items-center ">
@@ -84,9 +83,8 @@ export const MainChocolateSort = () => {
               // </div>
             );
           })}
-        </Swiper>
+        </Swiper> */}
       </div>
     </div>
   );
-}
-
+};
