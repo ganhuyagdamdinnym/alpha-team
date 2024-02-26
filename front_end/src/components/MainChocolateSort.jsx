@@ -39,6 +39,7 @@ import "swiper/css/navigation";
 //     ref.current.focus();
 //   }, []);
 
+<<<<<<< HEAD
 //   const handleKeyDown = (event, index) => {
 //     if (event.key === "ArrowLeft") {
 //       swiperRef.slideTo(index - 1, 0);
@@ -48,6 +49,16 @@ import "swiper/css/navigation";
 //     }
 //     console.log("User pressed: ", event.key);
 //   };
+=======
+  const handleKeyDown = (event) => {
+    if (event.key === "ArrowLeft") {
+      swiperRef.slideTo(1, 0);
+    }
+    if (event.key === "ArrowRight") {
+      swiperRef.slideTo(1, 0);
+    }
+  };
+>>>>>>> 0d4cd167a242aac40d21884474c5ae12f6c5e091
 
 return (
   <div className="flex h-4/6 overflow-hidden">
@@ -69,6 +80,7 @@ return (
         navigation={true}
         virtual
       >
+<<<<<<< HEAD
         {images.map((image, index) => {
           return (
             <SwiperSlide key={image} virtualIndex={index}>
@@ -109,6 +121,38 @@ return (
           );
         })}
       </Swiper>
+=======
+        <Swiper
+          modules={[Virtual, Navigation, Pagination]}
+          onSwiper={setSwiperRef}
+          slidesPerView={3}
+          loop={true}
+          centeredSlides={true}
+          pagination={{
+            type: "fraction",
+          }}
+          navigation={true}
+          virtual
+        >
+          {images?.map((image, index) => {
+            return (
+              <SwiperSlide key={image} virtualIndex={index}>
+                <div
+                  className="w-full h-full flex justify-center items-center"
+                  style={{ backgroundColor: `${image.color}` }}
+                >
+                  <img src={image.image} className="w-9/12 h-9/12" />
+                </div>
+              </SwiperSlide>
+              // <div className="w-2/6 flex shrink-0 justify-center items-center ">
+              //   {" "}
+              //   <img src={image.image} className="w-9/12 h-9/12" />
+              // </div>
+            );
+          })}
+        </Swiper>
+      </div>
+>>>>>>> 0d4cd167a242aac40d21884474c5ae12f6c5e091
     </div>
   </div>
 );
