@@ -40,6 +40,7 @@ export default function Home() {
   const LoginButtonPress = () => {
     setLoginStat(!loginStat);
   };
+
   useEffect(() => {
     fetchChocolateData();
   }, []);
