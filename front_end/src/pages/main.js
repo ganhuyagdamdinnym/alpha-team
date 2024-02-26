@@ -1,5 +1,4 @@
-
-"use client"
+"use client";
 import { HandleSort } from "@/components/HandleSort";
 import { MainChocolateSort } from "@/components/MainChocolateSort";
 import { MainSortBuy } from "@/components/mainSortBuy";
@@ -19,22 +18,26 @@ export default function Main() {
       console.log("err", err);
     }
     console.log(data);
-
   };
   useEffect(() => {
     fetchChocolateData();
   }, []);
   return (
-    <div className="w-[100vw] h-[100vh]">
-      <MainWilley />
-      <MainChocolateSort />
-      <MainSortBuy data={data} />
-      <div
-        style={{ position: "fixed", bottom: "0", left: "0" }}
-        className="w-[100vw] h-[30px] bg-[red] flex items-center"
-      >
-        <HandleSort bgcolor={bgcolor} />
+    <div className="overflow-scroll">
+      <div className="w-[100vw] h-[100vh]">
+        <MainWilley />
+        <MainChocolateSort />
+        <MainSortBuy data={data} />
+        <div
+          style={{ position: "fixed", bottom: "0", left: "0" }}
+          className="w-[100vw] h-[30px] bg-[red] flex items-center"
+        >
+          <HandleSort bgcolor={bgcolor} />
+        </div>
       </div>
+
+      {/* ariukas part lol ;) */}
+      <div className="w-[100vw] h-[100vh]">hi</div>
     </div>
   );
 }

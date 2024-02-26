@@ -12,6 +12,8 @@
   position: relative;
 }
 body {
+  position: relative;
+  z-index: -2;
 }
 .main {
   display: flex;

@@ -8,15 +8,19 @@ export const Header = (props) => {
         <button>
           <p>OUR CHOCOLATE</p>
         </button>
-        <Image src="logo.svg" height={96} width={96} />
+        <Image
+          priority="true"
+          alt="logo"
+          src="logo.svg"
+          height={96}
+          width={96}
+        />
         <button>
           <p>ABOUT</p>
         </button>
-      </div>
-      <div className=" flex flex-row-reverse items-center">
         <button
           onClick={() => LoginButtonPress()}
-          className="p-[10px] bg-[#3c3c3c] backdrop-blur-[20px] text-white rounded-[10px] text-2xl absolute flex items-center"
+          className="p-[10px] bg-[#3c3c3c] backdrop-blur-[20px] text-white rounded-[10px] text-2xl absolute right-0 flex items-center"
         >
           <p>log in</p>
         </button>
