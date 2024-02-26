@@ -1,5 +1,6 @@
 import Image from "next/image";
 export const Header = (props) => {
+  console.log("tester");
   const { LoginButtonPress } = props;
   const header = ["About", "Our Chocolate", "Login"];
   return (
