@@ -40,7 +40,9 @@ export default function Home() {
   const LoginButtonPress = () => {
     setLoginStat(!loginStat);
   };
-
+  const relogin = () => {
+    setLoginStat(false);
+  };
   useEffect(() => {
     fetchChocolateData();
   }, []);
@@ -89,6 +91,7 @@ export default function Home() {
       <HomeChocolate
         LoginButtonPress={LoginButtonPress}
         loginStat={loginStat}
+        relogin={relogin}
       />
       <HomeAboutCompany />
       <div className="w-[100vw] h-[100vh] bg-white">helloo</div>

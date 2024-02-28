@@ -56,7 +56,7 @@ export const MainChocolateSort = () => {
           }}
           pagination={{
             clickable: true,
-            type:"progressbar",
+            type: "progressbar",
           }}
           navigation={true}
           virtual

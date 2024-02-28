@@ -1,4 +1,5 @@
-export const Buysort = () => {
+export const Buysort = (propss) => {
+  const { HandleSort } = props;
   const sortName = [
     "COLOURFUL VARIETY",
     "NUTS SELECTION",
