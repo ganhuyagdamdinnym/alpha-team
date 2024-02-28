@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
+
 export const Login = (props) => {
   const { relogin } = props;
   const [email, setEmail] = useState("");
@@ -23,6 +24,7 @@ export const Login = (props) => {
         <button className="w-80 text-2xl px-3 py-1 bg-[red] rounded-xl text-white border-solid border-2">
           Next
         </button>
+
         <button></button>
       </div>
     </div>

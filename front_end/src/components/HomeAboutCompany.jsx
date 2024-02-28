@@ -1,9 +1,11 @@
 import Image from "next/image";
+
 export const HomeAboutCompany = () => {
   return (
-    <div className="flex">
+    <div className="flex gap-[40vh] justify-around p-[10vh]">
       <div>
-        <Image src="logo.svg" height={60} width={60} />
+        <Image src="/logo.svg" height={100} width={100} />
+        <p className="border-t-2 border-black ">Ritter sport</p>
       </div>
       <div>
         <p>Information</p>
@@ -16,6 +18,14 @@ export const HomeAboutCompany = () => {
           Address: Suite 202, ICC Tower, 1st khoroo, Sukhbaatar district,
           Ulaanbaatar, Mongolia
         </p>
+      </div>
+      <div className="flex-col gap-[10vh]">
+        <input className="w-10 h-10" placeholder="sfhjfgkag" />
+        <button>subscribe</button>
+        <div className="flex">
+          <Image src="/fb.svg" height={40} width={40} />
+          <Image src="/mail.svg" height={40} width={40} />
+        </div>
       </div>
     </div>
   );
