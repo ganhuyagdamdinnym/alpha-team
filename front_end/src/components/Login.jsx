@@ -1,9 +1,39 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { auth } from "@/pages/_app";
+
 export const Login = (props) => {
   const { relogin } = props;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, "sign-in-button", {
+      size: "invisible",
+      callback: (response) => {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        onSignInSubmit();
+      },
+    });
+    window.recaptchaVerifier.render().then(function (widgetId) {
+      grecaptcha.reset(widgetId);
+    });
+  }, []);
+
+  const createUser = () => {
+    const appVerifier = window.recaptchaVerifier;
+
+    signInWithPhoneNumber(auth, "+97696483484", appVerifier)
+      .then((confirmationResult) => {
+        console.log(confirmationResult);
+        window.confirmationResult = confirmationResult;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="w-[400px] h-[600px] bg-[#F06742] flex flex-col gap-4 py-2 rounded-xl z-10">
       <div className="w-full text-white  flex flex-row-reverse px-2 ">
@@ -18,13 +48,19 @@ export const Login = (props) => {
       <div className="flex flex-col gap-3 full items-center">
         <input
           className="w-80 px-3 py-2 rounded-xl border-solid border-2"
+          type="number"
           placeholder="Утасны дугаар"
         />
-        <button className="w-80 text-2xl px-3 py-1 bg-[red] rounded-xl text-white border-solid border-2">
+        <button
+          onClick={createUser}
+          className="w-80 text-2xl px-3 py-1 bg-[red] rounded-xl text-white border-solid border-2"
+        >
           Next
         </button>
         <button></button>
       </div>
+
+      <div id="sign-in-button"></div>
     </div>
   );
 };

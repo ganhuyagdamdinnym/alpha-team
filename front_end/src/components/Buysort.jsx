@@ -1,4 +1,4 @@
-export const Buysort = (propss) => {
+export const Buysort = (props) => {
   const { HandleSort } = props;
   const sortName = [
     "COLOURFUL VARIETY",
@@ -9,14 +9,14 @@ export const Buysort = (propss) => {
     "250G BARS",
   ];
   return (
-    <div className="w-screen flex bg-">
-      {sortName.map((e) => (
-        <div
-          onclick={() => HandleSort()}
-          className="w-1/6 flex justify-center bg-[red]"
+    <div className="w-screen flex h-8 ">
+      {sortName.map((e, index) => (
+        <button
+          onClick={() => HandleSort()}
+          className="w-1/6 flex justify-center h-full bg-[red] items-center"
         >
           <p className="">{e}</p>
-        </div>
+        </button>
       ))}
     </div>
   );

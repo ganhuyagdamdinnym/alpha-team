@@ -6,7 +6,9 @@
     "unit_price": "5500",
     "count_in_box": "10",
     "box_price": "55000",
-    "sort": "variefy"
+    "sort": "variefy",
+    "border": "#EAD70E",
+    "bg": "#FFC300"
   },
   {
     "id": "2",
@@ -15,7 +17,8 @@
     "unit_price": "6600",
     "count_in_box": "12",
     "box_price": "66000",
-    "sort": "variefy"
+    "sort": "variefy",
+    "bg": "#0EA7EA"
   },
   {
     "id": "3",
@@ -123,7 +126,8 @@
     "unit_price": "5500",
     "count_in_box": "10",
     "box_price": "55000",
-    "sort": "nuts"
+    "sort": "nuts",
+    "bg": "#C70039"
   },
   {
     "id": "15",
@@ -132,7 +136,8 @@
     "unit_price": "5500",
     "count_in_box": "11",
     "box_price": "60500",
-    "sort": "nuts"
+    "sort": "nuts",
+    "bg": "#1A6D22"
   },
   {
     "id": "16",
@@ -141,7 +146,8 @@
     "unit_price": "5500",
     "count_in_box": "11",
     "box_price": "60500",
-    "sort": "nuts"
+    "sort": "nuts",
+    "bg": "#D18715"
   },
   {
     "id": "17",
