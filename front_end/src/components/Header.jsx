@@ -1,11 +1,16 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 export const Header = (props) => {
+  const router = useRouter();
   const { LoginButtonPress } = props;
   const header = ["About", "Our Chocolate", "Login"];
+  const jumptomain = () => {
+    router.push("/main");
+  };
   return (
-    <div className="w-full">
-      <div className="w-full flex justify-center text-white text-2xl gap-8  mt-[40px] ">
-        <button>
+    <div className="w-full ">
+      <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] ">
+        <button onClick={() => jumptomain()}>
           <p>OUR CHOCOLATE</p>
         </button>
         <Image
@@ -20,9 +25,9 @@ export const Header = (props) => {
         </button>
         <button
           onClick={() => LoginButtonPress()}
-          className="p-[10px] bg-[#3c3c3c] backdrop-blur-[20px] text-white rounded-[10px] text-2xl absolute right-0 flex items-center"
+          className="p-[10px] bg-[#3c3c3c] backdrop-blur-[20px] border-2 border-white text-white  text-2xl absolute right-0 flex mr-4 items-center"
         >
-          <p>log in</p>
+          <p>ХУДАЛДАА ХИЙХ</p>
         </button>
       </div>
     </div>
