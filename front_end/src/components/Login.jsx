@@ -1,39 +1,48 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import {
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 import { auth } from "@/pages/_app";
 
 export const Login = (props) => {
   const { relogin } = props;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    window.recaptchaVerifier = new RecaptchaVerifier(auth, "sign-in-button", {
-      size: "invisible",
-      callback: (response) => {
-        // reCAPTCHA solved, allow signInWithPhoneNumber.
-        onSignInSubmit();
-      },
-    });
-    window.recaptchaVerifier.render().then(function (widgetId) {
-      grecaptcha.reset(widgetId);
-    });
-  }, []);
-
+  // useEffect(() => {
+  //   window.recaptchaVerifier = new RecaptchaVerifier(auth, "sign-in-button", {
+  //     size: "invisible",
+  //     callback: (response) => {
+  //       // reCAPTCHA solved, allow signInWithPhoneNumber.
+  //       onSignInSubmit();
+  //     },
+  //   });
+  //   window.recaptchaVerifier.render().then(function (widgetId) {
+  //     grecaptcha.reset(widgetId);
+  //   });
+  // }, []);
   const createUser = () => {
     const appVerifier = window.recaptchaVerifier;
-
-    signInWithPhoneNumber(auth, "+97696483484", appVerifier)
-      .then((confirmationResult) => {
-        console.log(confirmationResult);
-        window.confirmationResult = confirmationResult;
+    createUserWithEmailAndPassword(auth, "email@gmail.com", "pass1234")
+      .then((authUser) => {
+        console.log("Success. The user is created in Firebase");
+        router.push("/logged_in");
       })
       .catch((error) => {
-        console.error(error);
+        // An error occurred. Set error message to be displayed to user
+        // setError(error.message);
       });
+    // signInWithPhoneNumber(auth, "+97696483484", appVerifier)
+    //   .then((confirmationResult) => {
+    //     console.log(confirmationResult);
+    //     window.confirmationResult = confirmationResult;
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
   };
-
   return (
     <div className="w-[400px] h-[600px] bg-[#F06742] flex flex-col gap-4 py-2 rounded-xl z-10">
       <div className="w-full text-white  flex flex-row-reverse px-2 ">

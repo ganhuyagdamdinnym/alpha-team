@@ -16,6 +16,12 @@ body {
   position: relative;
   z-index: -2;
 }
+.chocolateSortBuy {
+  transition: all 1000ms;
+}
+.chocolateSortBuy:hover {
+  background-color: #ebe9e6;
+}
 .main {
   display: flex;
   width: 100vw;
@@ -42,7 +48,6 @@ body {
 img {
   animation: image 1s;
 }
-
 @keyframes image {
   0% {
     opacity: 0;
