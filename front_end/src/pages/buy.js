@@ -37,7 +37,9 @@ export default function Buy() {
     fetchChocolateData();
   }, []);
   return (
-    <div className={`w-[100wv] h-[100hv] flex flex-col gap-2  bg-[#EBE9E6] `}>
+    <div
+      className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester  bg-[#EBE9E6] `}
+    >
       {hoppetStatus ? (
         <div className={`opacity-75 fixed w-screen h-screen bg-[#EAE2E3]`}>
           <button
