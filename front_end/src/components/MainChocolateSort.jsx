@@ -10,8 +10,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 export const MainChocolateSort = () => {
-  const [swiperRef, setSwiperRef] = useState(null);
+  const [swiperPerScreen, setSwiperPerScreen] = useState();
   const [color, setColor] = useState();
+
   // const appendNumber = useRef(6);
   // const [bgcolor, setBgcolor] = useState("green");
 
@@ -38,54 +39,76 @@ export const MainChocolateSort = () => {
   useEffect(() => {
     ref.current.focus();
   }, []);
-  console.log(color);
+  // console.log(color);
+  useEffect(() => {
+    if (window) {
+      if (window.screen.width < 600) {
+        console.log("mobile");
+        setSwiperPerScreen(1);
+      }
+      if (window.screen.width > 600) {
+        setSwiperPerScreen(2);
+        console.log("desktop");
+      }
+    }
+  }, []);
+  console.log(swiperPerScreen);
   return (
     <div className="h-[100%]">
-      <div className="flex h-[70%] oveflow-hidden">
+      <div className="flex h-[70%] oveflow-hidden max-[600px]:h-[40%] max-[600px]:text-[10px]">
         <div
           className="overflow-hidden w-full h-full flex "
           ref={ref}
           tabIndex={0}
         >
-          <Swiper
-            modules={[Virtual, Navigation, Pagination, Keyboard]}
-            slidesPerView={2}
-            loop={true}
-            centeredSlides={true}
-            keyboard={{
-              enabled: true,
-            }}
-            pagination={{
-              clickable: true,
-              type: "progressbar",
-            }}
-            navigation={true}
-            virtual
-          >
-            {images?.map((image, index) => {
-              return (
-                <SwiperSlide key={image} virtualIndex={index}>
-                  <div
-                    key={index}
-                    className="w-full h-full flex justify-center items-center"
-                    style={{ backgroundColor: `${image.color}` }}
-                  >
-                    <img
-                      onLoad={() => {
-                        setColor(image.color);
-                      }}
-                      src={image.image}
-                      className="w-9/12 h-9/12"
-                    />
-                  </div>
-                </SwiperSlide>
-                // <div className="w-2/6 flex shrink-0 justify-center items-center ">
-                //   {" "}
-                //   <img src={image.image} className="w-9/12 h-9/12" />
-                // </div>
-              );
-            })}
-          </Swiper>
+          {swiperPerScreen ? (
+            <Swiper
+              modules={[Virtual, Navigation, Pagination, Keyboard]}
+              slidesPerView={swiperPerScreen}
+              loop={true}
+              centeredSlides={true}
+              keyboard={{
+                enabled: true,
+              }}
+              pagination={{
+                clickable: true,
+                type: "progressbar",
+              }}
+              navigation={true}
+              virtual
+              onSlideChange={(swiperCore) => {
+                const { realIndex } = swiperCore;
+                setColor(images[realIndex].color);
+              }}
+            >
+              {images?.map((image, index) => {
+                return (
+                  <SwiperSlide key={image} virtualIndex={index}>
+                    <div
+                      key={index}
+                      className="w-full h-full flex justify-center items-center"
+                      style={{ backgroundColor: `${image.color}` }}
+                    >
+                      <img
+                        // onLoad={() => {
+                        //   setColor(image.color);
+                        // }}
+                        src={image.image}
+                        className="w-9/12 h-9/12"
+                      />
+                    </div>
+                  </SwiperSlide>
+                  // <div className="w-2/6 flex shrink-0 justify-center items-center ">
+                  //   {" "}
+                  //   <img src={image.image} className="w-9/12 h-9/12" />
+                  // </div>
+                );
+              })}
+            </Swiper>
+          ) : (
+            <div>loading...</div>
+          )}
+
           <div
             style={{
               position: "fixed",
@@ -100,7 +123,7 @@ export const MainChocolateSort = () => {
         </div>
       </div>
       <div
-        className="w-[100vw] h-[30%]"
+        className="w-[100vw] h-[30%] max-[600px]:h-[60%] max-[600px]:text-[10px]"
         style={{ backgroundColor: color }}
       ></div>
     </div>
