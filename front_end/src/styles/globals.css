@@ -3,6 +3,7 @@
 @tailwind utilities;
 #myVideo {
   object-fit: cover;
+  width: 100%;
   height: 100%;
   left: 0;
   right: 0;
@@ -14,6 +15,13 @@
 body {
   position: relative;
   z-index: -2;
+  background-color: #dcd7d8;
+}
+.chocolateSortBuy {
+  transition: all 1000ms;
+}
+.chocolateSortBuy:hover {
+  background-color: #ebe9e6;
 }
 .main {
   display: flex;
@@ -22,4 +30,110 @@ body {
   align-items: center;
   position: absolute;
   top: 0;
+}
+.buyBorder:hover {
+  border-color: #de8526;
+  filter: brightness(1.2);
+}
+.buyBorder {
+  transition: all 500ms;
+}
+.basketButton:hover {
+  background-color: rgb(204, 93, 93);
+}
+.basketButton {
+  transition: all 500ms;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  padding-left: 50px;
+  padding-right: 70px;
+  padding-top: 20px;
+  gap: 30px;
+}
+
+/* .hoppet {
+  transition: all 1000ms;
+}
+.hoppet:hover {
+  background-color: red;
+} */
+
+img {
+  animation: image 1s;
+}
+@keyframes image {
+  0% {
+    opacity: 0;
+    filter: brightness(1) blur(20px);
+  }
+  10% {
+    opacity: 1;
+    filter: brightness(2) blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1) blur(0);
+  }
+}
+@media only screen and (max-width: 1500px) {
+  /* .tester {
+    background-color: black;
+  } */
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding-left: 50px;
+    padding-right: 70px;
+    padding-top: 20px;
+    gap: 30px;
+  }
+  /* .chocolateSortBuy {
+    font-size: 20px;
+  } */
+}
+@media only screen and (max-width: 1200px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-left: 50px;
+    padding-right: 70px;
+    padding-top: 20px;
+    gap: 30px;
+  }
+  .chocolateSortBuy {
+    font-size: 11px;
+  }
+  .loginPart {
+    height: 350px;
+    width: 250px;
+  }
+  /* .basket {
+    width: 10px;
+  } */
+}
+@media only screen and (max-width: 900px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 50px;
+    padding-right: 70px;
+    padding-top: 20px;
+    gap: 30px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    padding-left: 50px;
+    padding-right: 40px;
+
+    /* padding-top: 20px; */
+    gap: 30px;
+  }
+  .chocolateSortBuy {
+    font-size: 8px;
+  }
 }

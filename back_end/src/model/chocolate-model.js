@@ -9,4 +9,4 @@ const chocolateSchema = new Schema({
   image: String,
   sort: String,
 });
-export const ChocolateModel = model("Main", chocolateSchema);
+export const ChocolateModel = model("Chocolate", chocolateSchema);
