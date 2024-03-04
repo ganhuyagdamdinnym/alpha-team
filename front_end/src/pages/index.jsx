@@ -1,4 +1,3 @@
-"use client";
 import { HomeChocolate } from "../components/HomeChocolate";
 import { HomeAboutCompany } from "../components/homeAboutCompany";
 import data from "@/chocolate/data.json";
@@ -6,6 +5,7 @@ import { Login } from "../components/Login";
 import { Header } from "../components/Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
+
 export default function Home() {
   console.log(data);
   //const [data, setData] = useState();
@@ -97,6 +97,7 @@ export default function Home() {
         relogin={relogin}
       />
       <HomeAboutCompany />
+      {/* <div className="w-[100vw] h-[100vh] bg-white">helloo</div> */}
       <div className="w-[100vw] h-[100vh] bg-white"></div>
     </div>
   );
