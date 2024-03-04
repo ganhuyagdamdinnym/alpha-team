@@ -9,10 +9,14 @@ export const HandleSort = (props) => {
     "250G BARS",
   ];
   return (
-    <div className="w-screen flex bg-">
-      {sortName.map((e) => (
-        <div onclick={() => HandleSort()} className="w-1/6 flex justify-center">
-          <p className={`bg-[${bgcolor}]`}>{e}</p>
+    <div className="w-screen flex">
+      {sortName.map((e, index) => (
+        <div
+          key={index}
+          onClick={() => HandleSort()}
+          className="w-1/6 bg-[white] flex justify-center"
+        >
+          <p className={`bg-[white] `}>{e}</p>
         </div>
       ))}
     </div>

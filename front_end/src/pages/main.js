@@ -1,15 +1,12 @@
 "use client";
-import { HandleSort } from "@/components/HandleSort";
 import { MainChocolateSort } from "@/components/MainChocolateSort";
 import { MainSortBuy } from "@/components/mainSortBuy";
 import { MainWilley } from "@/components/mainWilley";
 import { Data } from "@/components/localData";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Image from "next/image";
 export default function Main() {
   const [data, setData] = useState();
-  const [bgcolor, setBgcolor] = useState("green");
   const fetchChocolateData = async () => {
     //alert("hi");
     try {
@@ -19,7 +16,6 @@ export default function Main() {
     } catch (err) {
       console.log("err", err);
     }
-    console.log(data);
   };
   useEffect(() => {
     fetchChocolateData();
@@ -30,12 +26,6 @@ export default function Main() {
         <MainWilley />
         <MainChocolateSort />
         <MainSortBuy data={data} />
-        <div
-          style={{ position: "fixed", bottom: "0", left: "0" }}
-          className="w-[100vw] h-[30px] bg-[red] flex items-center"
-        >
-          <HandleSort bgcolor={bgcolor} />
-        </div>
       </div>
 
       {/* ariukas part lol ;) */}

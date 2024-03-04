@@ -46,7 +46,7 @@ body {
   gap: 30px;
 }
 img {
-  animation: image 1s;
+  animation: imag 1s;
 }
 @keyframes image {
   0% {
