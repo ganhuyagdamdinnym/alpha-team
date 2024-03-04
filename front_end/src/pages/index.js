@@ -1,13 +1,14 @@
 "use client";
 import { HomeChocolate } from "../components/HomeChocolate";
-
 import { HomeAboutCompany } from "../components/homeAboutCompany";
+import data from "@/chocolate/data.json";
 import { Login } from "../components/Login";
 import { Header } from "../components/Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
 export default function Home() {
-  const [data, setData] = useState();
+  console.log(data);
+  //const [data, setData] = useState();
   const [loginStat, setLoginStat] = useState(false);
   const fetchChocolateData = async () => {
     //alert("hi");
@@ -19,39 +20,24 @@ export default function Home() {
       console.log("err", err);
     }
   };
-  //   import { getAuth, signInWithPhoneNumber } from "firebase/auth";
-
-  // const phoneNumber = getPhoneNumberFromUserInput();
-  // const appVerifier = window.recaptchaVerifier;
-
-  // const auth = getAuth();
-  // signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-  //     .then((confirmationResult) => {
-  //       // SMS sent. Prompt user to type the code from the message, then sign the
-  //       // user in with confirmationResult.confirm(code).
-  //       window.confirmationResult = confirmationResult;
-  //       // ...
-  //     }).catch((error) => {
-  //       // Error; SMS not sent
-  //       // ...
-  //     });
   const first = async () => {
-    // try {
-    //   const url = `http://localhost:8002/getchocolate`;
-    //   data.map(async (e) => {
-    //     await axios.post(url, {
-    //       id: e.id,
-    //       name: e.name,
-    //       unit_price: e.unit_price,
-    //       count_in_box: e.count_in_box,
-    //       box_price: e.box_price,
-    //       image: e.image,
-    //       sort: e.sort,
-    //     });
-    //   });
-    // } catch (err) {
-    //   console.log(err);
-    // }
+    // alert("hi");
+    try {
+      const url = `http://localhost:8002/getchocolate`;
+      data.map(async (e) => {
+        await axios.post(url, {
+          id: e.id,
+          name: e.name,
+          unit_price: e.unit_price,
+          count_in_box: e.count_in_box,
+          box_price: e.box_price,
+          image: e.image,
+          sort: e.sort,
+        });
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
   const LoginButtonPress = () => {
     setLoginStat(!loginStat);
@@ -61,6 +47,7 @@ export default function Home() {
   };
   useEffect(() => {
     fetchChocolateData();
+    //first();
   }, []);
   // const [data, setData] = useState();
   // const fetchChocolateData = async () => {
@@ -110,7 +97,7 @@ export default function Home() {
         relogin={relogin}
       />
       <HomeAboutCompany />
-      <div className="w-[100vw] h-[100vh] bg-white">helloo</div>
+      <div className="w-[100vw] h-[100vh] bg-white"></div>
     </div>
   );
 }

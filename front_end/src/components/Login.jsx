@@ -44,7 +44,7 @@ export const Login = (props) => {
     //   });
   };
   return (
-    <div className="w-[400px] h-[600px] bg-[#F06742] flex flex-col gap-4 py-2 rounded-xl z-10">
+    <div className="w-[400px] h-[600px] bg-[#F06742] flex flex-col gap-4 py-2 rounded-xl z-10 loginPart">
       <div className="w-full text-white  flex flex-row-reverse px-2 ">
         <Image onClick={() => relogin()} src="ban.svg" height={20} width={20} />
       </div>
@@ -56,13 +56,13 @@ export const Login = (props) => {
       </h1>
       <div className="flex flex-col gap-3 full items-center">
         <input
-          className="w-80 px-3 py-2 rounded-xl border-solid border-2"
+          className="w-3/4 px-3 py-2 rounded-xl border-solid border-2"
           type="number"
           placeholder="Утасны дугаар"
         />
         <button
           onClick={createUser}
-          className="w-80 text-2xl px-3 py-1 bg-[red] rounded-xl text-white border-solid border-2"
+          className="w-3/4 text-2xl px-3 py-1 bg-[red] rounded-xl text-white border-solid border-2"
         >
           Next
         </button>
