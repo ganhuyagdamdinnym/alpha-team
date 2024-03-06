@@ -15,6 +15,7 @@
 body {
   position: relative;
   z-index: -2;
+  background-color: #dcd7d8;
 }
 .chocolateSortBuy {
   transition: all 400ms;
@@ -37,16 +38,30 @@ body {
 .buyBorder {
   transition: all 500ms;
 }
+.basketButton:hover {
+  background-color: rgb(204, 93, 93);
+}
+.basketButton {
+  transition: all 500ms;
+}
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: 20% 20% 20% 20% 20%;
   padding-left: 50px;
   padding-right: 70px;
   padding-top: 20px;
   gap: 30px;
 }
+
+/* .hoppet {
+  transition: all 1000ms;
+}
+.hoppet:hover {
+  background-color: red;
+} */
+
 img {
-  animation: imag 1s;
+  animation: image 1s;
 }
 @keyframes image {
   0% {
@@ -90,7 +105,35 @@ img {
   .chocolateSortBuy {
     font-size: 11px;
   }
+  .loginPart {
+    height: 350px;
+    width: 300px;
+  }
   /* .basket {
     width: 10px;
   } */
+}
+@media only screen and (max-width: 900px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 50px;
+    padding-right: 70px;
+    padding-top: 20px;
+    gap: 30px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    padding-left: 50px;
+    padding-right: 40px;
+
+    /* padding-top: 20px; */
+    gap: 30px;
+  }
+  .chocolateSortBuy {
+    font-size: 8px;
+  }
 }
