@@ -1,6 +1,6 @@
 import Image from "next/image";
 export const UserHead = (props) => {
-  const { HandeHoppetStatus } = props;
+  const { HandeHoppetStatus, userNumber } = props;
   return (
     <div className="flex items-center justify-between border-[red] border-b-4 py-2 px-4">
       <button
@@ -11,7 +11,7 @@ export const UserHead = (props) => {
         {/* <Image src="hoppet2.svg" height={64} width={64} className="basket" /> */}
       </button>
       <Image src="logo.svg" width={64} height={64} />
-      <div className="flex mr-4 w-24">hello</div>
+      <div className="flex mr-4 w-24">{userNumber}</div>
     </div>
   );
 };

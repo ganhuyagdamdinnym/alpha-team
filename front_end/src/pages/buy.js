@@ -1,19 +1,36 @@
 import { Buysort } from "../components/Buysort";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Hoppet } from "../components/Hoppet";
 import { UserHead } from "@/components/UserHead";
+import { UserTokenContext } from "./_app";
+import { ChocolateImfo } from "@/components/ChocolateImfo";
 export default function Buy() {
+  const { token } = useContext(UserTokenContext);
+  console.log("token", token);
   const router = useRouter();
   const [data, setData] = useState();
   const [sorts, setSorts] = useState();
-  const [bag, setBag] = useState([]);
+  const [user, setUser] = useState();
+
   const [hoppetStatus, setHoppetStatus] = useState(false);
+  const UserData = async () => {
+    try {
+      if (token) {
+        const url = `http://localhost:8002/UserData/${token}`;
+        const res = await axios.get(url);
+        console.log(res.data.User);
+        setUser(res.data.User);
+      }
+    } catch (err) {
+      console.log("err", err);
+    }
+  };
   const fetchChocolateData = async () => {
     try {
-      const url = `http://localhost:8002/getchocolatedata`;
+      const url = `http://localhost:8002/getChocolatedata`;
       const res = await axios.get(url);
       setData(res.data);
       setSorts(res.data);
@@ -33,10 +50,12 @@ export default function Buy() {
   const HandeHoppetStatus = () => {
     router.push("/basket");
   };
-  const buyChocolate = async () => {};
-  useEffect((e) => {
+  useEffect(() => {
     fetchChocolateData();
   }, []);
+  useEffect(() => {
+    UserData();
+  }, [token]);
   return (
     <div
       className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-[#DCD7D8]`}
@@ -55,39 +74,23 @@ export default function Buy() {
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
         className="w-full bg-white"
       >
-        <UserHead HandeHoppetStatus={HandeHoppetStatus} />
+        <UserHead
+          HandeHoppetStatus={HandeHoppetStatus}
+          userNumber={user?.number}
+        />
       </div>
       <div style={{ position: "fixed", bottom: "0", left: "0", zIndex: 10 }}>
         <Buysort HandleSort={HandleSort} />
       </div>
       <div className="grid-container mt-16 mb-8 min-w-88">
         {data?.map((e) => (
-          <div className="border-2 border-[#DCDAD7] rounded-[10px] buyBorder bg-white z-0">
-            <img
-              src={`${e.image}`}
-              className="w-full rounded-t-[8px]"
-              style={{ aspectRatio: "1" }}
-            />
-            <div className="w-full  h-[150px] border-[#AD70E] px-4 ">
-              <h1 className="text-[#2C261F] h-12">{e.name}</h1>
-              <h1 className="text-[#2C261F]">
-                Ширхэгийн үнэ: {e.unit_price} ₮
-              </h1>
-              <h1 className="text-[#2C261F]">Хайрцгийн үнэ: {e.box_price} ₮</h1>
-              <h1>Хайрцаг дахь ширхэг: {e.count_in_box}ш</h1>
-            </div>
-            <div className="w-full flex">
-              <button className="px-2 py-2 border-2 border-[#EBE9E6] rounded-xl ml-2 basketButton">
-                <Image
-                  onClick={() => buyChocolate()}
-                  src="hoppet.svg"
-                  height={16}
-                  width={16}
-                  //className="hoppet"
-                />
-              </button>
-            </div>
-          </div>
+          <ChocolateImfo
+            name={e.name}
+            unit_price={e.unit_price}
+            box_price={e.box_price}
+            count_in_box={e.count_in_box}
+            image={e.image}
+          />
         ))}
       </div>
     </div>

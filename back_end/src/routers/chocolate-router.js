@@ -5,4 +5,4 @@ import {
 } from "../controllers/chocolate-control.js";
 export const chocolateRouter = express.Router();
 chocolateRouter.post("/getchocolate", getChocolate);
-chocolateRouter.get("/getchocolatedata", getChocolatedata);
+chocolateRouter.get("/getChocolatedata", getChocolatedata);
