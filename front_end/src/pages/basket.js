@@ -12,10 +12,16 @@ export default function Basket() {
           className="flex gap-4 px-4 bg-white ml-4 rounded-xl w-24"
           onClick={() => backToHome()}
         >
-          <Image src="arrowBig.svg" height={64} width={64} className="basket" />
+          <Image
+            alt="photo"
+            src="arrowBig.svg"
+            height={64}
+            width={64}
+            className="basket"
+          />
           {/* <Image src="hoppet2.svg" height={64} width={64} className="basket" /> */}
         </button>
-        <Image src="logo.svg" width={64} height={64} />
+        <Image alt="photo" src="logo.svg" width={64} height={64} />
         <div className="flex mr-4 w-24">hello</div>
       </div>
       <div className="w-full h-[90%]"></div>

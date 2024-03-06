@@ -47,7 +47,7 @@ export default function Buy() {
             onClick={() => HandeHoppetStatus()}
             style={{ position: "fixed", right: "20px", top: "35px" }}
           >
-            <Image src="hoppet2.svg" width={32} height={32} />
+            <Image alt="photo" src="hoppet2.svg" width={32} height={32} />
           </button>
         </div>
       ) : null}
@@ -82,6 +82,7 @@ export default function Buy() {
                   onClick={() => buyChocolate()}
                   src="hoppet.svg"
                   height={16}
+                  alt="photo"
                   width={16}
                   //className="hoppet"
                 />

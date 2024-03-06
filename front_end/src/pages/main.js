@@ -22,7 +22,7 @@ export default function Main() {
   }, []);
   return (
     <div className="overflow-scroll">
-      <div className="w-[100vw] h-[100vh]">
+      <div className="w-[100vw] h-[100vh] max-[1000px]:h-[auto]">
         <MainWilley />
         <MainChocolateSort />
         <MainSortBuy data={data} />
@@ -32,7 +32,10 @@ export default function Main() {
       <div className="w-[100vw] h-[100vh] flex items-center flex-wrap">
         {Data.map((e, index) => {
           return (
-            <div key={index} className="flex w-[20%]">
+            <div
+              key={index}
+              className="flex w-[20%] min-w-max-[300px] max-[1000px]:w-[100%]"
+            >
               <img src={e.name} alt="image"></img>
             </div>
           );

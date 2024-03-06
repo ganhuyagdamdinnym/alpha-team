@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Home() {
-  console.log(data);
   //const [data, setData] = useState();
   const [loginStat, setLoginStat] = useState(false);
   const fetchChocolateData = async () => {
@@ -15,7 +14,6 @@ export default function Home() {
     try {
       const url = `http://localhost:8002/getchocolatedata`;
       const res = await axios.get(url);
-      setData(res.data);
     } catch (err) {
       console.log("err", err);
     }
@@ -90,15 +88,12 @@ export default function Home() {
   // ))}
   return (
     <div className={`overflow-y-auto`}>
-      {/* <div className={`overflow-y-auto ${loginStat ? "opacity-50" : ""}`}> */}
       <HomeChocolate
         LoginButtonPress={LoginButtonPress}
         loginStat={loginStat}
         relogin={relogin}
       />
       <HomeAboutCompany />
-      {/* <div className="w-[100vw] h-[100vh] bg-white">helloo</div> */}
-      <div className="w-[100vw] h-[100vh] bg-white"></div>
     </div>
   );
 }
