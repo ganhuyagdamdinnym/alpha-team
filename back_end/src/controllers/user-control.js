@@ -5,7 +5,7 @@ export const createUser = async (req, res) => {
     await UserModel.create({
       number: body.number,
     });
-    res.status(200).json({ message: "succeeded" });
+    res.status(200).json({ message: body.number });
   } catch (err) {
     console.log(err);
   }

@@ -21,6 +21,7 @@ export const Login = (props) => {
         number: number,
       });
       router.push("/buy");
+      localStorage.setItem("items", 1);
     } catch (err) {
       console.log(err);
     }
