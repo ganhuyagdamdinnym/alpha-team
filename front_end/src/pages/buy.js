@@ -14,8 +14,7 @@ export default function Buy() {
   const [data, setData] = useState();
   const [sorts, setSorts] = useState();
   const [user, setUser] = useState();
-
-  const [hoppetStatus, setHoppetStatus] = useState(false);
+  //const [hoppetStatus, setHoppetStatus] = useState(false);
   const UserData = async () => {
     try {
       if (token) {
@@ -52,6 +51,7 @@ export default function Buy() {
   };
   useEffect(() => {
     fetchChocolateData();
+    UserData();
   }, []);
   useEffect(() => {
     UserData();
@@ -60,16 +60,15 @@ export default function Buy() {
     <div
       className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-[#DCD7D8]`}
     >
-      {hoppetStatus ? (
-        <div className={`opacity-75 fixed w-screen h-screen bg-[#EAE2E3]`}>
-          <button
-            onClick={() => HandeHoppetStatus()}
-            style={{ position: "fixed", right: "20px", top: "35px" }}
-          >
-            <Image src="hoppet2.svg" width={32} height={32} />
-          </button>
-        </div>
-      ) : null}
+      <div className={`opacity-75 fixed w-screen h-screen bg-[#EAE2E3]`}>
+        <button
+          onClick={() => HandeHoppetStatus()}
+          style={{ position: "fixed", right: "20px", top: "35px" }}
+        >
+          <Image src="hoppet2.svg" width={32} height={32} />
+        </button>
+      </div>
+
       <div
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
         className="w-full bg-white"
@@ -90,6 +89,7 @@ export default function Buy() {
             box_price={e.box_price}
             count_in_box={e.count_in_box}
             image={e.image}
+            id={e._id}
           />
         ))}
       </div>

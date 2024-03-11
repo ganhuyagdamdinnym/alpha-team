@@ -17,3 +17,6 @@ export const getUserData = async (req, res) => {
   console.log("user", User);
   res.status(200).json({ User });
 };
+export const inputChocolateToBasket = async (req, res) => {
+  console.log("hello my guy");
+};
