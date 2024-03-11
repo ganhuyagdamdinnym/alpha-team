@@ -3,7 +3,6 @@ import { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { Hoppet } from "../components/Hoppet";
 import { UserHead } from "@/components/UserHead";
 import { UserTokenContext } from "./_app";
 import { ChocolateImfo } from "@/components/ChocolateImfo";
@@ -54,6 +53,7 @@ export default function Buy() {
     UserData();
   }, []);
   useEffect(() => {
+    fetchChocolateData();
     UserData();
   }, [token]);
   return (

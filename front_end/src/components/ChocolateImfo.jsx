@@ -3,13 +3,14 @@ import Image from "next/image";
 import axios from "axios";
 export const ChocolateImfo = (props) => {
   const { name, unit_price, box_price, count_in_box, image, id } = props;
-  const [bag, setBag] = useState(false);
+  const [handleCount, setHandleCount] = useState(false);
   const [count, setCount] = useState(0);
+  const [bag, setBag] = useState([]);
   const buyChocolate = async () => {
-    setBag(true);
+    setHandleCount(true);
   };
   const abdicateBuy = async () => {
-    setBag(false);
+    setHandleCount(false);
     setCount(0);
   };
   const HandleCount = () => {
@@ -18,15 +19,22 @@ export const ChocolateImfo = (props) => {
     }
   };
   const HandleBuy = async () => {
-    try {
-      const url = `http://localhost:8002/inputChocolateToBasket`;
-      await axios.post(url, {
-        chocolate: id,
-        count: count,
-      });
-    } catch (err) {
-      console.log(err);
+    const price = count * box_price;
+    if (count > 0) {
+      if (localStorage.getItem("basket") == null) {
+        const newBag = [...bag];
+        newBag.push({ chocolate: id, count: count, price: price });
+        localStorage.setItem("basket", JSON.stringify(newBag));
+        const basket = localStorage.getItem("basket");
+      } else {
+        const rawNewBag = localStorage.getItem("basket");
+        const newBag = JSON.parse(rawNewBag);
+        console.log("hi", newBag);
+        newBag.push({ chocolate: id, count: count, price: price });
+        localStorage.setItem("basket", JSON.stringify(newBag));
+      }
     }
+    setHandleCount(false);
   };
   return (
     <div className="border-2 border-[#DCDAD7] rounded-[10px] buyBorder bg-white z-0">
@@ -42,7 +50,7 @@ export const ChocolateImfo = (props) => {
         <h1>Хайрцаг дахь ширхэг: {count_in_box}ш</h1>
       </div>
       <div className="w-full flex">
-        {bag ? (
+        {handleCount ? (
           <div className="w-full flex justify-center py-2">
             <button className="py-1 border-b-2 border-t-2 border-l-2 border-black rounded-s-[10px] px-1">
               <Image
