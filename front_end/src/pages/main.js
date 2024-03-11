@@ -7,19 +7,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 export default function Main() {
   const [data, setData] = useState();
-  const fetchChocolateData = async () => {
-    //alert("hi");
-    try {
-      const url = `http://localhost:8002/getchocolatedata`;
-      const res = await axios.get(url);
-      setData(res.data);
-    } catch (err) {
-      console.log("err", err);
-    }
-  };
-  useEffect(() => {
-    fetchChocolateData();
-  }, []);
   return (
     <div className="overflow-scroll">
       <div className="w-[100vw] h-[100vh] max-[1000px]:h-[auto]">

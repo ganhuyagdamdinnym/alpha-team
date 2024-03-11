@@ -10,3 +10,10 @@ export const createUser = async (req, res) => {
     console.log(err);
   }
 };
+export const getUserData = async (req, res) => {
+  const { token } = req.params;
+  const PhoneNumber = Number(token);
+  const User = await UserModel.findOne({ number: PhoneNumber });
+  console.log("user", User);
+  res.status(200).json({ User });
+};
