@@ -14,6 +14,10 @@ export const getUserData = async (req, res) => {
   const { token } = req.params;
   const PhoneNumber = Number(token);
   const User = await UserModel.findOne({ number: PhoneNumber });
-  console.log("user", User);
+  // console.log("user", User);
   res.status(200).json({ User });
+};
+export const inputChocolateToBasket = async (req, res) => {
+  const { count, chocolate } = req.body;
+  console.log("body", req.body);
 };

@@ -1,7 +1,7 @@
 import { model, Schema } from "mongoose";
 
 const UserSchema = new Schema({
-  number: { type: Number, unique: true },
+  number: { type: Number, require: true, unique: true },
   password: String,
   basket: [{ type: Schema.Types.ObjectId, ref: "Chocolate" }],
 });

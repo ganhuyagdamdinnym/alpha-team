@@ -15,14 +15,22 @@ export const Login = (props) => {
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
   const createUser = async () => {
-    try {
-      const url = `http://localhost:8002/createUser`;
-      const response = await axios.post(url, {
-        number: number,
-      });
-      router.push("/buy");
-      localStorage.setItem("token", response.data.message);
-    } catch (err) {}
+
+    if (number == "") {
+      alert("utasnii dugaaraa hiine uu");
+    } else {
+      try {
+        const url = `http://localhost:8002/createUser`;
+        const response = await axios.post(url, {
+          number: number,
+        });
+        router.push("/buy");
+        console.log(response.data);
+        localStorage.setItem("token", response.data.message);
+      } catch (err) {
+        console.log(err);
+      }
+    }
   };
   // useEffect(() => {
   //   window.recaptchaVerifier = new RecaptchaVerifier(auth, "sign-in-button", {
