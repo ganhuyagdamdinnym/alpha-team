@@ -1,4 +1,8 @@
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSquareFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faMapLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons'
+
 
 export const HomeAboutCompany = () => {
   return (
@@ -11,30 +15,30 @@ export const HomeAboutCompany = () => {
         <p className="text-[4vh] text-white border-b-2">Contact Information</p>
         <a
           href="https://www.facebook.com/RitterSportMongolia"
-          className="flex gap-[1vh]"
+          className="flex gap-[1vh] items-center"
         >
-          <Image src="/fb.svg" height={40} width={40} />
+          <FontAwesomeIcon icon={faSquareFacebook} style={{color: "#74C0FC",}} className="w-10"/>
           <p className="text-white text-[1.8vh]">Like Us On Facebook</p>
         </a>
         <div className="flex gap-[1vh]">
-          <Image src="/mail.svg" height={55} width={45} />
-          <p className="text-white text-[1.8vh]">
-            <a href="mailto: Jargalmaa@premiumsweets.mn">
+          <p className="text-white text-[1.8vh] ">
+            <a href="mailto: Jargalmaa@premiumsweets.mn" className="flex items-center gap-[1vh]">
+            <FontAwesomeIcon icon={faEnvelope} style={{color: "#74C0FC",}} className="w-10"/>
               Jargalmaa@premiumsweets.mn
             </a>
           </p>
         </div>
         <a
           href="https://www.google.com/maps/place/ICC+Tower/@47.9151661,106.9155506,17z/data=!4m10!1m2!2m1!1sICC+Tower,+1st+khoroo,+Sukhbaatar+district,+Ulaanbaatar,Mongolia!3m6!1s0x5d96937c984f0a31:0x758bb4db95096256!8m2!3d47.9160326!4d106.9198523!15sCkBJQ0MgVG93ZXIsIDFzdCBraG9yb28sIFN1a2hiYWF0YXIgZGlzdHJpY3QsIFVsYWFuYmFhdGFyLE1vbmdvbGlhkgEQY29ycG9yYXRlX29mZmljZeABAA!16s%2Fg%2F11jft7wkv9?entry=ttu"
-          className="flex gap-[1vh]"
+          className="flex gap-[1vh] items-center "
         >
-          <Image src="/loca.svg" height={65} width={65} />
-          <p className="text-white text-[1.8vh] text-nowrap overflow-x-hidden">
-            ICC Tower, 1st khoroo, Sukhbaatar district, Ulaanbaatar,Mongolia
+          <FontAwesomeIcon icon={faMapLocationDot} style={{color: "#74C0FC",}}  className="w-10" />
+          <p className="text-white text-[1.8vh] text-nowrap overflow-x-hidden w-[31vh]">
+            ICC Tower, Ulaanbaatar,Mongolia
           </p>
         </a>
-        <a href="tel:976 7777-3555 OR 976 9978-8822" className="flex gap-[1vh]">
-          <Image src="/phone.svg" height={40} width={40} />
+        <a href="tel:976 7777-3555 OR 976 9978-8822" className="flex gap-[1vh] items-center" >
+        <FontAwesomeIcon icon={faPhone} style={{color: "#74C0FC",}}  className="w-10"/>
           <p className="text-white text-[1.8vh]">Call Us</p>
         </a>
       </div>

@@ -82,8 +82,6 @@ export default function Home() {
         relogin={relogin}
       />
       <HomeAboutCompany />
-      {/* <div className="w-[100vw] h-[100vh] bg-white">helloo</div> */}
-      <div className="w-[100vw] h-[100vh] bg-white"></div>
     </div>
-  );
+  )
 }

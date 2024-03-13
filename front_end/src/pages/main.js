@@ -25,9 +25,9 @@ export default function Main() {
             >
               <img src={e.name} alt="image"></img>
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
+  )
 }

@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <UserTokenContext.Provider value={{ token }}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </UserTokenContext.Provider>
   );
 }
