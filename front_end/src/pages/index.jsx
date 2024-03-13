@@ -83,5 +83,5 @@ export default function Home() {
       />
       <HomeAboutCompany />
     </div>
-  );
+  )
 }
