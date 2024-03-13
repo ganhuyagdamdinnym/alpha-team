@@ -22,7 +22,13 @@ export const HandleSort = (props) => {
   return (
     <div className="w-screen flex">
       {sortName.map((e, index) => (
-        <div key={index} className="w-1/4 bg-[white] flex justify-center">
+        <div
+          onClick={() => {
+            swiperRef.slideTo(index - 1, 0);
+          }}
+          key={index}
+          className="w-1/4 bg-[white] flex justify-center"
+        >
           {bgcolor === e.color ? (
             <p style={{ backgroundColor: e.color }}>{e.name}</p>
           ) : (

@@ -12,7 +12,28 @@ import "swiper/css/navigation";
 export const MainChocolateSort = () => {
   const [swiperPerScreen, setSwiperPerScreen] = useState();
   const [color, setColor] = useState();
+  const [currentIndex, setCurrentIndex] = useState();
+  const [swiperRef, setSwiperRef] = useState(null);
+  const [clickedSlide, setClickedSlide] = useState();
 
+  const sortName = [
+    {
+      name: "COLOURFUL VARIETY",
+      color: "red",
+    },
+    {
+      name: "NUT SELECTION",
+      color: "green",
+    },
+    {
+      name: "VEGAN RANGE",
+      color: "yellow",
+    },
+    {
+      name: "MINI RANGE",
+      color: "brown",
+    },
+  ];
   // const appendNumber = useRef(6);
   // const [bgcolor, setBgcolor] = useState("green");
 
@@ -39,20 +60,24 @@ export const MainChocolateSort = () => {
   useEffect(() => {
     ref.current.focus();
   }, []);
-  // console.log(color);
+  function handleTab(e) {
+    const index = images.forEach((file, index) => {
+      if (file.color === e) {
+        setClickedSlide(index);
+      }
+    });
+  }
+
   useEffect(() => {
     if (window) {
       if (window.screen.width < 600) {
-        console.log("mobile");
         setSwiperPerScreen(1);
       }
       if (window.screen.width > 600) {
         setSwiperPerScreen(2);
-        console.log("desktop");
       }
     }
   }, []);
-  console.log(swiperPerScreen);
   return (
     <div className="h-[100%]">
       <div className="flex h-[70%] oveflow-hidden max-[600px]:h-[40%] max-[600px]:text-[10px]">
@@ -63,6 +88,7 @@ export const MainChocolateSort = () => {
         >
           {swiperPerScreen ? (
             <Swiper
+              onSwiper={setSwiperRef}
               modules={[Virtual, Navigation, Pagination, Keyboard]}
               slidesPerView={swiperPerScreen}
               loop={true}
@@ -77,7 +103,9 @@ export const MainChocolateSort = () => {
               navigation={true}
               virtual
               onSlideChange={(swiperCore) => {
+                console.log("change");
                 const { realIndex } = swiperCore;
+                setCurrentIndex(realIndex);
                 setColor(images[realIndex].color);
               }}
             >
@@ -118,7 +146,21 @@ export const MainChocolateSort = () => {
             }}
             className="w-[100vw] h-[30px]  flex items-center"
           >
-            <HandleSort bgcolor={color} />
+            <div className="w-screen flex">
+              {sortName.map((e, index) => (
+                <div
+                  onClick={() => handleTab(e.color)}
+                  key={index}
+                  className="w-1/4 bg-[white] flex justify-center"
+                >
+                  {color === e.color ? (
+                    <p style={{ backgroundColor: e.color }}>{e.name}</p>
+                  ) : (
+                    <p className={`bg-[white] `}>{e.name}</p>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
