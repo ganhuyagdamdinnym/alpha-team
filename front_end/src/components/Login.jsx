@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useState, useEffect, useContext } from "react";
+import { UserTokenContext } from "@/pages/_app";
 import axios from "axios";
 import {
   RecaptchaVerifier,
@@ -11,6 +12,7 @@ import { auth } from "@/pages/_app";
 import { root } from "postcss";
 export const Login = (props) => {
   const { relogin } = props;
+  const { token } = useContext(UserTokenContext);
   const router = useRouter();
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
@@ -29,6 +31,11 @@ export const Login = (props) => {
       } catch (err) {
         console.log(err);
       }
+    }
+  };
+  const loginCurrentUser = () => {
+    if (token) {
+      router.push("/buy");
     }
   };
   // useEffect(() => {
@@ -74,6 +81,29 @@ export const Login = (props) => {
       <h1 className="text-2xl w-full flex justify-center text-white">
         НЭВТРЭХ
       </h1>
+      <div className="flex w-full justify-center">
+        <div className="w-3/4 text-2xl py-1  rounded-xl text-[white] flex flex-col gap-2">
+          {/* <div className="flex w-full justify-center gap-4 text-[35px]">
+            <Image src="user2.svg" height={24} width={24} />
+            {token}
+          </div> */}
+          <button
+            onClick={() => loginCurrentUser()}
+            className="w-full text-2xl py-1 bg-[red] rounded-xl text-[#dcd7d8] border-solid border-2 flex flex-col items-center"
+          >
+            <p>Одоогийн хэрэглэгч</p>
+            {/* <div className="flex gap-2">
+              <Image
+                src="user2.svg"
+                height={16}
+                width={16}
+                className="rounded-full w-8 h-8 px-1 py-1 border-2 border-solid"
+              />
+              {token}
+            </div> */}
+          </button>
+        </div>
+      </div>
       <div className="flex flex-col gap-3 full items-center">
         <input
           className="w-3/4 px-3 py-2 rounded-xl border-solid border-2"
@@ -92,7 +122,7 @@ export const Login = (props) => {
           onClick={createUser}
           className="w-3/4 text-2xl px-3 py-1 bg-[red] rounded-xl text-white border-solid border-2"
         >
-          Next
+          НЭВТРЭХ
         </button>
 
         <button></button>
