@@ -21,11 +21,8 @@ export const Login = (props) => {
         number: number,
       });
       router.push("/buy");
-      console.log(response.data);
       localStorage.setItem("token", response.data.message);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
   // useEffect(() => {
   //   window.recaptchaVerifier = new RecaptchaVerifier(auth, "sign-in-button", {

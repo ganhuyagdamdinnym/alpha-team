@@ -14,9 +14,7 @@ export default function Home() {
     try {
       const url = `http://localhost:8002/getchocolatedata`;
       const res = await axios.get(url);
-    } catch (err) {
-      console.log("err", err);
-    }
+    } catch (err) {}
   };
   const first = async () => {
     // alert("hi");

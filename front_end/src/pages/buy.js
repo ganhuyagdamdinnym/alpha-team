@@ -84,7 +84,6 @@ export default function Buy() {
       </div>
       <div className="grid-container mt-16 mb-8 min-w-88">
         {data?.map((e) => (
-<<<<<<< HEAD
           <div className="border-2 border-[#DCDAD7] rounded-[10px] buyBorder bg-white z-0">
             <img
               src={`${e.image}`}
@@ -112,15 +111,6 @@ export default function Buy() {
               </button>
             </div>
           </div>
-=======
-          <ChocolateImfo
-            name={e.name}
-            unit_price={e.unit_price}
-            box_price={e.box_price}
-            count_in_box={e.count_in_box}
-            image={e.image}
-          />
->>>>>>> 91be7646331b442d2ec808def7a2aa2078d6fb7e
         ))}
       </div>
     </div>
