@@ -44,8 +44,11 @@ export default function Basket() {
   console.log(bag);
   console.log("une", price);
   return (
-    <div className="bg-[#EBE9E6] w-[100wv] h-[100hv]">
-      <div className="w-full py-2 border-b-[16px] border-[red] flex items-center justify-between px-8">
+    <div className=" w-[100wv] h-[100hv]">
+      <div
+        style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
+        className="w-full border-b-[4px] py-2 border-[red] flex items-center justify-between "
+      >
         <button
           className="flex gap-4 px-4 bg-white ml-4 rounded-xl w-24"
           onClick={() => backToHome()}
@@ -55,12 +58,10 @@ export default function Basket() {
         <Image src="logo.svg" width={64} height={64} />
         <div className="flex mr-4 w-24">{user?.number}</div>
       </div>
-      <div className="w-full h-[90%]">
-        <div className="buy-container mt-16 mb-8 min-w-88">
-          {bag?.map((e, index) => (
-            <Hoppet id={e.chocolate} count={e.count} price={e.price} />
-          ))}
-        </div>
+      <div className="buy-container mt-16 mb-8 min-w-88">
+        {bag?.map((e, index) => (
+          <Hoppet id={e.chocolate} count={e.count} price={e.price} />
+        ))}
       </div>
     </div>
   );
