@@ -27,7 +27,6 @@ export default function App({ Component, pageProps }) {
     if (window) {
       const localToken = localStorage.getItem("token");
       if (localToken === null) {
-        router.push("/");
       } else {
         setToken(localToken);
       }
@@ -40,7 +39,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <UserTokenContext.Provider value={{ token }}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </UserTokenContext.Provider>
   );
 }

@@ -53,6 +53,7 @@ export default function Basket() {
           className="flex gap-4 px-4 bg-white ml-4 rounded-xl w-24"
           onClick={() => backToHome()}
         >
+
           <Image src="arrowBig.svg" height={64} width={64} className="basket" />
         </button>
         <Image src="logo.svg" width={64} height={64} />

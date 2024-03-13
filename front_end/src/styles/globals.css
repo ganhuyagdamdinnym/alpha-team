@@ -64,9 +64,14 @@ body {
   padding-top: 20px;
   gap: 70px;
 }
-img {
-  animation: image 1s;
-}
+.hoppet:hover {
+  background-color: red;
+} */
+
+/* img {
+    animation: image 1s;
+  } */
+
 @keyframes image {
   0% {
     opacity: 0;
