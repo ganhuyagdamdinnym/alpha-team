@@ -26,7 +26,7 @@ export const Hoppet = (props) => {
       <div>
         <Image alt="photo" src="logo.svg" width={60} height={60} />
       </div>
-    <div>
+      {/* <div> */}
       {data?.map((e) => (
         <div>
           <div className="border-2 border-[#DCDAD7] rounded-[10px] buyBorder bg-white z-0">
