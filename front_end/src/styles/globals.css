@@ -59,7 +59,7 @@ body {
   justify-content: center;
   display: grid;
   grid-template-columns: 23% 23% 23% 23%;
-  padding-left: 50px;
+  padding-left: 70px;
   padding-right: 70px;
   padding-top: 20px;
   gap: 70px;
@@ -118,9 +118,16 @@ body {
     height: 350px;
     width: 300px;
   }
-  /* .basket {
-    width: 10px;
-  } */
+  .buy-container {
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    gap: 70px;
+  }
 }
 @media only screen and (max-width: 900px) {
   .grid-container {
@@ -130,6 +137,16 @@ body {
     padding-right: 70px;
     padding-top: 20px;
     gap: 30px;
+  }
+  .buy-container {
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    gap: 70px;
   }
 }
 @media only screen and (max-width: 650px) {
@@ -144,5 +161,15 @@ body {
   }
   .chocolateSortBuy {
     font-size: 8px;
+  }
+  .buy-container {
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    gap: 70px;
   }
 }

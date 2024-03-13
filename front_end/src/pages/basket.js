@@ -10,8 +10,24 @@ export default function Basket() {
   const [bag, setBag] = useState();
   const [price, setPrice] = useState(0);
   const router = useRouter();
-  const backToHome = () => {
+  const fetchLocalstorage = () => {
+    if (localStorage.getItem("basket") !== null) {
+      const rawBag = localStorage.getItem("basket");
+      const Bag = JSON.parse(rawBag);
+      let sum = 0;
+      Bag.map((e) => {
+        sum = sum + e.price;
+        //setPrice(price + e.price);
+      });
+      setPrice(sum);
+      setBag(Bag);
+    }
+  };
+  const backToBuyPart = () => {
     router.push("/buy");
+  };
+  const BackToHome = () => {
+    router.push("/");
   };
   const UserData = async () => {
     try {
@@ -25,21 +41,12 @@ export default function Basket() {
       console.log("err", err);
     }
   };
+
   useEffect(() => {
     UserData();
   }, [token]);
   useEffect(() => {
-    if (localStorage.getItem("basket") !== null) {
-      const rawBag = localStorage.getItem("basket");
-      const Bag = JSON.parse(rawBag);
-      let sum = 0;
-      Bag.map((e) => {
-        sum = sum + e.price;
-        //setPrice(price + e.price);
-      });
-      setPrice(sum);
-      setBag(Bag);
-    }
+    fetchLocalstorage();
   }, []);
   console.log(bag);
   console.log("une", price);
@@ -47,21 +54,35 @@ export default function Basket() {
     <div className=" w-[100wv] h-[100hv]">
       <div
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
-        className="w-full border-b-[4px] py-2 border-[red] flex items-center justify-between "
+        className="w-full border-b-[20px] py-2 border-[red] flex items-center justify-between "
       >
         <button
           className="flex gap-4 px-4 bg-white ml-4 rounded-xl w-24"
-          onClick={() => backToHome()}
+          onClick={() => backToBuyPart()}
         >
-
           <Image src="arrowBig.svg" height={64} width={64} className="basket" />
         </button>
-        <Image src="logo.svg" width={64} height={64} />
-        <div className="flex mr-4 w-24">{user?.number}</div>
+        <Image
+          onClick={() => BackToHome()}
+          className="cursor-pointer"
+          src="logo.svg"
+          width={64}
+          height={64}
+        />
+        <div className="flex mr-4 w-24 gap-2">
+          <Image src="user.svg" height={16} width={16} />
+          {user?.number}
+        </div>
       </div>
-      <div className="buy-container mt-16 mb-8 min-w-88">
+      <div className="buy-container mt-16 mb-8 w-full px-4 min-w-88">
         {bag?.map((e, index) => (
-          <Hoppet id={e.chocolate} count={e.count} price={e.price} />
+          <Hoppet
+            fetchLocalStorage={fetchLocalstorage}
+            id={e.chocolate}
+            count={e.count}
+            price={e.price}
+            bag={bag}
+          />
         ))}
       </div>
     </div>

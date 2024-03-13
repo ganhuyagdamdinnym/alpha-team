@@ -7,7 +7,7 @@ export const UserHead = (props) => {
     router.push("/");
   };
   return (
-    <div className="flex items-center justify-between border-[red] border-b-4 py-2 px-4">
+    <div className="flex items-center justify-between border-[red] border-b-[20px] py-2 px-4">
       <button
         className="flex gap-4 px-2  ml-4 rounded-xl w-24 bg-[#DCD7D8] py-2 items-center justify-center"
         onClick={() => HandeHoppetStatus()}

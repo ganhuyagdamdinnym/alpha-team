@@ -4,7 +4,7 @@ import axios from "axios";
 export const ChocolateImfo = (props) => {
   const { name, unit_price, box_price, count_in_box, image, id } = props;
   const [handleCount, setHandleCount] = useState(false);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [bag, setBag] = useState([]);
   const buyChocolate = async () => {
     setHandleCount(true);
@@ -29,9 +29,30 @@ export const ChocolateImfo = (props) => {
       } else {
         const rawNewBag = localStorage.getItem("basket");
         const newBag = JSON.parse(rawNewBag);
-        console.log("hi", newBag);
-        newBag.push({ chocolate: id, count: count, price: price });
-        localStorage.setItem("basket", JSON.stringify(newBag));
+        let status = false;
+        newBag.map((e) => {
+          if (e.chocolate === id) {
+            status = true;
+            //alert("hi");
+          }
+        });
+        if (status == true) {
+          // alert("hi");
+          const updateBag = newBag.map((e) => {
+            if (e.chocolate === id) return { ...e, count: e.count + count };
+            return e;
+          });
+          localStorage.setItem("basket", JSON.stringify(updateBag));
+        } else {
+          newBag.push({ chocolate: id, count: count, price: price });
+          localStorage.setItem("basket", JSON.stringify(newBag));
+        }
+        // return { ...e, count: e.count + count };
+        // newBag.push({ chocolate: id, count: count, price: price });
+        // localStorage.setItem("basket", JSON.stringify(newBag));
+        // console.log("hi", newBag);
+        // newBag.push({ chocolate: id, count: count, price: price });
+        // localStorage.setItem("basket", JSON.stringify(newBag));
       }
     }
     setHandleCount(false);
@@ -94,12 +115,7 @@ export const ChocolateImfo = (props) => {
             onClick={() => buyChocolate()}
             className="px-2 py-2 border-2 border-[#EBE9E6] rounded-xl ml-2 basketButton"
           >
-            <Image
-              src="hoppet.svg"
-              height={16}
-              width={16}
-              //className="hoppet"
-            />
+            <Image src="hoppet.svg" height={16} width={16} />
           </button>
         )}
       </div>
