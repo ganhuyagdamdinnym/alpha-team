@@ -35,7 +35,7 @@ export const Buysort = (props) => {
       {sortName.map((e, index) => (
         <button
           onClick={() => HandleSort(e.sort)}
-          className="w-1/6 flex justify-center h-full bg-[red] items-center chocolateSortBuy"
+          className="w-1/6 flex justify-center h-full bg-[#BE9131] items-center chocolateSortBuy "
         >
           <p className="">{e.name}</p>
         </button>
