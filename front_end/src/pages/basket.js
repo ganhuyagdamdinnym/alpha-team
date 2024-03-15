@@ -85,6 +85,9 @@ export default function Basket() {
           />
         ))}
       </div>
+      <div style={{position:"fixed",bottom:"10px", right:"10px"}} className="w-20 h-12 bg-[red]">
+
+      </div>
     </div>
   );
 }

@@ -81,7 +81,7 @@ export default function Buy() {
       <div style={{ position: "fixed", bottom: "0", left: "0", zIndex: 10 }}>
         <Buysort HandleSort={HandleSort} />
       </div>
-      <div className="grid-container mt-16 mb-8 min-w-88">
+      <div className="grid-container mt-24 mb-8 min-w-88">
         {data?.map((e) => (
           <ChocolateImfo
             name={e.name}
