@@ -32,40 +32,46 @@ export default function About() {
   // </div>
   const data = [
     {
-      bg_image: "/ritter-history.1-removebg-preview (1).png",
+      bg_image: "/ritter-history.1-removebg-preview__1_-removebg-preview.png",
       story:
         "Алфред Евген Риттер, Клара Риттер нар шоколад, чихрийн үйлдвэрийг үүсгэн байгуулж, Риттер Спортын шоколадны түүхийн суурь чулууг 1912 онд Штутгарт-Бад Каннштат хотод тавьжээ.",
       title: "Риттер Спортын шоколадны үүсэл",
       year: "1912",
+      bg: "#744f45",
     },
     {
-      bg_image: "/Name21-removebg-preview (1).png",
+      bg_image: "/Name21-removebg-preview__1_-removebg-preview.png",
       story:
         "Клара Риттерийн санал: Спорт хүрэм бүрийн халаасанд хагарахгүй багтах, жирийн урт баар шиг жинтэй шоколад хийцгээе. Энэ нь Ritter's Sport Schokolade нэрээр худалдаанд гарсан.",
       title: "Дөрвөлжин шокаладний үүсэл",
       year: "1932",
+      bg: "#1e263b",
     },
     {
-      bg_image: "/xconvert.com-1 (1).jpg",
+      bg_image: "/xconvert.com-1__1_-removebg-preview.png",
       story:
         "Шоколадны зах зээл дээрх хувьсгал: бизнес эрхлэгч Альфред Отто Риттер Бунте Палетт (өнгөлөг төрөл) -ийг танилцуулав. Зар сурталчилгааны зурагт хуудаснууд дээр Бүх зүйл илүү өнгөлөг, илүү аз жаргалтай, илүү орчин үеийн, илүү идэвхтэй болж байна, үүнд дагалддаг шоколад орно гэж бичсэн байдаг.",
       title: "Нэр төрлөө нэмэгдүүлсэн нь",
       year: "1974",
+      bg: "#ff6309",
     },
   ];
   return (
-    <div className="bg-white w-100% h-100%">
-      <div className="flex flex-wrap">
+    <div className="w-100% h-100%">
+      <div className="flex flex-wrap overflow-y-scroll">
         {data.map((dta) => (
-          <div className="w-screen h-screen gap-[10vh]">
+          <div
+            // style={{ backgroundColor: dta.bg }}
+            className="w-screen h-screen gap-[10vh] bg-white"
+          >
             <p className="text-[8vh] justify-center text-center">{dta.year}</p>
             <div className="flex justify-around gap-[10vh]">
-              <p className="text-[5vh] text-wrap w-[2vh]">{dta.title}</p>
+              <p className="text-[5vh] text-wrap w-[2vh] ">{dta.title}</p>
               <img
                 src={dta?.bg_image}
-                className="w-[60vh] h-[60vh] ml-[40vh]"
+                className="w-[60vh] h-[60vh] ml-[40vh] bg-transparent"
               />
-              <p className="w-[50vh] text-[2vh]">{dta.story}</p>
+              <p className="text-black w-[50vh] text-[2vh]">{dta.story}</p>
             </div>
           </div>
         ))}
