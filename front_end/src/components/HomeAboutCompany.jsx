@@ -9,8 +9,8 @@ import {
 
 export const HomeAboutCompany = () => {
   return (
-    <div className="flex gap-[8vh] justify-evenly py-[8vh] bg-blue-950 my-0 ">
-      <div className=" flex flex-col justify-center items-center ">
+    <div className="homeAbout">
+      <div className="flex flex-col justify-center items-center ">
         <Image alt="photo" src="/logo.svg" height={200} width={200} />
         <p className="text-[4vh] text-white">RITTER SPORT</p>
       </div>
