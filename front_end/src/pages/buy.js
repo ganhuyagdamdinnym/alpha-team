@@ -1,5 +1,5 @@
 import { Buysort } from "../components/Buysort";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -7,12 +7,14 @@ import { UserHead } from "@/components/UserHead";
 import { UserTokenContext } from "./_app";
 import { ChocolateImfo } from "@/components/ChocolateImfo";
 export default function Buy() {
+  const currentRef = useRef(null);
   const { token } = useContext(UserTokenContext);
   console.log("token", token);
   const router = useRouter();
   const [data, setData] = useState();
   const [sorts, setSorts] = useState();
   const [user, setUser] = useState();
+
   //const [hoppetStatus, setHoppetStatus] = useState(false);
   const UserData = async () => {
     try {
@@ -24,6 +26,12 @@ export default function Buy() {
       }
     } catch (err) {
       console.log("err", err);
+    }
+  };
+  const back = (ref) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      //alert("hi");
+      setHandleCount(false);
     }
   };
   const fetchChocolateData = async () => {
@@ -58,6 +66,7 @@ export default function Buy() {
   }, [token]);
   return (
     <div
+      //onClick={() => back(currentRef)}
       className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-[#DCD7D8]`}
     >
       <div className={`opacity-75 fixed w-screen h-screen bg-[#EAE2E3]`}>
@@ -81,7 +90,7 @@ export default function Buy() {
       <div style={{ position: "fixed", bottom: "0", left: "0", zIndex: 10 }}>
         <Buysort HandleSort={HandleSort} />
       </div>
-      <div className="grid-container mt-24 mb-8 min-w-88">
+      <div className="grid-container mt-24 mb-8 min-w-88 bg-white">
         {data?.map((e) => (
           <ChocolateImfo
             name={e.name}
@@ -90,6 +99,9 @@ export default function Buy() {
             count_in_box={e.count_in_box}
             image={e.image}
             id={e._id}
+            currentRef={currentRef}
+            // handleCount={handleCount}
+            // setHandleCount={setHandleCount}
           />
         ))}
       </div>

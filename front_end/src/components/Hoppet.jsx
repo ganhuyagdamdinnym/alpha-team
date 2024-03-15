@@ -35,6 +35,7 @@ export const Hoppet = (props) => {
         });
         localStorage.setItem("basket", JSON.stringify(newbag));
         fetchLocalStorage();
+        fetchChocolateData();
       }
     }
   };

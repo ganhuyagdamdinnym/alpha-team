@@ -13,6 +13,7 @@ export default function Basket() {
   const [price, setPrice] = useState(0);
   const router = useRouter();
   const fetchLocalstorage = () => {
+    //alert("hi");
     if (localStorage.getItem("basket") !== null) {
       const rawBag = localStorage.getItem("basket");
       const Bag = JSON.parse(rawBag);
@@ -91,17 +92,16 @@ export default function Basket() {
           BuyStatus ? "opacity-25" : null
         }`}
       >
-        {bag?.map((e, index) => (
+        {bag?.map((item, index) => (
           <Hoppet
             fetchLocalStorage={fetchLocalstorage}
-            id={e.chocolate}
-            count={e.count}
-            price={e.price}
+            id={item.chocolate}
+            count={item.count}
+            price={item.price}
             bag={bag}
           />
         ))}
       </div>
-
       {BuyStatus ? (
         <div
           onClick={() => back(currentRef)}
@@ -110,7 +110,7 @@ export default function Basket() {
         >
           <div
             style={{ position: "absolute", zIndex: 40 }}
-            className="w-[50%] h-[60%] bg-white border-[red] border-4 rounded-3xl"
+            className="w-[50%] h-[60%] bg-white border-[red] border-4 rounded-3xl cashPart"
             ref={currentRef}
           >
             {" "}
