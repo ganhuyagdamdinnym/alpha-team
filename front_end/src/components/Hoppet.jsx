@@ -5,36 +5,45 @@ export const Hoppet = (props) => {
   const { id, count, price, bag, fetchLocalStorage } = props;
   const [number, setNumber] = useState(count);
   const [data, setData] = useState();
-  const [minusStatus, setMinusStatus] = useState(false);
+  const [Oneprice, setOnePrice] = useState(0);
   const fetchChocolateData = async () => {
     try {
       const url = `http://localhost:8002/getChocolatedata`;
       const res = await axios.get(url);
       const chocolote = res?.data?.filter((e) => e._id == id);
+      console.log("price", chocolote.box_price);
       setData(chocolote);
+      const newprice = chocolote.box_price * count;
+      setOnePrice(newprice);
     } catch (err) {
       console.log("err", err);
     }
   };
-  const handleMinus = () => {
-    setMinusStatus(true);
-  };
   const HandleCount = () => {
     if (number > 0) {
-      setNumber(number - 1);
-      const newbag = bag.map((e) => {
-        if (e.chocolate === id) return { ...e, count: e.count - 1 };
-        return e;
-      });
-      localStorage.setItem("basket", JSON.stringify(newbag));
-      fetchLocalStorage();
+      if (count == 1) {
+        const newbag = bag.filter((e) => e.chocolate !== id);
+        localStorage.setItem("basket", JSON.stringify(newbag));
+        fetchLocalStorage();
+      } else {
+        setNumber(number - 1);
+        const newbag = bag.map((e) => {
+          const onePrice = e.price / e.count;
+          if (e.chocolate === id)
+            return { ...e, count: e.count - 1, price: e.price - onePrice };
+          return e;
+        });
+        localStorage.setItem("basket", JSON.stringify(newbag));
+        fetchLocalStorage();
+      }
     }
   };
   const HandleCountPlus = () => {
     setNumber(number + 1);
-
     const newbag = bag.map((e) => {
-      if (e.chocolate === id) return { ...e, count: e.count + 1 };
+      const onePrice = e.price / e.count;
+      if (e.chocolate === id)
+        return { ...e, count: e.count + 1, price: e.price + onePrice };
       return e;
     });
     localStorage.setItem("basket", JSON.stringify(newbag));

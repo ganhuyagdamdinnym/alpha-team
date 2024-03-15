@@ -39,7 +39,8 @@ export const ChocolateImfo = (props) => {
         if (status == true) {
           // alert("hi");
           const updateBag = newBag.map((e) => {
-            if (e.chocolate === id) return { ...e, count: e.count + count };
+            if (e.chocolate === id)
+              return { ...e, count: e.count + count, price: e.price + price };
             return e;
           });
           localStorage.setItem("basket", JSON.stringify(updateBag));
