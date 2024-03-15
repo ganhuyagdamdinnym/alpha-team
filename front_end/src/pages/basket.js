@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { UserTokenContext } from "./_app";
 import axios from "axios";
 import { Hoppet } from "@/components/Hoppet";
 export default function Basket() {
+  const currentRef = useRef(null);
   const [user, setUser] = useState();
   const { token } = useContext(UserTokenContext);
   const [bag, setBag] = useState();
+  const [BuyStatus, setBuyStatus] = useState(false);
   const [price, setPrice] = useState(0);
   const router = useRouter();
   const fetchLocalstorage = () => {
@@ -28,6 +30,15 @@ export default function Basket() {
   };
   const BackToHome = () => {
     router.push("/");
+  };
+  const HandleToBuy = () => {
+    setBuyStatus(true);
+  };
+  const back = (ref) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      //alert("hi");
+      setBuyStatus(false);
+    }
   };
   const UserData = async () => {
     try {
@@ -51,10 +62,10 @@ export default function Basket() {
   console.log(bag);
   console.log("une", price);
   return (
-    <div className=" w-[100wv] h-[100hv]">
+    <div onClick={() => back(currentRef)} className=" w-[100wv] h-[100hv] ]">
       <div
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
-        className="w-full border-b-[20px] py-2 border-[red] flex items-center justify-between "
+        className={`w-full border-b-[20px] py-2 border-[red] flex items-center justify-between bg-[#dcd7d8]`}
       >
         <button
           className="flex gap-4 px-4 bg-white ml-4 rounded-xl w-24"
@@ -74,7 +85,12 @@ export default function Basket() {
           {user?.number}
         </div>
       </div>
-      <div className="buy-container mt-16 mb-8 w-full px-4 min-w-88">
+      <div
+        onClick={() => back(currentRef)}
+        className={`buy-container mt-24 mb-8 w-full px-4 min-w-88 ${
+          BuyStatus ? "opacity-25" : null
+        }`}
+      >
         {bag?.map((e, index) => (
           <Hoppet
             fetchLocalStorage={fetchLocalstorage}
@@ -85,9 +101,30 @@ export default function Basket() {
           />
         ))}
       </div>
-      <div style={{position:"fixed",bottom:"10px", right:"10px"}} className="w-20 h-12 bg-[red]">
 
-      </div>
+      {BuyStatus ? (
+        <div
+          onClick={() => back(currentRef)}
+          style={{ position: "absolute", top: 0, bottom: 0, zIndex: 30 }}
+          className="flex justify-center w-screen h-screen items-center"
+        >
+          <div
+            style={{ position: "absolute", zIndex: 40 }}
+            className="w-[50%] h-[60%] bg-white border-[red] border-4 rounded-3xl"
+            ref={currentRef}
+          >
+            {" "}
+          </div>
+        </div>
+      ) : (
+        <div
+          style={{ position: "fixed", bottom: "20px", right: "20px" }}
+          className="px-3 py-2 bg-white rounded-xl border-2 border-[red]"
+          onClick={() => HandleToBuy()}
+        >
+          <Image src="cash.svg" height={32} width={32} />
+        </div>
+      )}
     </div>
   );
 }

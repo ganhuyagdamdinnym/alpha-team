@@ -22,7 +22,6 @@ export const Hoppet = (props) => {
   const HandleCount = () => {
     if (number > 0) {
       setNumber(number - 1);
-
       const newbag = bag.map((e) => {
         if (e.chocolate === id) return { ...e, count: e.count - 1 };
         return e;
