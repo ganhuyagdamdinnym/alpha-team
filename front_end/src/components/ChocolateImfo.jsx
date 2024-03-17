@@ -19,6 +19,7 @@ export const ChocolateImfo = (props) => {
       setCount(count - 1);
     }
   };
+  // console.log("name", name);
   const HandleBuy = async () => {
     const price = count * box_price;
     if (count > 0) {
@@ -29,9 +30,12 @@ export const ChocolateImfo = (props) => {
           count: count,
           price: box_price,
           name: name,
+          image: image,
         });
+
+        // alert(name);
         localStorage.setItem("basket", JSON.stringify(newBag));
-        const basket = localStorage.getItem("basket");
+        // const basket = localStorage.getItem("basket");
       } else {
         const rawNewBag = localStorage.getItem("basket");
         const newBag = JSON.parse(rawNewBag);
@@ -43,15 +47,26 @@ export const ChocolateImfo = (props) => {
           }
         });
         if (status == true) {
-          // alert("hi");
           const updateBag = newBag.map((e) => {
             if (e.chocolate === id)
-              return { ...e, count: e.count + count, price: e.price + price };
+              return {
+                ...e,
+                count: e.count + count,
+                price: e.price + price,
+                name: name,
+                image: image,
+              };
             return e;
           });
           localStorage.setItem("basket", JSON.stringify(updateBag));
         } else {
-          newBag.push({ chocolate: id, count: count, price: price });
+          newBag.push({
+            chocolate: id,
+            count: count,
+            price: price,
+            name: name,
+            image: image,
+          });
           localStorage.setItem("basket", JSON.stringify(newBag));
         }
         // return { ...e, count: e.count + count };

@@ -10,7 +10,7 @@ export const Header = (props) => {
     router.push("/main");
   };
   return (
-    <div className="w-full ">
+    <div className="w-full">
       <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] ">
         <button onClick={() => jumptomain()}>
           <p>OUR CHOCOLATE</p>

@@ -4,7 +4,6 @@ import data from "@/chocolate/data.json";
 import { useState, useEffect } from "react";
 import axios from "axios";
 export default function Home() {
-
   console.log(data);
   const [loginStat, setLoginStat] = useState(false);
   //hereg bolj magadgui
@@ -80,8 +79,9 @@ export default function Home() {
         LoginButtonPress={LoginButtonPress}
         loginStat={loginStat}
         relogin={relogin}
+        setLoginStat={setLoginStat}
       />
       <HomeAboutCompany />
     </div>
-  )
+  );
 }

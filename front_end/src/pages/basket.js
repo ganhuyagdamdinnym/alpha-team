@@ -20,7 +20,6 @@ export default function Basket() {
       let sum = 0;
       Bag.map((e) => {
         sum = sum + e.price;
-        //setPrice(price + e.price);
       });
       setPrice(sum);
       setBag(Bag);
@@ -98,6 +97,8 @@ export default function Basket() {
             id={item.chocolate}
             count={item.count}
             price={item.price}
+            name={item.name}
+            image={item.image}
             bag={bag}
           />
         ))}
@@ -112,9 +113,7 @@ export default function Basket() {
             style={{ position: "absolute", zIndex: 40 }}
             className="w-[50%] h-[60%] bg-white border-[red] border-4 rounded-3xl cashPart"
             ref={currentRef}
-          >
-            {" "}
-          </div>
+          ></div>
         </div>
       ) : (
         <div
