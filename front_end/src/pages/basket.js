@@ -66,10 +66,10 @@ export default function Basket() {
     <div onClick={() => back(currentRef)} className=" w-[100wv] h-[100hv] ]">
       <div
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
-        className={`w-full border-b-[20px] py-2 border-[red] flex items-center justify-between bg-[#dcd7d8]`}
+        className={`w-full border-b-[20px] py-2 border-[#be9131] flex items-center justify-between bg-[#dcd7d8]`}
       >
         <button
-          className="flex gap-4 px-4 bg-white ml-4 rounded-xl w-24"
+          className="flex gap-4 px-4 bg-white ml-4 rounded-xl w-24 border-2 border-[#be9131]"
           onClick={() => backToBuyPart()}
         >
           <Image src="arrowBig.svg" height={64} width={64} className="basket" />
@@ -81,7 +81,7 @@ export default function Basket() {
           width={64}
           height={64}
         />
-        <div className="flex mr-4 w-24 gap-2">
+        <div className="flex mr-4 w-24 gap-2 border-2 border-[#be9131]">
           <Image src="user.svg" height={16} width={16} />
           {user?.number}
         </div>
@@ -121,7 +121,7 @@ export default function Basket() {
       ) : (
         <div
           style={{ position: "fixed", bottom: "20px", right: "20px" }}
-          className="px-3 py-2 bg-white rounded-xl border-2 border-[red]"
+          className="px-3 py-2 bg-white rounded-xl border-2 border-[#be9131]"
           onClick={() => HandleToBuy()}
         >
           <Image src="cash.svg" height={32} width={32} />
