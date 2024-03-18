@@ -2,7 +2,7 @@
   {
     "id": "1",
     "name": "RITTER SPORT Cornflakes 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509005/chocolate1_yd3ghq.webp",
+    "image": "/chocolate1.png",
     "unit_price": "5500",
     "count_in_box": "10",
     "box_price": "55000",
@@ -13,7 +13,7 @@
   {
     "id": "2",
     "name": "RITTER SPORT Alpine Milk Chocolate 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509121/chocolate2_ft3zuh.webp",
+    "image": "/chocolate3.png",
     "unit_price": "6600",
     "count_in_box": "12",
     "box_price": "66000",
@@ -23,71 +23,71 @@
   {
     "id": "3",
     "name": "RITTER SPORT Raisins Hazelnuts 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509136/chocolate3_xpetci.webp",
     "unit_price": "5500",
     "count_in_box": "12",
     "box_price": "66000",
-    "sort": "variefy"
+    "sort": "variefy",
+    "image": "/chocolate3.png"
   },
   {
     "id": "4",
     "name": "RITTER SPORT Marzipan 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509163/chocolate4_jcumft.webp",
     "unit_price": "5500",
     "count_in_box": "12",
     "box_price": "66000",
-    "sort": "variefy"
+    "sort": "variefy",
+    "image": "/chocolate4.png"
   },
   {
     "id": "5",
     "name": "RITTER SPORT Praline 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509175/chocolate5_zsvbkx.webp",
     "unit_price": "5500",
     "count_in_box": "13",
     "box_price": "71500",
+    "image": "/chocolate5.png",
     "sort": "variefy"
   },
   {
     "id": "6",
     "name": "RITTER SPORT Peppermint 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509191/chocolate6_lne6a2.webp",
     "unit_price": "5500",
     "count_in_box": "12",
     "box_price": "66000",
+    "image": "/chocolate6.png",
     "sort": "variefy"
   },
   {
     "id": "7",
     "name": "RITTER SPORT Butter Biscuit 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509214/chocolate7_bog5vz.webp",
     "unit_price": "5500",
     "count_in_box": "11",
+    "image": "/chocolate7.png",
     "box_price": "60500",
     "sort": "variefy"
   },
   {
     "id": "8",
     "name": "RITTER SPORT Strawberry Yoghurt 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509238/chocolate8_hz1jss.webp",
     "unit_price": "5500",
     "count_in_box": "12",
+    "image": "/chocolate8.png",
     "box_price": "66000",
     "sort": "variefy"
   },
   {
     "id": "9",
     "name": "RITTER SPORT Cocoa Mousse 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509262/chocolate9_gthp27.webp",
     "unit_price": "5500",
     "count_in_box": "11",
+    "image": "/chocolate9.png",
     "box_price": "60500",
     "sort": "variefy"
   },
   {
     "id": "10",
     "name": "RITTER SPORT Hazelnuts 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509282/chocolate10_bcqstt.webp",
     "unit_price": "5500",
+    "image": "/chocolate10.png",
     "count_in_box": "12",
     "box_price": "66000",
     "sort": "variefy"
@@ -95,17 +95,17 @@
   {
     "id": "11",
     "name": "RITTER SPORT Dark Almond Orange  100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509299/chocolate11_bknffn.webp",
     "unit_price": "5500",
     "count_in_box": "12",
+    "image": "/chocolate11.png",
     "box_price": "66000",
     "sort": "variefy"
   },
   {
     "id": "12",
     "name": "RITTER SPORT Rum Raisins Hazelnut 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509332/chocolate12_oumktf.webp",
     "unit_price": "5500",
+    "image": "/chocolate12.png",
     "count_in_box": "12",
     "box_price": "66000",
     "sort": "variefy"
@@ -113,18 +113,18 @@
   {
     "id": "13",
     "name": "RITTER SPORT Whole Hazelnuts 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509386/chocolate13_cmrxmd.webp",
     "unit_price": "5500",
     "count_in_box": "10",
+    "image": "/chocolate13.png",
     "box_price": "55000",
     "sort": "nuts"
   },
   {
     "id": "14",
     "name": "RITTER SPORT Dark Whole Hazelnuts 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509397/chocolate14_hytx3d.webp",
     "unit_price": "5500",
     "count_in_box": "10",
+    "image": "/chocolate14.png",
     "box_price": "55000",
     "sort": "nuts",
     "bg": "#C70039"
@@ -132,8 +132,8 @@
   {
     "id": "15",
     "name": "RITTER SPORT Whole Almonds 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509404/chocolate15_j2qo1v.webp",
     "unit_price": "5500",
+    "image": "/chocolate15.png",
     "count_in_box": "11",
     "box_price": "60500",
     "sort": "nuts",
@@ -142,8 +142,8 @@
   {
     "id": "16",
     "name": "RITTER SPORT Honey Salt Almonds 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509412/chocolate16_yuctbl.webp",
     "unit_price": "5500",
+    "image": "/chocolate16.png",
     "count_in_box": "11",
     "box_price": "60500",
     "sort": "nuts",
@@ -152,8 +152,8 @@
   {
     "id": "17",
     "name": "RITTER SPORT Cashew 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509421/chocolate17_qxbemz.webp",
     "unit_price": "5500",
+    "image": "/chocolate17.png",
     "count_in_box": "12",
     "box_price": "66000",
     "sort": "nuts"
@@ -161,8 +161,8 @@
   {
     "id": "18",
     "name": "RITTER SPORT Dark Whole Almonds 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509433/chocolate18_sok6ix.webp",
     "unit_price": "5500",
+    "image": "/chocolate18.png",
     "count_in_box": "11",
     "box_price": "60500",
     "sort": "nuts"
@@ -170,7 +170,7 @@
   {
     "id": "19",
     "name": "RITTER SPORT 55% SMOOTH from Ghana 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509442/chocolate19_cpzlxt.webp",
+    "image": "/chocolate19.png",
     "unit_price": "5500",
     "count_in_box": "12",
     "box_price": "66000",
@@ -179,8 +179,9 @@
   {
     "id": "20",
     "name": "RITTER SPORT 61% FINE from Nicaragua 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509449/chocolate20_r9ya25.webp",
     "unit_price": "5500",
+    "image": "/chocolate20.png",
+
     "count_in_box": "12",
     "box_price": "66000",
     "sort": "cocoa"
@@ -188,17 +189,17 @@
   {
     "id": "21",
     "name": "RITTER SPORT 74% INTENSE from Peru 100g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509479/chocolate21_ba9isp.webp",
     "unit_price": "5500",
     "count_in_box": "12",
+    "image": "/chocolate21.png",
     "box_price": "66000",
     "sort": "cocoa"
   },
   {
     "id": "22",
     "name": "RITTER SPORT Alpine Milk Chocolate 250g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509121/chocolate2_ft3zuh.webp",
     "unit_price": "13500",
+    "image": "/chocolate22.png",
     "count_in_box": "11",
     "box_price": "119900",
     "sort": "250g"
@@ -206,8 +207,8 @@
   {
     "id": "23",
     "name": "RITTER SPORT Hazelnuts 250g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509282/chocolate10_bcqstt.webp",
     "unit_price": "13500",
+    "image": "/chocolate23.png",
     "count_in_box": "11",
     "box_price": "119900",
     "sort": "250g"
@@ -215,8 +216,8 @@
   {
     "id": "24",
     "name": "RITTER SPORT PRALINE 250g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509175/chocolate5_zsvbkx.webp",
     "unit_price": "10900",
+    "image": "/chocolate24.png",
     "count_in_box": "11",
     "box_price": "119900",
     "sort": "250g"
@@ -224,8 +225,7 @@
   {
     "id": "25",
     "name": "RITTER SPORT Gold Edition 250g",
-    "image": "chocolate25.png",
-    "unit_price": "10900",
+    "image": "/chocolate25.png",
     "count_in_box": "11",
     "box_price": "119900",
     "sort": "250g"
@@ -233,7 +233,7 @@
   {
     "id": "26",
     "name": "RITTER SPORT Yogurt Mix/Joghurt Schatz 176g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509489/chocolate26_w9yyo5.webp",
+    "image": "/chocolate26.png",
     "unit_price": "13500",
     "count_in_box": "8",
     "box_price": "108000",
@@ -242,35 +242,35 @@
   {
     "id": "27",
     "name": "RITTER SPORT Happy birthday/Lass Dich Feiern 176g ",
-    "image": "chocolate27.png",
-    "unit_price": "13500",
     "count_in_box": "8",
+    "image": "/chocolate27.png",
     "box_price": "108000",
     "sort": "cubes"
   },
   {
     "id": "28",
     "name": "RITTER SPORT Mini Alpine Milk 2 Pack 33.34g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509510/chocolate28_tq9tkx.webp",
     "unit_price": "2800",
     "count_in_box": "16",
     "box_price": "44800",
+    "image": "/chocolate28.png",
+
     "sort": "mini"
   },
   {
     "id": "29",
     "name": "RITTER SPORT Mini Whole Hazelnuts 2 Pack 33.34g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708509517/chocolate29_lszgnm.webp",
     "unit_price": "2800",
     "count_in_box": "16",
+    "image": "/chocolate29.png",
     "box_price": "44800",
     "sort": "mini"
   },
   {
     "id": "30",
     "name": "RITTER SPORT Mini Nut Selection 116,69g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708515913/chocolate30_n8eqli.webp",
     "unit_price": "11000",
+    "image": "/chocolate30.png",
     "count_in_box": "8",
     "box_price": "88000",
     "sort": "mini"
@@ -278,8 +278,8 @@
   {
     "id": "31",
     "name": "RITTER SPORT Mini Chocolate Mix 133,36g",
-    "image": "https://res.cloudinary.com/dtilbfc3a/image/upload/v1708515920/chocolate31_nrvamu.webp",
     "unit_price": "11000",
+    "image": "/chocolate31.png",
     "count_in_box": "8",
     "box_price": "88000",
     "sort": "mini"

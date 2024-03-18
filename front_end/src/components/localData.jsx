@@ -1,7 +1,5 @@
 export const Data = [
-  {
-    name: "/chocolate1.png",
-  },
+  {},
   {
     name: "/chocolate2.png",
   },
