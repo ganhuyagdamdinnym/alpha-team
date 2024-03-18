@@ -25,10 +25,7 @@ export const Header = (props) => {
         <button>
           <p>ABOUT</p>
         </button>
-        <button
-          onClick={() => LoginButtonPress()}
-          className="p-[10px] backdrop-blur-[20px] border-2  text-white rounded-xl text-2xl absolute right-0 flex mr-4 items-center"
-        >
+        <button onClick={() => LoginButtonPress()} className="buy">
           <p>ХУДАЛДАА ХИЙХ</p>
         </button>
       </div>

@@ -23,7 +23,7 @@ export const HomeAboutCompany = () => {
           <FontAwesomeIcon
             icon={faSquareFacebook}
             style={{ color: "#74C0FC" }}
-            className="w-10"
+            className="icon"
           />
           <p className="text-white text-[1.8vh]">Like Us On Facebook</p>
         </a>
@@ -36,7 +36,7 @@ export const HomeAboutCompany = () => {
               <FontAwesomeIcon
                 icon={faEnvelope}
                 style={{ color: "#74C0FC" }}
-                className="w-10"
+                className="icon"
               />
               Jargalmaa@premiumsweets.mn
             </a>
@@ -49,7 +49,7 @@ export const HomeAboutCompany = () => {
           <FontAwesomeIcon
             icon={faMapLocationDot}
             style={{ color: "#74C0FC" }}
-            className="w-10"
+            className="icon"
           />
           <p className="text-white text-[1.8vh] text-nowrap overflow-x-hidden w-[31vh]">
             ICC Tower, Ulaanbaatar,Mongolia
@@ -62,7 +62,7 @@ export const HomeAboutCompany = () => {
           <FontAwesomeIcon
             icon={faPhone}
             style={{ color: "#74C0FC" }}
-            className="w-10"
+            className="icon"
           />
           <p className="text-white text-[1.8vh]">Call Us</p>
         </a>

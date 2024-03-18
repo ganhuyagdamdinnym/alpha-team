@@ -12,6 +12,9 @@
   z-index: -1;
   position: relative;
 }
+.icon {
+  width: 4%;
+}
 body {
   position: relative;
   z-index: -2;
@@ -22,6 +25,19 @@ body {
 }
 .chocolateSortBuy:hover {
   background-color: #ebe9e6;
+}
+.buy {
+  /* p-[10px] bg-[#3c3c3c] backdrop-blur-[20px] border-2 border-white text-white  text-2xl absolute right-0 flex mr-4 items-center */
+  padding: 10px;
+  background-color: white;
+  backdrop-filter: blur(20px);
+  border: 4px #be9131 solid;
+  color: #010391;
+  position: absolute;
+  right: 0;
+  display: flex;
+  margin: 4px;
+  align-items: center;
 }
 .main {
   display: flex;
@@ -79,6 +95,7 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 /* img {
     animation: image 1s;
   } */
@@ -109,6 +126,18 @@ body {
     padding-top: 20px;
     gap: 30px;
   }
+  .homeAbout {
+    display: flex;
+    gap: 5vh;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    background-color: rgb(23 37 84);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   /* .chocolateSortBuy {
     font-size: 20px;
   } */
@@ -128,6 +157,20 @@ body {
     margin-bottom: 0;
   }
 
+  .buy {
+    /* p-[10px] bg-[#3c3c3c] backdrop-blur-[20px] border-2 border-white text-white  text-2xl absolute right-0 flex mr-4 items-center */
+    padding: 10px;
+    background-color: white;
+    backdrop-filter: blur(20px);
+    border: 4px #be9131 solid;
+    color: #010391;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    margin: 4px;
+    align-items: center;
+  }
   .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
