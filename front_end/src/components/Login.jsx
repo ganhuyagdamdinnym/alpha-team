@@ -3,20 +3,12 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect, useContext } from "react";
 import { UserTokenContext } from "@/pages/_app";
 import axios from "axios";
-import {
-  RecaptchaVerifier,
-  signInWithPhoneNumber,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
-import { auth } from "@/pages/_app";
-import { root } from "postcss";
 export const Login = (props) => {
-  const { relogin, createUser } = props;
+  const { relogin, email, setEmail, setCodeStatus, setLoginStat, loginStat } =
+    props;
   const { token } = useContext(UserTokenContext);
-  const [email, setEmail] = useState("");
+  //const [email, setEmail] = useState("");
   const router = useRouter();
-  const [number, setNumber] = useState("");
-  const [password, setPassword] = useState("");
   // const createUser = async () => {
   //   if (number == "") {
   //     alert("utasnii dugaaraa hiine uu");
@@ -39,14 +31,18 @@ export const Login = (props) => {
       router.push("/buy");
     }
   };
-
   const loginByEmail = async () => {
-    console.log("email", email);
-    try {
-      const url = `http://localhost:8002/loginByEmail/${email}`;
-      await axios.get(url);
-    } catch (err) {
-      console.log(err);
+    if (email == "") {
+      alert("И-мэйл хаягаа оруулна уу");
+    } else {
+      setCodeStatus(false);
+      setLoginStat(false);
+      try {
+        const url = `http://localhost:8002/loginByEmail/${email}`;
+        await axios.get(url);
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
   return (
