@@ -18,6 +18,7 @@ export const UserHead = (props) => {
           height={32}
           width={32}
           className="basket"
+          priority={true}
         />
         {/* <Image src="hoppet2.svg" height={64} width={64} className="basket" /> */}
       </button>
@@ -27,6 +28,7 @@ export const UserHead = (props) => {
         src="logo.svg"
         width={64}
         height={64}
+        priority={true}
       />
       <div className="flex mr-4 gap-2 items-center">
         <div className="border-2 border-black rounded-full w-[25px] h-[25px] flex justify-center items-center">

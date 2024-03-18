@@ -8,8 +8,6 @@ export default function Main() {
         <MainChocolateSort />
         <MainSortBuy />
       </div>
-
-      {/* ariukas part lol ;) */}
     </div>
   );
 }

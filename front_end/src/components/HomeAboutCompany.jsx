@@ -11,7 +11,13 @@ export const HomeAboutCompany = () => {
   return (
     <div className="homeAbout">
       <div className="flex flex-col justify-center items-center ">
-        <Image alt="photo" src="/logo.svg" height={200} width={200} />
+        <Image
+          alt="photo"
+          priority={true}
+          src="/logo.svg"
+          height={200}
+          width={200}
+        />
         <p className="text-[4vh] text-white">RITTER SPORT</p>
       </div>
       <div className="flex flex-col gap-[2vh] w-[35vh] mt-10px">

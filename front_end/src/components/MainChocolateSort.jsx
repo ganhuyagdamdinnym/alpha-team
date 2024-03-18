@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from "react";
 import { images } from "../chocolate/sort.js";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Virtual, Navigation, Pagination, Keyboard } from "swiper/modules";
-import { HandleSort } from "@/components/HandleSort";
 import { Data } from "@/components/data";
 
 import "swiper/css";
@@ -13,7 +12,6 @@ import "swiper/css/navigation";
 export const MainChocolateSort = () => {
   const [swiperPerScreen, setSwiperPerScreen] = useState();
   const [color, setColor] = useState();
-  const [currentIndex, setCurrentIndex] = useState();
   const [swiperRef, setSwiperRef] = useState(null);
   const [name, setName] = useState();
 
@@ -96,7 +94,6 @@ export const MainChocolateSort = () => {
               virtual
               onSlideChange={(swiperCore) => {
                 const { realIndex } = swiperCore;
-                setCurrentIndex(realIndex);
                 setColor(images[realIndex].color);
                 setName(images[realIndex].name);
               }}
@@ -170,21 +167,25 @@ export const MainChocolateSort = () => {
           </div>
         </div>
       </div>
+      <p className="h-[30vh]" style={{ backgroundColor: color }}>
+        hello
+      </p>
       <div
-        className="w-[100vw] h-[30vh] max-[600px]:h-[60%] max-[600px]:text-[10px]"
+        className="w-[100vw] h-[auto] max-[600px]:h-[60%] max-[600px]:text-[10px]"
         style={{ backgroundColor: color }}
-      ></div>
-      <div className="w-[100vw] h-[100vh] flex items-center flex-wrap">
-        {Data.map((e, index) => {
-          return e.sort === name ? (
-            <div
-              key={index}
-              className="flex w-[20%] min-w-max-[300px] max-[1000px]:w-[100%] bg-cover "
-            >
-              <img src={e.image} alt="image"></img>
-            </div>
-          ) : null;
-        })}
+      >
+        <div className=" flex items-center flex-wrap">
+          {Data.map((e, index) => {
+            return e.sort === name ? (
+              <div
+                key={index}
+                className="flex w-[20%] min-w-max-[300px] max-[1000px]:w-[100%] bg-cover "
+              >
+                <img src={e.image} alt="image"></img>
+              </div>
+            ) : null;
+          })}
+        </div>
       </div>
     </div>
   );

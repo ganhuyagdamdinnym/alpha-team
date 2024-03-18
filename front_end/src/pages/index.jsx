@@ -1,9 +1,7 @@
 import { HomeChocolate } from "../components/HomeChocolate";
 import { HomeAboutCompany } from "../components/homeAboutCompany";
-import data from "@/chocolate/data.json";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 export default function Home() {
-  console.log(data);
   //hereg bolj magadgui
   // const first = async () => {
   //   try {

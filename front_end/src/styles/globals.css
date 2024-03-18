@@ -84,7 +84,6 @@ body {
 .hoppet:hover {
   background-color: red;
 }
-<<<<<<< HEAD
 .homeAbout {
   /* flex gap-[8vh] justify-evenly py-[8vh] bg-blue-950 my-0  */
   display: flex;
@@ -96,8 +95,6 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
-=======
->>>>>>> ddaf977a795d2cdbcd27982ca534c7fd870bbd84
 
 /* img {
     animation: image 1s;
@@ -246,4 +243,11 @@ body {
     padding-top: 20px;
     gap: 70px;
   }
+}
+
+.swiper-button-prev {
+  left: 30vw !important;
+}
+.swiper-button-next {
+  right: 30vw !important;
 }

@@ -57,7 +57,13 @@ export const Login = (props) => {
         />
       </div>
       <div className="text-black w-full flex justify-center bg-[red]">
-        <Image alt="photo" src="logo.svg" height={60} width={60} />
+        <Image
+          alt="photo"
+          priority={true}
+          src="logo.svg"
+          height={60}
+          width={60}
+        />
       </div>
       <h1 className="text-2xl w-full flex justify-center text-white">
         НЭВТРЭХ

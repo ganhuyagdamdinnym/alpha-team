@@ -32,7 +32,7 @@ export const EnterCode = (props) => {
   return (
     <div className="w-[350px] h-[300px] bg-[#F06742] flex flex-col gap-4 py-2 rounded-xl border-2 border-white">
       <div className="w-full flex justify-center">
-        <Image src="logo.svg" width={64} height={64} />
+        <Image src="logo.svg" priority={true} width={64} height={64} />
       </div>
       <div className="h-3/4 w-full flex flex-col items-center gap-4">
         <input

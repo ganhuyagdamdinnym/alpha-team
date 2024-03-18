@@ -16,7 +16,7 @@ export const Header = (props) => {
           <p>OUR CHOCOLATE</p>
         </button>
         <Image
-          priority="true"
+          priority={true}
           alt="logo"
           src="logo.svg"
           height={96}
