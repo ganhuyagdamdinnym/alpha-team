@@ -4,6 +4,7 @@ import { useContext, useState, useEffect, useRef } from "react";
 import { UserTokenContext } from "./_app";
 import axios from "axios";
 import { Hoppet } from "@/components/Hoppet";
+import { CashPart } from "@/components/CashPart";
 export default function Basket() {
   const currentRef = useRef(null);
   const [user, setUser] = useState();
@@ -113,7 +114,9 @@ export default function Basket() {
             style={{ position: "absolute", zIndex: 40 }}
             className="w-[50%] h-[60%] bg-white border-[red] border-4 rounded-3xl cashPart"
             ref={currentRef}
-          ></div>
+          >
+            <CashPart allPrice={price} />
+          </div>
         </div>
       ) : (
         <div

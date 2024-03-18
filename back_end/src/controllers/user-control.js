@@ -60,14 +60,14 @@ export const loginByEmail = async (req, res) => {
       from: "damdinnymg@gmail.com",
       to: email,
       subject: "Password reset",
-      text: `Your password reset code is  ${randomNumber}`,
+      text: `Your  code is  ${randomNumber}`,
     };
     await transport.sendMail(options);
     const updatedUser = await UserModel.create({
       email: email,
       code: randomNumber,
     });
-    return updatedUser;
+    // return updatedUser;
   } catch (err) {
     // const error = err as AxiosError;
     // throw new Error(error.message);

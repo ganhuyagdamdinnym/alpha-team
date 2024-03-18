@@ -60,7 +60,7 @@ export const Hoppet = (props) => {
     fetchChocolateData();
   }, []);
   return (
-    <div>
+    <div className="drop-shadow-2xl">
       {/* {data?.map((e) => ( */}
       <div>
         <div className="border-2 border-[#DCDAD7] rounded-[10px] buyBorder bg-white z-0">
