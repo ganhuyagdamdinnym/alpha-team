@@ -1,17 +1,52 @@
 export const images = [
+  // {
+  //   image: "/option_colorful.webp",
+  //   color: "red",
+  // },
+  // {
+  //   image: "/option_mini.webp",
+  //   color: "green",
+  // },
+  // {
+  //   image: "/option_nut.webp",
+  //   color: "brown",
+  // },
+  // { image: "/option_vegan.webp", color: "yellow" },
   {
-    image: "/option_colorful.webp",
+    name: "COLOURFUL VARIETY",
     color: "red",
+    image: "sortPhoto/colorful.webp",
   },
   {
-    image: "/option_mini.webp",
-    color: "green",
+    name: "COCOA SELECTION",
+    color: "rgb(255, 205, 74)",
+    image: "sortPhoto/cocoa.webp",
   },
   {
-    image: "/option_nut.webp",
-    color: "brown",
+    name: "MINI RANGE",
+    color: "rgb(179, 126, 101)",
+    image: "sortPhoto/mini.webp",
   },
-  { image: "/option_vegan.webp", color: "yellow" },
+  {
+    name: "CHOCO CUBES",
+    color: "rgb(255, 0, 100)",
+    image: "sortPhoto/choco.webp",
+  },
+  {
+    name: "250G BARS",
+    color: "rgb(24, 36, 98)",
+    image: "sortPhoto/250g.webp",
+  },
+  {
+    name: "TASTY VIBES",
+    color: "rgb(137, 198, 230)",
+    image: "sortPhoto/tasty.webp",
+  },
+  {
+    name: "NUT SELECTION",
+    color: "rgb(59, 150, 43)",
+    image: "sortPhoto/but.webp",
+  },
   // {
   //   image:
   //     "https://irp.cdn-website.com/6cb74a62/dms3rep/multi/SW_PG_overview.webp",
