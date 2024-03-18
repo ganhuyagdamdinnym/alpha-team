@@ -7,12 +7,7 @@ import { EnterCode } from "./EnterCode";
 export const HomeChocolate = (props) => {
   const [loginStat, setLoginStat] = useState(false);
   const [codeStatus, setCodeStatus] = useState(true);
-  const [input1, setInput1] = useState();
-  const [input2, setInput2] = useState();
-  const [input3, setInput3] = useState();
-  const [input4, setInput4] = useState();
-  const [input5, setInput5] = useState();
-  const [input6, setInput6] = useState();
+
   const [email, setEmail] = useState("");
   // const createUser = () => {
   //   setLoginStat(false);
