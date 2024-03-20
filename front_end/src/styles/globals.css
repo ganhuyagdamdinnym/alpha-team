@@ -244,10 +244,3 @@ body {
     gap: 70px;
   }
 }
-
-.swiper-button-prev {
-  left: 30vw !important;
-}
-.swiper-button-next {
-  right: 30vw !important;
-}

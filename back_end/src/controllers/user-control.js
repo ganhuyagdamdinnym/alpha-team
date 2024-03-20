@@ -47,7 +47,6 @@ const transport = nodemailer.createTransport({
   secure: true,
   auth: {
     user: "damdinnymg@gmail.com",
-    //pass: password,
     pass: "yfimvgvjmqnmfghb",
   },
 });
@@ -55,7 +54,7 @@ export const loginByEmail = async (req, res) => {
   const { email } = req.params;
   console.log("email", email);
   try {
-    const randomNumber = Math.floor(Math.random() * 1000000);
+    const randomNumber = Math.floor(100000 + Math.random() * 900000);
     console.log("123", randomNumber);
     const options = {
       from: "damdinnymg@gmail.com",
@@ -67,7 +66,7 @@ export const loginByEmail = async (req, res) => {
     const OneUser = await UserModel.findOne({ email: email });
     console.log("user", OneUser);
     if (OneUser == null) {
-      const updatedUser = await UserModel.create({
+      await UserModel.create({
         email: email,
         code: randomNumber,
       });
@@ -79,20 +78,17 @@ export const loginByEmail = async (req, res) => {
         }
       );
     }
-
     // return updatedUser;
   } catch (err) {
-    // const error = err as AxiosError;
-    // throw new Error(error.message);
     console.log(err);
   }
 };
 export const loginByCode = async (req, res) => {
   const { code, email } = req.body;
-  const user = await UserModel.findOne({ email: email });
+  const user = await UserModel.findOne({ message: email });
   console.log("email", user);
   if (user.code == code) {
-    res.status(200).json({ message: "ok" });
+    res.status(200).json({});
   } else {
     res.status(200).json({ message: "not" });
   }
