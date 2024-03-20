@@ -77,19 +77,24 @@ export const Login = (props) => {
         </div>
       </div>
       <div className="flex flex-col gap-3 full items-center">
-        <input
-          className="w-3/4 px-3 py-2 rounded-xl border-solid border-2"
-          type="string"
-          placeholder="И-мэйл хаягаа оруулна уу"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <button
-          onClick={loginByEmail}
-          className="w-3/4 text-2xl px-3 py-1 bg-[red] rounded-xl text-white border-solid border-2"
+        <form
+          className="w-full flex flex-col gap-3 full items-center"
+          onSubmit={loginByEmail}
         >
-          НЭВТРЭХ
-        </button>
+          <input
+            className="w-3/4 px-3 py-2 rounded-xl border-solid border-2"
+            type="email"
+            placeholder="И-мэйл хаягаа оруулна уу"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+          <button
+            type="submit"
+            className="w-3/4 text-2xl px-3 py-1 bg-[red] rounded-xl text-white border-solid border-2"
+          >
+            НЭВТРЭХ
+          </button>
+        </form>
 
         <button></button>
       </div>

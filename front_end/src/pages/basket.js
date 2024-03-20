@@ -66,24 +66,36 @@ export default function Basket() {
     <div onClick={() => back(currentRef)} className=" w-[100wv] h-[100hv] ]">
       <div
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
-        className={`w-full border-b-[20px] py-2 border-[red] flex items-center justify-between bg-[#dcd7d8]`}
+        className="w-full bg-white"
       >
-        <button
-          className="flex gap-4 px-4 bg-white ml-4 rounded-xl w-24"
-          onClick={() => backToBuyPart()}
-        >
-          <Image src="arrowBig.svg" height={64} width={64} className="basket" />
-        </button>
-        <Image
-          onClick={() => BackToHome()}
-          className="cursor-pointer"
-          src="logo.svg"
-          width={64}
-          height={64}
-        />
-        <div className="flex mr-4 w-24 gap-2">
-          <Image src="user.svg" height={16} width={16} />
-          {user?.number}
+        <div className="flex items-center justify-between border-[#BE9131] border-b-[15px] py-2 px-4">
+          <button
+            className="flex gap-4 px-2  ml-4 rounded-xl w-24 bg-[#DCD7D8] py-2 items-center justify-center"
+            onClick={() => backToBuyPart()}
+          >
+            <Image
+              src="arrowBig.svg"
+              height={32}
+              width={32}
+              className="basket"
+              priority={true}
+            />
+            {/* <Image src="hoppet2.svg" height={64} width={64} className="basket" /> */}
+          </button>
+          <Image
+            onClick={() => BackToHome()}
+            className="cursor-pointer"
+            src="logo.svg"
+            width={64}
+            height={64}
+            priority={true}
+          />
+          <div className="flex mr-4 gap-2 items-center">
+            <div className="border-2 border-black rounded-full w-[25px] h-[25px] flex justify-center items-center">
+              <Image src="user.svg" height={12} width={12} />
+            </div>
+            <p>{token}</p>
+          </div>
         </div>
       </div>
       <div
@@ -112,7 +124,7 @@ export default function Basket() {
         >
           <div
             style={{ position: "absolute", zIndex: 40 }}
-            className="w-[50%] h-[60%] bg-white border-[red] border-4 rounded-3xl cashPart"
+            className="w-[50%] h-[60%] bg-white border-[#BE9131] border-4 rounded-3xl cashPart"
             ref={currentRef}
           >
             <CashPart allPrice={price} />
@@ -121,7 +133,7 @@ export default function Basket() {
       ) : (
         <div
           style={{ position: "fixed", bottom: "20px", right: "20px" }}
-          className="px-3 py-2 bg-white rounded-xl border-2 border-[red]"
+          className="px-3 py-2 bg-white rounded-xl border-2 border-[#BE9131]"
           onClick={() => HandleToBuy()}
         >
           <Image src="cash.svg" height={32} width={32} />

@@ -85,10 +85,11 @@ export const loginByEmail = async (req, res) => {
 };
 export const loginByCode = async (req, res) => {
   const { code, email } = req.body;
-  const user = await UserModel.findOne({ message: email });
+  console.log("info", code, email);
+  const user = await UserModel.findOne({ email: email });
   console.log("email", user);
   if (user.code == code) {
-    res.status(200).json({});
+    res.status(200).json({ message: email });
   } else {
     res.status(200).json({ message: "not" });
   }
