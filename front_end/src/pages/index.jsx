@@ -63,10 +63,6 @@ export default function Home() {
     <div className={`overflow-y-auto`}>
       <HomeChocolate relogin={relogin} />
       <HomeAboutCompany />
-<<<<<<< HEAD
-=======
-      {/* <div className="w-[100vw] h-[100vh] bg-white">helloo</div> */}
->>>>>>> aae4764a18fa2aa4d7151afca65c00924249b312
     </div>
   );
 }

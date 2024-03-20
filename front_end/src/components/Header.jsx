@@ -10,13 +10,8 @@ export const Header = (props) => {
     router.push("/main");
   };
   return (
-<<<<<<< HEAD
-    <div className="w-full">
-      <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] ">
-=======
     <div className="w-full fixed">
       <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] bg-white">
->>>>>>> aae4764a18fa2aa4d7151afca65c00924249b312
         <button onClick={() => jumptomain()}>
           <p style={{ color: "#160d98" }} className="font-medium">
             OUR CHOCOLATE
