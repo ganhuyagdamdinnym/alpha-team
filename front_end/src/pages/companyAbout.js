@@ -31,63 +31,99 @@ export default function About() {
   //     </p>
   //   </div>
   // </div>
+  const image = ["/Image.jpeg", "/Image.jpeg", "/Image.jpeg"];
   const data = [
     {
-      bg_image: "/ritter-history.1-removebg-preview__1_-removebg-preview.png",
-      story:
-        "Алфред Евген Риттер, Клара Риттер нар шоколад, чихрийн үйлдвэрийг үүсгэн байгуулж, Риттер Спортын шоколадны түүхийн суурь чулууг 1912 онд Штутгарт-Бад Каннштат хотод тавьжээ.",
+      bg_image: "/Image.jpeg",
       title: "Риттер Спорт шоколадны үүсэл",
       year: "1912",
-      bg: "#013242",
       textColor: "#009a91",
     },
     {
-      bg_image: "/Name21-removebg-preview__1_-removebg-preview.png",
-      story:
-        "Клара Риттер: Спорт хүрэм бүрийн халаасанд хагарахгүй багтах, жирийн урт баар шиг жинтэй шоколад хийцгээе. Энэ нь Ritter's Sport Schokolade нэрээр худалдаанд гарсан.",
-      title: "Яагаад дөрвөлжин шокалад гэж?",
-      year: "1932",
-      bg: "#5c3729",
       textColor: "#795548",
     },
     {
-      bg_image: "/xconvert.com-1__1_-removebg-preview.png",
-      story:
-        "Шоколадны зах зээл дээрх хувьсгал: бизнес эрхлэгч Альфред Отто Риттер Бунте Палетт (өнгөлөг төрөл) -ийг танилцуулав. Зар сурталчилгааны зурагт хуудаснууд дээр Бүх зүйл илүү өнгөлөг, илүү аз жаргалтай, илүү орчин үеийн, илүү идэвхтэй болж байна, үүнд дагалддаг шоколад орно гэж бичсэн байдаг.",
+      bg_image: "/Image.jpeg",
+      title: "Яагаад дөрвөлжин шокалад гэж?",
+      year: "1932",
+      textColor: "#7fa97e",
+    },
+    {
+      textColor: "#7fa97e",
+    },
+    {
+      bg_image: "/Image.jpeg",
       title: "Нэр төрлөө нэмэгдүүлсэн нь",
       year: "1974",
-      bg: "#367535",
+      textColor: "#7fa97e",
+    },
+  ];
+  const data_1 = [
+    {
+      bg_image: "/Image.jpeg",
+      title: "Риттер Спорт шоколадны үүсэл",
+      textColor: "#009a91",
+    },
+    {
+      bg_image: "/Image.jpeg",
+      title: "Яагаад дөрвөлжин шокалад гэж?",
+      textColor: "#7fa97e",
+    },
+    {
+      bg_image: "/Image.jpeg",
+      title: "Нэр төрлөө нэмэгдүүлсэн нь",
+      textColor: "#7fa97e",
+    },
+    {
+      bg_image: "/Image.jpeg",
+      title: "Нэр төрлөө нэмэгдүүлсэн нь",
       textColor: "#7fa97e",
     },
   ];
   return (
     <div>
       <Header />
-      <div className="flex flex-wrap overflow-y-scroll">
-        {data.map((dta) => (
-          <div
-            style={{ backgroundColor: dta.bg }}
-            className="w-screen h-screen bg-white flex flex-col justify-around"
-          >
-            <p className="text-[8vh] justify-center text-center text-white font-black">
-              {dta.year}
-            </p>
-            <div className="flex justify-evenly items-center">
+      <div className="flex flex-col">
+        <div className="flex w-full justify-evenly justify-items-center pt-[10vh] pl-[8vh]">
+          {image.map((dta) => (
+            <img src={dta} className="w-1/6 " />
+          ))}
+        </div>
+        <div className="flex justify-evenly">
+          {data.map((dta) => (
+            <div className="flex flex-col justify-center gap-[1vh]">
+              <p className="text-[2vh] justify-center text-white">{dta.year}</p>
+              <div className="flex justify-center gap-[10vh]">
+                <button
+                  style={{ background: dta.textColor }}
+                  className="w-[2vh] h-[2vh] text-[1.5vh]"
+                ></button>
+                <p
+                  style={{ background: dta.textColor }}
+                  className="h-[3vh] w-[0.1vh]"
+                ></p>
+              </div>
               <p
                 style={{ color: dta.textColor }}
-                className="text-[5vh] text-wrap w-1/4 font-extrabold"
+                className="text-black w-full  text-[1.5vh] font-light"
               >
                 {dta.title}
               </p>
-              <img src={dta?.bg_image} className="w-2/5 h-3/4 bg-transparent" />
-              <p
-                style={{ color: dta.textColor }}
-                className="text-black w-1/4  text-[2.5vh] font-light"
-              >
-                {dta.story}
-              </p>
             </div>
-            <div></div>
+          ))}
+        </div>
+      </div>
+      <div className="w-screen flex ">
+        {data_1.map((dta) => (
+          <div>
+            <img src={dta.bg_image} className="w-1/6" />
+            <div className="flex">
+              <div
+                className="w-[2vh] h-[2vh]"
+                style={{ background: dta.textColor }}
+              ></div>
+              <p>{dta.title}</p>
+            </div>
           </div>
         ))}
       </div>
