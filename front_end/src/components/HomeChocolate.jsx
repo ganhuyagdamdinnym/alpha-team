@@ -1,5 +1,4 @@
 "use client";
-
 import { Header } from "./Header";
 import { useState } from "react";
 import { Login } from "./Login";
@@ -7,7 +6,6 @@ import { EnterCode } from "./EnterCode";
 export const HomeChocolate = (props) => {
   const [loginStat, setLoginStat] = useState(false);
   const [codeStatus, setCodeStatus] = useState(true);
-
   const [email, setEmail] = useState("");
   // const createUser = () => {
   //   setLoginStat(false);
