@@ -94,3 +94,17 @@ export const loginByCode = async (req, res) => {
     res.status(200).json({ message: "not" });
   }
 };
+export const UserBought = (req, res) => {
+  // const { email, price } = req.body;
+  // try {
+  //   const options = {
+  //     from: "amaraaamarbileg06@gmail.com",
+  //     to: "damdinnymg@gmail.com",
+  //     subject: "Password reset",
+  //     text: `${email} хэрэглэгч `,
+  //   };
+  // } catch (err) {
+  //   console.log(err);
+  // }
+  // console.log("hi");
+};

@@ -107,7 +107,11 @@ export const EnterCode = (props) => {
           const name = res.data.message;
           localStorage.setItem("token", name);
           localStorage.setItem("basket", null);
-          router.push("/buy");
+          if (name == "dulamsuren894@gmail.com") {
+            router.push("/admin");
+          } else {
+            router.push("/buy");
+          }
         }
       } catch (err) {
         console.log(err);
