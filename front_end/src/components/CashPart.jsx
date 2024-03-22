@@ -31,8 +31,10 @@ export const CashPart = (props) => {
         </select>
       </div>
       <div className="w-full flex justify-center items-center flex-col gap-2 ">
+        <h1 className="w-2/5 px-3">Хүргэлт очих хороо?</h1>
         <input
           className="w-2/5 px-3 rounded-xl py-1 border-[#BE9131] border-2"
+          type="number"
           placeholder="Хэддүгээр хороо болох?"
         />
       </div>
