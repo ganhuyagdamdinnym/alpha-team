@@ -1,10 +1,14 @@
+import express from "express";
 import { BuyerModel } from "../model/buyer-model.js";
-export const getAllBuyerInfo = (req, res) => {
+import { PurchaseModel } from "../model/allPurchase-model.js";
+export const getAllBuyerInfo = async(req, res) => {
   console.log("hi");
+  const allBuyer=await BuyerModel.find()
+  res.status(200).json({allBuyer})
 };
 export const UserBought = async (req, res) => {
-  const { email, pay, number, name } = req.body;
-  console.log("name", name);
+  const { email, allBuy } = req.body;
+  console.log("name", allBuy);
   try {
     const user = await BuyerModel.findOne({ email: email });
     if (user == null) {
@@ -12,21 +16,29 @@ export const UserBought = async (req, res) => {
         email: email,
         allBuy: [
           {
-            number: number,
+            chocolateName: allBuy.chocolateName,
+            pay: allBuy.pay,
+            number:allBuy.number,
+            address:allBuy.address
           },
         ],
       });
     } else {
-      //   console.log("user", user);
-      //   console.log("us", user.allBuy);
-      //   const options = {
-      //     number: number,
-      //     pay: pay,
-      //   };
-      user.allBuy.push({ number: number, pay: pay, chocolateName: name });
+      const newuser=user.allBuy.push({...allBuy});
+      console.log("hi",newuser)
       await user.save();
-      console.log("neew", user);
+      // await BuyerModel.findOneAndDelete({email:email})
+      // await BuyerModel.create(user)
+      // console.log("neew", user);
     }
+    await PurchaseModel.create({
+      email:email,
+      chocolateName: allBuy.chocolateName,
+      pay: allBuy.pay,
+      number:allBuy.number,
+     address:allBuy.address
+    })
+
     res
       .status(200)
       .json({ success: true, message: "Purchase recorded successfully" });
