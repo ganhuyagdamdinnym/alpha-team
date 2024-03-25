@@ -6,7 +6,7 @@ export const Data = [
     unit_price: "5500",
     count_in_box: "10",
     box_price: "55000",
-    sort: "COLOURFUL VARIETY",
+    sort: "ӨНГӨ ТӨРӨЛ",
     border: "#EAD70E",
     bg: "#FFC300",
   },
@@ -16,7 +16,7 @@ export const Data = [
     unit_price: "5500",
     count_in_box: "12",
     box_price: "66000",
-    sort: "COLOURFUL VARIETY",
+    sort: "ӨНГӨ ТӨРӨЛ",
     image: "/chocolate3.png",
   },
   {
@@ -25,7 +25,7 @@ export const Data = [
     unit_price: "5500",
     count_in_box: "12",
     box_price: "66000",
-    sort: "COLOURFUL VARIETY",
+    sort: "ӨНГӨ ТӨРӨЛ",
     image: "/chocolate4.png",
   },
   {
@@ -35,7 +35,7 @@ export const Data = [
     count_in_box: "13",
     box_price: "71500",
     image: "/chocolate5.png",
-    sort: "COLOURFUL VARIETY",
+    sort: "ӨНГӨ ТӨРӨЛ",
   },
   {
     id: "6",
@@ -44,7 +44,7 @@ export const Data = [
     count_in_box: "12",
     box_price: "66000",
     image: "/chocolate6.png",
-    sort: "COLOURFUL VARIETY",
+    sort: "ӨНГӨ ТӨРӨЛ",
   },
   {
     id: "7",
@@ -53,7 +53,7 @@ export const Data = [
     count_in_box: "11",
     image: "/chocolate7.png",
     box_price: "60500",
-    sort: "COLOURFUL VARIETY",
+    sort: "ӨНГӨ ТӨРӨЛ",
   },
   {
     id: "8",
@@ -62,7 +62,7 @@ export const Data = [
     count_in_box: "12",
     image: "/chocolate8.png",
     box_price: "66000",
-    sort: "COLOURFUL VARIETY",
+    sort: "ӨНГӨ ТӨРӨЛ",
   },
   {
     id: "9",
@@ -71,7 +71,7 @@ export const Data = [
     count_in_box: "11",
     image: "/chocolate9.png",
     box_price: "60500",
-    sort: "COLOURFUL VARIETY",
+    sort: "ӨНГӨ ТӨРӨЛ",
   },
   {
     id: "10",
@@ -80,7 +80,7 @@ export const Data = [
     image: "/chocolate10.png",
     count_in_box: "12",
     box_price: "66000",
-    sort: "COLOURFUL VARIETY",
+    sort: "ӨНГӨ ТӨРӨЛ",
   },
   {
     id: "11",
@@ -89,7 +89,7 @@ export const Data = [
     count_in_box: "12",
     image: "/chocolate11.png",
     box_price: "66000",
-    sort: "COLOURFUL VARIETY",
+    sort: "ӨНГӨ ТӨРӨЛ",
   },
   {
     id: "12",
@@ -98,7 +98,7 @@ export const Data = [
     image: "/chocolate12.png",
     count_in_box: "12",
     box_price: "66000",
-    sort: "COLOURFUL VARIETY",
+    sort: "ӨНГӨ ТӨРӨЛ",
   },
   {
     id: "13",
@@ -107,7 +107,7 @@ export const Data = [
     count_in_box: "10",
     image: "/chocolate13.png",
     box_price: "55000",
-    sort: "NUT SELECTION",
+    sort: "САМРЫН СОНГОЛТ",
   },
   {
     id: "14",
@@ -116,7 +116,7 @@ export const Data = [
     count_in_box: "10",
     image: "/chocolate14.png",
     box_price: "55000",
-    sort: "NUT SELECTION",
+    sort: "САМРЫН СОНГОЛТ",
     bg: "#C70039",
   },
   {
@@ -126,7 +126,7 @@ export const Data = [
     image: "/chocolate15.png",
     count_in_box: "11",
     box_price: "60500",
-    sort: "NUT SELECTION",
+    sort: "САМРЫН СОНГОЛТ",
     bg: "#1A6D22",
   },
   {
@@ -136,7 +136,7 @@ export const Data = [
     image: "/chocolate16.png",
     count_in_box: "11",
     box_price: "60500",
-    sort: "NUT SELECTION",
+    sort: "САМРЫН СОНГОЛТ",
     bg: "#D18715",
   },
   {
@@ -146,7 +146,7 @@ export const Data = [
     image: "/chocolate17.png",
     count_in_box: "12",
     box_price: "66000",
-    sort: "NUT SELECTION",
+    sort: "САМРЫН СОНГОЛТ",
   },
   {
     id: "18",
@@ -155,7 +155,7 @@ export const Data = [
     image: "/chocolate18.png",
     count_in_box: "11",
     box_price: "60500",
-    sort: "NUT SELECTION",
+    sort: "САМРЫН СОНГОЛТ",
   },
   {
     id: "19",
@@ -164,7 +164,7 @@ export const Data = [
     unit_price: "5500",
     count_in_box: "12",
     box_price: "66000",
-    sort: "COCOA SELECTION",
+    sort: "КАКАО СОНГОЛТ",
   },
   {
     id: "20",
@@ -174,7 +174,7 @@ export const Data = [
 
     count_in_box: "12",
     box_price: "66000",
-    sort: "COCOA SELECTION",
+    sort: "КАКАО СОНГОЛТ",
   },
   {
     id: "21",
@@ -183,7 +183,7 @@ export const Data = [
     count_in_box: "12",
     image: "/chocolate21.png",
     box_price: "66000",
-    sort: "COCOA SELECTION",
+    sort: "КАКАО СОНГОЛТ",
   },
   {
     id: "22",
@@ -193,7 +193,7 @@ export const Data = [
       "https://irp.cdn-website.com/6cb74a62/dms3rep/multi/NEW_AlpineMilk_Normal.webp",
     count_in_box: "11",
     box_price: "119900",
-    sort: "250G BARS",
+    sort: "250 гр БАР",
   },
   {
     id: "23",
@@ -203,7 +203,7 @@ export const Data = [
       "https://irp.cdn-website.com/6cb74a62/dms3rep/multi/NEW_Hazelnuts_Normal.webp",
     count_in_box: "11",
     box_price: "119900",
-    sort: "250G BARS",
+    sort: "250 гр БАР",
   },
   {
     id: "24",
@@ -213,7 +213,7 @@ export const Data = [
       "https://irp.cdn-website.com/6cb74a62/dms3rep/multi/NEW_Praline_Normal.webp",
     count_in_box: "11",
     box_price: "119900",
-    sort: "250G BARS",
+    sort: "250 гр БАР",
   },
   {
     id: "25",
@@ -221,7 +221,7 @@ export const Data = [
     image: "/chocolate25.webp",
     count_in_box: "11",
     box_price: "119900",
-    sort: "250G BARS",
+    sort: "250 гр БАР",
   },
   {
     id: "26",
@@ -230,7 +230,7 @@ export const Data = [
     unit_price: "13500",
     count_in_box: "8",
     box_price: "108000",
-    sort: "CHOCO CUBES",
+    sort: "CHOCO шоо",
   },
   {
     id: "27",
@@ -238,7 +238,7 @@ export const Data = [
     count_in_box: "8",
     image: "/chocolate27.png",
     box_price: "108000",
-    sort: "CHOCO CUBES",
+    sort: "CHOCO шоо",
   },
   {
     id: "28",
@@ -261,7 +261,7 @@ export const Data = [
   },
   {
     id: "30",
-    name: "RITTER SPORT Mini Nut Selection 116,69g",
+    name: "RITTER SPORT Mini САМРЫН СОНГОЛТ 116,69g",
     unit_price: "11000",
     image: "/chocolate30.png",
     count_in_box: "8",
