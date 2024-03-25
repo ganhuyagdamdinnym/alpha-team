@@ -9,6 +9,12 @@ export const Header = (props) => {
   const jumptomain = () => {
     router.push("/main");
   };
+  const jumptoAbout = () => {
+    router.push("/companyAbout");
+  };
+  const jumptoHome = () => {
+    router.push("/");
+  };
   return (
     <div className="w-full fixed t-0 h-10">
       <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] bg-white">
@@ -18,13 +24,15 @@ export const Header = (props) => {
           </p>
         </button>
         <Image
+          onClick={jumptoHome}
+          className="cursor-pointer"
           priority={true}
           alt="logo"
           src="logo.svg"
           height={96}
           width={96}
         />
-        <button>
+        <button onClick={jumptoAbout}>
           <p style={{ color: "#160d98" }} className="font-medium">
             ABOUT
           </p>

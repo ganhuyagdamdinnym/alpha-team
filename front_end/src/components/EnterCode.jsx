@@ -106,7 +106,7 @@ export const EnterCode = (props) => {
           console.log("ss", res.data.message);
           const name = res.data.message;
           localStorage.setItem("token", name);
-          localStorage.setItem("basket", null);
+          localStorage.removeItem("basket");
           if (name == "dulamsuren894@gmail.com") {
             router.push("/admin");
           } else {

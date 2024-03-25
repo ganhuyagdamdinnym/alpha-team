@@ -95,14 +95,16 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
-.div1{
+.div1 {
   /* flex flex-col justify-center items-center  */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
+/* .buyer {
+  scrollbar-width: 300px;
+} */
 /* img {
     animation: image 1s;
   } */
@@ -150,11 +152,11 @@ body {
   } */
 }
 @media only screen and (max-width: 1200px) {
-  .logo{
+  .logo {
     width: 150px;
     height: 150px;
   }
-  .div1{
+  .div1 {
     /* flex flex-col justify-center items-center  */
     display: flex;
     flex-direction: column;
