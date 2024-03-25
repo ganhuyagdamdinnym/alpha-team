@@ -103,10 +103,6 @@ body {
   align-items: center;
 }
 
-/* img {
-    animation: image 1s;
-  } */
-
 @keyframes image {
   0% {
     opacity: 0;
