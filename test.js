@@ -1,11 +1,18 @@
-const dk = "hello";
+//function App() {
+// Your original string
+const originalString = "This is a sample string";
 
-const div = dk.split("");
+// Split the string based on the space character
+const parts = originalString.split(" ");
 
-const map = div.map((e, index) => {
-  if (e == "o") {
-    return index;
-  }
-});
+// Take the first part of the split string
+const cutString = parts[0]; // Or you can use destructuring like const [cutString] = parts;
 
-console.log(map);
+console.log(cutString);
+//   return (
+//     <div>
+//       <p>Original String: {originalString}</p>
+//       <p>Cut String: {cutString}</p>
+//     </div>
+//   );
+// }

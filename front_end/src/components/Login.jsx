@@ -26,6 +26,15 @@ export const Login = (props) => {
   //     }
   //   }
   // };
+  const originalString = "Thisisas@mplestring";
+
+  // Split the string based on the space character
+  const parts = originalString.split("@");
+
+  // Take the first part of the split string
+  const cutString = parts[0]; // Or you can use destructuring like const [cutString] = parts;
+
+  console.log("con", cutString);
   const loginCurrentUser = () => {
     if (token) {
       router.push("/buy");

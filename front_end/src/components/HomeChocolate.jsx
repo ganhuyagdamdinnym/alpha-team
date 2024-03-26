@@ -21,6 +21,9 @@ export const HomeChocolate = (props) => {
     // setCodeStatus(false);
     // setLoginStat(false);
   };
+  const back = () => {
+    setCodeStatus(true);
+  };
   return (
     <div className="h-[100vh] w-[100vw]">
       {loginStat ? (
@@ -39,7 +42,7 @@ export const HomeChocolate = (props) => {
       ) : null}
       {codeStatus ? null : (
         <div className="w-screen h-screen absolute flex justify-center items-center">
-          <EnterCode email={email} />
+          <EnterCode email={email} back={back} />
         </div>
       )}
       <video autoPlay muted loop id="myVideo">

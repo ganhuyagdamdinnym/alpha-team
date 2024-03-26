@@ -3,7 +3,7 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 export const EnterCode = (props) => {
-  const { email } = props;
+  const { email, back } = props;
   const router = useRouter();
   const input1Ref = useRef(null);
   const input2Ref = useRef(null);
@@ -77,7 +77,6 @@ export const EnterCode = (props) => {
         options[number]?.current.focus();
       }
     }
-
     if (
       input1Ref.current.value !== "" &&
       input2Ref.current.value !== "" &&
@@ -102,6 +101,13 @@ export const EnterCode = (props) => {
         });
         if (res.data.message == "not") {
           alert("code is wrong");
+          input1Ref.current.value = "";
+          input2Ref.current.value = "";
+          input3Ref.current.value = "";
+          input4Ref.current.value = "";
+          input5Ref.current.value = "";
+          input6Ref.current.value = "";
+          input1Ref.current.focus();
         } else {
           console.log("ss", res.data.message);
           const name = res.data.message;
@@ -118,18 +124,21 @@ export const EnterCode = (props) => {
       }
     }
   };
+
   return (
     <div className="w-[350px] h-[300px] bg-[#F06742] flex flex-col gap-4 py-2 rounded-xl border-2 border-white relative">
-      <div className="w-4 h-4 bg-[white] absolute right-0"></div>
+      <div onClick={back} className=" absolute right-2 top-2">
+        <Image src="x.svg" height={16} width={16} />
+      </div>
       <div className="w-full flex justify-center">
         <Image src="logo.svg" priority={true} width={64} height={64} />
       </div>
       <div className="h-3/4 w-full flex flex-col items-center gap-4">
-        <div className="w-80 px-2 py-2 text-2xl border-2 border-[red] rounded-xl flex gap-2 justify-center">
+        <div className="w-80 px-2 py-2 text-3xl  flex gap-2 justify-center">
           <input
             value=""
             ref={input1Ref}
-            className="w-[20px] text-center rounded-[5px]"
+            className="w-[30px] text-center rounded-[5px] py-2"
             onKeyUpCapture={(e) => HandleChange(e, input1Ref, 1)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
@@ -140,33 +149,32 @@ export const EnterCode = (props) => {
             onKeyUpCapture={(e) => HandleChange(e, input2Ref, 2)}
             onKeyDown={(e) => HandleBackspace(e)}
             onClick={(e) => HandleNextInput(e)}
-            className="w-[20px] text-center rounded-[5px]"
+            className="w-[30px] text-center rounded-[5px]"
           />
           <input
-            value=""
             onKeyUpCapture={(e) => HandleChange(e, input3Ref, 3)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
             ref={input3Ref}
-            className="w-[20px] text-center rounded-[5px]"
+            className="w-[30px] text-center rounded-[5px]"
           />
           <input
             ref={input4Ref}
-            className="w-[20px] text-center rounded-[5px]"
+            className="w-[30px] text-center rounded-[5px]"
             onKeyUpCapture={(e) => HandleChange(e, input4Ref, 4)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
           />
           <input
             ref={input5Ref}
-            className="w-[20px] text-center rounded-[5px]"
+            className="w-[30px] text-center rounded-[5px]"
             onKeyUpCapture={(e) => HandleChange(e, input5Ref, 5)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
           />
           <input
             ref={input6Ref}
-            className="w-[20px] text-center rounded-[5px]"
+            className="w-[30px] text-center rounded-[5px]"
             onKeyUpCapture={(e) => HandleChange(e, input6Ref, 6)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
