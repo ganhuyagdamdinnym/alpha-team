@@ -6,7 +6,7 @@ export const getChocolatedata = async (req, res) => {
   res.status(200).json(alldata);
 };
 export const getChocolate = async (req, res) => {
-  console.log("sss");
+  //console.log("sss");
   const body = req.body;
   const newChocolate = ChocolateModel.create({
     id: body.id,

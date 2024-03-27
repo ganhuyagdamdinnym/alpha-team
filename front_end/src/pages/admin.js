@@ -27,11 +27,11 @@ export default function Home() {
   }, []);
   return (
     <div className="w-full h-[100vh]">
-      <div className="w-full flex flex-col px-4 py-1 gap-2 fixed top-0 bg-[#BE9131] r-[4px] z-10">
+      <div className="w-full flex flex-col px-4 py-1 gap-2 fixed top-0 bg-[#BE9131] r-[4px] z-10 border-b-[20px] border-solid">
         <p className="text-3xl">Hi Admin!</p>
         <div className="w-full">hello</div>
       </div>
-      <div className="w-full h-full flex flex-col items-center mt-[70px] py-4 ">
+      <div className="w-full h-full flex flex-col items-center mt-[90px] py-4 ">
         <div className="w-full h-full flex flex-col items-center gap-4 px-10">
           {data?.map((e) => (
             <div className="flex flex-col px-4 py-2 bg-white w-[80%] h-[300px] rounded-2xl overflow-y-scroll gap-2">

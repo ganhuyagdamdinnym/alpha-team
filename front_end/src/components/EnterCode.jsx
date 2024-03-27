@@ -109,7 +109,6 @@ export const EnterCode = (props) => {
           input6Ref.current.value = "";
           input1Ref.current.focus();
         } else {
-          console.log("ss", res.data.message);
           const name = res.data.message;
           localStorage.setItem("token", name);
           localStorage.removeItem("basket");

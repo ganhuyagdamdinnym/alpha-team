@@ -4,7 +4,7 @@ const buySchema = new Schema({
   pay: Number,
   address: String,
   number: Number,
-  datenow: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now() },
 });
 const BuyerSchema = new Schema({
   email: { type: String, require: true, unique: true },

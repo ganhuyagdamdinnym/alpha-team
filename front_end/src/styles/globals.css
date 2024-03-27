@@ -273,6 +273,13 @@ body {
   .info {
     height: 0;
   }
+  .header-choco {
+    font-size: 15px;
+  }
+  .userHeadEmail {
+    font-size: 12px;
+    margin-right: 2px;
+  }
 }
 .swiper-button-next {
   right: 30vw !important;

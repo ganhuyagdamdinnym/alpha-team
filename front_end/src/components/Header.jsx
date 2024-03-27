@@ -19,8 +19,11 @@ export const Header = (props) => {
     <div className="w-full fixed t-0 h-10">
       <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] bg-white">
         <button onClick={() => jumptomain()}>
-          <p style={{ color: "#160d98" }} className="font-medium">
-            МАНАЙ ШОКОЛАД
+          <p
+            style={{ color: "#160d98" }}
+            className="font-medium border-b-[0.5px] border-[#160d98] px-1 header-choco"
+          >
+            ШОКОЛАД
           </p>
         </button>
         <Image
@@ -33,7 +36,10 @@ export const Header = (props) => {
           width={96}
         />
         <button onClick={jumptoAbout}>
-          <p style={{ color: "#160d98" }} className="font-medium">
+          <p
+            style={{ color: "#160d98" }}
+            className="font-medium border-b-[0.5px] border-[#160d98] px-1 header-choco"
+          >
             ТУХАЙ
           </p>
         </button>

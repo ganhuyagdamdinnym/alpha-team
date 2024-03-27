@@ -26,15 +26,10 @@ export const Login = (props) => {
   //     }
   //   }
   // };
-  const originalString = "Thisisas@mplestring";
-
-  // Split the string based on the space character
-  const parts = originalString.split("@");
-
+  const ShortEmail = token.split("@");
   // Take the first part of the split string
-  const cutString = parts[0]; // Or you can use destructuring like const [cutString] = parts;
-
-  console.log("con", cutString);
+  const cutString = ShortEmail[0]; // Or you can use destructuring like const [cutString] = parts;
+  //console.log("con", cutString);
   const loginCurrentUser = () => {
     if (token) {
       router.push("/buy");
@@ -83,7 +78,7 @@ export const Login = (props) => {
             onClick={() => loginCurrentUser()}
             className="w-full text-2xl py-1 bg-[red] rounded-xl text-[#dcd7d8] border-solid border-2 flex flex-col items-center"
           >
-            {token}
+            {cutString}
           </button>
         </div>
       </div>
