@@ -13,6 +13,7 @@ export default function Basket() {
   const [BuyStatus, setBuyStatus] = useState(false);
   const [price, setPrice] = useState(0);
   const router = useRouter();
+  const [cutEmail, setCutEmail] = useState("");
   const fetchLocalstorage = () => {
     //alert("hi");
     if (localStorage.getItem("basket") !== null) {
@@ -53,13 +54,15 @@ export default function Basket() {
       console.log("err", err);
     }
   };
-  const Email = token?.split("@");
-  const cutEmail = Email[0];
+  // const Email = token?.split("@");
+  // const newEmail = Email[0];
+
   useEffect(() => {
     UserData();
   }, [token]);
   useEffect(() => {
     fetchLocalstorage();
+    // setCutEmail(newEmail);
   }, []);
 
   return (
@@ -94,7 +97,7 @@ export default function Basket() {
             <div className="border-2 border-black rounded-full w-[25px] h-[25px] flex justify-center items-center">
               <Image src="user.svg" height={12} width={12} />
             </div>
-            <p>{cutEmail}</p>
+            <p></p>
           </div>
         </div>
       </div>

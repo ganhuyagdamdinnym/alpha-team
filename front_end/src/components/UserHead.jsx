@@ -1,13 +1,16 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 export const UserHead = (props) => {
   const router = useRouter();
   const { HandeHoppetStatus, userNumber } = props;
   const backToHome = () => {
     router.push("/");
   };
-  const email = userNumber.split("@");
-  const cutString = email[0];
+  useEffect((e) => {
+    const email = userNumber?.split("@");
+    const cutString = email[0];
+  }, []);
   return (
     <div className="flex items-center justify-center border-[#BE9131] border-b-[15px] py-2 px-4 relative">
       <button
