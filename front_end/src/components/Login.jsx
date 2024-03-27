@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useContext } from "react";
 import { UserTokenContext } from "@/pages/_app";
+import { Back_End_url } from "@/utils/back-url";
 import axios from "axios";
 export const Login = (props) => {
   const { relogin, email, setEmail, setCodeStatus, setLoginStat, loginStat } =
@@ -42,7 +43,7 @@ export const Login = (props) => {
       setCodeStatus(false);
       setLoginStat(false);
       try {
-        const url = `http://localhost:8002/loginByEmail/${email}`;
+        const url = `${Back_End_url}/loginByEmail/${email}`;
         await axios.get(url);
       } catch (err) {
         console.log(err);

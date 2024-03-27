@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import { UserHead } from "@/components/UserHead";
 import { UserTokenContext } from "./_app";
 import { ChocolateImfo } from "@/components/ChocolateImfo";
+//import { Back_End_url } from "../utils/back-url";
+import { Back_End_url } from "@/utils/back-url";
 export default function Buy() {
   const currentRef = useRef(null);
   const { token } = useContext(UserTokenContext);
@@ -19,7 +21,7 @@ export default function Buy() {
   const UserData = async () => {
     try {
       if (token) {
-        const url = `http://localhost:8002/UserData/${token}`;
+        const url = `${Back_End_url}/UserData/${token}`;
         const res = await axios.get(url);
         console.log(res.data.User);
         setUser(res.data.User);
@@ -36,7 +38,7 @@ export default function Buy() {
   };
   const fetchChocolateData = async () => {
     try {
-      const url = `http://localhost:8002/getChocolatedata`;
+      const url = `${Back_End_url}/getChocolatedata`;
       const res = await axios.get(url);
       setData(res.data);
       setSorts(res.data);

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Back_End_url } from "@/utils/back-url";
 export const Hoppet = (props) => {
   const { id, count, price, bag, fetchLocalStorage, name, image } = props;
   const [number, setNumber] = useState(count);
@@ -8,7 +9,7 @@ export const Hoppet = (props) => {
   const [Oneprice, setOnePrice] = useState(0);
   const fetchChocolateData = async () => {
     try {
-      const url = `http://localhost:8002/getChocolatedata`;
+      const url = `${Back_End_url}/getChocolatedata`;
       const res = await axios.get(url);
       const chocolote = res?.data?.filter((e) => e._id == id);
       console.log("price", chocolote.box_price);

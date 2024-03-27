@@ -1,5 +1,5 @@
 import { HomeChocolate } from "../components/HomeChocolate";
-import { HomeAboutCompany } from "../components/homeAboutCompany";
+import { HomeAboutCompany } from "../components/HomeAboutCompany";
 import { useEffect } from "react";
 export default function Home() {
   //hereg bolj magadgui

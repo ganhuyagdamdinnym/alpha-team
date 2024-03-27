@@ -2,6 +2,8 @@ import Image from "next/image";
 import axios from "axios";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Back_End_url } from "@/utils/back-url";
+// import { Back_End_url } from "@/pages/back-url";
 export const EnterCode = (props) => {
   const { email, back } = props;
   const router = useRouter();
@@ -94,7 +96,7 @@ export const EnterCode = (props) => {
           input5Ref.current.value +
           input6Ref.current.value;
         console.log(code, email);
-        const url = `http://localhost:8002/loginByEmail`;
+        const url = `${Back_End_url}/loginByEmail`;
         const res = await axios.post(url, {
           email: email,
           code: code,

@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { format, compareAsc } from "date-fns";
 import axios from "axios";
+import { Back_End_url } from "../utils/back-url";
 export default function Home() {
   const [data, setData] = useState();
   const fetchAllBuyerInfo = async () => {
     try {
-      const url = `http://localhost:8002/BuyersData`;
+      const url = `${Back_End_url}/BuyersData`;
       const res = await axios.get(url);
       setData(res?.data?.allBuyer);
       console.log(res.data.allBuyer);

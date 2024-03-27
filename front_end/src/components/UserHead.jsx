@@ -9,7 +9,7 @@ export const UserHead = (props) => {
   };
   useEffect((e) => {
     const email = userNumber?.split("@");
-    const cutString = email[0];
+    //const cutString = email[0];
   }, []);
   return (
     <div className="flex items-center justify-center border-[#BE9131] border-b-[15px] py-2 px-4 relative">
@@ -39,7 +39,7 @@ export const UserHead = (props) => {
         <div className="border-2 border-black rounded-full w-[25px] h-[25px] flex justify-center items-center">
           <Image src="user.svg" height={12} width={12} />
         </div>
-        <p>{cutString}</p>
+        <p></p>
       </div>
     </div>
   );

@@ -5,6 +5,8 @@ import { UserTokenContext } from "./_app";
 import axios from "axios";
 import { Hoppet } from "@/components/Hoppet";
 import { CashPart } from "@/components/CashPart";
+//import { Back_End_url } from "../utils/back-url";
+import { Back_End_url } from "@/utils/back-url";
 export default function Basket() {
   const currentRef = useRef(null);
   const [user, setUser] = useState();
@@ -45,7 +47,7 @@ export default function Basket() {
   const UserData = async () => {
     try {
       if (token) {
-        const url = `http://localhost:8002/UserData/${token}`;
+        const url = `${Back_End_url}/UserData/${token}`;
         const res = await axios.get(url);
         console.log(res.data.User);
         setUser(res.data.User);
