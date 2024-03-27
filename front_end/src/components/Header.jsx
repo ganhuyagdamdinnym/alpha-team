@@ -10,8 +10,8 @@ export const Header = (props) => {
     router.push("/main");
   };
   return (
-    <div className="w-full fixed t-0 h-10">
-      <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] bg-white">
+    <div className="w-full fixed top-0 z-20">
+      <div className="w-full flex justify-center text-white text-2xl gap-8 items-center  bg-white">
         <button onClick={() => jumptomain()}>
           <p style={{ color: "#160d98" }} className="font-medium">
             OUR CHOCOLATE

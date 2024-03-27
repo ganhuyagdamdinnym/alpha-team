@@ -95,7 +95,14 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
-
+.aboutPart {
+  display: grid;
+  grid-template-columns: 48% 48%;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
+  gap: 70px;
+}
 /* img {
     animation: image 1s;
   } */
