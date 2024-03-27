@@ -124,7 +124,7 @@ export default function Basket() {
         >
           <div
             style={{ position: "absolute", zIndex: 40 }}
-            className="w-[40%] h-[60%] bg-white border-[#BE9131] border-4 rounded-3xl cashPart"
+            className="cashPart  "
             ref={currentRef}
           >
             <CashPart allPrice={price} />

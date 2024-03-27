@@ -57,6 +57,10 @@ body {
 .basketButton:hover {
   background-color: rgb(204, 93, 93);
 }
+.text2 {
+  /* font-size: small; */
+  width: 70%;
+}
 .basketButton {
   transition: all 500ms;
 }
@@ -70,6 +74,14 @@ body {
   padding-top: 20px;
   gap: 70px;
   /* filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)); */
+}
+.cart {
+  /* flex flex-col gap-4 justify-center items-center*/
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
 }
 .buy-container {
   display: flex;
@@ -95,12 +107,21 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
-.div1{
+.div1 {
   /* flex flex-col justify-center items-center  */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.cashPart {
+  /* w-[40%] h-[60%] bg-white border-[#BE9131] border-4 rounded-3xl cashPart  */
+  width: 40%;
+  height: 60%;
+  background-color: white;
+  border: #be9131 4px solid;
+  border-radius: 30px;
+  overflow: auto;
 }
 
 /* img {
@@ -133,6 +154,23 @@ body {
     padding-top: 20px;
     gap: 30px;
   }
+  .cart {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .text1 {
+    font-size: medium;
+  }
+  .text2 {
+    font-size: small;
+    width: 70%;
+  }
   .homeAbout {
     display: flex;
     gap: 5vh;
@@ -150,11 +188,11 @@ body {
   } */
 }
 @media only screen and (max-width: 1200px) {
-  .logo{
+  .logo {
     width: 150px;
     height: 150px;
   }
-  .div1{
+  .div1 {
     /* flex flex-col justify-center items-center  */
     display: flex;
     flex-direction: column;
@@ -203,6 +241,10 @@ body {
     height: 400px;
     width: 350px;
   }
+  .cashPart {
+    width: 50%;
+    height: 50%;
+  }
   .buy-container {
     display: flex;
     justify-content: center;
@@ -236,6 +278,10 @@ body {
     padding-top: 20px;
     gap: 30px;
   }
+  .cashPart {
+    width: 80%;
+    height: 60%;
+  }
   .buy-container {
     display: flex;
     justify-content: center;
@@ -259,7 +305,7 @@ body {
   }
   .cashPart {
     width: 90%;
-    height: 600px;
+    height: 70%;
   }
   .chocolateSortBuy {
     font-size: 8px;
