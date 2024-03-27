@@ -83,10 +83,7 @@ export default function Buy() {
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
         className="w-full bg-white"
       >
-        <UserHead
-          HandeHoppetStatus={HandeHoppetStatus}
-          userNumber={user?.number}
-        />
+        <UserHead HandeHoppetStatus={HandeHoppetStatus} userNumber={token} />
       </div>
       <div style={{ position: "fixed", bottom: "0", left: "0", zIndex: 10 }}>
         <Buysort HandleSort={HandleSort} />

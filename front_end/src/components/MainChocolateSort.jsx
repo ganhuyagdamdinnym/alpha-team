@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { images } from "../chocolate/sort.js";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Virtual, Navigation, Pagination, Keyboard } from "swiper/modules";
-import { HandleSort } from "@/components/HandleSort";
+import { Data } from "@/components/data";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,60 +12,51 @@ import "swiper/css/navigation";
 export const MainChocolateSort = () => {
   const [swiperPerScreen, setSwiperPerScreen] = useState();
   const [color, setColor] = useState();
-  const [currentIndex, setCurrentIndex] = useState();
   const [swiperRef, setSwiperRef] = useState(null);
-  const [clickedSlide, setClickedSlide] = useState();
+  const [name, setName] = useState();
 
   const sortName = [
     {
-      name: "COLOURFUL VARIETY",
+      name: "ӨНГӨ ТӨРӨЛ",
       color: "red",
     },
     {
-      name: "NUT SELECTION",
-      color: "green",
-    },
-    {
-      name: "VEGAN RANGE",
-      color: "yellow",
+      name: "КАКАО СОНГОЛТ",
+      color: "rgb(255, 205, 74)",
     },
     {
       name: "MINI RANGE",
-      color: "brown",
+      color: "rgb(179, 126, 101)",
+    },
+    {
+      name: "CHOCO шоо",
+      color: "rgb(255, 0, 100)",
+    },
+    {
+      name: "250 гр БАР",
+      color: "rgb(24, 36, 98)",
+    },
+    {
+      name: "АМТТАЙ ДУРТАЙ",
+      color: "rgb(137, 198, 230)",
+    },
+    {
+      name: "САМРЫН СОНГОЛТ",
+      color: "rgb(59, 150, 43)",
     },
   ];
-  // const appendNumber = useRef(6);
-  // const [bgcolor, setBgcolor] = useState("green");
 
-  // const prependNumber = useRef(1);
-  // const [slides, setSlides] = useState(
-  //   Array.from({ length: 5 }).map((_, index) => `Slide ${index + 1}`)
-  // );
-  // const prepend = () => {
-  //   setSlides([
-  //     `Slide ${prependNumber.current - 2}`,
-  //     `Slide ${prependNumber.current - 1}`,
-  //     ...slides,
-  //   ]);
-  //   prependNumber.current = prependNumber.current - 2;
-  //   swiperRef.slideTo(swiperRef.activeIndex + 2, 0);
-  // };
-  // const append = () => {
-  //   setSlides([...slides, "Slide " + ++appendNumber.current]);
-  // };
-  // const slideTo = (index) => {
-  //   swiperRef.slideTo(index - 1, 0);
-  // };
   const ref = useRef(null);
   useEffect(() => {
     ref.current.focus();
   }, []);
   function handleTab(e) {
-    const index = images.forEach((file, index) => {
-      if (file.color === e) {
-        setClickedSlide(index);
+    const filt = images.filter((cur) => {
+      if (e.color === cur.color) {
+        return cur;
       }
     });
+    swiperRef.slideTo(images.indexOf(filt[0]) + 2);
   }
 
   useEffect(() => {
@@ -78,6 +69,7 @@ export const MainChocolateSort = () => {
       }
     }
   }, []);
+
   return (
     <div className="h-[100%]">
       <div className="flex h-[70%] oveflow-hidden max-[600px]:h-[40%] max-[600px]:text-[10px]">
@@ -94,9 +86,6 @@ export const MainChocolateSort = () => {
               slidesPerView={swiperPerScreen}
               loop={true}
               centeredSlides={true}
-              keyboard={{
-                enabled: true,
-              }}
               pagination={{
                 clickable: true,
                 type: "progressbar",
@@ -104,10 +93,9 @@ export const MainChocolateSort = () => {
               navigation={true}
               virtual
               onSlideChange={(swiperCore) => {
-                console.log("change");
                 const { realIndex } = swiperCore;
-                setCurrentIndex(realIndex);
                 setColor(images[realIndex].color);
+                setName(images[realIndex].name);
               }}
             >
               {images?.map((image, index) => {
@@ -150,14 +138,28 @@ export const MainChocolateSort = () => {
             <div className="w-screen flex">
               {sortName.map((e, index) => (
                 <div
-                  onClick={() => handleTab(e.color)}
                   key={index}
                   className="w-1/4 bg-[white] flex justify-center"
                 >
                   {color === e.color ? (
-                    <p style={{ backgroundColor: e.color }}>{e.name}</p>
+                    <p
+                      style={{
+                        backgroundColor: e.color,
+                        borderRadius: "10px",
+                      }}
+                    >
+                      {e.name}
+                    </p>
                   ) : (
-                    <p className={`bg-[white] `}>{e.name}</p>
+                    <p
+                      onClick={() => handleTab(e)}
+                      className={
+                        `bg-[white] ` +
+                        "hover:cursor-pointer p-[10px] text-center rounded-[20px]"
+                      }
+                    >
+                      {e.name}
+                    </p>
                   )}
                 </div>
               ))}
@@ -165,10 +167,24 @@ export const MainChocolateSort = () => {
           </div>
         </div>
       </div>
+      <p className="h-[30vh] info" style={{ backgroundColor: color }}></p>
       <div
-        className="w-[100vw] h-[30%] max-[600px]:h-[60%] max-[600px]:text-[10px]"
+        className="w-[100vw] h-[auto] max-[600px]:h-[60%] max-[600px]:text-[10px]"
         style={{ backgroundColor: color }}
-      ></div>
+      >
+        <div className=" flex items-center flex-wrap">
+          {Data.map((e, index) => {
+            return e.sort === name ? (
+              <div
+                key={index}
+                className="flex w-[20%] min-w-max-[300px] max-[1000px]:w-[100%] bg-cover "
+              >
+                <img src={e.image} alt="image"></img>
+              </div>
+            ) : null;
+          })}
+        </div>
+      </div>
     </div>
   );
 };

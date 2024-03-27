@@ -24,10 +24,11 @@ export default function App({ Component, pageProps }) {
   const [token, setToken] = useState();
 
   const checkToken = () => {
-    if (window) {
+    if (window == "/main") {
+    } else {
       const localToken = localStorage.getItem("token");
       if (localToken === null) {
-        router.push("/");
+        //router.push("/");
       } else {
         setToken(localToken);
       }

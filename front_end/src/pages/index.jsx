@@ -1,11 +1,7 @@
 import { HomeChocolate } from "../components/HomeChocolate";
 import { HomeAboutCompany } from "../components/homeAboutCompany";
-import data from "@/chocolate/data.json";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect } from "react";
 export default function Home() {
-  console.log(data);
-  const [loginStat, setLoginStat] = useState(false);
   //hereg bolj magadgui
   // const first = async () => {
   //   try {
@@ -25,11 +21,8 @@ export default function Home() {
   //     console.log(err);
   //   }
   // };
-  const LoginButtonPress = () => {
-    setLoginStat(!loginStat);
-  };
   const relogin = () => {
-    setLoginStat(false);
+    // setLoginStat(false);
   };
   useEffect(() => {
     //first();
@@ -66,21 +59,9 @@ export default function Home() {
   // useEffect(() => {
   //   fetchChocolateData();
   // }, []);
-  //map guih jishee
-  // {data?.map((e) => (
-  //   <div>
-  //     {e.name}
-  //     <img src={`${e.image}`} />
-  //   </div>
-  // ))}
   return (
     <div className={`overflow-y-auto`}>
-      <HomeChocolate
-        LoginButtonPress={LoginButtonPress}
-        loginStat={loginStat}
-        relogin={relogin}
-        setLoginStat={setLoginStat}
-      />
+      <HomeChocolate relogin={relogin} />
       <HomeAboutCompany />
     </div>
   );

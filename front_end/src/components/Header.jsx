@@ -9,21 +9,33 @@ export const Header = (props) => {
   const jumptomain = () => {
     router.push("/main");
   };
+  const jumptoAbout = () => {
+    router.push("/companyAbout");
+  };
+  const jumptoHome = () => {
+    router.push("/");
+  };
   return (
-    <div className="w-full">
-      <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] ">
+    <div className="w-full fixed t-0 h-10">
+      <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] bg-white">
         <button onClick={() => jumptomain()}>
-          <p>OUR CHOCOLATE</p>
+          <p style={{ color: "#160d98" }} className="font-medium">
+            МАНАЙ ШОКОЛАД
+          </p>
         </button>
         <Image
-          priority="true"
+          onClick={jumptoHome}
+          className="cursor-pointer"
+          priority={true}
           alt="logo"
           src="logo.svg"
           height={96}
           width={96}
         />
-        <button>
-          <p>ABOUT</p>
+        <button onClick={jumptoAbout}>
+          <p style={{ color: "#160d98" }} className="font-medium">
+            ТУХАЙ
+          </p>
         </button>
         <button onClick={() => LoginButtonPress()} className="buy">
           <p>ХУДАЛДАА ХИЙХ</p>

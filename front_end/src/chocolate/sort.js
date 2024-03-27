@@ -1,17 +1,52 @@
 export const images = [
+  // {
+  //   image: "/option_colorful.webp",
+  //   color: "red",
+  // },
+  // {
+  //   image: "/option_mini.webp",
+  //   color: "green",
+  // },
+  // {
+  //   image: "/option_nut.webp",
+  //   color: "brown",
+  // },
+  // { image: "/option_vegan.webp", color: "yellow" },
   {
-    image: "/option_colorful.webp",
+    name: "ӨНГӨ ТӨРӨЛ",
     color: "red",
+    image: "sortPhoto/colorful.webp",
   },
   {
-    image: "/option_mini.webp",
-    color: "green",
+    name: "КАКАО СОНГОЛТ",
+    color: "rgb(255, 205, 74)",
+    image: "sortPhoto/cocoa.webp",
   },
   {
-    image: "/option_nut.webp",
-    color: "brown",
+    name: "MINI RANGE",
+    color: "rgb(179, 126, 101)",
+    image: "sortPhoto/mini.webp",
   },
-  { image: "/option_vegan.webp", color: "yellow" },
+  {
+    name: "CHOCO шоо",
+    color: "rgb(255, 0, 100)",
+    image: "sortPhoto/choco.webp",
+  },
+  {
+    name: "250 гр БАР",
+    color: "rgb(24, 36, 98)",
+    image: "sortPhoto/250g.webp",
+  },
+  {
+    name: "АМТТАЙ ДУРТАЙ",
+    color: "rgb(137, 198, 230)",
+    image: "sortPhoto/tasty.webp",
+  },
+  {
+    name: "САМРЫН СОНГОЛТ",
+    color: "rgb(59, 150, 43)",
+    image: "sortPhoto/but.webp",
+  },
   // {
   //   image:
   //     "https://irp.cdn-website.com/6cb74a62/dms3rep/multi/SW_PG_overview.webp",
