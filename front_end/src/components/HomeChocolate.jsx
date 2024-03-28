@@ -12,7 +12,8 @@ export const HomeChocolate = (props) => {
   //   setCodeStatus(false);
   // };
   const LoginButtonPress = () => {
-    setLoginStat(!loginStat);
+    alert("hi");
+    setLoginStat(true);
   };
   const relogin = () => {
     setLoginStat(false);

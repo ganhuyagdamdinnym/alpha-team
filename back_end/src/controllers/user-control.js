@@ -1,31 +1,32 @@
 import { UserModel } from "../model/user-model.js";
-//import AxiosError from "axios"
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import { AxiosError } from "axios";
-export const createUser = async (req, res) => {
-  const alldata = await UserModel.find();
-  try {
-    let status = false;
-    const body = req.body;
-    console.log(alldata);
-    if (
-      alldata.filter((e) => {
-        e.number == body.number;
-      })
-    ) {
-      status = true;
-    }
-    if (status == true) {
-      res.status(200).json({ message: body.number });
-    } else {
-      await UserModel.create({
-        number: body.number,
-      });
-      res.status(200).json({ message: body.number });
-    }
-  } catch (err) {
-    console.log(err);
-  }
-};
+// export const createUser = async (req, res) => {
+//   const alldata = await UserModel.find();
+//   try {
+//     let status = false;
+//     const body = req.body;
+//     console.log(alldata);
+//     if (
+//       alldata.filter((e) => {
+//         e.number == body.number;
+//       })
+//     ) {
+//       status = true;
+//     }
+//     if (status == true) {
+//       res.status(200).json({ message: body.number });
+//     } else {
+//       await UserModel.create({
+//         number: body.number,
+//       });
+//       res.status(200).json({ message: body.number });
+//     }
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
 export const getUserData = async (req, res) => {
   const { token } = req.params;
   const PhoneNumber = Number(token);
@@ -89,10 +90,19 @@ export const loginByCode = async (req, res) => {
   const user = await UserModel.findOne({ email: email });
   console.log("email", user);
   if (user.code == code) {
-    res.status(200).json({ message: email });
+    if (bcrypt.compare(email)) {
+      // sha256
+      const token = jwt.sign({ id: email }, "SomeSecretKey", {
+        expiresIn: "2d",
+      });
+      res.status(200).json({ token });
+    } else {
+      res.status(405).json({ message: "hereglegch alga" });
+    }
   } else {
     res.status(200).json({ message: "not" });
   }
+  //bcrypt
 };
 export const UserBought = (req, res) => {
   // const { email, price } = req.body;

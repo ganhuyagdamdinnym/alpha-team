@@ -43,7 +43,7 @@ export const Header = (props) => {
             ТУХАЙ
           </p>
         </button>
-        <button onClick={() => LoginButtonPress()} className="buy">
+        <button onClick={() => LoginButtonPress()} className="buy rounded-xl">
           <p>ХУДАЛДАА ХИЙХ</p>
         </button>
       </div>

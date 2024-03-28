@@ -27,9 +27,9 @@ export const Login = (props) => {
   //     }
   //   }
   // };
-  const ShortEmail = token.split("@");
+  //const ShortEmail = token.split("@");
   // Take the first part of the split string
-  const cutString = ShortEmail[0]; // Or you can use destructuring like const [cutString] = parts;
+  //const cutString = ShortEmail[0]; // Or you can use destructuring like const [cutString] = parts;
   //console.log("con", cutString);
   const loginCurrentUser = () => {
     if (token) {
@@ -78,9 +78,7 @@ export const Login = (props) => {
           <button
             onClick={() => loginCurrentUser()}
             className="w-full text-2xl py-1 bg-[red] rounded-xl text-[#dcd7d8] border-solid border-2 flex flex-col items-center"
-          >
-            {cutString}
-          </button>
+          ></button>
         </div>
       </div>
       <div className="flex flex-col gap-3 full items-center">
