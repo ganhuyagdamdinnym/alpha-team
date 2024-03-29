@@ -3,8 +3,8 @@ import { useRouter } from "next/navigation";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
+import { AuthProvider } from "@/hook/authProvider";
 
-export const UserTokenContext = createContext({});
 // const firebaseConfig = {
 //   apiKey: "AIzaSyDPVatrQKiEBy2xZlRVwyFLxg9YCI8uJIA",
 //   authDomain: "test-a3593.firebaseapp.com",
@@ -20,26 +20,9 @@ export const UserTokenContext = createContext({});
 // auth.languageCode = "it";
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
-  const [token, setToken] = useState();
-
-  const checkToken = () => {
-    if (window == "/main") {
-    } else {
-      const localToken = localStorage.getItem("token");
-      if (localToken === null) {
-        router.push("/");
-      } else {
-        setToken(localToken);
-      }
-    }
-  };
-  useEffect(() => {
-    checkToken();
-  }, []);
   return (
-    <UserTokenContext.Provider value={{ token }}>
+    <AuthProvider>
       <Component {...pageProps} />
-    </UserTokenContext.Provider>
+    </AuthProvider>
   );
 }

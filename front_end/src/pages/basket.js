@@ -7,10 +7,12 @@ import { Hoppet } from "@/components/Hoppet";
 import { CashPart } from "@/components/CashPart";
 //import { Back_End_url } from "../utils/back-url";
 import { Back_End_url } from "@/utils/back-url";
+import { AuthContext } from "@/hook/authProvider";
 export default function Basket() {
   const currentRef = useRef(null);
-  const [user, setUser] = useState();
-  const { token } = useContext(UserTokenContext);
+  // const [user, setUser] = useState();
+  const { token, curUser: user } = useContext(AuthContext);
+
   const [bag, setBag] = useState();
   const [BuyStatus, setBuyStatus] = useState(false);
   const [price, setPrice] = useState(0);
@@ -44,29 +46,27 @@ export default function Basket() {
       setBuyStatus(false);
     }
   };
-  const UserData = async () => {
-    try {
-      if (token) {
-        const url = `${Back_End_url}/UserData/${token}`;
-        const res = await axios.get(url);
-        console.log(res.data.User);
-        setUser(res.data.User);
-      }
-    } catch (err) {
-      console.log("err", err);
-    }
-  };
+  // const UserData = async () => {
+  //   try {
+  //     if (token) {
+  //       const url = `${Back_End_url}/UserData/${token}`;
+  //       const res = await axios.get(url);
+  //       console.log(res.data.User);
+  //       setUser(res.data.User);
+  //     }
+  //   } catch (err) {
+  //     console.log("err", err);
+  //   }
+  // };
   // const Email = token?.split("@");
   // const newEmail = Email[0];
-
   useEffect(() => {
-    UserData();
+    // UserData();
   }, [token]);
   useEffect(() => {
     fetchLocalstorage();
     // setCutEmail(newEmail);
   }, []);
-
   return (
     <div onClick={() => back(currentRef)} className=" w-[100wv] h-[100hv] ]">
       <div
@@ -99,7 +99,7 @@ export default function Basket() {
             <div className="border-2 border-black rounded-full w-[25px] h-[25px] flex justify-center items-center">
               <Image src="user.svg" height={12} width={12} />
             </div>
-            <p></p>
+            <p>{user.email}</p>
           </div>
         </div>
       </div>

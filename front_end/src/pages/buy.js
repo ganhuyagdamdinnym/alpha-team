@@ -4,33 +4,34 @@ import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { UserHead } from "@/components/UserHead";
-import { UserTokenContext } from "./_app";
 import { ChocolateImfo } from "@/components/ChocolateImfo";
 import { Back_End_url } from "@/utils/back-url";
+import { AuthContext } from "@/hook/authProvider";
+
 export default function Buy() {
   const currentRef = useRef(null);
-  const { token } = useContext(UserTokenContext);
-  console.log("token", token);
+  const { token, curUser: user } = useContext(AuthContext);
+  // console.log("token", token);
   const router = useRouter();
   const [data, setData] = useState();
   const [sorts, setSorts] = useState();
-  const [user, setUser] = useState();
-  const UserData = async () => {
-    try {
-      if (token) {
-        const url = `${Back_End_url}/UserData`;
-        const res = await axios.get(url, {
-          headers: {
-            token: token,
-          },
-        });
-        console.log(res.data.User);
-        setUser(res.data.User);
-      }
-    } catch (err) {
-      console.log("err", err);
-    }
-  };
+  // const [user, setUser] = useState();
+  // const UserData = async () => {
+  //   try {
+  //     if (token) {
+  //       const url = `${Back_End_url}/UserData`;
+  //       const res = await axios.get(url, {
+  //         headers: {
+  //           token: token,
+  //         },
+  //       });
+  //       console.log(res.data.User);
+  //       setUser(res.data.User);
+  //     }
+  //   } catch (err) {
+  //     console.log("err", err);
+  //   }
+  // };
   const back = (ref) => {
     if (ref.current && !ref.current.contains(event.target)) {
       //alert("hi");
@@ -61,21 +62,23 @@ export default function Buy() {
   };
   useEffect(() => {
     fetchChocolateData();
-    UserData();
+    // UserData();
   }, []);
   useEffect(() => {
     // fetchChocolateData();
-    UserData();
+    // UserData();
   }, [token]);
   return (
     <div
       //onClick={() => back(currentRef)}
       className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-[#DCD7D8]`}
     >
-      <div className={`opacity-75 fixed w-screen h-screen bg-[#EAE2E3] border-2 border-[#be9131]`} >
+      <div
+        className={`opacity-75 fixed w-screen h-screen bg-[#EAE2E3] border-2 border-[#be9131]`}
+      >
         <button
           onClick={() => HandeHoppetStatus()}
-          style={{ position: "fixed", right: "20px", top: "35px", }}
+          style={{ position: "fixed", right: "20px", top: "35px" }}
           className="border-2 border-[#be9131]"
         >
           <Image src="hoppet2.svg" width={32} height={32} />
