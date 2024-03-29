@@ -61,50 +61,55 @@ export const Hoppet = (props) => {
     fetchChocolateData();
   }, []);
   return (
-    <div className="drop-shadow-2xl">
+    <div className="">
       {/* {data?.map((e) => ( */}
       <div>
-        <div className="border-2 border-[#DCDAD7] rounded-[10px] buyBorder bg-white z-0">
+        <div className="border-[3.5px] border-[#DCDAD7] rounded-[12px] buyBorder bg-white z-0">
           <img
             src={`${image}`}
             className="w-full rounded-t-[8px]"
             style={{ aspectRatio: "1" }}
           />
-          <div className="w-full  h-[100px] border-[#AD70E] px-4 ">
-            <h1 className="text-[#2C261F] h-12">{name}</h1>
-            <h1>Сагсан дахь ширхэг:{number}ш</h1>
-            <h1>Үнэ:{price}₮</h1>
-          </div>
-          {/* {minusStatus ? ( */}
-          <div className="w-full flex justify-center py-2">
-            <div className="flex py-2 px-2 gap-4 border-2 border-black ">
-              <Image
-                onClick={() => HandleCount()}
-                className="cursor-pointer"
-                src="minus.svg"
-                height={16}
-                width={16}
-              />
-              <p className="text-[20px]">{number}</p>
-              <Image
-                onClick={() => HandleCountPlus()}
-                className="cursor-pointer"
-                src="plus.svg"
-                height={16}
-                width={16}
-              />
+          <div className="flex flex-col items-center">
+            <div className="w-full h-[70px] border-[#AD70E] px-4 py-4">
+              <h1 className="text-[#2C261F] h-12 text-[12xl] font-semibold">
+                {name}
+              </h1>
             </div>
-            <button
-              onClick={() => abdicateBuy()}
-              className="py-1 border-black ] border-b-2 border-t-2 border-r-2 px-1 "
-            >
-              <Image
-                className="cursor-pointer"
-                src="xmark.svg"
-                height={24}
-                width={24}
-              />
-            </button>
+            <div className="w-full  px-4 ">
+              <h1 className="text-[12xl]">Үнэ:{price}₮</h1>
+              <div className="w-full flex items-center text-[12xl] py-3">
+                <h1>Тоо ширхэг:</h1>
+                <div className="flex px-2 gap-4">
+                  <Image
+                    onClick={() => HandleCount()}
+                    className="cursor-pointer opacity-[0.5] HandleChocolateCount"
+                    src="minus.svg"
+                    height={16}
+                    width={16}
+                  />
+                  <p className="text-[20px]">{number}</p>
+                  <Image
+                    onClick={() => HandleCountPlus()}
+                    className="cursor-pointer opacity-[0.5] HandleChocolateCount"
+                    src="plus.svg"
+                    height={16}
+                    width={16}
+                  />
+                </div>
+                <button
+                  onClick={() => abdicateBuy()}
+                  className="px-1 fixed top-1 right-0"
+                >
+                  <Image
+                    className="cursor-pointer"
+                    src="xmark.svg"
+                    height={24}
+                    width={24}
+                  />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

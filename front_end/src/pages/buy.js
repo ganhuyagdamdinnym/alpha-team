@@ -71,10 +71,10 @@ export default function Buy() {
   return (
     <div
       //onClick={() => back(currentRef)}
-      className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-[#DCD7D8]`}
+      className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-white`}
     >
-      <div
-        className={`opacity-75 fixed w-screen h-screen bg-[#EAE2E3] border-2 border-[#be9131]`}
+      {/* <div
+        className={`opacity-75 fixed w-screen h-screen bg-[white] border-2 border-[#be9131]`}
       >
         <button
           onClick={() => HandeHoppetStatus()}
@@ -83,7 +83,7 @@ export default function Buy() {
         >
           <Image src="hoppet2.svg" width={32} height={32} />
         </button>
-      </div>
+      </div> */}
 
       <div
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
@@ -94,7 +94,7 @@ export default function Buy() {
       <div style={{ position: "fixed", bottom: "0", left: "0", zIndex: 10 }}>
         <Buysort HandleSort={HandleSort} />
       </div>
-      <div className="grid-container mt-24 mb-8 min-w-88 bg-white">
+      <div className="grid-container mt-32 mb-8 min-w-88 bg-white ">
         {data?.map((e) => (
           <ChocolateImfo
             name={e.name}

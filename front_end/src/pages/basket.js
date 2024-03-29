@@ -12,7 +12,6 @@ export default function Basket() {
   const currentRef = useRef(null);
   // const [user, setUser] = useState();
   const { token, curUser: user } = useContext(AuthContext);
-
   const [bag, setBag] = useState();
   const [BuyStatus, setBuyStatus] = useState(false);
   const [price, setPrice] = useState(0);
@@ -46,27 +45,11 @@ export default function Basket() {
       setBuyStatus(false);
     }
   };
-  // const UserData = async () => {
-  //   try {
-  //     if (token) {
-  //       const url = `${Back_End_url}/UserData/${token}`;
-  //       const res = await axios.get(url);
-  //       console.log(res.data.User);
-  //       setUser(res.data.User);
-  //     }
-  //   } catch (err) {
-  //     console.log("err", err);
-  //   }
-  // };
-  // const Email = token?.split("@");
-  // const newEmail = Email[0];
-  useEffect(() => {
-    // UserData();
-  }, [token]);
+  useEffect(() => {}, [token]);
   useEffect(() => {
     fetchLocalstorage();
-    // setCutEmail(newEmail);
   }, []);
+
   return (
     <div onClick={() => back(currentRef)} className=" w-[100wv] h-[100hv] ]">
       <div
@@ -75,13 +58,13 @@ export default function Basket() {
       >
         <div className="flex items-center justify-center border-[#BE9131] border-b-[15px] py-2 px-4">
           <button
-            className="flex gap-4 px-2  ml-4 rounded-xl w-24 bg-[#DCD7D8] py-2 items-center justify-center fixed left-0"
+            className="flex gap-4 px-2  ml-4 rounded-xl w-24 bg-white py-2 items-center justify-center fixed left-0"
             onClick={() => backToBuyPart()}
           >
             <Image
               src="arrowBig.svg"
-              height={32}
-              width={32}
+              height={42}
+              width={42}
               className="basket"
               priority={true}
             />
@@ -89,23 +72,23 @@ export default function Basket() {
           </button>
           <Image
             onClick={() => BackToHome()}
-            className="cursor-pointer"
+            className="cursor-pointer logoInBasket"
             src="logo.svg"
-            width={64}
-            height={64}
+            width={96}
+            height={96}
             priority={true}
           />
           <div className="flex mr-4 gap-2 items-center fixed right-0 userHeadEmail">
-            <div className="border-2 border-black rounded-full w-[25px] h-[25px] flex justify-center items-center">
+            <div className="border-2 border-[#BE9131] rounded-full w-[25px] h-[25px] flex justify-center items-center">
               <Image src="user.svg" height={12} width={12} />
             </div>
-            <p>{user.email}</p>
+            <p>{user.name}</p>
           </div>
         </div>
       </div>
       <div
         onClick={() => back(currentRef)}
-        className={`buy-container mt-24 mb-8 w-full px-4 min-w-88 ${
+        className={`buy-container mt-32 mb-8 w-full px-4 min-w-88 ${
           BuyStatus ? "opacity-25" : null
         }`}
       >

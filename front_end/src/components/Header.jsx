@@ -1,11 +1,9 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-
 export const Header = (props) => {
   const router = useRouter();
   const { LoginButtonPress } = props;
   const header = ["About", "Our Chocolate", "Login"];
-
   const jumptomain = () => {
     router.push("/main");
   };

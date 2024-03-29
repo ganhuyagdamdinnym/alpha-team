@@ -32,8 +32,11 @@ export const AuthProvider = ({ children }) => {
             token: token,
           },
         });
-        console.log(res.data.User);
-        setCurUser(res.data.User);
+        // console.log(res.data.User);
+        const user = res.data.User.email;
+        const shortEmail = user.split("@");
+        const name = shortEmail[0];
+        setCurUser({ ...res.data.User, name });
       }
     } catch (err) {
       console.log("err", err);
