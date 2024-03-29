@@ -34,19 +34,19 @@ export default function About() {
   const data = [
     {
       bg_image: "/FEAHKWNWYAAZpSc-removebg-preview (1) (1).png",
-      title: "Риттер Спорт шоколадны үүсэл",
+      title: "АЛЬФРЕД,КЛАРА РИТТЭР НАР ҮҮСГЭН БАЙГУУЛСАН",
       year: "1912",
       textColor: "#009a91",
     },
     {
-      bg_image: "Untitled design (1).png",
-      title: "Яагаад дөрвөлжин шокалад гэж?",
+      bg_image: "Untitled design (1) (1).png",
+      title: "АНХНЫ ДӨРВӨЛЖИН ХЭЛБЭРТЭЙ ЗАГВАРАА ГАРГАСАН",
       year: "1932",
       textColor: "#7fa97e",
     },
     {
       bg_image: "/xconvert.com-1-removebg-preview (1) (1).png",
-      title: "Нэр төрлөө нэмэгдүүлсэн нь",
+      title: "НЭР ТӨРЛӨӨ НЭМЭГДҮҮЛЖ,ОДООГИЙН ҮНДСЭН ӨНГӨ ТӨРХӨӨ БИЙ БОЛГОСОН",
       year: "1974",
       textColor: "#7fa97e",
     },
@@ -54,24 +54,28 @@ export default function About() {
   const data_1 = [
     {
       bg_image: "/RitterSport_Headquarter (1).jpg",
-      title: "Риттер Спорт шоколадны үүсэл",
+      title:
+        "АНХНЫ ҮЙЛДВЭРЭЭ КАННСТАТ (ГЕРМАН) ХОТОД БАЙГУУЛСАН БА ХОЖИМ НЬ ВАЛДЕНБУХ РУУ НҮҮЖ ӨНӨӨГ ХҮРТЭЛ ТЭНДЭЭ ҮЙЛ АЖИЛЛАГААГАА ЯВУУЛЖ БАЙНА",
       textColor: "#009a91",
     },
     {
       bg_image:
         "/canva-travel-summer-concept-with-earth-map-ball-on-sand-1 (1).png",
-      title: "Яагаад дөрвөлжин шокалад гэж?",
+      title:
+        "ДЭЛХИЙН 100 ГАРУЙ УЛС,ОРОНД ХУДАЛДААЛАГДДАГ БА ЧАНАР БОЛОН БОРЛУУЛАЛТААРАА ГЕРМАНД №2,ЕВРОПТ №3 ОРДОГ",
       textColor: "#7fa97e",
     },
     {
-      bg_image: "/ritter-sport-01-jpg.png",
-      title: "Нэр төрлөө нэмэгдүүлсэн нь",
+      bg_image: "/ritter-sport-01-jpg (1).png",
+      title:
+        "ВАЛДЕНБУХ(ГЕРМАН) БРАЙТЕНБРУНН(АВСТРИ) ЗЭРЭГ 2 ҮЙЛДВЭРЭЭС ӨДӨРТ ХАМГИЙН БАГАДАА 3 САЯ БААР ҮЙЛДВЭРЛДЭГ",
       textColor: "#7fa97e",
     },
     {
       bg_image:
         "/Ritter-Sport-to-get-closer-to-origins-after-reaching-100-certified-cocoa (1).jpg",
-      title: "Нэр төрлөө нэмэгдүүлсэн нь",
+      title:
+        "НИКИРАГУА ДАХЬ ЭЛЬ КАКАО ФЕРМ ДЭЭР ӨӨРИЙН КАКАО ТАРИАЛАЛТАА ХИЙДЭГ",
       textColor: "#7fa97e",
     },
   ];
@@ -107,51 +111,55 @@ export default function About() {
   return (
     <div className="bg-white">
       <Header />
-      <div className="flex flex-col pt-[10vh] justify-center">
-        <div className="flex justify-evenly justify-center">
-          {data.map((dta) => (
-            <div className="flex flex-col place-content-center gap-[1vh]">
-              <img src={dta.bg_image} className="w-4/5 h-4/5 border-b-2" />
-              <p className="text-[2vh] text-black align-center">{dta.year}</p>
-              <button
-                style={{ background: dta.textColor }}
-                className="w-[2vh] h-[2vh] text-[1.5vh]"
-              ></button>
-              <p
-                style={{ color: dta.textColor }}
-                className="text-black w-full text-[1.5vh] font-light"
-              >
-                {dta.title}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div className="w-full h-auto flex justify-evenly pt-[10vh]">
+        {data.map((dta) => (
+          <div className="flex flex-col gap-[2vh] w-1/6 items-center">
+            <img src={dta.bg_image} className="w-full h-[28vh]" />
+            <p
+              style={{ color: dta.textColor }}
+              className="text-[2.8vh] text-black "
+            >
+              {dta.year}
+            </p>
+
+            <button
+              style={{ background: dta.textColor }}
+              className="w-[2.5vh] h-[2.5vh] text-[1.5vh]"
+            ></button>
+            <p className="text-black  text-[2vh] font-light">{dta.title}</p>
+          </div>
+        ))}
       </div>
-      <div className="w-screen flex aboutPart pb-[2vh]">
+      <div className="w-screen flex aboutPart place-content-around">
         {data_1.map((dta) => (
           <div>
-            <img src={dta.bg_image} className="w-full h-full" />
-            <div className="flex">
+            <img src={dta.bg_image} className="w-full h-4/5" />
+            <div className="flex gap-4 w-full">
               <div
-                className="w-[2vh] h-[2vh]"
+                className="w-[3vh] h-[3vh]"
                 style={{ background: dta.textColor }}
               ></div>
-              <p>{dta.title}</p>
+              <span className="text-[2.2vh] w-full">{dta.title}</span>
             </div>
           </div>
         ))}
       </div>
-      <img
-        className="w-screen place-self-center"
-        src="/387846203_348878714323255_7632759952354299977_n (1) (1).jpg"
-      />
-      <div className="flex flex-col place-items-center gap-[4vh]">
+      <div className="w-full flex justify-center">
+        <img
+          className="w-4/6 align-center"
+          src="/387846203_348878714323255_7632759952354299977_n (1) (1) (1).jpg"
+        />
+      </div>
+      <div className="flex flex-col w-full items-center gap-[4vh]">
         {data_2.map((dta) => (
-          <div className="flex w-3/4 gap-[10vh]">
-            <img src={dta.bg_image} className="w-1/6" />
+          <div className="flex w-2/3 gap-[10vh] items-center">
+            <img
+              src={dta.bg_image}
+              className="w-1/6 h-1/6 pr-[3vh] items-center"
+            />
             <p className="font-semibold place-self-center text-[3vh]">
               {dta.text1}
-              {dta.text2}
+              <span className="font-thin">{dta.text2}</span>
             </p>
           </div>
         ))}
