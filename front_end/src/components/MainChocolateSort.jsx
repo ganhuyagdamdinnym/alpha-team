@@ -18,48 +18,51 @@ export const MainChocolateSort = () => {
 
   const sortName = [
     {
-      name: "ӨНГӨ ТӨРӨЛ",
+      name: "COLOURFUL VARIETY",
       color: "red",
-    },
-    {
-      name: "КАКАО СОНГОЛТ",
-      color: "rgb(255, 205, 74)",
-    },
-    {
-      name: "MINI RANGE",
-      color: "rgb(179, 126, 101)",
-    },
-    {
-      name: "CHOCO шоо",
-      color: "rgb(255, 0, 100)",
-    },
-    {
-      name: "250 гр БАР",
-      color: "rgb(24, 36, 98)",
-    },
-    {
-      name: "АМТТАЙ ДУРТАЙ",
-      color: "rgb(137, 198, 230)",
-    },
-    {
-      name: "САМРЫН СОНГОЛТ",
-      color: "rgb(59, 150, 43)",
-    },
-  ];
-  const favtext = [
-    {
       title: "MORE IS JUST MORE",
-      id: "",
       content:
         "We live and love variety. With our colorful range, it is also literally on everyone's lips. With such a large selection, it's not easy to find your absolute favourite. But the good thing is: you don't have to choose between Marzipan, Nougat or Alpine Milk Chocolate, for example. You can even have more than one favourite flavor.",
     },
     {
-      title: "",
+      name: "NUT SELECTION",
+      color: "rgb(59, 150, 43)",
+      title: "NUTTING BUT THE BEST",
+      content:
+        "Whether hazelnuts, almonds, or cashews - we fully load our squares to the top with the best nuts! How we still get 100% certified sustainable cocoa around it remains our secret. One thing is for sure though: with our Nut Selection, we redefine the concept of nut chocolate.",
+    },
+    {
+      name: "COCOA SELECTION",
+      color: "rgb(255, 205, 74)",
+      title: "REDUCED TO THE MMMHHH!",
+      content:
+        "Our Cocoa Selection concentrates on the essentials because there is not much else than cacao in our Cocoa Selection. Only 3 or 4 ingredients - good chocolate does not need more! The cocoa in each bar comes from just one country of origin - Ghana, Nicaragua, or Peru and is 100% certified sustainable.",
+    },
+    {
+      name: "CHOCO CUBES",
+      color: "rgb(255, 0, 100)",
+      title: "THERE IS ALWAYS AN OCCASION",
+      content:
+        "Now that's a truly tasty gift idea! Our compact all-in-one packages are filled to the brim with delicious flavours. And thanks to the beautiful design, you don't even need gift paper. Don't say it with flowers, say it with cubes!",
+    },
+    {
+      name: "MINI RANGE",
+      color: "rgb(179, 126, 101)",
+      title: "SAY HIGH TO OUR MINIS",
+      content:
+        "With our Choco Towers, our little squares make their grand entrance. In three delicious collections, the minis ensure maximum enjoyment. Thanks to their cardboard packaging, they are perfect as a gift - but of course you can also enjoy them yourself.",
+    },
+    {
+      name: "250G BARS",
+      color: "rgb(24, 36, 98)",
+      title: "SOMETIMES SIZE MATTERS",
+      content:
+        "For example, if you want to give a very special person a very special treat. Or when you simply can't get enough of your favourite flavour. Because when it comes to chocolate, you should think big - and only settle for the best.",
     },
   ];
   const ref = useRef(null);
   useEffect(() => {
-    ref.current.focus();
+    ref.current;
   }, []);
   function handleTab(e) {
     const filt = images.filter((cur) => {
@@ -100,10 +103,12 @@ export const MainChocolateSort = () => {
               // onSwiper={setSwiperRef}
               slidesPerView={swiperPerScreen}
               loop={true}
+              swiperElementNodeName=""
               centeredSlides={true}
               pagination={{
                 clickable: true,
                 type: "progressbar",
+                el: "",
               }}
               navigation={true}
               virtual
@@ -172,7 +177,7 @@ export const MainChocolateSort = () => {
                     <p
                       onClick={() => handleTab(e)}
                       className={
-                        `bg-[rgb(255, 240, 180)] ` +
+                        `bg-[rgb(255, 24  0, 180)] ` +
                         "hover:cursor-pointer p-[10px] text-center rounded-[20px]"
                       }
                     >
@@ -198,7 +203,7 @@ export const MainChocolateSort = () => {
             return e.sort === name ? (
               <div
                 key={index}
-                className="flex w-[20%] min-w-max-[300px] max-[1000px]:w-[100%] bg-cover "
+                className="flex w-[20%] min-w-max-[300px] max-[1000px]:w-[50%] bg-cover "
               >
                 <img src={e.image} alt="image"></img>
               </div>
