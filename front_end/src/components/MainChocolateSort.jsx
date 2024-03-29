@@ -8,6 +8,7 @@ import { Data } from "@/components/data";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Header } from "./Header.jsx";
 
 export const MainChocolateSort = () => {
   const [swiperPerScreen, setSwiperPerScreen] = useState();
@@ -45,7 +46,17 @@ export const MainChocolateSort = () => {
       color: "rgb(59, 150, 43)",
     },
   ];
-
+  const favtext = [
+    {
+      title: "MORE IS JUST MORE",
+      id: "",
+      content:
+        "We live and love variety. With our colorful range, it is also literally on everyone's lips. With such a large selection, it's not easy to find your absolute favourite. But the good thing is: you don't have to choose between Marzipan, Nougat or Alpine Milk Chocolate, for example. You can even have more than one favourite flavor.",
+    },
+    {
+      title: "",
+    },
+  ];
   const ref = useRef(null);
   useEffect(() => {
     ref.current.focus();
@@ -72,7 +83,11 @@ export const MainChocolateSort = () => {
 
   return (
     <div className="h-[100%]">
-      <div className="flex h-[70%] oveflow-hidden max-[600px]:h-[40%] max-[600px]:text-[10px]">
+      <div className="absolute top-[-1.7vh]">
+        <Header></Header>
+      </div>
+
+      <div className="flex mt-[100px] h-[70%] oveflow-hidden max-[600px]:h-[40%] max-[600px]:text-[10px]">
         <div
           className="overflow-hidden w-full h-full flex "
           ref={ref}
@@ -138,14 +153,17 @@ export const MainChocolateSort = () => {
             <div className="w-screen flex">
               {sortName.map((e, index) => (
                 <div
+                  style={{ backgroundColor: "rgb(255, 240, 180)" }}
                   key={index}
-                  className="w-1/4 bg-[white] flex justify-center"
+                  className="w-1/4 flex justify-center"
                 >
                   {color === e.color ? (
                     <p
                       style={{
                         backgroundColor: e.color,
-                        borderRadius: "10px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
                       }}
                     >
                       {e.name}
@@ -154,7 +172,7 @@ export const MainChocolateSort = () => {
                     <p
                       onClick={() => handleTab(e)}
                       className={
-                        `bg-[white] ` +
+                        `bg-[rgb(255, 240, 180)] ` +
                         "hover:cursor-pointer p-[10px] text-center rounded-[20px]"
                       }
                     >
@@ -167,7 +185,10 @@ export const MainChocolateSort = () => {
           </div>
         </div>
       </div>
-      <p className="h-[30vh] info" style={{ backgroundColor: color }}></p>
+      <div
+        className="h-[30vh] info flex justify-center items-center"
+        style={{ backgroundColor: color }}
+      ></div>
       <div
         className="w-[100vw] h-[auto] max-[600px]:h-[60%] max-[600px]:text-[10px]"
         style={{ backgroundColor: color }}

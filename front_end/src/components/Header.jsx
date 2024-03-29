@@ -16,7 +16,7 @@ export const Header = (props) => {
     router.push("/");
   };
   return (
-    <div className="w-full fixed t-0 h-10">
+    <div className="w-full fixed t-0 h-10 z-[9999999]">
       <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] bg-white">
         <button onClick={() => jumptomain()}>
           <p style={{ color: "#160d98" }} className="font-medium">
