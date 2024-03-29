@@ -28,10 +28,11 @@ import { AxiosError } from "axios";
 //   }
 // };
 export const getUserData = async (req, res) => {
-  const { token } = req.params;
-  const PhoneNumber = Number(token);
-  const User = await UserModel.findOne({ number: PhoneNumber });
-  // console.log("user", User);
+  const user = req.user;
+  console.log("token", user);
+  //const PhoneNumber = Number(token);
+  const User = await UserModel.findOne({ email: user.id });
+  // / console.log("user", User);
   res.status(200).json({ User });
 };
 export const inputChocolateToBasket = async (req, res) => {
@@ -79,7 +80,6 @@ export const loginByEmail = async (req, res) => {
         }
       );
     }
-    // return updatedUser;
   } catch (err) {
     console.log(err);
   }
@@ -95,6 +95,7 @@ export const loginByCode = async (req, res) => {
       const token = jwt.sign({ id: email }, "SomeSecretKey", {
         expiresIn: "2d",
       });
+      console.log("hi", token);
       res.status(200).json({ token });
     } else {
       res.status(405).json({ message: "hereglegch alga" });

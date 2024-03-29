@@ -111,8 +111,9 @@ export const EnterCode = (props) => {
           input6Ref.current.value = "";
           input1Ref.current.focus();
         } else {
-          const name = res.data.message;
-          localStorage.setItem("token", name);
+          const token = res.data.token;
+          console.log("token", res.data);
+          localStorage.setItem("token", token);
           localStorage.removeItem("basket");
           if (name == "dulamsuren894@gmail.com") {
             router.push("/admin");
@@ -125,7 +126,6 @@ export const EnterCode = (props) => {
       }
     }
   };
-
   return (
     <div className="w-[350px] h-[300px] bg-[#F06742] flex flex-col gap-4 py-2 rounded-xl border-2 border-white relative">
       <div onClick={back} className=" absolute right-2 top-2">

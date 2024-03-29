@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { UserHead } from "@/components/UserHead";
 import { UserTokenContext } from "./_app";
 import { ChocolateImfo } from "@/components/ChocolateImfo";
-//import { Back_End_url } from "../utils/back-url";
 import { Back_End_url } from "@/utils/back-url";
 export default function Buy() {
   const currentRef = useRef(null);
@@ -16,13 +15,15 @@ export default function Buy() {
   const [data, setData] = useState();
   const [sorts, setSorts] = useState();
   const [user, setUser] = useState();
-
-  //const [hoppetStatus, setHoppetStatus] = useState(false);
   const UserData = async () => {
     try {
       if (token) {
-        const url = `${Back_End_url}/UserData/${token}`;
-        const res = await axios.get(url);
+        const url = `${Back_End_url}/UserData`;
+        const res = await axios.get(url, {
+          headers: {
+            token: token,
+          },
+        });
         console.log(res.data.User);
         setUser(res.data.User);
       }
@@ -63,7 +64,7 @@ export default function Buy() {
     UserData();
   }, []);
   useEffect(() => {
-    fetchChocolateData();
+    // fetchChocolateData();
     UserData();
   }, [token]);
   return (
@@ -84,7 +85,7 @@ export default function Buy() {
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
         className="w-full bg-white"
       >
-        <UserHead HandeHoppetStatus={HandeHoppetStatus} userNumber={token} />
+        <UserHead HandeHoppetStatus={HandeHoppetStatus} userEmail={user} />
       </div>
       <div style={{ position: "fixed", bottom: "0", left: "0", zIndex: 10 }}>
         <Buysort HandleSort={HandleSort} />
@@ -99,8 +100,6 @@ export default function Buy() {
             image={e.image}
             id={e._id}
             currentRef={currentRef}
-            // handleCount={handleCount}
-            // setHandleCount={setHandleCount}
           />
         ))}
       </div>
