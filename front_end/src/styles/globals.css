@@ -337,8 +337,11 @@ body {
     padding-top: 20px;
     gap: 70px;
   }
-  .info {
-    height: 0;
+  .swiper-button-next {
+    right: 0 !important;
+  }
+  .swiper-button-prev {
+    left: 0 !important;
   }
   .header-choco {
     font-size: 15px;
@@ -348,9 +351,7 @@ body {
     margin-right: 2px;
   }
 }
-.swiper-button-next {
-  right: 30vw !important;
-}
-.swiper-button-prev {
-  left: 30vw !important;
+body {
+  --swiper-navigation-sides-offset: 30vw;
+  user-select: none;
 }
