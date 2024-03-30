@@ -86,8 +86,9 @@ body {
 .HandleChocolateCount {
   transition: all 500ms;
 }
-.HandleChocolateCount:hover {
-  /* background-color: black; */
+.swiper {
+  height: 95vh !important;
+  overflow-x: hidden;
 }
 .buy-container {
   display: flex;
@@ -354,4 +355,5 @@ body {
 body {
   --swiper-navigation-sides-offset: 30vw;
   user-select: none;
+  overflow-x: hidden;
 }
