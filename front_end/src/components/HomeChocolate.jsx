@@ -7,21 +7,13 @@ export const HomeChocolate = (props) => {
   const [loginStat, setLoginStat] = useState(false);
   const [codeStatus, setCodeStatus] = useState(true);
   const [email, setEmail] = useState("");
-  // const createUser = () => {
-  //   setLoginStat(false);
-  //   setCodeStatus(false);
-  // };
   const LoginButtonPress = () => {
-    alert("hi");
     setLoginStat(true);
   };
   const relogin = () => {
     setLoginStat(false);
   };
-  const tester = () => {
-    // setCodeStatus(false);
-    // setLoginStat(false);
-  };
+  const tester = () => {};
   const back = () => {
     setCodeStatus(true);
   };
