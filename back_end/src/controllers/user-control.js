@@ -1,38 +1,14 @@
 import { UserModel } from "../model/user-model.js";
+//import bcrypt from "bcrypt";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { AxiosError } from "axios";
-// export const createUser = async (req, res) => {
-//   const alldata = await UserModel.find();
-//   try {
-//     let status = false;
-//     const body = req.body;
-//     console.log(alldata);
-//     if (
-//       alldata.filter((e) => {
-//         e.number == body.number;
-//       })
-//     ) {
-//       status = true;
-//     }
-//     if (status == true) {
-//       res.status(200).json({ message: body.number });
-//     } else {
-//       await UserModel.create({
-//         number: body.number,
-//       });
-//       res.status(200).json({ message: body.number });
-//     }
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
+import nodemailer from "nodemailer";
 export const getUserData = async (req, res) => {
   const user = req.user;
-  console.log("token", user);
-  //const PhoneNumber = Number(token);
+  //console.log("token", user);
   const User = await UserModel.findOne({ email: user.id });
-  // / console.log("user", User);
+  console.log("bolsoo", user);
   res.status(200).json({ User });
 };
 export const inputChocolateToBasket = async (req, res) => {
@@ -40,7 +16,7 @@ export const inputChocolateToBasket = async (req, res) => {
   console.log("body", req.body);
 };
 //email
-import nodemailer from "nodemailer";
+
 //const password = process.env.APP_HOST_EMAIL_PASSWORD;
 const transport = nodemailer.createTransport({
   service: "gmail",

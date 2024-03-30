@@ -80,7 +80,7 @@ export const ChocolateImfo = (props) => {
         className="w-full rounded-t-[8px]"
         style={{ aspectRatio: "1" }}
       />
-      <div className="w-full h-[130px] border-[#AD70E] px-4 ">
+      <div className="w-full h-[130px] border-[#AD70E] px-4 font-semibold">
         <h1 className="text-[#2C261F] h-12">{name}</h1>
         <h1 className="text-[#2C261F]">Ширхэгийн үнэ: {unit_price} ₮</h1>
         <h1 className="text-[#2C261F]">Хайрцгийн үнэ: {box_price} ₮</h1>

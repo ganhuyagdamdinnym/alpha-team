@@ -76,7 +76,7 @@ export const Hoppet = (props) => {
                 {name}
               </h1>
             </div>
-            <div className="w-full  px-4 ">
+            <div className="w-full  px-4 font-semibold ">
               <h1 className="text-[12xl]">Үнэ:{price}₮</h1>
               <div className="w-full flex items-center text-[12xl] py-3">
                 <h1>Тоо ширхэг:</h1>
