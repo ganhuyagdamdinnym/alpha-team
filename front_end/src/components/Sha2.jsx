@@ -84,7 +84,10 @@ export default function MainPageGlitchFix() {
   }
   return (
     <div className="">
-      <div className="w-[100vw] h-[100vh] flex flex-col">
+      <div
+        className="w-[100vw] h-[100vh] flex flex-col"
+        style={{ backgroundColor: mainStreamPipeForState.color }}
+      >
         <div className="mt-[-20px]">
           <Header />
         </div>
@@ -119,7 +122,9 @@ export default function MainPageGlitchFix() {
                 style={{ backgroundColor: e.color }}
                 key={index}
               >
-                <img height="auto" src={e.image}></img>
+                <div className="w-[25vw] h-[25vw] flex justify-center items-center">
+                  <img src={e.image}></img>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -132,7 +137,7 @@ export default function MainPageGlitchFix() {
           }}
         >
           <div className="w-[70vw]">
-            <h1 className="text-[46px] font-bold">
+            <h1 className="text-[35px] font-bold">
               {mainStreamPipeForState.title}
             </h1>
             <p className="text-[24px]">{mainStreamPipeForState.content}</p>
@@ -141,7 +146,7 @@ export default function MainPageGlitchFix() {
         <div
           style={{ backgroundColor: mainStreamPipeForState.accentColor }}
           className={
-            "sticky z-[99999999] bottom-0 gap-[20px] flex justify-evenly"
+            "fixed z-[99999999] w-[100vw] top-[95vh] gap-[20px] flex justify-evenly"
           }
         >
           {MainStreamDataForSwiperCover.map((e, index) =>
@@ -174,7 +179,10 @@ export default function MainPageGlitchFix() {
         </div>
       </div>
 
-      <div className="flex items-center flex-wrap">
+      <div
+        className="flex items-center flex-wrap"
+        style={{ backgroundColor: mainStreamPipeForState.color }}
+      >
         {Data.map((e, index) => {
           return e.sort == mainStreamPipeForState.name ? (
             <img
