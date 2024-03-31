@@ -26,9 +26,7 @@ body {
 .chocolateSortBuy:hover {
   background-color: #ebe9e6;
 }
-.swiper-wrapper {
-  margin: 80px;
-}
+
 .buy {
   /* p-[10px] bg-[#3c3c3c] backdrop-blur-[20px] border-2 border-white text-white  text-2xl absolute right-0 flex mr-4 items-center */
   padding: 10px;
@@ -89,10 +87,7 @@ body {
 .HandleChocolateCount {
   transition: all 500ms;
 }
-.swiper {
-  height: 95vh !important;
-  overflow-x: hidden;
-}
+
 .buy-container {
   display: flex;
   justify-content: center;
@@ -360,3 +355,11 @@ body {
   user-select: none;
   overflow-x: hidden;
 }
+
+/* .swiper-wrapper {
+  margin: 80px;
+} */
+/* .swiper {
+  height: 95vh !important;
+  overflow-x: hidden;
+} */
