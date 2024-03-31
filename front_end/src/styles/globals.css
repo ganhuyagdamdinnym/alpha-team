@@ -356,10 +356,10 @@ body {
   overflow-x: hidden;
 }
 
-/* .swiper-wrapper {
+.swiper-wrapper {
   margin: 80px;
-} */
-/* .swiper {
+}
+.swiper {
   height: 95vh !important;
   overflow-x: hidden;
-} */
+}
