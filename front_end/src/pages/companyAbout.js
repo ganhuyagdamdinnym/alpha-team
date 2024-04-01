@@ -1,6 +1,7 @@
 import { data } from "autoprefixer";
 import Image from "next/image";
 import { Header } from "@/components/Header";
+import { HomeAboutCompany } from "@/components/HomeAboutCompany";
 export default function About() {
   //   <div className="flex flex-wrap">
   //   <div className="flex flex-col text-wrap">
@@ -48,7 +49,7 @@ export default function About() {
       bg_image: "/xconvert.com-1-removebg-preview (1) (1).png",
       title: "НЭР ТӨРЛӨӨ НЭМЭГДҮҮЛЖ,ОДООГИЙН ҮНДСЭН ӨНГӨ ТӨРХӨӨ БИЙ БОЛГОСОН",
       year: "1974",
-      textColor: "#7fa97e",
+      textColor: "#FFDF00",
     },
   ];
   const data_1 = [
@@ -56,27 +57,27 @@ export default function About() {
       bg_image: "/RitterSport_Headquarter (1).jpg",
       title:
         "АНХНЫ ҮЙЛДВЭРЭЭ КАННСТАТ (ГЕРМАН) ХОТОД БАЙГУУЛСАН БА ХОЖИМ НЬ ВАЛДЕНБУХ РУУ НҮҮЖ ӨНӨӨГ ХҮРТЭЛ ТЭНДЭЭ ҮЙЛ АЖИЛЛАГААГАА ЯВУУЛЖ БАЙНА",
-      textColor: "#009a91",
+      textColor: "#FFDF00",
     },
     {
       bg_image:
         "/canva-travel-summer-concept-with-earth-map-ball-on-sand-1 (1).png",
       title:
-        "ДЭЛХИЙН 100 ГАРУЙ УЛС,ОРОНД ХУДАЛДААЛАГДДАГ БА ЧАНАР БОЛОН БОРЛУУЛАЛТААРАА ГЕРМАНД №2,ЕВРОПТ №3 ОРДОГ",
+        "ДЭЛХИЙН 100 ГАРУЙ УЛС, ОРОНД ХУДАЛДААЛАГДДАГ БА ЧАНАР БОЛОН БОРЛУУЛАЛТААРАА ГЕРМАНД №2, ЕВРОПТ №3 ОРДОГ",
       textColor: "#7fa97e",
     },
     {
       bg_image: "/ritter-sport-01-jpg (1).png",
       title:
         "ВАЛДЕНБУХ(ГЕРМАН) БРАЙТЕНБРУНН(АВСТРИ) ЗЭРЭГ 2 ҮЙЛДВЭРЭЭС ӨДӨРТ ХАМГИЙН БАГАДАА 3 САЯ БААР ҮЙЛДВЭРЛДЭГ",
-      textColor: "#7fa97e",
+      textColor: "#FF2400",
     },
     {
       bg_image:
         "/Ritter-Sport-to-get-closer-to-origins-after-reaching-100-certified-cocoa (1).jpg",
       title:
         "НИКИРАГУА ДАХЬ ЭЛЬ КАКАО ФЕРМ ДЭЭР ӨӨРИЙН КАКАО ТАРИАЛАЛТАА ХИЙДЭГ",
-      textColor: "#7fa97e",
+      textColor: "#0000FF",
     },
   ];
   const data_2 = [
@@ -87,25 +88,21 @@ export default function About() {
       text1: "RAINFOREST ALLIANCE ",
     },
     {
-      bg_image: "/Image.jpeg",
-      text2: "КАКАОНЫ УРТ ХУГАЦААНЫ ТҮНШЛЭЛИЙН ГЭРЭЭТЭЙ ",
-      text1: "COCOA FROM LONG-TERM PARTNERSHIPS ",
-    },
-    {
       bg_image:
         "/f9257078-1ab3-49dd-bde0-1c6d95b7a907.__CR0,0,630,290_PT0_SX315_V1___.jpeg",
       text2: "100% КАКАОГААР ХИЙДЭГ",
       text1: "100% CERTIFIED SUSTAINABLE COCOA SOURCING ",
     },
     {
-      bg_image: "/fairtrade-cocoa-program-logo-696DE917E3-seeklogo.com.png",
-      text2: "ИЙН ГИШҮҮН БА ОРОН НУТГИЙН ИРГЭД,ТАРИАЛАНЧДЫГ ДЭМЖИЖ",
-      text1: "FAIRTRADE INTERNATIONAL ",
+      bg_image: "/347596348_215343754607880_3077843115052717370_n.png",
+      text2:
+        "-ИЙН ГИШҮҮН БА ХҮРЭЭЛЭН БУЙ ОРЧИН, ТАРИАН ТАЛБАЙН ЗӨВ ЗОХИСТОЙ АШИГЛАЛТ МЕНЕЖМЕНТИЙН ГАЗАРТАЙ ХАМТАРЧ АЖИЛЛАДАГ",
+      text1: "UTZ CERTIFIED ",
     },
     {
-      bg_image: "/347596348_215343754607880_3077843115052717370_n.png",
-      text2: "Нэр төрлөө нэмэгдүүлсэн нь",
-      text1: "UTZ CERTIFIED ",
+      bg_image: "/fairtrade-cocoa-program-logo-696DE917E3-seeklogo.com.png",
+      text2: "-ИЙН ГИШҮҮН БА ОРОН НУТГИЙН ИРГЭД, ТАРИАЛАНЧДЫГ ДЭМЖИЖ АЖИЛЛАДАГ",
+      text1: "FAIRTRADE INTERNATIONAL ",
     },
   ];
   return (
@@ -114,19 +111,18 @@ export default function About() {
       <div className="w-full h-auto flex justify-evenly pt-[10vh]">
         {data.map((dta) => (
           <div className="flex flex-col gap-[2vh] w-1/6 items-center">
-            <img src={dta.bg_image} className="w-full h-[28vh]" />
+            <img src={dta.bg_image} className="w-full h-[30vh]" />
             <p
               style={{ color: dta.textColor }}
-              className="text-[2.8vh] text-black "
+              className="text-[3.5vh] font-bold"
             >
               {dta.year}
             </p>
-
             <button
               style={{ background: dta.textColor }}
               className="w-[2.5vh] h-[2.5vh] text-[1.5vh]"
             ></button>
-            <p className="text-black  text-[2vh] font-light">{dta.title}</p>
+            <p className="text-black  text-[2.7vh] font-normal">{dta.title}</p>
           </div>
         ))}
       </div>
@@ -134,7 +130,7 @@ export default function About() {
         {data_1.map((dta) => (
           <div>
             <img src={dta.bg_image} className="w-full h-4/5" />
-            <div className="flex gap-4 w-full">
+            <div className="flex gap-4 pt-[1vh] pb-[4vh] w-full">
               <div
                 className="w-[3vh] h-[3vh]"
                 style={{ background: dta.textColor }}
@@ -146,24 +142,22 @@ export default function About() {
       </div>
       <div className="w-full flex justify-center">
         <img
-          className="w-4/6 align-center"
+          className="w-5/6 align-center"
           src="/387846203_348878714323255_7632759952354299977_n (1) (1) (1).jpg"
         />
       </div>
-      <div className="flex flex-col w-full items-center gap-[4vh]">
+      <div className="flex flex-wrap w-full place-content-center Company gap-[1vh] pt-[5vh]">
         {data_2.map((dta) => (
-          <div className="flex w-2/3 gap-[10vh] items-center">
-            <img
-              src={dta.bg_image}
-              className="w-1/6 h-1/6 pr-[3vh] items-center"
-            />
-            <p className="font-semibold place-self-center text-[3vh]">
+          <div className="flex w-full items-center">
+            <img src={dta.bg_image} className="w-1/3 h-1/2 pr-[2vh]" />
+            <p className="font-semibold place-self-center text-[1.8vh]">
               {dta.text1}
               <span className="font-thin">{dta.text2}</span>
             </p>
           </div>
         ))}
       </div>
+      <HomeAboutCompany />
     </div>
   );
 }

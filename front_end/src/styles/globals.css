@@ -125,7 +125,7 @@ body {
 }
 .aboutPart {
   display: grid;
-  grid-template-columns: 40% 40%;
+  grid-template-columns: 48% 48%;
   padding-top: 20px;
 }
 /* img {
@@ -330,6 +330,9 @@ body {
   .header-choco {
     font-size: 15px;
   }
+  .header {
+    border-color: #be9131;
+  }
   .userHeadEmail {
     font-size: 12px;
     margin-right: 2px;
@@ -340,4 +343,14 @@ body {
 }
 .swiper-button-prev {
   left: 30vw !important;
+}
+.Company {
+  display: grid;
+  grid-template-columns: 45% 45%;
+}
+.StoryHAC {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  padding-top: 10vh;
+  gap: 30px;
 }
