@@ -1,7 +1,15 @@
 import { HomeChocolate } from "../components/HomeChocolate";
 import { HomeAboutCompany } from "../components/HomeAboutCompany";
 import { useEffect } from "react";
-export default function Home() {
+import { useState } from "react";
+import { Login } from "../components/Login";
+import { EnterCode } from "../components/EnterCode";
+import { Header } from "../components/Header";
+
+export default function Home(props) {
+  const [loginStat, setLoginStat] = useState(false);
+  const [codeStatus, setCodeStatus] = useState(true);
+  const [email, setEmail] = useState("");
   //hereg bolj magadgui
   // const first = async () => {
   //   try {
@@ -21,8 +29,16 @@ export default function Home() {
   //     console.log(err);
   //   }
   // };
+
+  const LoginButtonPress = () => {
+    setLoginStat(true);
+  };
   const relogin = () => {
-    // setLoginStat(false);
+    setLoginStat(false);
+  };
+  const tester = () => {};
+  const back = () => {
+    setCodeStatus(true);
   };
   useEffect(() => {
     //first();
@@ -60,10 +76,35 @@ export default function Home() {
   //   fetchChocolateData();
   // }, []);
   return (
-    <div className={`overflow-y-auto `}>
-      <div></div>
-      <HomeChocolate relogin={relogin} />
-      <HomeAboutCompany />
+    <div className={`overflow-y-auto `} relogin={relogin}>
+      {loginStat ? (
+        <div className="w-screen h-screen absolute flex justify-center items-center">
+          <Login
+            relogin={relogin}
+            codeStatus={codeStatus}
+            setCodeStatus={setCodeStatus}
+            setLoginStat={setLoginStat}
+            loginStat={loginStat}
+            email={email}
+            setEmail={setEmail}
+          />
+          <div className="w-[100vw] h-[100vh] absolute top-0 left-0 opacity-50 z-0 bg-white"></div>
+        </div>
+      ) : null}
+
+      {codeStatus ? null : (
+        <div className="w-screen h-screen absolute flex justify-center items-center">
+          <EnterCode email={email} back={back} />
+        </div>
+      )}
+      <div onClick={tester} className="main">
+        <Header LoginButtonPress={LoginButtonPress} />
+      </div>
+
+      <div>
+        <HomeChocolate />
+        <HomeAboutCompany />
+      </div>
     </div>
   );
 }
