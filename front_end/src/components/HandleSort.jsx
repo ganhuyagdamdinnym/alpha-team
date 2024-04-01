@@ -18,7 +18,6 @@ export const HandleSort = (props) => {
       color: "brown",
     },
   ];
-
   return (
     <div className="w-screen flex">
       {sortName.map((e, index) => (

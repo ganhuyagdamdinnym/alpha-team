@@ -13,6 +13,7 @@ export default function Basket() {
   const [BuyStatus, setBuyStatus] = useState(false);
   const [price, setPrice] = useState(0);
   const router = useRouter();
+  const [cutEmail, setCutEmail] = useState("");
   const fetchLocalstorage = () => {
     //alert("hi");
     if (localStorage.getItem("basket") !== null) {
@@ -53,24 +54,26 @@ export default function Basket() {
       console.log("err", err);
     }
   };
+  // const Email = token?.split("@");
+  // const newEmail = Email[0];
 
   useEffect(() => {
     UserData();
   }, [token]);
   useEffect(() => {
     fetchLocalstorage();
+    // setCutEmail(newEmail);
   }, []);
-  console.log(bag);
-  console.log("une", price);
+
   return (
     <div onClick={() => back(currentRef)} className=" w-[100wv] h-[100hv] ]">
       <div
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
-        className="w-full bg-white"
+        className="w-full bg-white relative"
       >
-        <div className="flex items-center justify-between border-[#BE9131] border-b-[15px] py-2 px-4">
+        <div className="flex items-center justify-center border-[#BE9131] border-b-[15px] py-2 px-4">
           <button
-            className="flex gap-4 px-2  ml-4 rounded-xl w-24 bg-[#DCD7D8] py-2 items-center justify-center"
+            className="flex gap-4 px-2  ml-4 rounded-xl w-24 bg-[#DCD7D8] py-2 items-center justify-center fixed left-0"
             onClick={() => backToBuyPart()}
           >
             <Image
@@ -90,11 +93,11 @@ export default function Basket() {
             height={64}
             priority={true}
           />
-          <div className="flex mr-4 gap-2 items-center">
+          <div className="flex mr-4 gap-2 items-center fixed right-0 userHeadEmail">
             <div className="border-2 border-black rounded-full w-[25px] h-[25px] flex justify-center items-center">
               <Image src="user.svg" height={12} width={12} />
             </div>
-            <p>{token}</p>
+            <p></p>
           </div>
         </div>
       </div>
@@ -124,7 +127,7 @@ export default function Basket() {
         >
           <div
             style={{ position: "absolute", zIndex: 40 }}
-            className="w-[50%] h-[60%] bg-white border-[#BE9131] border-4 rounded-3xl cashPart"
+            className="cashPart  "
             ref={currentRef}
           >
             <CashPart allPrice={price} />

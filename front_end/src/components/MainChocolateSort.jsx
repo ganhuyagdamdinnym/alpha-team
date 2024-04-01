@@ -17,11 +17,11 @@ export const MainChocolateSort = () => {
 
   const sortName = [
     {
-      name: "COLOURFUL VARIETY",
+      name: "ӨНГӨ ТӨРӨЛ",
       color: "red",
     },
     {
-      name: "COCOA SELECTION",
+      name: "КАКАО СОНГОЛТ",
       color: "rgb(255, 205, 74)",
     },
     {
@@ -29,19 +29,19 @@ export const MainChocolateSort = () => {
       color: "rgb(179, 126, 101)",
     },
     {
-      name: "CHOCO CUBES",
+      name: "CHOCO шоо",
       color: "rgb(255, 0, 100)",
     },
     {
-      name: "250G BARS",
+      name: "250 гр БАР",
       color: "rgb(24, 36, 98)",
     },
     {
-      name: "TASTY VIBES",
+      name: "АМТТАЙ ДУРТАЙ",
       color: "rgb(137, 198, 230)",
     },
     {
-      name: "NUT SELECTION",
+      name: "САМРЫН СОНГОЛТ",
       color: "rgb(59, 150, 43)",
     },
   ];
@@ -167,9 +167,7 @@ export const MainChocolateSort = () => {
           </div>
         </div>
       </div>
-      <p className="h-[30vh]" style={{ backgroundColor: color }}>
-        hello
-      </p>
+      <p className="h-[30vh] info" style={{ backgroundColor: color }}></p>
       <div
         className="w-[100vw] h-[auto] max-[600px]:h-[60%] max-[600px]:text-[10px]"
         style={{ backgroundColor: color }}

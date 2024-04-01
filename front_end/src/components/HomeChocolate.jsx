@@ -1,5 +1,4 @@
 "use client";
-
 import { Header } from "./Header";
 import { useState } from "react";
 import { Login } from "./Login";
@@ -7,7 +6,6 @@ import { EnterCode } from "./EnterCode";
 export const HomeChocolate = (props) => {
   const [loginStat, setLoginStat] = useState(false);
   const [codeStatus, setCodeStatus] = useState(true);
-
   const [email, setEmail] = useState("");
   // const createUser = () => {
   //   setLoginStat(false);
@@ -22,6 +20,9 @@ export const HomeChocolate = (props) => {
   const tester = () => {
     // setCodeStatus(false);
     // setLoginStat(false);
+  };
+  const back = () => {
+    setCodeStatus(true);
   };
   return (
     <div className="h-[100vh] w-[100vw]">
@@ -41,7 +42,7 @@ export const HomeChocolate = (props) => {
       ) : null}
       {codeStatus ? null : (
         <div className="w-screen h-screen absolute flex justify-center items-center">
-          <EnterCode email={email} />
+          <EnterCode email={email} back={back} />
         </div>
       )}
       <video autoPlay muted loop id="myVideo">

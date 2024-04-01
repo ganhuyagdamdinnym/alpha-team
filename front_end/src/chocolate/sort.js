@@ -13,12 +13,12 @@ export const images = [
   // },
   // { image: "/option_vegan.webp", color: "yellow" },
   {
-    name: "COLOURFUL VARIETY",
+    name: "ӨНГӨ ТӨРӨЛ",
     color: "red",
     image: "sortPhoto/colorful.webp",
   },
   {
-    name: "COCOA SELECTION",
+    name: "КАКАО СОНГОЛТ",
     color: "rgb(255, 205, 74)",
     image: "sortPhoto/cocoa.webp",
   },
@@ -28,22 +28,22 @@ export const images = [
     image: "sortPhoto/mini.webp",
   },
   {
-    name: "CHOCO CUBES",
+    name: "CHOCO шоо",
     color: "rgb(255, 0, 100)",
     image: "sortPhoto/choco.webp",
   },
   {
-    name: "250G BARS",
+    name: "250 гр БАР",
     color: "rgb(24, 36, 98)",
     image: "sortPhoto/250g.webp",
   },
   {
-    name: "TASTY VIBES",
+    name: "АМТТАЙ ДУРТАЙ",
     color: "rgb(137, 198, 230)",
     image: "sortPhoto/tasty.webp",
   },
   {
-    name: "NUT SELECTION",
+    name: "САМРЫН СОНГОЛТ",
     color: "rgb(59, 150, 43)",
     image: "sortPhoto/but.webp",
   },

@@ -10,15 +10,16 @@ import {
 export const HomeAboutCompany = () => {
   return (
     <div className="homeAbout">
-      <div className="flex flex-col justify-center items-center ">
+      <div className="div1">
         <Image
           alt="photo"
           priority={true}
           src="/logo.svg"
           height={200}
           width={200}
+          className="logo"
         />
-        <p className="text-[4vh] text-white">RITTER SPORT</p>
+        <p className="text-[4wh] text-white">RITTER SPORT</p>
       </div>
       <div className="flex flex-col gap-[2vh] w-[35vh] mt-10px">
         <p className="text-[4vh] text-white border-b-2">Contact Information</p>
