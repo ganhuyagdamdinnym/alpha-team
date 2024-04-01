@@ -95,7 +95,7 @@ export const EnterCode = (props) => {
           input4Ref.current.value +
           input5Ref.current.value +
           input6Ref.current.value;
-        console.log(code, email);
+        console.log("email", code, email);
         const url = `${Back_End_url}/loginByEmail`;
         const res = await axios.post(url, {
           email: email,
