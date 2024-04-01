@@ -38,7 +38,7 @@ export default function MainPageGlitchFix() {
       color: "rgb(255, 205, 74)",
       image: "/sortPhoto/cocoa.webp",
       title: "REDUCED TO THE MMMHHH!",
-      accentColor: "#009a92;",
+      accentColor: "#009a92",
       content:
         "Our Cocoa Selection concentrates on the essentials because there is not much else than cacao in our Cocoa Selection. Only 3 or 4 ingredients - good chocolate does not need more! The cocoa in each bar comes from just one country of origin - Ghana, Nicaragua, or Peru and is 100% certified sustainable.",
     },
@@ -91,15 +91,13 @@ export default function MainPageGlitchFix() {
         <div className="mt-[-20px]">
           <Header />
         </div>
-        <div
-          style={{ backgroundColor: mainStreamPipeForState.color }}
-          className="w-[100%] mt-[60px] h-[50%]"
-        >
+        <div className="w-[100%] mt-[60px] h-[50%]">
           <Swiper
             slidesPerView={3}
             modules={[Navigation, Autoplay, Virtual]}
             onSlideChange={(swiperCore) => {
               const { realIndex } = swiperCore;
+
               setMainStreamPipeForState({
                 ...mainStreamPipeForState,
                 color: MainStreamDataForSwiperCover[realIndex].color,
@@ -108,6 +106,7 @@ export default function MainPageGlitchFix() {
                 content: MainStreamDataForSwiperCover[realIndex].content,
                 accentColor:
                   MainStreamDataForSwiperCover[realIndex].accentColor,
+                cur_index: realIndex,
               });
             }}
             onSwiper={setSwiperRef}
@@ -117,22 +116,23 @@ export default function MainPageGlitchFix() {
             centeredSlides={true}
           >
             {MainStreamDataForSwiperCover.map((e, index) => (
-              <SwiperSlide
-                virtualIndex={index}
-                style={{ backgroundColor: e.color }}
-                key={index}
-              >
-                <div className="w-[25vw] h-[25vw] flex justify-center items-center">
+              <SwiperSlide virtualIndex={index} key={index}>
+                <div
+                  style={{
+                    backgroundColor: MainStreamDataForSwiperCover[index]?.color,
+                  }}
+                  className="w-[100%] h-[30vw] flex justify-center"
+                >
                   <img src={e.image}></img>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
+
         <div
-          className="h-[40vh] w-[100vw] flex justify-center flex-col text-center items-center"
+          className="h-[40vh] absolute z-[99999] top-[60vh] w-[100vw] flex justify-center flex-col text-center items-center"
           style={{
-            backgroundColor: mainStreamPipeForState.color,
             color: mainStreamPipeForState.accentColor,
           }}
         >
@@ -152,21 +152,28 @@ export default function MainPageGlitchFix() {
           {MainStreamDataForSwiperCover.map((e, index) =>
             e.name === mainStreamPipeForState.name ? (
               <button
+                className="font"
                 key={index}
                 style={{
                   height: "5vh",
                   backgroundColor: mainStreamPipeForState.color,
                   paddingLeft: "20px",
                   paddingRight: "20px",
+
+                  fontSize: "18px",
+                  color: mainStreamPipeForState.accentColor,
                 }}
               >
                 {e.name}
               </button>
             ) : (
               <button
+                className="font"
                 style={{
                   paddingLeft: "20px",
+                  fontSize: "18px",
                   paddingRight: "20px",
+
                   backgroundColor: mainStreamPipeForState.accentColor,
                 }}
                 key={index}
@@ -178,6 +185,37 @@ export default function MainPageGlitchFix() {
           )}
         </div>
       </div>
+      <button
+        onClick={() => {
+          swiperRef.slidePrev();
+        }}
+        className="absolute top-[30vh] left-[35vw] z-[99999999]"
+      >
+        <svg
+          height={50}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+          fill="black"
+          style={{ rotate: "180deg" }}
+        >
+          <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+        </svg>
+      </button>
+      <button
+        onClick={() => {
+          swiperRef.slideNext();
+        }}
+        className="absolute top-[30vh] right-[35vw] z-[9999999999]"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+          height={50}
+          fill="black"
+        >
+          <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+        </svg>
+      </button>
 
       <div
         className="flex items-center flex-wrap"
