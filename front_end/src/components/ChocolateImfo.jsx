@@ -93,14 +93,14 @@ export const ChocolateImfo = (props) => {
               <Image
                 onClick={() => abdicateBuy()}
                 src="xmark.svg"
-                height={24}
-                width={24}
+                height={32}
+                width={32}
               />
             </button>
             <div className="flex py-2 px-2 gap-4  border-black ">
               <Image
                 onClick={() => HandleCount()}
-                className="cursor-pointer"
+                className="cursor-pointer opacity-50"
                 src="minus.svg"
                 height={16}
                 width={16}
@@ -108,7 +108,7 @@ export const ChocolateImfo = (props) => {
               <p className="text-[20px]">{count}х</p>
               <Image
                 onClick={() => setCount(count + 1)}
-                className="cursor-pointer"
+                className="cursor-pointer opacity-50"
                 src="plus.svg"
                 height={16}
                 width={16}
@@ -121,8 +121,8 @@ export const ChocolateImfo = (props) => {
               <Image
                 className="cursor-pointer"
                 src="check.svg"
-                height={24}
-                width={24}
+                height={32}
+                width={32}
               />
             </button>
           </div>

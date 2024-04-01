@@ -153,7 +153,7 @@ body {
     filter: brightness(1) blur(0);
   }
 }
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1600px) {
   /* .tester {
     background-color: black;
   } */
@@ -304,6 +304,10 @@ body {
   }
 }
 @media only screen and (max-width: 650px) {
+  .buy {
+    font-size: 12px;
+    padding: 4px;
+  }
   .grid-container {
     display: grid;
     grid-template-columns: auto;
@@ -345,7 +349,11 @@ body {
   }
   .userHeadEmail {
     font-size: 12px;
-    margin-right: 2px;
+    margin-right: 16px;
+  }
+  .username {
+    font-size: 12px;
+    margin-right: 16px;
   }
 }
 body {

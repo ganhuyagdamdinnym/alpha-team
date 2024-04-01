@@ -7,11 +7,9 @@ import { UserHead } from "@/components/UserHead";
 import { ChocolateImfo } from "@/components/ChocolateImfo";
 import { Back_End_url } from "@/utils/back-url";
 import { AuthContext } from "@/hook/authProvider";
-
 export default function Buy() {
   const currentRef = useRef(null);
   const { token, curUser: user } = useContext(AuthContext);
-  // console.log("token", token);
   const router = useRouter();
   const [data, setData] = useState();
   const [sorts, setSorts] = useState();
@@ -84,7 +82,6 @@ export default function Buy() {
           <Image src="hoppet2.svg" width={32} height={32} />
         </button>
       </div> */}
-
       <div
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
         className="w-full bg-white"
