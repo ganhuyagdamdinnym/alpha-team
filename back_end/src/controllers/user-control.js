@@ -5,15 +5,15 @@ import jwt from "jsonwebtoken";
 import { AxiosError } from "axios";
 import nodemailer from "nodemailer";
 export const getUserData = async (req, res) => {
-  const user = req.user;
-  //console.log("token", user);
-  const User = await UserModel.findOne({ email: user.id });
-  console.log("bolsoo", user);
-  res.status(200).json({ User });
-};
-export const inputChocolateToBasket = async (req, res) => {
-  const { count, chocolate } = req.body;
-  console.log("body", req.body);
+  try {
+    const user = req.user;
+    //console.log("token", user);
+    const User = await UserModel.findOne({ email: user.id });
+    console.log("bolsoo", user);
+    res.status(200).json({ User });
+  } catch (err) {
+    console.log(err);
+  }
 };
 //email
 
@@ -61,24 +61,29 @@ export const loginByEmail = async (req, res) => {
   }
 };
 export const loginByCode = async (req, res) => {
-  const { code, email } = req.body;
-  console.log("info", code, email);
-  const user = await UserModel.findOne({ email: email });
-  console.log("email", user);
-  if (user.code == code) {
-    if (bcrypt.compare(email)) {
-      // sha256
-      const token = jwt.sign({ id: email }, "SomeSecretKey", {
-        expiresIn: "2d",
-      });
-      console.log("hi", token);
-      res.status(200).json({ token });
+  try {
+    const { code, email } = req.body;
+    if (code || email) {
+      console.log("info", code, email);
+      const user = await UserModel.findOne({ email: email });
+      console.log("email", user);
+      if (user.code == code) {
+        // sha256
+        const token = jwt.sign({ id: email }, "SomeSecretKey", {
+          expiresIn: "2d",
+        });
+        console.log("hi", token);
+        res.status(200).json({ token });
+      } else {
+        res.status(200).json({ message: "not" });
+      }
     } else {
-      res.status(405).json({ message: "hereglegch alga" });
+      console.log("aldaa");
     }
-  } else {
-    res.status(200).json({ message: "not" });
+  } catch (err) {
+    console.log(err);
   }
+
   //bcrypt
 };
 export const UserBought = (req, res) => {

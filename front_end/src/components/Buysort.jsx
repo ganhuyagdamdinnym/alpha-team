@@ -31,11 +31,11 @@ export const Buysort = (props) => {
     },
   ];
   return (
-    <div className="w-screen flex h-8">
+    <div className="w-screen flex h-12">
       {sortName.map((e, index) => (
         <button
           onClick={() => HandleSort(e.sort)}
-          className="w-1/6 flex justify-center h-full bg-[#BE9131] items-center chocolateSortBuy "
+          className="w-1/6 flex justify-center h-full bg-[#BE9131] items-center chocolateSortBuy text-white text-[20px] font-medium"
         >
           <p className="">{e.name}</p>
         </button>
