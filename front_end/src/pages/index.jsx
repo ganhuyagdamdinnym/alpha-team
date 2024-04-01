@@ -60,7 +60,8 @@ export default function Home() {
   //   fetchChocolateData();
   // }, []);
   return (
-    <div className={`overflow-y-auto`}>
+    <div className={`overflow-y-auto `}>
+      <div></div>
       <HomeChocolate relogin={relogin} />
       <HomeAboutCompany />
     </div>

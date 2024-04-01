@@ -38,7 +38,7 @@ export const UserHead = (props) => {
         <div className="border-2 border-[#BE9131] rounded-full w-[25px] h-[25px] flex justify-center items-center">
           <Image src="user.svg" height={12} width={12} />
         </div>
-        <p>{userEmail.name}</p>
+        <p className="font-medium">{userEmail.name}</p>
       </div>
     </div>
   );
