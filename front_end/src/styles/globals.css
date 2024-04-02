@@ -200,6 +200,10 @@ body {
   } */
 }
 @media only screen and (max-width: 1200px) {
+  .textContent {
+    font-size: 20px;
+  }
+
   .logo {
     width: 150px;
     height: 150px;
@@ -269,6 +273,9 @@ body {
   }
 }
 @media only screen and (max-width: 900px) {
+  .textContent {
+    font-size: 16px;
+  }
   .homeAbout {
     /* flex gap-[8vh] justify-evenly py-[8vh] bg-blue-950 my-0  */
     display: flex;
@@ -306,6 +313,12 @@ body {
   }
 }
 @media only screen and (max-width: 650px) {
+  body {
+    --swiper-navigation-sides-offset: 35vw !important;
+    --swiper-navigation-top-offset: 35vh !important;
+    user-select: none;
+    overflow-x: hidden;
+  }
   .grid-container {
     display: grid;
     grid-template-columns: auto;
@@ -351,7 +364,8 @@ body {
   }
 }
 body {
-  --swiper-navigation-sides-offset: 30vw;
+  --swiper-navigation-sides-offset: 35vw;
+  --swiper-navigation-top-offset: 17vw;
   user-select: none;
   overflow-x: hidden;
 }
