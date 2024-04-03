@@ -35,7 +35,7 @@ export default function Home() {
         const url = `${Back_End_url}/getAllPurchaseInfo`;
         const res = await axios.get(url);
         console.log("info", res.data.allData);
-        setLastBuyStatus(res.data.allData);
+        setLastBuyerData(res.data.allData);
       } catch (err) {
         console.log(err);
       }
@@ -125,12 +125,15 @@ export default function Home() {
             </div>
           ) : (
             <div className="w-full h-full flex flex-col items-center gap-8 px-10">
-              hi
               {lastBuyerData?.map((e) => (
-                <div className="flex flex-col px-8 py-2 bg-white w-[80%] h-[400px] rounded-2xl overflow-y-scroll gap-2">
-                  <p className="text-2xl border-b-[0.1px] border-black px-2">
+                <div className="flex text-2xl flex-col px-8 py-2 bg-white w-[80%] rounded-2xl overflow-y-scroll gap-2">
+                  <p className="px-2">
                     И-мэйл: {e.email}
                   </p>
+                  <p>
+
+                  </p>
+        
                 </div>
               ))}
             </div>

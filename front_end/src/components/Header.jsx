@@ -50,18 +50,18 @@ export const Header = (props) => {
           <EnterCode email={email} back={back} />
         </div>
       )}
-      <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] bg-white">
+      <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] bg-white py-1">
         <button onClick={() => jumptomain()}>
           <p
             style={{ color: "#160d98" }}
-            className="font-medium border-b-[0.5px] border-[#160d98] px-1 header-choco"
+            className="font-medium border-b-[0.5px] border-[#160d98] px-1 header-choco  w-36 headerText"
           >
             ШОКОЛАД
           </p>
         </button>
         <Image
           onClick={jumptoHome}
-          className="cursor-pointer"
+          className="cursor-pointer logoInBasket"
           priority={true}
           alt="logo"
           src="logo.svg"
@@ -71,7 +71,7 @@ export const Header = (props) => {
         <button onClick={jumptoAbout}>
           <p
             style={{ color: "#160d98" }}
-            className="font-medium border-b-[0.5px] border-[#160d98] px-1 header-choco"
+            className="font-medium border-b-[0.5px] border-[#160d98] px-1 header-choco w-36 headerText"
           >
             ТУХАЙ
           </p>

@@ -27,8 +27,9 @@ export const UserHead = (props) => {
         {/* <Image src="hoppet2.svg" height={64} width={64} className="basket" /> */}
       </button>
       <Image
+      
         onClick={() => backToHome()}
-        className="cursor-pointer"
+        className="cursor-pointer logoInBasket"
         src="logo.svg"
         width={96}
         height={96}

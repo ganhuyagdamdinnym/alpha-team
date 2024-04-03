@@ -108,7 +108,7 @@ export default function Basket() {
         <div
           onClick={() => back(currentRef)}
           style={{ position: "absolute", top: 0, bottom: 0, zIndex: 30 }}
-          className="flex justify-center w-screen h-screen items-center"
+          className="flex justify-center w-screen h-screen items-center relative"
         >
           <div
             style={{ position: "absolute", zIndex: 40 }}
