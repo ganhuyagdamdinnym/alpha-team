@@ -154,9 +154,10 @@ body {
   }
 }
 @media only screen and (max-width: 1600px) {
-  /* .tester {
-    background-color: black;
-  } */
+  .loginPart {
+    height: 400px;
+    width: 350px;
+  }
   .grid-container {
     display: grid;
     grid-template-columns: 24% 24% 24% 24%;

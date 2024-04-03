@@ -67,21 +67,7 @@ export default function Buy() {
     // UserData();
   }, [token]);
   return (
-    <div
-      //onClick={() => back(currentRef)}
-      className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-white`}
-    >
-      {/* <div
-        className={`opacity-75 fixed w-screen h-screen bg-[white] border-2 border-[#be9131]`}
-      >
-        <button
-          onClick={() => HandeHoppetStatus()}
-          style={{ position: "fixed", right: "20px", top: "35px" }}
-          className="border-2 border-[#be9131]"
-        >
-          <Image src="hoppet2.svg" width={32} height={32} />
-        </button>
-      </div> */}
+    <div className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-white`}>
       <div
         style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
         className="w-full bg-white"

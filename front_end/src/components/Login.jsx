@@ -7,7 +7,8 @@ import { AuthContext } from "@/hook/authProvider";
 export const Login = (props) => {
   const { relogin, email, setEmail, setCodeStatus, setLoginStat, loginStat } =
     props;
-  const { token } = useContext(AuthContext);
+  //const { token } = useContext(AuthContext);
+  const { token, curUser: user } = useContext(AuthContext);
   const router = useRouter();
   const loginCurrentUser = () => {
     if (token) {
@@ -29,7 +30,7 @@ export const Login = (props) => {
     }
   };
   return (
-    <div className="w-[500px] h-[600px] bg-[#F06742] flex flex-col gap-4 py-2 rounded-xl z-10 loginPart">
+    <div className="w-[500px] h-[600px] bg-[#F06742] flex flex-col gap-4  rounded-xl z-10 loginPart">
       <div className="w-full text-white  flex flex-row-reverse px-2 ">
         <Image
           alt="photo"
@@ -55,8 +56,10 @@ export const Login = (props) => {
         <div className="w-3/4 text-2xl py-1  rounded-xl text-[white] flex flex-col gap-2">
           <button
             onClick={() => loginCurrentUser()}
-            className="w-full text-2xl py-1 bg-[red] rounded-xl text-[#dcd7d8] border-solid border-2 flex flex-col items-center"
-          ></button>
+            className="w-full text-2xl py-1 bg-[red] rounded-xl text-[#dcd7d8] border-solid border-2 flex flex-col items-center h-[40px]"
+          >
+            {user.name}
+          </button>
         </div>
       </div>
       <div className="flex flex-col gap-3 full items-center">

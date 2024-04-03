@@ -23,45 +23,64 @@ export default function Home() {
     new Date(1989, 6, 10),
   ];
   dates.sort(compareAsc);
-  const Users = () => {};
-  const Last = () => {};
-  // const StyleSS = {
-  //   ...(signUpAndSignIn && {
-  //     transition: "all 400ms ease-in-out",
-  //     transform: "rotateY(360deg)",
-  //   }),
-  // };
-  // const Style = {
-  //   ...(!signUpAndSignIn && {
-  //     transition: "all 400ms ease-in-out",
-  //     transform: "rotateY(360deg)",
-  //   }),
-  // };
+  const Users = () => {
+    if (lastBuyStatus == false) {
+      setLastBuyStatus(true);
+    }
+  };
+  const Last = () => {
+    if (lastBuyStatus == true) {
+      setLastBuyStatus(false);
+    }
+  };
+  const StyleSS = {
+    ...(lastBuyStatus && {
+      transition: "all 400ms ease-in-out",
+      transform: "rotateY(360deg)",
+    }),
+  };
+  const Style = {
+    ...(!lastBuyStatus && {
+      transition: "all 400ms ease-in-out",
+      transform: "rotateY(360deg)",
+    }),
+  };
   useEffect(() => {
     fetchAllBuyerInfo();
   }, []);
   return (
-    <div className="w-full h-[100vh] bg-[#DCD7D8]">
-      <div className="w-full flex flex-col px-4 py-1 gap-2 fixed top-0 bg-[#BE9131] r-[4px] z-10 border-b-[20px] border-[#DCD7D8] relative">
+    <div className="w-full h-[100] bg-[#DCD7D8] relative">
+      <div className="w-full flex flex-col px-4 py-1 gap-2 fix top-0 bg-[#BE9131] r-[4px] z-10 border-b-[20px] border-[#DCD7D8] relative">
         <p className="text-3xl">Hi Admin!</p>
         <div className="w-full">hello</div>
         <div className="absolute right-10 flex gap-4 h-full items-center">
           <button
             onClick={Users}
-            className="text-2xl text-[#DCD7D8] bg-white w-40 py-1"
+            className={`text-2xl rounded-2xl  ${
+              lastBuyStatus
+                ? "bg-white text-black"
+                : "text-[#DCD7D8] border-b-[2px]"
+            } w-40 py-1 border-white`}
           >
             Хэрэглэгчид
           </button>
           <button
             onClick={Last}
-            className="text-2xl text-black bg-white w-40 py-1"
+            className={`text-2xl rounded-2xl  ${
+              lastBuyStatus
+                ? "text-[#DCD7D8] border-b-[2px] border-[#DCD7D8]"
+                : "bg-white text-black"
+            } w-40 py-1`}
           >
             Сүүлийн
           </button>
         </div>
       </div>
-      <div>
-        <div className="w-full h-full flex flex-col items-center mt-[90px] py-4  ">
+      <div style={Style}>
+        <div
+          style={StyleSS}
+          className="w-full h-full flex flex-col items-center mt-[90px] py-4  "
+        >
           <div className="w-full h-full flex flex-col items-center gap-8 px-10">
             {data?.map((e) => (
               <div className="flex flex-col px-8 py-2 bg-white w-[80%] h-[400px] rounded-2xl overflow-y-scroll gap-2">

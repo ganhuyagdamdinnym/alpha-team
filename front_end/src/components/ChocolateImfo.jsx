@@ -105,7 +105,7 @@ export const ChocolateImfo = (props) => {
                 height={16}
                 width={16}
               />
-              <p className="text-[20px]">{count}х</p>
+              <p className="text-[20px] font-medium">{count}х</p>
               <Image
                 onClick={() => setCount(count + 1)}
                 className="cursor-pointer opacity-50"
