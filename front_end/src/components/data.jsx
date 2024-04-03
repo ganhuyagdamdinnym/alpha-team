@@ -9,6 +9,7 @@ export const Data = [
     sort: "COLOURFUL VARIETY",
     border: "#EAD70E",
     bg: "#FFC300",
+    hover: "/hoverImage/NEW_Cornflakes_Composing.webp",
   },
   {
     id: "3",
