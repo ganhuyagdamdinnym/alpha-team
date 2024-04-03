@@ -1,4 +1,4 @@
-import { useState, useEffect,useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { format, compareAsc } from "date-fns";
 import axios from "axios";
 import { Back_End_url } from "../utils/back-url";
@@ -9,7 +9,7 @@ export default function Home() {
   const [lastBuyerData, setLastBuyerData] = useState();
   const [lastBuyStatus, setLastBuyStatus] = useState(true);
   //const[]
-  const {curUser: user } = useContext(AuthContext);
+  const { curUser: user } = useContext(AuthContext);
   const fetchAllBuyerInfo = async () => {
     try {
       const url = `${Back_End_url}/BuyersData`;
@@ -131,18 +131,17 @@ export default function Home() {
             <div className="w-full h-full flex flex-col items-center gap-8 px-10">
               {lastBuyerData?.map((e) => (
                 <div className="flex text-[20px] font-medium flex-col px-8 py-2 bg-[#BE9131] text-white w-[80%] rounded-2xl overflow-y-scroll gap-[2px] relative">
-                  <p >
-                    И-мэйл: {e.email}
-                  </p>
-                  <p>
-                    Утасны дугаар:{e.number}
-                  </p>
-                  <p>
-                    Хаяг:{e.address}
-                  </p>
+                  <p>И-мэйл: {e.email}</p>
+                  <p>Утасны дугаар:{e.number}</p>
+                  <p>Хаяг:{e.address}</p>
                   <p>Худалдааны цаг:</p>
                   <p>Худалдааны дүн: {e.pay}₮</p>
-                  <Image src="dots.svg" height={24} width={24} className="absolute right-4 cursor-pointer"/>
+                  <Image
+                    src="dots.svg"
+                    height={24}
+                    width={24}
+                    className="absolute right-4 cursor-pointer"
+                  />
                 </div>
               ))}
             </div>

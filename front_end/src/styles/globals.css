@@ -37,7 +37,7 @@ body {
   position: absolute;
   right: 0;
   display: flex;
-  margin: 4px;
+  margin-right: 20px;
   align-items: center;
 }
 .main {
@@ -315,6 +315,15 @@ body {
   .buy {
     font-size: 12px;
     padding: 4px;
+    margin-right: none;
+  }
+  .userImage {
+    height: 15px;
+    width: 15px;
+  }
+  .userBorder {
+    height: 30px;
+    width: 30px;
   }
   body {
     --swiper-navigation-sides-offset: 35vw !important;
@@ -335,7 +344,7 @@ body {
     width: 50px;
     height: 50px;
   }
-  .headerText{
+  .headerText {
     width: 100px;
   }
   .cashPart {
@@ -367,12 +376,12 @@ body {
   .userHeadEmail {
     font-size: 12px;
     margin-right: 12px;
-    gap:2px
+    gap: 2px;
   }
   .username {
     font-size: 12px;
     margin-right: 8px;
-    gap:2px
+    gap: 4px;
   }
 }
 body {
@@ -381,7 +390,6 @@ body {
   user-select: none;
   overflow-x: hidden;
 }
-
 .swiper-wrapper {
   margin-top: 40px;
 }

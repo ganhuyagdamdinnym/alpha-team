@@ -79,10 +79,17 @@ export default function Basket() {
             priority={true}
           />
           <div className="flex mr-4 gap-2 items-center fixed right-0 userHeadEmail">
-            <div className="border-2 border-[#BE9131] rounded-full w-[25px] h-[25px] flex justify-center items-center">
-              <Image src="user.svg" height={12} width={12} />
+            <div className="border-2 border-[#BE9131] rounded-full w-[40px] h-[40px] flex justify-center items-center userBorder">
+              <Image
+                src="user.svg"
+                className="userImage"
+                height={24}
+                width={24}
+              />
             </div>
-            <p className="font-medium">{user.name}</p>
+            <p className="font-medium text-[#000391] text-2xl username">
+              {user.name}
+            </p>
           </div>
         </div>
       </div>

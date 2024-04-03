@@ -27,7 +27,6 @@ export const UserHead = (props) => {
         {/* <Image src="hoppet2.svg" height={64} width={64} className="basket" /> */}
       </button>
       <Image
-      
         onClick={() => backToHome()}
         className="cursor-pointer logoInBasket"
         src="logo.svg"
@@ -36,10 +35,12 @@ export const UserHead = (props) => {
         priority={true}
       />
       <div className="flex mr-4 gap-2 items-center fixed right-0 userHeadEmail">
-        <div className="border-2 border-[#BE9131] rounded-full w-[25px] h-[25px] flex justify-center items-center">
-          <Image src="user.svg" height={12} width={12} />
+        <div className="border-2 border-[#BE9131] rounded-full w-[40px] h-[40px] flex justify-center items-center userBorder">
+          <Image src="user.svg" height={24} width={24} className="userImage" />
         </div>
-        <p className="font-medium text-2xl  username">{userEmail.name}</p>
+        <p className="font-medium text-2xl  username text-[#000391]">
+          {userEmail.name}
+        </p>
       </div>
     </div>
   );

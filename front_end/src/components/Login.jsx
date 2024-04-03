@@ -56,7 +56,7 @@ export const Login = (props) => {
         <div className="w-3/4 text-2xl py-1  rounded-xl text-[white] flex flex-col gap-2">
           <button
             onClick={() => loginCurrentUser()}
-            className="w-full text-2xl py-1 bg-[red] rounded-xl text-[#dcd7d8] border-solid border-2 flex flex-col items-center h-[40px]"
+            className="w-full text-2xl py-1 bg-[red] rounded-xl text-white border-solid border-2 flex  items-center justify-center  h-[40px]"
           >
             {user.name}
           </button>
