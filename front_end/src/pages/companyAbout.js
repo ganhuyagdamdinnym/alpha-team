@@ -108,34 +108,36 @@ export default function About() {
   return (
     <div className="bg-white">
       <Header />
-      <div className="w-full h-auto flex justify-evenly pt-[10vh]">
+      <div className="w-full h-auto flex justify-evenly Div1CA pt-[10vh]">
         {data.map((dta) => (
-          <div className="flex flex-col gap-[2vh] w-1/6 items-center">
-            <img src={dta.bg_image} className="w-full h-[30vh]" />
+          <div className="flex flex-col Div1 gap-[2vh] w-1/5 items-center">
+            <img src={dta.bg_image} className="w-80 h-80 Div1CA-img" />
             <p
               style={{ color: dta.textColor }}
-              className="text-[3.5vh] font-bold"
+              className="text-[3.5vh] font-bold Div1CA-font"
             >
               {dta.year}
             </p>
             <button
               style={{ background: dta.textColor }}
-              className="w-[2.5vh] h-[2.5vh] text-[1.5vh]"
+              className="w-[2.5vh] h-[2.7vh] text-[1.5vh]"
             ></button>
-            <p className="text-black  text-[2.7vh] font-normal">{dta.title}</p>
+            <p className="text-black Div1CA-font text-[2.3vh] font-normal">
+              {dta.title}
+            </p>
           </div>
         ))}
       </div>
-      <div className="w-screen flex aboutPart place-content-around">
+      <div className="w-screen flex aboutPart place-content-around Div2">
         {data_1.map((dta) => (
           <div>
             <img src={dta.bg_image} className="w-full h-4/5" />
-            <div className="flex gap-4 pt-[1vh] pb-[4vh] w-full">
+            <div className="flex gap-4 pt-[1vh] relative w-full">
               <div
                 className="w-[3vh] h-[3vh]"
                 style={{ background: dta.textColor }}
               ></div>
-              <span className="text-[2.2vh] w-full">{dta.title}</span>
+              <span className="text-[2.2vh] w-full Div2font">{dta.title}</span>
             </div>
           </div>
         ))}
@@ -149,7 +151,7 @@ export default function About() {
       <div className="flex flex-wrap w-full place-content-center Company gap-[1vh] pt-[5vh]">
         {data_2.map((dta) => (
           <div className="flex w-full items-center">
-            <img src={dta.bg_image} className="w-1/3 h-1/2 pr-[2vh]" />
+            <img src={dta.bg_image} className="w-1/4 h-3/4 pr-[2vh]" />
             <p className="font-semibold place-self-center text-[1.8vh]">
               {dta.text1}
               <span className="font-thin">{dta.text2}</span>

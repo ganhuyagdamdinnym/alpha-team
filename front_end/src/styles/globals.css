@@ -146,6 +146,14 @@ body {
     filter: brightness(1) blur(0);
   }
 }
+@media only screen and (max-width: 1900px) {
+  .Div2 {
+    gap: 30px;
+  }
+  .Div2font {
+    font-size: 2vh;
+  }
+}
 @media only screen and (max-width: 1500px) {
   /* .tester {
     background-color: black;
@@ -190,6 +198,20 @@ body {
   /* .chocolateSortBuy {
     font-size: 20px;
   } */
+  .Div1CA {
+    justify-content: space-around;
+  }
+  .Div1CA-img {
+    width: 236px;
+    height: 236px;
+  }
+  .Div1CA-font {
+    font-weight: 400;
+    font-size: 2vh;
+  }
+  .Div2font {
+    font-size: 1.6vh;
+  }
 }
 @media only screen and (max-width: 1200px) {
   .logo {
@@ -258,6 +280,28 @@ body {
     padding-right: 70px;
     padding-top: 20px;
     gap: 70px;
+  }
+  .aboutPart {
+    display: grid;
+    grid-template-columns: 90%;
+  }
+  .Div1 {
+    width: 25vh;
+  }
+  .Div1CA-img {
+    width: 200px;
+    height: 200px;
+  }
+  .Div1CA-font {
+    font-weight: 300;
+    font-size: 1.8vh;
+  }
+  .Div2font {
+    font-size: 1.7vh;
+  }
+  .Company {
+    display: grid;
+    grid-template-columns: 80%;
   }
 }
 @media only screen and (max-width: 900px) {
