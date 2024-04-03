@@ -28,9 +28,6 @@ export const UserBought = async (req, res) => {
       const newuser = user.allBuy.push({ ...allBuy });
       console.log("hi", newuser);
       await user.save();
-      // await BuyerModel.findOneAndDelete({email:email})
-      // await BuyerModel.create(user)
-      // console.log("neew", user);
     }
     await PurchaseModel.create({
       email: email,
@@ -39,7 +36,6 @@ export const UserBought = async (req, res) => {
       number: allBuy.number,
       address: allBuy.address,
     });
-
     res
       .status(200)
       .json({ success: true, message: "Purchase recorded successfully" });
