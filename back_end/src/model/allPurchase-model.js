@@ -5,6 +5,7 @@ const PurchaseSchema= new Schema({
     pay: Number,
     address: String,
     number: Number,
+    deliveryId:Number,
     datenow: { type: Date, default: Date.now }
 })
 export const PurchaseModel = model("allPurchase", PurchaseSchema);
