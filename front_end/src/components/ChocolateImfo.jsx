@@ -80,35 +80,35 @@ export const ChocolateImfo = (props) => {
         className="w-full rounded-t-[8px]"
         style={{ aspectRatio: "1" }}
       />
-      <div className="w-full h-[130px] border-[#AD70E] px-4 font-semibold">
-        <h1 className="text-[#2C261F] h-12">{name}</h1>
+      <div className="w-full h-[130px] border-[#AD70E] px-4 ">
+        <h1 className="text-[#2C261F] h-12 font-semibold">{name}</h1>
         <h1 className="text-[#2C261F]">Ширхэгийн үнэ: {unit_price} ₮</h1>
         <h1 className="text-[#2C261F]">Хайрцгийн үнэ: {box_price} ₮</h1>
-        <h1>Хайрцаг дахь ширхэг: {count_in_box}ш</h1>
+        <h1 className="">Хайрцаг дахь ширхэг: {count_in_box}ш</h1>
       </div>
       <div className="w-full flex h-[50px] items-center">
         {handleCount ? (
           <div ref={currentRef} className="w-full flex justify-center py-2 ">
-            <button className="py-1 border-b-2 border-t-2 border-l-2 border-black rounded-s-[10px] px-1">
+            <button className="py-1  rounded-s-[10px] px-1">
               <Image
                 onClick={() => abdicateBuy()}
                 src="xmark.svg"
-                height={24}
-                width={24}
+                height={32}
+                width={32}
               />
             </button>
-            <div className="flex py-2 px-2 gap-4 border-2 border-black ">
+            <div className="flex py-2 px-2 gap-4  border-black ">
               <Image
                 onClick={() => HandleCount()}
-                className="cursor-pointer"
+                className="cursor-pointer opacity-50"
                 src="minus.svg"
                 height={16}
                 width={16}
               />
-              <p className="text-[20px]">{count}</p>
+              <p className="text-[20px] font-medium">{count}х</p>
               <Image
                 onClick={() => setCount(count + 1)}
-                className="cursor-pointer"
+                className="cursor-pointer opacity-50"
                 src="plus.svg"
                 height={16}
                 width={16}
@@ -116,13 +116,13 @@ export const ChocolateImfo = (props) => {
             </div>
             <button
               onClick={() => HandleBuy()}
-              className="py-1 border-black rounded-e-[10px] border-b-2 border-t-2 border-r-2 px-1 "
+              className="py-1 border-black rounded-e-[10px]  px-1 "
             >
               <Image
                 className="cursor-pointer"
                 src="check.svg"
-                height={24}
-                width={24}
+                height={32}
+                width={32}
               />
             </button>
           </div>

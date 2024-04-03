@@ -2,7 +2,6 @@ import express from "express";
 import { BuyerModel } from "../model/buyer-model.js";
 import { PurchaseModel } from "../model/allPurchase-model.js";
 export const getAllBuyerInfo = async (req, res) => {
-  // console.log("hi");
   const allBuyer = await BuyerModel.find();
   res.status(200).json({ allBuyer });
 };

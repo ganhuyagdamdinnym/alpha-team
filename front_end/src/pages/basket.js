@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useContext, useState, useEffect, useRef } from "react";
-import { UserTokenContext } from "./_app";
 import axios from "axios";
 import { Hoppet } from "@/components/Hoppet";
 import { CashPart } from "@/components/CashPart";
@@ -52,8 +51,9 @@ export default function Basket() {
 
   return (
     <div onClick={() => back(currentRef)} className=" w-[100wv] h-[100hv] ]">
+      {/* <div className="w-screen h-screen bg-[red] absolute top-0 z-auto"></div> */}
       <div
-        style={{ position: "fixed", top: "0", left: "0", zIndex: 20 }}
+        style={{ position: "fixed", top: "0", left: "0", zIndex: 10 }}
         className="w-full bg-white relative"
       >
         <div className="flex items-center justify-center border-[#BE9131] border-b-[15px] py-2 px-4">
@@ -82,7 +82,7 @@ export default function Basket() {
             <div className="border-2 border-[#BE9131] rounded-full w-[25px] h-[25px] flex justify-center items-center">
               <Image src="user.svg" height={12} width={12} />
             </div>
-            <p>{user.name}</p>
+            <p className="font-medium">{user.name}</p>
           </div>
         </div>
       </div>
