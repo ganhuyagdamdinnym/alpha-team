@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Header } from "./Header";
 
@@ -72,15 +72,27 @@ export default function MainPageGlitchFix() {
     },
   ];
 
+  function responsiveTabHandler() {
+    if (screen.width < 630) {
+      return 1;
+    } else {
+      return 2;
+    }
+  }
+
   function handleTab(event) {
     const targetIndex = MainStreamDataForSwiperCover.findIndex(
       (item) => item === event
     );
     if (targetIndex !== -1) {
-      swiperRef.slideTo(targetIndex + 2);
+      swiperRef.slideTo(targetIndex + responsiveTabHandler());
     } else {
       console.error("Item not found in data array");
     }
+  }
+
+  function providerNameFilter(content) {
+    return content.replace("RITTER SPORT ", "");
   }
   return (
     <div className="">
@@ -95,6 +107,7 @@ export default function MainPageGlitchFix() {
           <Swiper
             slidesPerView={3}
             modules={[Navigation, Autoplay, Virtual]}
+            navigation={true}
             onSlideChange={(swiperCore) => {
               const { realIndex } = swiperCore;
 
@@ -114,6 +127,24 @@ export default function MainPageGlitchFix() {
             virtual
             loop={true}
             centeredSlides={true}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+            }}
           >
             {MainStreamDataForSwiperCover.map((e, index) => (
               <SwiperSlide virtualIndex={index} key={index}>
@@ -121,7 +152,7 @@ export default function MainPageGlitchFix() {
                   style={{
                     backgroundColor: MainStreamDataForSwiperCover[index]?.color,
                   }}
-                  className="w-[100%] h-[30vw] flex justify-center"
+                  className="w-[100%] flex justify-center"
                 >
                   <img src={e.image}></img>
                 </div>
@@ -137,16 +168,18 @@ export default function MainPageGlitchFix() {
           }}
         >
           <div className="w-[70vw]">
-            <h1 className="text-[35px] font-bold">
+            <h1 className="textTitle text-[35px] font-bold">
               {mainStreamPipeForState.title}
             </h1>
-            <p className="text-[24px]">{mainStreamPipeForState.content}</p>
+            <p className="textContent text-[24px]">
+              {mainStreamPipeForState.content}
+            </p>
           </div>
         </div>
         <div
           style={{ backgroundColor: mainStreamPipeForState.accentColor }}
           className={
-            "fixed z-[99999999] w-[100vw] top-[95vh] gap-[20px] flex justify-evenly"
+            "fixed z-[99999999] w-[100vw] top-[95vh] gap-[20px] overflow-x-scroll flex justify-evenly"
           }
         >
           {MainStreamDataForSwiperCover.map((e, index) =>
@@ -159,7 +192,6 @@ export default function MainPageGlitchFix() {
                   backgroundColor: mainStreamPipeForState.color,
                   paddingLeft: "20px",
                   paddingRight: "20px",
-
                   fontSize: "18px",
                   color: mainStreamPipeForState.accentColor,
                 }}
@@ -173,7 +205,6 @@ export default function MainPageGlitchFix() {
                   paddingLeft: "20px",
                   fontSize: "18px",
                   paddingRight: "20px",
-
                   backgroundColor: mainStreamPipeForState.accentColor,
                 }}
                 key={index}
@@ -185,37 +216,6 @@ export default function MainPageGlitchFix() {
           )}
         </div>
       </div>
-      <button
-        onClick={() => {
-          swiperRef.slidePrev();
-        }}
-        className="absolute top-[30vh] left-[35vw] z-[99999999]"
-      >
-        <svg
-          height={50}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 448 512"
-          fill="black"
-          style={{ rotate: "180deg" }}
-        >
-          <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-        </svg>
-      </button>
-      <button
-        onClick={() => {
-          swiperRef.slideNext();
-        }}
-        className="absolute top-[30vh] right-[35vw] z-[9999999999]"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 448 512"
-          height={50}
-          fill="black"
-        >
-          <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-        </svg>
-      </button>
 
       <div
         className="flex items-center flex-wrap"
@@ -223,11 +223,15 @@ export default function MainPageGlitchFix() {
       >
         {Data.map((e, index) => {
           return e.sort == mainStreamPipeForState.name ? (
-            <img
+            <div
               key={index}
-              className="flex w-[20%] min-w-max-[300px] max-[1000px]:w-[50%] bg-cover"
-              src={e.image}
-            ></img>
+              className="flex w-[20%] min-w-max-[300px] justify-center max-[1000px]:w-[50%] bg-cover"
+            >
+              <img src={e.image}></img>
+              <p className="absolute z-[2000] text-[white] max-[1000px]:text-[14px] max-[1000px]:mt-[42%] mt-[17%]">
+                {providerNameFilter(e.name)}
+              </p>
+            </div>
           ) : null;
         })}
       </div>
