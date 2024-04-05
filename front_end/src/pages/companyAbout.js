@@ -108,20 +108,22 @@ export default function About() {
   return (
     <div className="bg-white">
       <Header />
-      <div className="w-full h-auto flex justify-evenly Div1CA pt-[10vh]">
+      <div className="w-full flex justify-evenly Div1CA pt-[10vh]">
         {data.map((dta) => (
           <div className="flex flex-col Div1 gap-[2vh] w-1/5 items-center">
             <img src={dta.bg_image} className="w-80 h-80 Div1CA-img" />
-            <p
-              style={{ color: dta.textColor }}
-              className="text-[3.5vh] font-bold Div1CA-font"
-            >
-              {dta.year}
-            </p>
-            <button
-              style={{ background: dta.textColor }}
-              className="w-[2.5vh] h-[2.7vh] text-[1.5vh]"
-            ></button>
+            <div>
+              <p
+                style={{ color: dta.textColor }}
+                className="text-[3.5vh] font-bold Div1CA-font"
+              >
+                {dta.year}
+              </p>
+              <button
+                style={{ background: dta.textColor }}
+                className="w-[2.5vh] h-[2.7vh] bw text-[1.5vh]"
+              ></button>
+            </div>
             <p className="text-black Div1CA-font text-[2.3vh] font-normal">
               {dta.title}
             </p>
@@ -134,10 +136,12 @@ export default function About() {
             <img src={dta.bg_image} className="w-full h-4/5" />
             <div className="flex gap-4 pt-[1vh] relative w-full">
               <div
-                className="w-[3vh] h-[3vh]"
+                className="w-[3vh] h-[3vh] bw"
                 style={{ background: dta.textColor }}
               ></div>
-              <span className="text-[2.2vh] w-full Div2font">{dta.title}</span>
+              <span className="text-[2.2vh] w-full Div1CA-font">
+                {dta.title}
+              </span>
             </div>
           </div>
         ))}
@@ -148,11 +152,11 @@ export default function About() {
           src="/387846203_348878714323255_7632759952354299977_n (1) (1) (1).jpg"
         />
       </div>
-      <div className="flex flex-wrap w-full place-content-center Company gap-[1vh] pt-[5vh]">
+      <div className="flex w-full place-content-center Company reliative gap-[1vh] pt-[5vh]">
         {data_2.map((dta) => (
-          <div className="flex w-full items-center">
-            <img src={dta.bg_image} className="w-1/4 h-3/4 pr-[2vh]" />
-            <p className="font-semibold place-self-center text-[1.8vh]">
+          <div className="flex w-full classs items-center">
+            <img src={dta.bg_image} className="w-full h-3/4 pr-[2vh]" />
+            <p className="font-semibold place-self-center Div1CA-font text-[1.8vh]">
               {dta.text1}
               <span className="font-thin">{dta.text2}</span>
             </p>
