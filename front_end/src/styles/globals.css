@@ -24,10 +24,25 @@
 .icon {
   width: 4%;
 }
+.header1 {
+  /* w-full flex flex-col px-4 py-1 gap-2 fix top-0 bg-[#BE9131] r-[4px] z-10 border-b-[20px] border-[#F1EFEF] relative */
+  width: 100vw;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  padding: 1 4 1 4;
+  top: 0px;
+  background-color: #be9131;
+  z-index: 2px;
+  border-bottom: 20px #f1efef solid;
+  position: relative;
+}
 body {
   position: relative;
   z-index: -2;
-  background-color: white;
+  /* background-color: ; */
 }
 .chocolateSortBuy {
   transition: all 400ms;
@@ -139,6 +154,15 @@ body {
   display: grid;
   grid-template-columns: 48% 48%;
   padding-top: 20px;
+}
+.bttn1 {
+  /* absolute right-10 flex gap-4 h-full items-center */
+  position: absolute;
+  right: 10px;
+  display: flex;
+  gap: 4px;
+  height: 100%;
+  align-items: center;
 }
 /* img {
     animation: image 1s;
@@ -453,7 +477,16 @@ body {
   .username {
     font-size: 12px;
     margin-right: 8px;
-    gap: 4px;
+    gap: 2px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .header1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .bttn1 {
+    position: fixed;
   }
   .Div1CA-font {
     font-size: 0.9vh;
