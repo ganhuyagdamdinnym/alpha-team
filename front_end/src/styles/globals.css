@@ -158,13 +158,12 @@ body {
     filter: brightness(1) blur(0);
   }
 }
-<<<<<<< HEAD
 @media only screen and (max-width: 1600px) {
   .loginPart {
     height: 400px;
     width: 350px;
   }
-=======
+}
 @media only screen and (max-width: 1900px) {
   .Div2 {
     gap: 30px;
@@ -177,7 +176,6 @@ body {
   /* .tester {
     background-color: black;
   } */
->>>>>>> e0f46fc635d6c385f4dc4691d55cf09b7c6c14c7
   .grid-container {
     display: grid;
     grid-template-columns: 24% 24% 24% 24%;
@@ -214,11 +212,9 @@ body {
     margin-top: 0;
     margin-bottom: 0;
   }
-<<<<<<< HEAD
   .chocolateSortBuy {
     font-size: 15px;
-=======
-
+  }
   /* .chocolateSortBuy {
     font-size: 20px;
   } */
@@ -236,7 +232,6 @@ body {
   .bw {
     width: 1.7vh;
     height: 1.7vh;
->>>>>>> e0f46fc635d6c385f4dc4691d55cf09b7c6c14c7
   }
 }
 @media only screen and (max-width: 1200px) {
