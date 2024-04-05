@@ -106,8 +106,10 @@ export default function About() {
     },
   ];
   return (
-    <div className="bg-white">
-      <Header />
+    <div className="bg-white relative">
+      <div className="fixed t-0 bg-black mt-[-20px] z-20">
+        <Header />
+      </div>
       <div className="w-full flex justify-evenly Div1CA pt-[10vh]">
         {data.map((dta) => (
           <div className="flex flex-col Div1 gap-[2vh] w-1/5 items-center">
