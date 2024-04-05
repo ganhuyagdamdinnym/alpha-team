@@ -2,13 +2,32 @@ import { useState } from "react";
 import Image from "next/image";
 
 export function Info({ e }) {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
+  function handlShow() {
+    setShow(!show);
+  }
+  function arrowImg() {
+    if (show == false) {
+      return "/downArrow.png";
+    } else {
+      return "/upArrow.png";
+    }
+  }
   return (
-    <div className="flex flex-col px-8 py-2 bg-white w-[80%] h-[400px] rounded-2xl overflow-y-scroll gap-2">
-      <p className="text-2xl border-b-[0.1px] border-[#BE9131] px-2">
-        И-мэйл: {e.email}
-      </p>
-      <Image />
+    <div className="flex flex-col px-8 py-2 bg-white w-[80%]  rounded-2xl overflow-y-scroll gap-2">
+      <div
+        className="flex justify-between text-2xl border-b-[0.1px] border-[#BE9131] px-2"
+        onClick={handlShow}
+      >
+        <p>И-мэйл: {e.email}</p>
+        {/* <div
+          style={{
+            backgroundImage: `${arrowImg}`,
+            width: "24px",
+            height: "24px",
+          }}
+        ></div> */}
+      </div>
       {show && (
         <div className="flex flex-col gap-4 ">
           {e.allBuy?.map((element) => (

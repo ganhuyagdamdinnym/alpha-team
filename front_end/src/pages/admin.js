@@ -63,11 +63,11 @@ export default function Home() {
     fetchAllBuyerInfo();
   }, []);
   return (
-    <div className="w-full h-[100] bg-[#F1EFEF] relative">
-      <div className="w-full flex flex-col px-4 py-1 gap-2 fix top-0 bg-[#BE9131] r-[4px] z-10 border-b-[20px] border-[#F1EFEF] relative">
+    <div className="w-full h-[100vh] bg-[#F1EFEF] relative overflow-scroll">
+      <div className=" header1">
         <p className="text-3xl text-white">Hi Admin!</p>
         <div className="w-full text-white">{user.name}</div>
-        <div className="absolute right-10 flex gap-4 h-full items-center">
+        <div className="bttn1">
           <button
             onClick={Users}
             className={`text-2xl rounded-2xl  ${
