@@ -14,7 +14,7 @@ export function Info({ e }) {
     }
   }
   return (
-    <div className="flex flex-col px-8 py-2 bg-white w-[80%]  rounded-2xl overflow-y-scroll gap-2">
+    <div className="flex flex-col px-8 py-2 bg-white w-[80%]  rounded-2xl overflow-y-scroll gap-2 AdminHeader">
       <div
         className="flex justify-between text-2xl border-b-[0.1px] border-[#BE9131] px-2"
         onClick={handlShow}
@@ -31,13 +31,13 @@ export function Info({ e }) {
       {show && (
         <div className="flex flex-col gap-4 ">
           {e.allBuy?.map((element) => (
-            <div className="border-solid border-2  border-[#BE9131] px-4 py-4 rounded-xl flex relative text-[20px]">
+            <div className="border-solid border-2  border-[#BE9131] px-4 py-[30px] rounded-xl flex relative text-[20px] flex flex-col ">
               <div className="absolute bottom-4 right-40 w-8 h-4 z-0">
                 Хүргэгдээгүй
               </div>
               <div>
-                <div className="flex gap-4">
-                  <h1>Шоколадны нэрс:</h1>
+                <div className="flex  flex  flex-wrap">
+                  <h1 className="w-44">Шоколадны нэрс:</h1>
                   {element.chocolateName.map((el) => (
                     <div className="flex gap-2">
                       <p>{el.name}</p>

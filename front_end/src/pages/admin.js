@@ -96,7 +96,7 @@ export default function Home() {
           className="w-full h-full flex flex-col items-center mt-[90px] py-4"
         >
           {lastBuyStatus ? (
-            <div className="w-full h-full flex flex-col items-center gap-8 px-10">
+            <div className="w-full h-full flex flex-col items-center gap-8 px-10 ">
               {data?.map((e) => (
                 //<Info e={e} />
                 <Info e={e} />
@@ -105,7 +105,7 @@ export default function Home() {
           ) : (
             <div className="w-full h-full flex flex-col items-center gap-8 px-10">
               {lastBuyerData?.map((e) => (
-                <div className="flex  text-[20px] font-medium flex-col px-8 py-2 border-solid border-2  border-[#BE9131]  w-[80%] rounded-2xl overflow-y-scroll gap-[2px] relative bg-white">
+                <div className="flex  text-[20px]  flex-col px-8 py-2 border-solid border-2  border-[#BE9131]  w-[80%] rounded-2xl overflow-y-scroll gap-[2px] relative bg-white">
                   <p>И-мэйл: {e.email}</p>
                   <p>Утасны дугаар:{e.number}</p>
                   <p>Хаяг:{e.address}</p>

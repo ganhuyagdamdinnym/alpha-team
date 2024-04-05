@@ -354,6 +354,9 @@ body {
   .textContent {
     font-size: 16px;
   }
+  /* .header1 {
+    font-size: 12px;
+  } */
   .homeAbout {
     /* flex gap-[8vh] justify-evenly py-[8vh] bg-blue-950 my-0  */
     display: flex;
@@ -402,6 +405,10 @@ body {
   .Company {
     display: grid;
     grid-template-columns: 85%;
+  }
+  .AdminHeader {
+    font-size: 20px;
+    /* background-color: red; */
   }
 }
 @media only screen and (max-width: 650px) {
