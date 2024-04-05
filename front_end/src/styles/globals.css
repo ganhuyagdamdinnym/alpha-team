@@ -13,6 +13,14 @@
   position: relative;
   margin-top: 50px;
 }
+.Company {
+  display: grid;
+  grid-template-columns: 45% 45%;
+}
+.classs {
+  display: grid;
+  grid-template-columns: 23% 70%;
+}
 .icon {
   width: 4%;
 }
@@ -130,10 +138,7 @@ body {
 .aboutPart {
   display: grid;
   grid-template-columns: 48% 48%;
-  padding-left: 100px;
-  padding-right: 100px;
   padding-top: 20px;
-  gap: 70px;
 }
 /* img {
     animation: image 1s;
@@ -158,6 +163,19 @@ body {
     height: 400px;
     width: 350px;
   }
+}
+@media only screen and (max-width: 1900px) {
+  .Div2 {
+    gap: 30px;
+  }
+  .Div2font {
+    font-size: 2vh;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  /* .tester {
+    background-color: black;
+  } */
   .grid-container {
     display: grid;
     grid-template-columns: 24% 24% 24% 24%;
@@ -196,6 +214,24 @@ body {
   }
   .chocolateSortBuy {
     font-size: 15px;
+  }
+  /* .chocolateSortBuy {
+    font-size: 20px;
+  } */
+  .Div1CA {
+    justify-content: space-around;
+  }
+  .Div1CA-img {
+    width: 236px;
+    height: 236px;
+  }
+  .Div1CA-font {
+    font-weight: 400;
+    font-size: 1.5vh;
+  }
+  .bw {
+    width: 1.7vh;
+    height: 1.7vh;
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -270,6 +306,25 @@ body {
     padding-top: 20px;
     gap: 70px;
   }
+  .aboutPart {
+    display: grid;
+    grid-template-columns: 80%;
+  }
+  .Div1 {
+    width: 25vh;
+  }
+  .Div1CA {
+    gap: 2vh;
+  }
+  .Div1CA-img {
+    width: 200px;
+    height: 200px;
+  }
+  .Company {
+    display: grid;
+    grid-template-columns: 70%;
+    margin-bottom: 6vh;
+  }
 }
 @media only screen and (max-width: 900px) {
   .textContent {
@@ -309,6 +364,20 @@ body {
     padding-right: 70px;
     padding-top: 20px;
     gap: 70px;
+  }
+  .Div1CA {
+    justify-content: space-between;
+  }
+  .Div1CA-img {
+    width: 170px;
+    height: 170px;
+  }
+  .Div1CA-font {
+    font-size: 1.2vh;
+  }
+  .Company {
+    display: grid;
+    grid-template-columns: 85%;
   }
 }
 @media only screen and (max-width: 650px) {
@@ -373,6 +442,9 @@ body {
   .header-choco {
     font-size: 15px;
   }
+  .header {
+    border-color: #be9131;
+  }
   .userHeadEmail {
     font-size: 12px;
     margin-right: 12px;
@@ -382,6 +454,26 @@ body {
     font-size: 12px;
     margin-right: 8px;
     gap: 4px;
+  }
+  .Div1CA-font {
+    font-size: 0.9vh;
+  }
+  .Div1CA {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 1vh;
+    padding-top: 14vh;
+  }
+  .Div1 {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 80%;
+  }
+  .Div1CA-img {
+    width: 30%;
+    height: 30%;
   }
 }
 body {
@@ -403,4 +495,11 @@ body {
 }
 svg {
   font-size: large;
+}
+
+.StoryHAC {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  padding-top: 10vh;
+  gap: 30px;
 }

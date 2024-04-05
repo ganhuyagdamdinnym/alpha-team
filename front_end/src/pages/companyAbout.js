@@ -1,6 +1,7 @@
 import { data } from "autoprefixer";
 import Image from "next/image";
 import { Header } from "@/components/Header";
+import { HomeAboutCompany } from "@/components/HomeAboutCompany";
 export default function About() {
   //   <div className="flex flex-wrap">
   //   <div className="flex flex-col text-wrap">
@@ -34,45 +35,49 @@ export default function About() {
   const data = [
     {
       bg_image: "/FEAHKWNWYAAZpSc-removebg-preview (1) (1).png",
-      title: "Риттер Спорт шоколадны үүсэл",
+      title: "АЛЬФРЕД,КЛАРА РИТТЭР НАР ҮҮСГЭН БАЙГУУЛСАН",
       year: "1912",
       textColor: "#009a91",
     },
     {
-      bg_image: "Untitled design (1).png",
-      title: "Яагаад дөрвөлжин шокалад гэж?",
+      bg_image: "Untitled design (1) (1).png",
+      title: "АНХНЫ ДӨРВӨЛЖИН ХЭЛБЭРТЭЙ ЗАГВАРАА ГАРГАСАН",
       year: "1932",
       textColor: "#7fa97e",
     },
     {
       bg_image: "/xconvert.com-1-removebg-preview (1) (1).png",
-      title: "Нэр төрлөө нэмэгдүүлсэн нь",
+      title: "НЭР ТӨРЛӨӨ НЭМЭГДҮҮЛЖ,ОДООГИЙН ҮНДСЭН ӨНГӨ ТӨРХӨӨ БИЙ БОЛГОСОН",
       year: "1974",
-      textColor: "#7fa97e",
+      textColor: "#FFDF00",
     },
   ];
   const data_1 = [
     {
       bg_image: "/RitterSport_Headquarter (1).jpg",
-      title: "Риттер Спорт шоколадны үүсэл",
-      textColor: "#009a91",
+      title:
+        "АНХНЫ ҮЙЛДВЭРЭЭ КАННСТАТ (ГЕРМАН) ХОТОД БАЙГУУЛСАН БА ХОЖИМ НЬ ВАЛДЕНБУХ РУУ НҮҮЖ ӨНӨӨГ ХҮРТЭЛ ТЭНДЭЭ ҮЙЛ АЖИЛЛАГААГАА ЯВУУЛЖ БАЙНА",
+      textColor: "#FFDF00",
     },
     {
       bg_image:
         "/canva-travel-summer-concept-with-earth-map-ball-on-sand-1 (1).png",
-      title: "Яагаад дөрвөлжин шокалад гэж?",
+      title:
+        "ДЭЛХИЙН 100 ГАРУЙ УЛС, ОРОНД ХУДАЛДААЛАГДДАГ БА ЧАНАР БОЛОН БОРЛУУЛАЛТААРАА ГЕРМАНД №2, ЕВРОПТ №3 ОРДОГ",
       textColor: "#7fa97e",
     },
     {
-      bg_image: "/ritter-sport-01-jpg.png",
-      title: "Нэр төрлөө нэмэгдүүлсэн нь",
-      textColor: "#7fa97e",
+      bg_image: "/ritter-sport-01-jpg (1).png",
+      title:
+        "ВАЛДЕНБУХ(ГЕРМАН) БРАЙТЕНБРУНН(АВСТРИ) ЗЭРЭГ 2 ҮЙЛДВЭРЭЭС ӨДӨРТ ХАМГИЙН БАГАДАА 3 САЯ БААР ҮЙЛДВЭРЛДЭГ",
+      textColor: "#FF2400",
     },
     {
       bg_image:
         "/Ritter-Sport-to-get-closer-to-origins-after-reaching-100-certified-cocoa (1).jpg",
-      title: "Нэр төрлөө нэмэгдүүлсэн нь",
-      textColor: "#7fa97e",
+      title:
+        "НИКИРАГУА ДАХЬ ЭЛЬ КАКАО ФЕРМ ДЭЭР ӨӨРИЙН КАКАО ТАРИАЛАЛТАА ХИЙДЭГ",
+      textColor: "#0000FF",
     },
   ];
   const data_2 = [
@@ -83,79 +88,82 @@ export default function About() {
       text1: "RAINFOREST ALLIANCE ",
     },
     {
-      bg_image: "/Image.jpeg",
-      text2: "КАКАОНЫ УРТ ХУГАЦААНЫ ТҮНШЛЭЛИЙН ГЭРЭЭТЭЙ ",
-      text1: "COCOA FROM LONG-TERM PARTNERSHIPS ",
-    },
-    {
       bg_image:
         "/f9257078-1ab3-49dd-bde0-1c6d95b7a907.__CR0,0,630,290_PT0_SX315_V1___.jpeg",
       text2: "100% КАКАОГААР ХИЙДЭГ",
       text1: "100% CERTIFIED SUSTAINABLE COCOA SOURCING ",
     },
     {
-      bg_image: "/fairtrade-cocoa-program-logo-696DE917E3-seeklogo.com.png",
-      text2: "ИЙН ГИШҮҮН БА ОРОН НУТГИЙН ИРГЭД,ТАРИАЛАНЧДЫГ ДЭМЖИЖ",
-      text1: "FAIRTRADE INTERNATIONAL ",
+      bg_image: "/347596348_215343754607880_3077843115052717370_n.png",
+      text2:
+        "-ИЙН ГИШҮҮН БА ХҮРЭЭЛЭН БУЙ ОРЧИН, ТАРИАН ТАЛБАЙН ЗӨВ ЗОХИСТОЙ АШИГЛАЛТ МЕНЕЖМЕНТИЙН ГАЗАРТАЙ ХАМТАРЧ АЖИЛЛАДАГ",
+      text1: "UTZ CERTIFIED ",
     },
     {
-      bg_image: "/347596348_215343754607880_3077843115052717370_n.png",
-      text2: "Нэр төрлөө нэмэгдүүлсэн нь",
-      text1: "UTZ CERTIFIED ",
+      bg_image: "/fairtrade-cocoa-program-logo-696DE917E3-seeklogo.com.png",
+      text2: "-ИЙН ГИШҮҮН БА ОРОН НУТГИЙН ИРГЭД, ТАРИАЛАНЧДЫГ ДЭМЖИЖ АЖИЛЛАДАГ",
+      text1: "FAIRTRADE INTERNATIONAL ",
     },
   ];
   return (
     <div className="bg-white">
       <Header />
-      <div className="flex flex-col pt-[10vh] justify-center">
-        <div className="flex justify-evenly justify-center">
-          {data.map((dta) => (
-            <div className="flex flex-col place-content-center gap-[1vh]">
-              <img src={dta.bg_image} className="w-4/5 h-4/5 border-b-2" />
-              <p className="text-[2vh] text-black align-center">{dta.year}</p>
-              <button
-                style={{ background: dta.textColor }}
-                className="w-[2vh] h-[2vh] text-[1.5vh]"
-              ></button>
+      <div className="w-full flex justify-evenly Div1CA pt-[10vh]">
+        {data.map((dta) => (
+          <div className="flex flex-col Div1 gap-[2vh] w-1/5 items-center">
+            <img src={dta.bg_image} className="w-80 h-80 Div1CA-img" />
+            <div>
               <p
                 style={{ color: dta.textColor }}
-                className="text-black w-full text-[1.5vh] font-light"
+                className="text-[3.5vh] font-bold Div1CA-font"
               >
-                {dta.title}
+                {dta.year}
               </p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="w-screen flex aboutPart pb-[2vh]">
-        {data_1.map((dta) => (
-          <div>
-            <img src={dta.bg_image} className="w-full h-full" />
-            <div className="flex">
-              <div
-                className="w-[2vh] h-[2vh]"
+              <button
                 style={{ background: dta.textColor }}
-              ></div>
-              <p>{dta.title}</p>
+                className="w-[2.5vh] h-[2.7vh] bw text-[1.5vh]"
+              ></button>
             </div>
-          </div>
-        ))}
-      </div>
-      <img
-        className="w-screen place-self-center"
-        src="/387846203_348878714323255_7632759952354299977_n (1) (1).jpg"
-      />
-      <div className="flex flex-col place-items-center gap-[4vh]">
-        {data_2.map((dta) => (
-          <div className="flex w-3/4 gap-[10vh]">
-            <img src={dta.bg_image} className="w-1/6" />
-            <p className="font-semibold place-self-center text-[3vh]">
-              {dta.text1}
-              {dta.text2}
+            <p className="text-black Div1CA-font text-[2.3vh] font-normal">
+              {dta.title}
             </p>
           </div>
         ))}
       </div>
+      <div className="w-screen flex aboutPart place-content-around Div2">
+        {data_1.map((dta) => (
+          <div>
+            <img src={dta.bg_image} className="w-full h-4/5" />
+            <div className="flex gap-4 pt-[1vh] relative w-full">
+              <div
+                className="w-[3vh] h-[3vh] bw"
+                style={{ background: dta.textColor }}
+              ></div>
+              <span className="text-[2.2vh] w-full Div1CA-font">
+                {dta.title}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="w-full flex justify-center">
+        <img
+          className="w-5/6 align-center"
+          src="/387846203_348878714323255_7632759952354299977_n (1) (1) (1).jpg"
+        />
+      </div>
+      <div className="flex w-full place-content-center Company reliative gap-[1vh] pt-[5vh]">
+        {data_2.map((dta) => (
+          <div className="flex w-full classs items-center">
+            <img src={dta.bg_image} className="w-full h-3/4 pr-[2vh]" />
+            <p className="font-semibold place-self-center Div1CA-font text-[1.8vh]">
+              {dta.text1}
+              <span className="font-thin">{dta.text2}</span>
+            </p>
+          </div>
+        ))}
+      </div>
+      <HomeAboutCompany />
     </div>
   );
 }
