@@ -14,6 +14,9 @@ app.use(chocolateRouter);
 app.use(UserRouter);
 app.use(BuyerRouter);
 app.use(AllPurchaseRouter);
+app.get("/", (req, res) => {
+  res.json({ state: 200 });
+});
 const port = 8002;
 app.listen(port, () => {
   console.log("power on" + port);
