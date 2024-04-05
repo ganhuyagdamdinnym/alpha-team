@@ -9,6 +9,7 @@ export const Login = (props) => {
     props;
   //const { token } = useContext(AuthContext);
   const { token, curUser: user } = useContext(AuthContext);
+
   const router = useRouter();
   const loginCurrentUser = () => {
     if (token) {
@@ -54,12 +55,14 @@ export const Login = (props) => {
       </h1>
       <div className="flex w-full justify-center">
         <div className="w-3/4 text-2xl py-1  rounded-xl text-[white] flex flex-col gap-2">
-          <button
-            onClick={() => loginCurrentUser()}
-            className="w-full text-2xl py-1 bg-[red] rounded-xl text-white border-solid border-2 flex  items-center justify-center  h-[40px]"
-          >
-            {user.name}
-          </button>
+          {user.name == null ? null : (
+            <button
+              onClick={() => loginCurrentUser()}
+              className="w-full text-2xl py-1 bg-[red] rounded-xl text-white border-solid border-2 flex  items-center justify-center  h-[40px]"
+            >
+              {user.name}
+            </button>
+          )}
         </div>
       </div>
       <div className="flex flex-col gap-3 full items-center">
