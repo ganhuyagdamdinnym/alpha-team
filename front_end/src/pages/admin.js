@@ -64,8 +64,8 @@ export default function Home() {
   }, []);
   return (
     <div className="w-full h-[100vh] bg-[#F1EFEF] relative overflow-scroll">
-      <div className=" header1">
-        <p className="text-3xl text-white">Hi Admin!</p>
+      <div className=" header1 h-[100px]">
+        <p className="text-3xl text-white ">Hi Admin!</p>
         <div className="w-full text-white">{user.name}</div>
         <div className="bttn1">
           <button
@@ -103,23 +103,61 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <div className="w-full h-full flex flex-col items-center gap-8 px-10">
-              {lastBuyerData?.map((e) => (
-                <div className="flex  text-[20px]  flex-col px-8 py-2 border-solid border-2  border-[#BE9131]  w-[80%] rounded-2xl overflow-y-scroll gap-[2px] relative bg-white">
-                  <p>И-мэйл: {e.email}</p>
-                  <p>Утасны дугаар:{e.number}</p>
-                  <p>Хаяг:{e.address}</p>
-                  <p>Худалдааны цаг:</p>
-                  <p>Худалдааны дүн: {e.pay}₮</p>
-                  <Image
-                    src="dots.svg"
-                    height={24}
-                    width={24}
-                    className="absolute right-4 cursor-pointer"
-                  />
+            <div className="w-full h-full flex px-10 flex-col">
+              <div className="w-full h-full border-2  border-[#BE9131] flex ">
+                <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
+                  <div>И-мэйл</div>
+                </div>
+                <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
+                  <div>Утасны дугаар</div>
+                </div>
+                <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
+                  <div>Хаяг</div>
+                </div>
+                <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
+                  <div>Худалдааны цаг</div>
+                </div>
+                <div className="w-[20%] flex justify-center">
+                  <div>Худалдааны дүн</div>
+                </div>
+              </div>
+              {lastBuyerData?.map((buyer) => (
+                <div className="w-full h-full border-b-2 border-[#BE9131] flex ">
+                  <div className="w-[20%] border-r-2 border-l-2 border-[#BE9131] flex justify-center">
+                    <p>{buyer.email}</p>
+                  </div>
+                  <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
+                    <p>{buyer.number}</p>
+                  </div>
+                  <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
+                    <div>{buyer.address}</div>
+                  </div>
+                  <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
+                    <div>Худалдааны цаг</div>
+                  </div>
+                  <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
+                    <div>Худалдааны дүн</div>
+                  </div>
                 </div>
               ))}
             </div>
+            // <div className="w-full h-full flex flex-col items-center gap-8 px-10 border-2  border-[#BE9131]">
+            //   {lastBuyerData?.map((e) => (
+            //     <div className="flex  text-[20px]  flex-col px-8 py-2 border-solid border-2  border-[#BE9131]  w-[80%] rounded-2xl overflow-y-scroll gap-[2px] relative bg-white">
+            //       <p>И-мэйл: {e.email}</p>
+            //       <p>Утасны дугаар:{e.number}</p>
+            //       <p>Хаяг:{e.address}</p>
+            //       <p>Худалдааны цаг:</p>
+            //       <p>Худалдааны дүн: {e.pay}₮</p>
+            //       <Image
+            //         src="dots.svg"
+            //         height={24}
+            //         width={24}
+            //         className="absolute right-4 cursor-pointer"
+            //       />
+            //     </div>
+            //   ))}
+            // </div>
           )}
         </div>
       </div>

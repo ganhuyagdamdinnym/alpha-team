@@ -27,7 +27,7 @@
 .header1 {
   /* w-full flex flex-col px-4 py-1 gap-2 fix top-0 bg-[#BE9131] r-[4px] z-10 border-b-[20px] border-[#F1EFEF] relative */
   width: 100vw;
-  height: 7vh;
+  height: 100px;
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -184,7 +184,7 @@ body {
 }
 @media only screen and (max-width: 1600px) {
   .loginPart {
-    height: 400px;
+    height: 380px;
     width: 350px;
   }
 }
