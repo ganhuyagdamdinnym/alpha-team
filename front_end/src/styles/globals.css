@@ -391,3 +391,11 @@ body {
 svg {
   font-size: large;
 }
+
+.chocolate-card-image {
+  transition: 0.4s;
+}
+
+.chocolate-card-image:hover {
+  scale: 1.2;
+}
