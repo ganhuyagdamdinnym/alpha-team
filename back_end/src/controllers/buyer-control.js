@@ -22,6 +22,7 @@ export const UserBought = async (req, res) => {
             number: allBuy.number,
             address: allBuy.address,
             createdAt: date,
+            deliveryStatus: false,
           },
         ],
       });
@@ -36,6 +37,7 @@ export const UserBought = async (req, res) => {
       pay: allBuy.pay,
       number: allBuy.number,
       address: allBuy.address,
+      deliveryStatus: false,
     });
     //send email to buyer
     const transport = nodemailer.createTransport({

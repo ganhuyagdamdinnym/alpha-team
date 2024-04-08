@@ -117,7 +117,7 @@ export default function About() {
             <div>
               <p
                 style={{ color: dta.textColor }}
-                className="text-[3.5vh] font-bold Div1CA-font"
+                className="text-[3.5vh] font-bold"
               >
                 {dta.year}
               </p>

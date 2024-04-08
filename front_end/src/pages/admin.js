@@ -4,7 +4,7 @@ import axios from "axios";
 import { Back_End_url } from "../utils/back-url";
 import { AuthContext } from "@/hook/authProvider";
 import Image from "next/image";
-import { Info } from "@/components/information";
+import { Info } from "@/components/Information";
 //import Info from "../components/information";
 export default function Home() {
   const [data, setData] = useState();
@@ -21,8 +21,8 @@ export default function Home() {
       console.log(err);
     }
   };
+  console.log(lastBuyerData);
   format(new Date(2014, 1, 11), "MM/dd/yyyy");
-  //=> '02/11/2014'
   const dates = [
     new Date(1995, 6, 2),
     new Date(1987, 1, 11),
@@ -65,16 +65,16 @@ export default function Home() {
   return (
     <div className="w-full h-[100vh] bg-[#F1EFEF] relative overflow-scroll">
       <div className=" header1 h-[100px]">
-        <p className="text-3xl text-white ">Hi Admin!</p>
-        <div className="w-full text-white">{user.name}</div>
-        <div className="bttn1">
+        <p className="text-3xl text-white hiAdmin ml-2">Hi Admin!</p>
+        <div className="w-full text-[#010391] ml-2">{user.name}</div>
+        <div className="bttn1 gap-2">
           <button
             onClick={Users}
             className={`text-2xl rounded-2xl  ${
               lastBuyStatus
-                ? "bg-white text-black"
+                ? "bg-white text-[#010391]"
                 : "text-white border-b-[2px]"
-            } w-40 py-1 border-white`}
+            } w-40 py-1 border-white buttonInAdminPageHeader`}
           >
             Хэрэглэгчид
           </button>
@@ -83,8 +83,8 @@ export default function Home() {
             className={`text-2xl rounded-2xl  ${
               lastBuyStatus
                 ? "text-white border-b-[2px] border-white"
-                : "bg-white text-black"
-            } w-40 py-1`}
+                : "bg-white text-[#010391]"
+            } w-40 py-1 buttonInAdminPageHeader`}
           >
             Сүүлийн
           </button>
@@ -93,71 +93,66 @@ export default function Home() {
       <div style={StyleSS}>
         <div
           style={Style}
-          className="w-full h-full flex flex-col items-center mt-[90px] py-4"
+          className="w-full h-full flex flex-col items-center mt-[90px] py-4 px-4"
         >
           {lastBuyStatus ? (
-            <div className="w-full h-full flex flex-col items-center gap-8 px-10 ">
+            <div className="w-full h-full flex flex-col items-center gap-8 px-[10px]">
               {data?.map((e) => (
-                //<Info e={e} />
                 <Info e={e} />
               ))}
             </div>
           ) : (
-            <div className="w-full h-full flex px-10 flex-col">
-              <div className="w-full h-full border-2  border-[#BE9131] flex ">
-                <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
-                  <div>И-мэйл</div>
-                </div>
-                <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
-                  <div>Утасны дугаар</div>
-                </div>
-                <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
-                  <div>Хаяг</div>
-                </div>
-                <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
-                  <div>Худалдааны цаг</div>
-                </div>
-                <div className="w-[20%] flex justify-center">
-                  <div>Худалдааны дүн</div>
-                </div>
-              </div>
-              {lastBuyerData?.map((buyer) => (
-                <div className="w-full h-full border-b-2 border-[#BE9131] flex ">
-                  <div className="w-[20%] border-r-2 border-l-2 border-[#BE9131] flex justify-center">
-                    <p>{buyer.email}</p>
-                  </div>
-                  <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
-                    <p>{buyer.number}</p>
-                  </div>
-                  <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
-                    <div>{buyer.address}</div>
-                  </div>
-                  <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
-                    <div>Худалдааны цаг</div>
-                  </div>
-                  <div className="w-[20%] border-r-2 border-[#BE9131] flex justify-center">
-                    <div>Худалдааны дүн</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            // <div className="w-full h-full flex flex-col items-center gap-8 px-10 border-2  border-[#BE9131]">
-            //   {lastBuyerData?.map((e) => (
-            //     <div className="flex  text-[20px]  flex-col px-8 py-2 border-solid border-2  border-[#BE9131]  w-[80%] rounded-2xl overflow-y-scroll gap-[2px] relative bg-white">
-            //       <p>И-мэйл: {e.email}</p>
-            //       <p>Утасны дугаар:{e.number}</p>
-            //       <p>Хаяг:{e.address}</p>
-            //       <p>Худалдааны цаг:</p>
-            //       <p>Худалдааны дүн: {e.pay}₮</p>
-            //       <Image
-            //         src="dots.svg"
-            //         height={24}
-            //         width={24}
-            //         className="absolute right-4 cursor-pointer"
-            //       />
-            //     </div>
-            //   ))}
-            // </div>
+            <table
+              style={{ width: "100%" }}
+              className="border-2 border-[#BE9131]"
+            >
+              <thead>
+                <tr className="border-b-2 border-[#BE9131]">
+                  <th className="w-[25px] border-r-2 border-[#BE9131]"></th>
+                  <th className="border-r-2 border-[#BE9131] min-w-48">
+                    И-мэйл
+                  </th>
+                  <th className="border-r-2 border-[#BE9131] w-32">
+                    Утасны дугаар
+                  </th>
+                  <th className="border-r-2 border-[#BE9131] min-w-48">Хаяг</th>
+                  <th className="border-r-2 border-[#BE9131] min-w-48">
+                    Худалдааны цаг
+                  </th>
+                  <th className="border-r-2 border-[#BE9131] min-w-96">
+                    Авсан шоколаднууд
+                  </th>
+                  <th>Худалдааны дүн</th>
+                </tr>
+              </thead>
+              <tbody>
+                {lastBuyerData.map((buyer, index) => (
+                  <tr>
+                    <td className="border-r-2 border-[#BE9131] border-b-2">
+                      {index + 1}
+                    </td>
+                    <td className="border-r-2 border-[#BE9131] border-b-2">
+                      {buyer.email}
+                    </td>
+                    <td className="border-r-2 border-[#BE9131] border-b-2">
+                      {buyer.number}
+                    </td>
+                    <td className="border-r-2 border-[#BE9131] border-b-2">
+                      {buyer.address}
+                    </td>
+                    <td className="border-r-2 border-[#BE9131] border-b-2">
+                      tsag
+                    </td>
+                    <td className="border-r-2 border-[#BE9131] border-b-2">
+                      Germany
+                    </td>
+                    <td className="border-b-2 border-[#BE9131]">
+                      {buyer.pay}₮
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           )}
         </div>
       </div>

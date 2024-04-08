@@ -4,15 +4,12 @@ const buySchema = new Schema({
   pay: Number,
   address: String,
   number: Number,
-  deliveryId:Number,
+  deliveryId: Number,
+  deliveryStatus: Boolean,
   createdAt: { type: Date, default: Date.now() },
 });
 const BuyerSchema = new Schema({
   email: { type: String, require: true, unique: true },
-  // number: Number,
-  // address: String,
-  // paidMoney: Number,
-  // boughtChocolates: [{ type: Schema.Types.ObjectId, ref: "Chocolate" }],
   allBuy: [buySchema],
 });
 export const BuyerModel = model("Buyer", BuyerSchema);

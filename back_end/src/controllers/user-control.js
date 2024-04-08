@@ -56,6 +56,7 @@ export const loginByEmail = async (req, res) => {
         }
       );
     }
+    res.status(200).json({ message: "Email sent" });
   } catch (err) {
     console.log(err);
   }

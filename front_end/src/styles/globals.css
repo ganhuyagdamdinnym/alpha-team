@@ -17,6 +17,10 @@
   display: grid;
   grid-template-columns: 45% 45%;
 }
+.bordeer {
+  border-bottom: #000391;
+  border-width: 4px;
+}
 .classs {
   display: grid;
   grid-template-columns: 23% 70%;
@@ -30,14 +34,13 @@
   height: 100px;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
   padding: 1 4 1 4;
   top: 0px;
   background-color: #be9131;
-  z-index: 2px;
   border-bottom: 20px #f1efef solid;
-  position: relative;
+  position: fixed;
+  z-index: 3;
 }
 body {
   position: relative;
@@ -354,6 +357,7 @@ body {
   .textContent {
     font-size: 16px;
   }
+
   /* .header1 {
     font-size: 12px;
   } */
@@ -410,8 +414,28 @@ body {
     font-size: 20px;
     /* background-color: red; */
   }
+  .hiAdmin {
+    font-size: 20px;
+  }
+  .textInAdminPage {
+    font-size: 15px;
+  }
+  .textStatusInAdminPage {
+    margin-right: none;
+  }
 }
 @media only screen and (max-width: 650px) {
+  .buttonInAdminPageHeader {
+    width: 80px;
+    font-size: 12px;
+  }
+  .textStatusInAdminPage {
+    font-size: 15px;
+    right: 80px;
+  }
+  .email {
+    font-size: 15px;
+  }
   .buy {
     font-size: 12px;
     padding: 4px;
@@ -496,7 +520,7 @@ body {
     position: fixed;
   }
   .Div1CA-font {
-    font-size: 0.9vh;
+    font-size: 1.3vh;
   }
   .Div1CA {
     display: flex;
@@ -537,18 +561,23 @@ svg {
   font-size: large;
 }
 
-<<<<<<< HEAD
 .StoryHAC {
   display: grid;
   grid-template-columns: 30% 30% 30%;
   padding-top: 10vh;
   gap: 30px;
-=======
+}
 .chocolate-card-image {
   transition: 0.4s;
 }
 
 .chocolate-card-image:hover {
   scale: 1.2;
->>>>>>> 2c54948c44d0889a9346004dc52b220c117013ee
+}
+
+/* th {
+  text-align: start;
+} */
+td {
+  text-align: center;
 }

@@ -123,7 +123,6 @@ export default function MainPageGlitchFix() {
             }}
             onSwiper={setSwiperRef}
             init={true}
-            virtual
             loop={true}
             centeredSlides={true}
             breakpoints={{
@@ -146,7 +145,7 @@ export default function MainPageGlitchFix() {
             }}
           >
             {MainStreamDataForSwiperCover.map((e, index) => (
-              <SwiperSlide virtualIndex={index} key={index}>
+              <SwiperSlide virtualIndex={index}>
                 <div
                   style={{
                     backgroundColor: MainStreamDataForSwiperCover[index]?.color,
@@ -185,7 +184,6 @@ export default function MainPageGlitchFix() {
             e.name === mainStreamPipeForState.name ? (
               <button
                 className="font"
-                key={index}
                 style={{
                   height: "5vh",
                   backgroundColor: mainStreamPipeForState.color,
@@ -213,7 +211,6 @@ export default function MainPageGlitchFix() {
                   paddingRight: "20px",
                   backgroundColor: mainStreamPipeForState.accentColor,
                 }}
-                key={index}
                 onClick={() => handleTab(e)}
               >
                 {e.name}
@@ -230,7 +227,6 @@ export default function MainPageGlitchFix() {
         {Data.map((e, index) => {
           return e.sort == mainStreamPipeForState.name ? (
             <div
-              key={index}
               onClick={() => {}}
               style={mainStreamPipeForState.styleFor}
               className="flex transition-all duration-300 w-[20%] min-w-max-[300px] h-[20%] justify-center max-[1000px]:w-[50%] bg-cover overflow-hidden"
