@@ -1,6 +1,7 @@
 import express from "express";
 import { BuyerModel } from "../model/buyer-model.js";
 import { PurchaseModel } from "../model/allPurchase-model.js";
+import nodemailer from "nodemailer";
 export const getAllBuyerInfo = async (req, res) => {
   const allBuyer = await BuyerModel.find();
   res.status(200).json({ allBuyer });
@@ -28,9 +29,6 @@ export const UserBought = async (req, res) => {
       const newuser = user.allBuy.push({ ...allBuy });
       console.log("hi", newuser);
       await user.save();
-      // await BuyerModel.findOneAndDelete({email:email})
-      // await BuyerModel.create(user)
-      // console.log("neew", user);
     }
     await PurchaseModel.create({
       email: email,
@@ -39,7 +37,24 @@ export const UserBought = async (req, res) => {
       number: allBuy.number,
       address: allBuy.address,
     });
-
+    //send email to buyer
+    const transport = nodemailer.createTransport({
+      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: "damdinnymg@gmail.com",
+        pass: "yfimvgvjmqnmfghb",
+      },
+    });
+    const options = {
+      from: "damdinnymg@gmail.com",
+      to: email,
+      subject: "Password reset",
+      text: `Таны худалдан авалт амжилттай боллоо.`,
+    };
+    await transport.sendMail(options);
     res
       .status(200)
       .json({ success: true, message: "Purchase recorded successfully" });

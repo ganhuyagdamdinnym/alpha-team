@@ -4,6 +4,7 @@ const buySchema = new Schema({
   pay: Number,
   address: String,
   number: Number,
+  deliveryId:Number,
   createdAt: { type: Date, default: Date.now() },
 });
 const BuyerSchema = new Schema({

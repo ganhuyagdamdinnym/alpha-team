@@ -1,12 +1,15 @@
 import Image from "next/image";
 import axios from "axios";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Back_End_url } from "@/utils/back-url";
+import { AuthContext } from "@/hook/authProvider";
 // import { Back_End_url } from "@/pages/back-url";
 export const EnterCode = (props) => {
   const { email, back } = props;
   const router = useRouter();
+  const { setToken } = useContext(AuthContext);
+
   const input1Ref = useRef(null);
   const input2Ref = useRef(null);
   const input3Ref = useRef(null);
@@ -115,6 +118,8 @@ export const EnterCode = (props) => {
           console.log("token", res.data);
           localStorage.setItem("token", token);
           localStorage.removeItem("basket");
+          setToken(token);
+
           if (name == "dulamsuren894@gmail.com") {
             router.push("/admin");
           } else {

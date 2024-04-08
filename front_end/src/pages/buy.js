@@ -13,29 +13,7 @@ export default function Buy() {
   const router = useRouter();
   const [data, setData] = useState();
   const [sorts, setSorts] = useState();
-  // const [user, setUser] = useState();
-  // const UserData = async () => {
-  //   try {
-  //     if (token) {
-  //       const url = `${Back_End_url}/UserData`;
-  //       const res = await axios.get(url, {
-  //         headers: {
-  //           token: token,
-  //         },
-  //       });
-  //       console.log(res.data.User);
-  //       setUser(res.data.User);
-  //     }
-  //   } catch (err) {
-  //     console.log("err", err);
-  //   }
-  // };
-  const back = (ref) => {
-    if (ref.current && !ref.current.contains(event.target)) {
-      //alert("hi");
-      setHandleCount(false);
-    }
-  };
+  const [handleSortName, setHandleSortName] = useState();
   const fetchChocolateData = async () => {
     try {
       const url = `${Back_End_url}/getChocolatedata`;
@@ -46,13 +24,14 @@ export default function Buy() {
       console.log("err", err);
     }
   };
-  const HandleSort = (sort) => {
+  const HandleSort = (sort, name) => {
     console.log("hi", sorts);
     if (sort == "all") {
       setData(sorts);
     } else {
       const category = sorts.filter((e) => e.sort == sort);
       setData(category);
+      setHandleSortName(name);
     }
   };
   const HandeHoppetStatus = () => {
@@ -60,12 +39,8 @@ export default function Buy() {
   };
   useEffect(() => {
     fetchChocolateData();
-    // UserData();
   }, []);
-  useEffect(() => {
-    // fetchChocolateData();
-    // UserData();
-  }, [token]);
+  useEffect(() => {}, [token]);
   return (
     <div className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-white`}>
       <div
@@ -75,7 +50,7 @@ export default function Buy() {
         <UserHead HandeHoppetStatus={HandeHoppetStatus} userEmail={user} />
       </div>
       <div style={{ position: "fixed", bottom: "0", left: "0", zIndex: 10 }}>
-        <Buysort HandleSort={HandleSort} />
+        <Buysort HandleSort={HandleSort} handleSortName={handleSortName} />
       </div>
       <div className="grid-container mt-32 mb-16 min-w-88 bg-white ">
         {data?.map((e) => (

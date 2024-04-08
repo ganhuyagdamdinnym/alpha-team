@@ -11,6 +11,7 @@ export const AuthProvider = ({ children }) => {
   const [curUser, setCurUser] = useState({});
 
   const checkToken = () => {
+    // window /main tai tentskue
     if (window == "/main") {
     } else {
       const localToken = localStorage.getItem("token");
@@ -43,10 +44,14 @@ export const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    if (token) getUserData(token);
+  }, [token]);
+
+  useEffect(() => {
     checkToken();
   }, []);
 
-  const value = { token, curUser };
+  const value = { token, curUser, setToken };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

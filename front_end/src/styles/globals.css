@@ -13,13 +13,36 @@
   position: relative;
   margin-top: 50px;
 }
+.Company {
+  display: grid;
+  grid-template-columns: 45% 45%;
+}
+.classs {
+  display: grid;
+  grid-template-columns: 23% 70%;
+}
 .icon {
   width: 4%;
+}
+.header1 {
+  /* w-full flex flex-col px-4 py-1 gap-2 fix top-0 bg-[#BE9131] r-[4px] z-10 border-b-[20px] border-[#F1EFEF] relative */
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  padding: 1 4 1 4;
+  top: 0px;
+  background-color: #be9131;
+  z-index: 2px;
+  border-bottom: 20px #f1efef solid;
+  position: relative;
 }
 body {
   position: relative;
   z-index: -2;
-  background-color: white;
+  /* background-color: ; */
 }
 .chocolateSortBuy {
   transition: all 400ms;
@@ -37,7 +60,7 @@ body {
   position: absolute;
   right: 0;
   display: flex;
-  margin: 4px;
+  margin-right: 20px;
   align-items: center;
 }
 .main {
@@ -130,10 +153,16 @@ body {
 .aboutPart {
   display: grid;
   grid-template-columns: 48% 48%;
-  padding-left: 100px;
-  padding-right: 100px;
   padding-top: 20px;
-  gap: 70px;
+}
+.bttn1 {
+  /* absolute right-10 flex gap-4 h-full items-center */
+  position: absolute;
+  right: 10px;
+  display: flex;
+  gap: 4px;
+  height: 100%;
+  align-items: center;
 }
 /* img {
     animation: image 1s;
@@ -155,9 +184,22 @@ body {
 }
 @media only screen and (max-width: 1600px) {
   .loginPart {
-    height: 400px;
+    height: 380px;
     width: 350px;
   }
+}
+@media only screen and (max-width: 1900px) {
+  .Div2 {
+    gap: 30px;
+  }
+  .Div2font {
+    font-size: 2vh;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  /* .tester {
+    background-color: black;
+  } */
   .grid-container {
     display: grid;
     grid-template-columns: 24% 24% 24% 24%;
@@ -196,6 +238,24 @@ body {
   }
   .chocolateSortBuy {
     font-size: 15px;
+  }
+  /* .chocolateSortBuy {
+    font-size: 20px;
+  } */
+  .Div1CA {
+    justify-content: space-around;
+  }
+  .Div1CA-img {
+    width: 236px;
+    height: 236px;
+  }
+  .Div1CA-font {
+    font-weight: 400;
+    font-size: 1.5vh;
+  }
+  .bw {
+    width: 1.7vh;
+    height: 1.7vh;
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -270,11 +330,33 @@ body {
     padding-top: 20px;
     gap: 70px;
   }
+  .aboutPart {
+    display: grid;
+    grid-template-columns: 80%;
+  }
+  .Div1 {
+    width: 25vh;
+  }
+  .Div1CA {
+    gap: 2vh;
+  }
+  .Div1CA-img {
+    width: 200px;
+    height: 200px;
+  }
+  .Company {
+    display: grid;
+    grid-template-columns: 70%;
+    margin-bottom: 6vh;
+  }
 }
 @media only screen and (max-width: 900px) {
   .textContent {
     font-size: 16px;
   }
+  /* .header1 {
+    font-size: 12px;
+  } */
   .homeAbout {
     /* flex gap-[8vh] justify-evenly py-[8vh] bg-blue-950 my-0  */
     display: flex;
@@ -310,11 +392,38 @@ body {
     padding-top: 20px;
     gap: 70px;
   }
+  .Div1CA {
+    justify-content: space-between;
+  }
+  .Div1CA-img {
+    width: 170px;
+    height: 170px;
+  }
+  .Div1CA-font {
+    font-size: 1.2vh;
+  }
+  .Company {
+    display: grid;
+    grid-template-columns: 85%;
+  }
+  .AdminHeader {
+    font-size: 20px;
+    /* background-color: red; */
+  }
 }
 @media only screen and (max-width: 650px) {
   .buy {
     font-size: 12px;
     padding: 4px;
+    margin-right: none;
+  }
+  .userImage {
+    height: 15px;
+    width: 15px;
+  }
+  .userBorder {
+    height: 30px;
+    width: 30px;
   }
   body {
     --swiper-navigation-sides-offset: 35vw !important;
@@ -334,6 +443,9 @@ body {
   .logoInBasket {
     width: 50px;
     height: 50px;
+  }
+  .headerText {
+    width: 100px;
   }
   .cashPart {
     width: 90%;
@@ -361,13 +473,47 @@ body {
   .header-choco {
     font-size: 15px;
   }
+  .header {
+    border-color: #be9131;
+  }
   .userHeadEmail {
     font-size: 12px;
-    margin-right: 16px;
+    margin-right: 12px;
+    gap: 2px;
   }
   .username {
     font-size: 12px;
-    margin-right: 16px;
+    margin-right: 8px;
+    gap: 2px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .header1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .bttn1 {
+    position: fixed;
+  }
+  .Div1CA-font {
+    font-size: 0.9vh;
+  }
+  .Div1CA {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 1vh;
+    padding-top: 14vh;
+  }
+  .Div1 {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 80%;
+  }
+  .Div1CA-img {
+    width: 30%;
+    height: 30%;
   }
 }
 body {
@@ -376,7 +522,6 @@ body {
   user-select: none;
   overflow-x: hidden;
 }
-
 .swiper-wrapper {
   margin-top: 40px;
 }
@@ -390,4 +535,11 @@ body {
 }
 svg {
   font-size: large;
+}
+
+.StoryHAC {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  padding-top: 10vh;
+  gap: 30px;
 }
