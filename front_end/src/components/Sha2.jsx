@@ -110,7 +110,6 @@ export default function MainPageGlitchFix() {
             navigation={true}
             onSlideChange={(swiperCore) => {
               const { realIndex } = swiperCore;
-
               setMainStreamPipeForState({
                 ...mainStreamPipeForState,
                 color: MainStreamDataForSwiperCover[realIndex].color,
@@ -190,6 +189,13 @@ export default function MainPageGlitchFix() {
                 style={{
                   height: "5vh",
                   backgroundColor: mainStreamPipeForState.color,
+                  // background:
+                  //   // background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(126,58,64,1) 4%, rgba(92,7,15,1) 50%, rgba(121,9,9,1) 93%, rgba(252,252,252,0) 100%);
+                  //   "linear-gradient(90deg, rgba(255,255,255,0) 0%, " +
+                  //   mainStreamPipeForState.color +
+                  //   " 34%, " +
+                  //   mainStreamPipeForState.color +
+                  //   " 64%, rgba(252,252,252,0) 100%)",
                   paddingLeft: "20px",
                   paddingRight: "20px",
                   fontSize: "18px",
@@ -218,16 +224,27 @@ export default function MainPageGlitchFix() {
       </div>
 
       <div
-        className="flex items-center flex-wrap"
+        className="flex items-center flex-wrap  mb-[40px]"
         style={{ backgroundColor: mainStreamPipeForState.color }}
       >
         {Data.map((e, index) => {
           return e.sort == mainStreamPipeForState.name ? (
             <div
               key={index}
-              className="flex w-[20%] min-w-max-[300px] justify-center max-[1000px]:w-[50%] bg-cover"
+              onClick={() => {}}
+              style={mainStreamPipeForState.styleFor}
+              className="flex transition-all duration-300 w-[20%] min-w-max-[300px] h-[20%] justify-center max-[1000px]:w-[50%] bg-cover overflow-hidden"
             >
-              <img src={e.image}></img>
+              <img className="chocolate-card-image" src={e.image} />
+
+              {/* <img className="chocolate-card-image" src={e.hover} /> */}
+              {/* {document
+                .querySelector("image" + index)
+                .addEventListener("mouseover") ? (
+                <img src={e.image}></img>
+              ) : (
+                <img src={e.hover}></img>
+              )} <3 */}
               <p className="absolute z-[2000] text-[white] max-[1000px]:text-[14px] max-[1000px]:mt-[42%] mt-[17%]">
                 {providerNameFilter(e.name)}
               </p>
