@@ -22,7 +22,7 @@ export default function MainPageGlitchFix() {
       title: "MORE IS JUST MORE",
       accentColor: "#fff0b4",
       content:
-        "We live and love variety. With our colorful range, it is also literally on everyone's lips. With such a large selection, it's not easy to find your absolute favourite. But the good thing is: you don't have to choose between Marzipan, Nougat or Alpine Milk Chocolate, for example. You can even have more than one favourite flavor.",
+        "We live and love variety. With our colorful range, it is also literally on everyone's lips. With such a large selection, it's not easy to find your absolute favourite.",
     },
     {
       name: "NUT SELECTION",
@@ -30,7 +30,7 @@ export default function MainPageGlitchFix() {
       title: "NUTTING BUT THE BEST",
       image: "/sortPhoto/but.webp",
       content:
-        "Whether hazelnuts, almonds, or cashews - we fully load our squares to the top with the best nuts! How we still get 100% certified sustainable cocoa around it remains our secret. One thing is for sure though: with our Nut Selection, we redefine the concept of nut chocolate",
+        "Whether hazelnuts, almonds, or cashews - we fully load our squares to the top with the best nuts! How we still get 100% certified sustainable cocoa around it remains our secret.",
       accentColor: "#fff0b4",
     },
     {
@@ -40,7 +40,7 @@ export default function MainPageGlitchFix() {
       title: "REDUCED TO THE MMMHHH!",
       accentColor: "#009a92",
       content:
-        "Our Cocoa Selection concentrates on the essentials because there is not much else than cacao in our Cocoa Selection. Only 3 or 4 ingredients - good chocolate does not need more! The cocoa in each bar comes from just one country of origin - Ghana, Nicaragua, or Peru and is 100% certified sustainable.",
+        "Our Cocoa Selection concentrates on the essentials because there is not much else than cacao in our Cocoa Selection.",
     },
     {
       name: "CHOCO CUBES",
@@ -49,7 +49,7 @@ export default function MainPageGlitchFix() {
       title: "THERE IS ALWAYS AN OCCASION",
       accentColor: "#fff6cd",
       content:
-        "Now that's a truly tasty gift idea! Our compact all-in-one packages are filled to the brim with delicious flavours. And thanks to the beautiful design, you don't even need gift paper. Don't say it with flowers, say it with cubes!",
+        "Now that's a truly tasty gift idea! Our compact all-in-one packages are filled to the brim with delicious flavours.",
     },
     {
       name: "MINI RANGE",
@@ -58,7 +58,7 @@ export default function MainPageGlitchFix() {
       title: "SHORT INTRODUCTION. GREAT JOY.",
       accentColor: "#f6b680",
       content:
-        "With our mini paper bags, you can't go wrong in any way. In four delicious varieties, the minis provide maximum enjoyment. Thanks to their paper packaging, they are also perfect as a gift - or you can simply indulge in them yourself.",
+        "With our mini paper bags, you can't go wrong in any way. In four delicious varieties, the minis provide maximum enjoyment.",
     },
 
     {
@@ -68,7 +68,7 @@ export default function MainPageGlitchFix() {
       title: "SOMETIMES SIZE MATTERS",
       accentColor: "#6fb8dd",
       content:
-        "For example, if you want to give a very special person a very special treat. Or when you simply can't get enough of your favourite flavour. Because when it comes to chocolate, you should think big - and only settle for the best.",
+        "For example, if you want to give a very special person a very special treat. Or when you simply can't get enough of your favourite flavour.",
     },
   ];
 
@@ -178,13 +178,13 @@ export default function MainPageGlitchFix() {
         <div
           style={{ backgroundColor: mainStreamPipeForState.accentColor }}
           className={
-            "fixed z-[99999999] w-[100vw] top-[95vh] gap-[20px] overflow-x-scroll flex justify-evenly"
+            "fixed z-[99999999] top-[95vh] gap-[20px] overflow-x-scroll flex justify-evenly"
           }
         >
           {MainStreamDataForSwiperCover.map((e, index) =>
             e.name === mainStreamPipeForState.name ? (
               <button
-                className="font"
+                className="font max-[800px]:w-[20%] w-[20%]"
                 key={index}
                 style={{
                   height: "5vh",
@@ -206,7 +206,7 @@ export default function MainPageGlitchFix() {
               </button>
             ) : (
               <button
-                className="font"
+                className="font w-[20%] max-[800px]:w-[20%]"
                 style={{
                   paddingLeft: "20px",
                   fontSize: "18px",
@@ -231,9 +231,9 @@ export default function MainPageGlitchFix() {
           return e.sort == mainStreamPipeForState.name ? (
             <div
               key={index}
-              onClick={() => {}}
-              style={mainStreamPipeForState.styleFor}
-              className="flex transition-all duration-300 w-[20%] min-w-max-[300px] h-[20%] justify-center max-[1000px]:w-[50%] bg-cover overflow-hidden"
+              className={
+                "flex transition-all duration-300 w-[20%] min-w-max-[300px] h-[20%] justify-center max-[1000px]:w-[50%] bg-cover overflow-hidden"
+              }
             >
               <img className="chocolate-card-image" src={e.image} />
 

@@ -537,18 +537,16 @@ svg {
   font-size: large;
 }
 
-<<<<<<< HEAD
 .StoryHAC {
   display: grid;
   grid-template-columns: 30% 30% 30%;
   padding-top: 10vh;
   gap: 30px;
-=======
+}
 .chocolate-card-image {
   transition: 0.4s;
 }
 
 .chocolate-card-image:hover {
   scale: 1.2;
->>>>>>> 2c54948c44d0889a9346004dc52b220c117013ee
 }
