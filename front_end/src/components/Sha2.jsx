@@ -179,13 +179,13 @@ export default function MainPageGlitchFix() {
         <div
           style={{ backgroundColor: mainStreamPipeForState.accentColor }}
           className={
-            "fixed z-[99999999] top-[95vh] gap-[20px] overflow-x-scroll flex justify-evenly"
+            "fixed z-[99999999] w-[100vw] top-[95vh] gap-[20px] overflow-x-scroll flex justify-evenly"
           }
         >
           {MainStreamDataForSwiperCover.map((e, index) =>
             e.name === mainStreamPipeForState.name ? (
               <button
-                className="font max-[800px]:w-[20%] w-[20%]"
+                className=" chocolateSortBuy text-[20px]  w-[16%]"
                 key={index}
                 style={{
                   height: "5vh",
@@ -199,7 +199,6 @@ export default function MainPageGlitchFix() {
                   //   " 64%, rgba(252,252,252,0) 100%)",
                   paddingLeft: "20px",
                   paddingRight: "20px",
-                  fontSize: "18px",
                   color: mainStreamPipeForState.accentColor,
                 }}
               >
@@ -207,10 +206,9 @@ export default function MainPageGlitchFix() {
               </button>
             ) : (
               <button
-                className="font w-[20%] max-[800px]:w-[20%]"
+                className=" chocolateSortBuy text-[20px] w-[16%] "
                 style={{
                   paddingLeft: "20px",
-                  fontSize: "18px",
                   paddingRight: "20px",
                   backgroundColor: mainStreamPipeForState.accentColor,
                 }}

@@ -45,7 +45,6 @@ body {
   /* background-color: ; */
 }
 .chocolateSortBuy {
-  transition: all 400ms;
 }
 .chocolateSortBuy:hover {
   background-color: #000391;
