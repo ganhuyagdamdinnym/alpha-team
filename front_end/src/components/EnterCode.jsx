@@ -8,7 +8,7 @@ import { AuthContext } from "@/hook/authProvider";
 export const EnterCode = (props) => {
   const { email, back } = props;
   const router = useRouter();
-  const { setToken } = useContext(AuthContext);
+  const { setToken , curUser:user } = useContext(AuthContext);
 
   const input1Ref = useRef(null);
   const input2Ref = useRef(null);
@@ -119,8 +119,8 @@ export const EnterCode = (props) => {
           localStorage.setItem("token", token);
           localStorage.removeItem("basket");
           setToken(token);
-
-          if (name == "dulamsuren894@gmail.com") {
+          //dulamsuren894
+          if (user.email == "damdinnymg@gmail.com") {
             router.push("/admin");
           } else {
             router.push("/buy");

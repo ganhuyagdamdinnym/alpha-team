@@ -96,7 +96,7 @@ export default function Home() {
           className="w-full h-full flex flex-col items-center mt-[90px] py-4 px-4"
         >
           {lastBuyStatus ? (
-            <div className="w-full h-full flex flex-col items-center gap-8 px-[10px]">
+            <div className="w-full h-full flex flex-col items-center gap-8 px-[10px] overflow-x-auto">
               {data?.map((e) => (
                 <Info e={e} />
               ))}
@@ -123,6 +123,7 @@ export default function Home() {
                     Авсан шоколаднууд
                   </th>
                   <th>Худалдааны дүн</th>
+                  <th>Стасус</th>
                 </tr>
               </thead>
               <tbody>
@@ -146,8 +147,14 @@ export default function Home() {
                     <td className="border-r-2 border-[#BE9131] border-b-2">
                       Germany
                     </td>
-                    <td className="border-b-2 border-[#BE9131]">
+                    <td className="border-b-2 border-[#BE9131] border-r-2">
                       {buyer.pay}₮
+                    </td>
+                    <td className="border-b-2  border-[#BE9131]">
+                    
+                      {
+                        buyer.deliveryStatus==true?<Image src="succeedDelivery.svg" height={16} width={16}/>:<Image src="notDelivery.svg" height={16} width={16}/>
+                      }
                     </td>
                   </tr>
                 ))}
