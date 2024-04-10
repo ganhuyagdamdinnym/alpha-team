@@ -6,7 +6,7 @@ import { Header } from "./Header";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Keyboard } from "swiper/modules";
 import { Navigation } from "swiper/modules";
 import { Virtual } from "swiper/modules";
 import { Data } from "./data";
@@ -106,8 +106,9 @@ export default function MainPageGlitchFix() {
         <div className="w-[100%] mt-[60px] h-[50%]">
           <Swiper
             slidesPerView={3}
-            modules={[Navigation, Autoplay, Virtual]}
+            modules={[Navigation, Autoplay, Virtual, Keyboard]}
             navigation={true}
+            keyboard={true}
             onSlideChange={(swiperCore) => {
               const { realIndex } = swiperCore;
               setMainStreamPipeForState({
