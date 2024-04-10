@@ -2,7 +2,6 @@ import express from "express";
 import { BuyerModel } from "../model/buyer-model.js";
 import { PurchaseModel } from "../model/allPurchase-model.js";
 import nodemailer from "nodemailer";
-import { all } from "axios";
 export const getAllBuyerInfo = async (req, res) => {
   const allBuyer = await BuyerModel.find();
   res.status(200).json({ allBuyer });
@@ -10,9 +9,9 @@ export const getAllBuyerInfo = async (req, res) => {
 export const UserBought = async (req, res) => {
   const { email, allBuy } = req.body;
   const date = new Date();
-  console.log("name", date);
   try {
     const user = await BuyerModel.findOne({ email: email });
+    const randomNumber = Math.floor(100000 + Math.random() * 900000);
     if (user == null) {
       await BuyerModel.create({
         email: email,
@@ -28,12 +27,26 @@ export const UserBought = async (req, res) => {
             },
             createdAt: date,
             deliveryStatus: false,
+            deliveryId: randomNumber,
           },
         ],
       });
     } else {
-      const newuser = user.allBuy.push({ ...allBuy });
-      console.log("hi", newuser);
+      const newuser = user.allBuy.push({
+        ...{
+          chocolateName: allBuy.chocolateName,
+          pay: allBuy.pay,
+          number: allBuy.number,
+          address: {
+            district: allBuy.address.district,
+            commission: allBuy.address.commission,
+            residence: allBuy.address.residence,
+          },
+          createdAt: date,
+          deliveryStatus: false,
+          deliveryId: randomNumber,
+        },
+      });
       await user.save();
     }
     await PurchaseModel.create({
@@ -46,6 +59,7 @@ export const UserBought = async (req, res) => {
         commission: allBuy.address.commission,
         residence: allBuy.address.residence,
       },
+      deliveryId: randomNumber,
       deliveryStatus: false,
     });
     //send email to buyer
@@ -71,5 +85,26 @@ export const UserBought = async (req, res) => {
       .json({ success: true, message: "Purchase recorded successfully" });
   } catch (error) {
     console.log(error);
+  }
+};
+export const removePurchase = async (req, res) => {
+  const { id, deliveryId } = req.body;
+  try {
+    const buyer = await BuyerModel.findById(id);
+    console.log(buyer);
+    const filterPurchase = buyer.allBuy.filter(
+      (e) => e.deliveryId !== deliveryId
+    );
+    await BuyerModel.findByIdAndUpdate(id, {
+      allBuy: filterPurchase,
+    });
+    const lastBuyers = await PurchaseModel.findOneAndDelete({
+      deliveryId: deliveryId,
+    });
+    res
+      .status(200)
+      .json({ success: true, message: "Purchase removed successfully" });
+  } catch (err) {
+    console.log(err);
   }
 };
