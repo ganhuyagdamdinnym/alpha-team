@@ -2,6 +2,7 @@ import express from "express";
 import { BuyerModel } from "../model/buyer-model.js";
 import { PurchaseModel } from "../model/allPurchase-model.js";
 import nodemailer from "nodemailer";
+import { all } from "axios";
 export const getAllBuyerInfo = async (req, res) => {
   const allBuyer = await BuyerModel.find();
   res.status(200).json({ allBuyer });
@@ -20,8 +21,13 @@ export const UserBought = async (req, res) => {
             chocolateName: allBuy.chocolateName,
             pay: allBuy.pay,
             number: allBuy.number,
-            address: allBuy.address,
+            address: {
+              district: allBuy.address.district,
+              commission: allBuy.address.commission,
+              residence: allBuy.address.residence,
+            },
             createdAt: date,
+            deliveryStatus: false,
           },
         ],
       });
@@ -35,7 +41,12 @@ export const UserBought = async (req, res) => {
       chocolateName: allBuy.chocolateName,
       pay: allBuy.pay,
       number: allBuy.number,
-      address: allBuy.address,
+      address: {
+        district: allBuy.address.district,
+        commission: allBuy.address.commission,
+        residence: allBuy.address.residence,
+      },
+      deliveryStatus: false,
     });
     //send email to buyer
     const transport = nodemailer.createTransport({

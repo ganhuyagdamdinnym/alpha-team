@@ -6,7 +6,6 @@ import {
   faMapLocationDot,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-
 export const HomeAboutCompany = () => {
   return (
     <div className="homeAbout">

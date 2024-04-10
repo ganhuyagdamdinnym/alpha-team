@@ -5,12 +5,9 @@ import { useState } from "react";
 import { EnterCode } from "./EnterCode";
 export const Header = (props) => {
   const router = useRouter();
-  // const { LoginButtonPress } = props;
   const [loginStat, setLoginStat] = useState(false);
   const [codeStatus, setCodeStatus] = useState(true);
   const [email, setEmail] = useState("");
-
-  const header = ["About", "Our Chocolate", "Login"];
   const jumptomain = () => {
     router.push("/main");
   };
@@ -30,7 +27,7 @@ export const Header = (props) => {
     setCodeStatus(true);
   };
   return (
-    <div className="w-full fixed t-0 h-10 z-[9999999]">
+    <div className="w-full fixed t-0 h-10 z-[9999999] bordeer">
       {loginStat ? (
         <div className="w-screen h-screen absolute flex justify-center items-center">
           <Login

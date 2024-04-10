@@ -124,7 +124,6 @@ export default function MainPageGlitchFix() {
             }}
             onSwiper={setSwiperRef}
             init={true}
-            virtual
             loop={true}
             centeredSlides={true}
             breakpoints={{
@@ -147,7 +146,7 @@ export default function MainPageGlitchFix() {
             }}
           >
             {MainStreamDataForSwiperCover.map((e, index) => (
-              <SwiperSlide virtualIndex={index} key={index}>
+              <SwiperSlide virtualIndex={index}>
                 <div
                   style={{
                     backgroundColor: MainStreamDataForSwiperCover[index]?.color,
@@ -212,7 +211,6 @@ export default function MainPageGlitchFix() {
                   paddingRight: "20px",
                   backgroundColor: mainStreamPipeForState.accentColor,
                 }}
-                key={index}
                 onClick={() => handleTab(e)}
               >
                 {e.name}
