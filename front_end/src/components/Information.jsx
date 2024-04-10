@@ -60,6 +60,18 @@ const Hello = ({ element, e }) => {
       console.log(err);
     }
   };
+  const HandleConfirmDelivery = async (id, deliveryId) => {
+    console.log(id, deliveryId);
+    try {
+      const url = `${Back_End_url}/confirmDelivery`;
+      await axios.post(url, {
+        id: id,
+        deliveryId: deliveryId,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div
       onClick={() => back(currentRef)}
@@ -84,7 +96,10 @@ const Hello = ({ element, e }) => {
             Худалдан авалт цуцлах
             <Image src="trash.svg" height={16} width={16} />
           </button>
-          <button className="flex items-center gap-2">
+          <button
+            onClick={() => HandleConfirmDelivery(e._id, element.deliveryId)}
+            className="flex items-center gap-2"
+          >
             Хүргэлт баталгаажуулах
             <Image src="succeedDelivery.svg" height={24} width={24} />
           </button>

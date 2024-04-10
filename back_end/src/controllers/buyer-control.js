@@ -108,3 +108,6 @@ export const removePurchase = async (req, res) => {
     console.log(err);
   }
 };
+export const confirmDelivery = async (req, res) => {
+  const { id, deliveryId } = req.body;
+};

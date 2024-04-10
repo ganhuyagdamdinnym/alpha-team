@@ -121,11 +121,11 @@ export default function Home() {
             <div className="">
               <table
                 // style={{ width: "100%" }}
-                className="border-2 border-[#BE9131] "
+                className="border-2 border-[#BE9131] w-[100%]"
               >
                 <thead>
                   <tr className="border-b-2 border-[#BE9131]">
-                    <th className="w-[25px] border-r-2 border-[#BE9131]"></th>
+                    <th className="w-[25px] border-r-2 border-[#BE9131] min-w-[25px]"></th>
                     <th className="border-r-2 border-[#BE9131] min-w-48">
                       И-мэйл
                     </th>
