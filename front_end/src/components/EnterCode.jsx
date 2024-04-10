@@ -109,7 +109,7 @@ export const EnterCode = (props) => {
           input1Ref.current.value = "";
           input2Ref.current.value = "";
           input3Ref.current.value = "";
-          input4Ref.current.value = "";
+          input4Ref.current.value = " ";
           input5Ref.current.value = "";
           input6Ref.current.value = "";
           input1Ref.current.focus();
