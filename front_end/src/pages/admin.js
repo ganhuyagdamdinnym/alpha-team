@@ -115,8 +115,8 @@ export default function Home() {
                   <th className="border-r-2 border-[#BE9131] w-32">
                     Утасны дугаар
                   </th>
-                  <th className="border-r-2 border-[#BE9131] min-w-48">Хаяг</th>
-                  <th className="border-r-2 border-[#BE9131] min-w-48">
+                  <th className="border-r-2 border-[#BE9131] min-w-52">Хаяг</th>
+                  <th className="border-r-2 border-[#BE9131] min-w-32">
                     Худалдааны цаг
                   </th>
                   <th className="border-r-2 border-[#BE9131] min-w-96">
@@ -151,10 +151,15 @@ export default function Home() {
                       {buyer.pay}₮
                     </td>
                     <td className="border-b-2  border-[#BE9131]">
-                    
-                      {
-                        buyer.deliveryStatus==true?<Image src="succeedDelivery.svg" height={16} width={16}/>:<Image src="notDelivery.svg" height={16} width={16}/>
-                      }
+                      {buyer.deliveryStatus == true ? (
+                        <Image
+                          src="succeedDelivery.svg"
+                          height={16}
+                          width={16}
+                        />
+                      ) : (
+                        <Image src="notDelivery.svg" height={16} width={16} />
+                      )}
                     </td>
                   </tr>
                 ))}

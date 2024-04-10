@@ -1,8 +1,13 @@
 import { model, Schema } from "mongoose";
+const addressType = new Schema({
+  district: String,
+  commission: String,
+  residence: String,
+});
 const buySchema = new Schema({
   chocolateName: Array,
   pay: Number,
-  address: String,
+  address: addressType,
   number: Number,
   deliveryId: Number,
   deliveryStatus: Boolean,

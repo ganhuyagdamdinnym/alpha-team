@@ -27,7 +27,7 @@ export const Header = (props) => {
     setCodeStatus(true);
   };
   return (
-    <div className="w-full fixed t-0 h-10 z-[9999999] border-b-4">
+    <div className="w-full fixed t-0 h-10 z-[9999999] bordeer">
       {loginStat ? (
         <div className="w-screen h-screen absolute flex justify-center items-center">
           <Login
