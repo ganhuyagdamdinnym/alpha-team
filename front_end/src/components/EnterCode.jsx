@@ -1,6 +1,6 @@
 import Image from "next/image";
 import axios from "axios";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Back_End_url } from "@/utils/back-url";
 import { AuthContext } from "@/hook/authProvider";
@@ -8,7 +8,8 @@ import { AuthContext } from "@/hook/authProvider";
 export const EnterCode = (props) => {
   const { email, back } = props;
   const router = useRouter();
-  const { setToken , curUser:user } = useContext(AuthContext);
+  const { curUser: user, setToken } = useContext(AuthContext);
+  const [currentToken, setCurrentToken] = useState(null);
 
   const input1Ref = useRef(null);
   const input2Ref = useRef(null);
@@ -114,23 +115,44 @@ export const EnterCode = (props) => {
           input6Ref.current.value = "";
           input1Ref.current.focus();
         } else {
-          const token = res.data.token;
-          console.log("token", res.data);
-          localStorage.setItem("token", token);
-          localStorage.removeItem("basket");
-          setToken(token);
+          setCurrentToken(res.data.token);
+          setToken(res.data.token);
+          // const token = res.data.token;
+          // console.log("token", res.data);
+          // localStorage.setItem("token", token);
+          // localStorage.removeItem("basket");
+          // setToken(token);
           //dulamsuren894
-          if (user.email == "damdinnymg@gmail.com") {
-            router.push("/admin");
-          } else {
-            router.push("/buy");
-          }
+          // if (user.email == "damdinnymg@gmail.com") {
+          //   router.push("/admin");
+          // } else {
+          //   router.push("/buy");
+          // }
         }
       } catch (err) {
         console.log(err);
       }
     }
   };
+
+  useEffect(() => {
+    if (currentToken) {
+      localStorage.setItem("token", currentToken);
+      localStorage.removeItem("basket");
+      if (user.email == "damdinnymg@gmail.com") {
+        router.push("/admin");
+      } else {
+        router.push("/buy");
+      }
+    }
+  }, [currentToken]);
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
+  console.log("user111", user);
+
   return (
     <div className="w-[350px] h-[300px] bg-[#F06742] flex flex-col gap-4 py-2 rounded-xl border-2 border-white relative">
       <div onClick={back} className=" absolute right-2 top-2">
@@ -148,6 +170,7 @@ export const EnterCode = (props) => {
             onKeyUpCapture={(e) => HandleChange(e, input1Ref, 1)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
+            type="Number"
           />
           <input
             value=""
@@ -156,6 +179,7 @@ export const EnterCode = (props) => {
             onKeyDown={(e) => HandleBackspace(e)}
             onClick={(e) => HandleNextInput(e)}
             className="w-[30px] text-center rounded-[5px]"
+            type="Number"
           />
           <input
             onKeyUpCapture={(e) => HandleChange(e, input3Ref, 3)}
@@ -163,6 +187,7 @@ export const EnterCode = (props) => {
             onKeyDown={(e) => HandleBackspace(e)}
             ref={input3Ref}
             className="w-[30px] text-center rounded-[5px]"
+            type="Number"
           />
           <input
             ref={input4Ref}
@@ -170,6 +195,7 @@ export const EnterCode = (props) => {
             onKeyUpCapture={(e) => HandleChange(e, input4Ref, 4)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
+            type="Number"
           />
           <input
             ref={input5Ref}
@@ -177,6 +203,7 @@ export const EnterCode = (props) => {
             onKeyUpCapture={(e) => HandleChange(e, input5Ref, 5)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
+            type="Number"
           />
           <input
             ref={input6Ref}
@@ -184,6 +211,7 @@ export const EnterCode = (props) => {
             onKeyUpCapture={(e) => HandleChange(e, input6Ref, 6)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
+            type="Number"
           />
         </div>
       </div>
