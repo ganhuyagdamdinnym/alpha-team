@@ -105,10 +105,10 @@ export default function Home() {
       <div style={StyleSS}>
         <div
           style={Style}
-          className="h-full mt-[90px] py-4 px-4 w-[100%] overflow-scroll"
+          className="h-full mt-[90px] py-4 px-4 w-[100%] overflow-scroll adminWW"
         >
           {lastBuyStatus ? (
-            <div className="w-full h-full flex flex-col items-center gap-8 px-[10px] overflow-x-auto">
+            <div className="w-full h-full flex flex-col items-center gap-8 px-[1px] overflow-x-auto">
               {data?.map((e) => (
                 <Info
                   e={e}
