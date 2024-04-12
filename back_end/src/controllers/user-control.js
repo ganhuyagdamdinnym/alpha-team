@@ -9,7 +9,7 @@ export const getUserData = async (req, res) => {
     const user = req.user;
     //console.log("token", user);
     const User = await UserModel.findOne({ email: user.id });
-    console.log("bolsoo", user);
+    // console.log("bolsoo", user);
     res.status(200).json({ User });
   } catch (err) {
     console.log(err);

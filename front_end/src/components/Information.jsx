@@ -130,6 +130,7 @@ const Hello = ({ element, e, fetchAllBuyerInfo }) => {
           {element.chocolateName.map((el) => (
             <div className="flex gap-2 textInAdminPage">
               <p>{el.name}</p>
+              {console.log("his")}
               <p>{el.count}ш,</p>
             </div>
           ))}

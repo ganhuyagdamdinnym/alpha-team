@@ -23,6 +23,8 @@ export const CashPart = (props) => {
   const ConfirmPurchase = async () => {
     const url = `${Back_End_url}/userBought`;
     const chocolates = localStorage.getItem("basket");
+    console.log("choco", chocolates);
+    const Bag = JSON.parse(chocolates);
     const token = localStorage.getItem("token");
     try {
       await axios.post(url, {
@@ -31,7 +33,7 @@ export const CashPart = (props) => {
         allBuy: {
           pay: allPrice,
           number: phoneNumber,
-          chocolateName: chocolates,
+          chocolateName: Bag,
           address: {
             district: district,
             commission: commission,

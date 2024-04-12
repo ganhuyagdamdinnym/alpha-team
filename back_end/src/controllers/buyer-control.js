@@ -9,6 +9,7 @@ export const getAllBuyerInfo = async (req, res) => {
 export const UserBought = async (req, res) => {
   const { email, allBuy } = req.body;
   const date = new Date();
+  console.log("working");
   try {
     const user = await BuyerModel.findOne({ email: email });
     const randomNumber = Math.floor(100000 + Math.random() * 900000);
