@@ -1,4 +1,5 @@
 import express from "express";
+import { checkAdminToken } from "../middleware/checkAdmin.js";
 import {
   getAllBuyerInfo,
   UserBought,
@@ -8,5 +9,5 @@ import {
 export const BuyerRouter = express.Router();
 BuyerRouter.get("/BuyersData", getAllBuyerInfo);
 BuyerRouter.post("/userBought", UserBought);
-BuyerRouter.post("/removePurchase", removePurchase);
-BuyerRouter.post("/confirmDelivery", confirmDelivery);
+BuyerRouter.post("/removePurchase", checkAdminToken, removePurchase);
+BuyerRouter.post("/confirmDelivery", checkAdminToken, confirmDelivery);

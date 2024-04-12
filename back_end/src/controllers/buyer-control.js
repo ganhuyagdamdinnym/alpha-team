@@ -109,5 +109,21 @@ export const removePurchase = async (req, res) => {
   }
 };
 export const confirmDelivery = async (req, res) => {
-  const { id, deliveryId } = req.body;
+  const { id, deliveryId, index } = req.body;
+  // console.log("index", index);
+  // console.log("working??/");
+  try {
+    const response = await BuyerModel.updateOne(
+      { "allBuy.deliveryId": deliveryId },
+      { $set: { "allBuy.$.deliveryStatus": true } }
+    );
+    // const lastBuyers = await PurchaseModel.findOneAndDelete({
+    //   deliveryId: deliveryId,
+    // });
+    res
+      .status(200)
+      .json({ success: true, message: "Purchase removed successfully" });
+  } catch (err) {
+    console.log(err);
+  }
 };
