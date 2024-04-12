@@ -1,6 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media only screen and (max-width: 800px) {
+  .chocolteSelectionBarResponsive {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .chocolteSelectionBarResponsive {
+    font-size: 14px;
+  }
+}
+
 #myVideo {
   object-fit: cover;
   width: 100%;

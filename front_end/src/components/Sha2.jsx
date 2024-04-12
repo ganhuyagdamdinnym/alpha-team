@@ -64,7 +64,7 @@ export default function MainPageGlitchFix() {
     {
       name: "250G BARS",
       color: "rgb(24, 36, 98)",
-      image: "/sortPhoto/250g.webp",
+      image: "/250g_productslider.webp",
       title: "SOMETIMES SIZE MATTERS",
       accentColor: "#6fb8dd",
       content:
@@ -153,7 +153,7 @@ export default function MainPageGlitchFix() {
                   }}
                   className="w-[100%] flex justify-center"
                 >
-                  <img src={e.image}></img>
+                  <img height="600px" width="600px" src={e.image}></img>
                 </div>
               </SwiperSlide>
             ))}
@@ -178,13 +178,13 @@ export default function MainPageGlitchFix() {
         <div
           style={{ backgroundColor: mainStreamPipeForState.accentColor }}
           className={
-            "fixed z-[99999999] w-[100vw] top-[95vh] gap-[20px] overflow-x-scroll flex justify-evenly"
+            "fixed z-[99999999] chocolteSelectionBarResponsive  w-[100vw] top-[95vh] gap-[20px] overflow-x-scroll flex justify-evenly"
           }
         >
           {MainStreamDataForSwiperCover.map((e, index) =>
             e.name === mainStreamPipeForState.name ? (
               <button
-                className=" chocolateSortBuy text-[20px]  w-[16%]"
+                className="w-[16%]"
                 key={index}
                 style={{
                   height: "5vh",
@@ -205,7 +205,7 @@ export default function MainPageGlitchFix() {
               </button>
             ) : (
               <button
-                className=" chocolateSortBuy text-[20px] w-[16%] "
+                className="w-[16%] "
                 style={{
                   paddingLeft: "20px",
                   paddingRight: "20px",
