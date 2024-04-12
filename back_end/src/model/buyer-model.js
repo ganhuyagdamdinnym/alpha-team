@@ -3,6 +3,8 @@ const addressType = new Schema({
   district: String,
   commission: String,
   residence: String,
+  withNumber: String,
+  codeOfResidence: String,
 });
 const buySchema = new Schema({
   chocolateName: Array,

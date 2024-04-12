@@ -1,6 +1,5 @@
 import { ChocolateModel } from "../model/chocolate-model.js";
 export const getChocolatedata = async (req, res) => {
-  console.log("hi tester");
   try {
     const alldata = await ChocolateModel.find();
     res.status(200).json(alldata);

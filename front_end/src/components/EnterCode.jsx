@@ -123,27 +123,28 @@ export const EnterCode = (props) => {
           // localStorage.removeItem("basket");
           // setToken(token);
           //dulamsuren894
-          // if (user.email == "damdinnymg@gmail.com") {
-          //   router.push("/admin");
-          // } else {
-          //   router.push("/buy");
-          // }
+          if (email == "damdinnymg@gmail.com") {
+            router.push("/admin");
+          } else {
+            router.push("/buy");
+          }
         }
       } catch (err) {
         console.log(err);
       }
     }
   };
-
   useEffect(() => {
     if (currentToken) {
       localStorage.setItem("token", currentToken);
       localStorage.removeItem("basket");
-      if (user.email == "damdinnymg@gmail.com") {
-        router.push("/admin");
-      } else {
-        router.push("/buy");
-      }
+      // if (user?.email) {
+      //   if (user.email == "damdinnymg@gmail.com") {
+      //     router.push("/admin");
+      //   } else {
+      //     router.push("/buy");
+      //   }
+      // }
     }
   }, [currentToken]);
 
