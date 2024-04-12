@@ -31,7 +31,7 @@ export const Login = (props) => {
     }
   };
   return (
-    <div className="w-[500px] h-[600px] bg-[#F06742] flex flex-col gap-4  rounded-xl z-10 loginPart">
+    <div className="w-[500px] h-[600px] bg-[white] flex flex-col gap-4  rounded-xl z-10 loginPart">
       <div className="w-full text-white  flex flex-row-reverse px-2 ">
         <Image
           alt="photo"
@@ -41,7 +41,7 @@ export const Login = (props) => {
           width={20}
         />
       </div>
-      <div className="text-black w-full flex justify-center bg-[red]">
+      <div className="text-black w-full flex justify-center bg-[#be9131]">
         <Image
           alt="photo"
           priority={true}
@@ -58,7 +58,7 @@ export const Login = (props) => {
           {user.name == null ? null : (
             <button
               onClick={() => loginCurrentUser()}
-              className="w-full text-2xl py-1 bg-[red] rounded-xl text-white border-solid border-2 flex  items-center justify-center  h-[40px]"
+              className="w-full text-2xl py-1 bg-[#be9131] rounded-xl text-white border-solid border-2 flex  items-center justify-center  h-[40px]"
             >
               {user.name}
             </button>
@@ -71,7 +71,7 @@ export const Login = (props) => {
           onSubmit={loginByEmail}
         >
           <input
-            className="w-3/4 px-3 py-2 rounded-xl border-solid border-2"
+            className="w-3/4 px-3 py-2 rounded-xl border-solid border-2 border-[#be9131]"
             type="email"
             placeholder="И-мэйл хаягаа оруулна уу"
             onChange={(e) => setEmail(e.target.value)}
@@ -79,7 +79,7 @@ export const Login = (props) => {
           />
           <button
             type="submit"
-            className="w-3/4 text-2xl px-3 py-1 bg-[red] rounded-xl text-white border-solid border-2"
+            className="w-3/4 text-2xl px-3 py-1 bg-[#be9131] rounded-xl text-white border-solid border-2"
           >
             НЭВТРЭХ
           </button>
