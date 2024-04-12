@@ -71,11 +71,11 @@ export default function Home() {
     fetchAllBuyerInfo();
   }, []);
   useEffect(() => {
-    if (user?.email) {
-      if (user.email !== "damdinnymg@gmail.com") {
-        router.push("/");
-      }
-    }
+    // if (user?.email) {
+    //   if (user.email !== "damdinnymg@gmail.com") {
+    //     router.push("/");
+    //   }
+    // }
   }, [user]);
   return (
     <div
