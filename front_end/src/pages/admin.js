@@ -6,6 +6,7 @@ import { AuthContext } from "@/hook/authProvider";
 import Image from "next/image";
 import { Info } from "@/components/Information";
 import Head from "next/head";
+import { useParams, useRouter } from "next/navigation";
 
 //import Info from "../components/information";
 export default function Home() {
@@ -14,7 +15,8 @@ export default function Home() {
   const [lastBuyStatus, setLastBuyStatus] = useState(true);
   const { curUser: user } = useContext(AuthContext);
   const [confirmDelivery, setConfirmDelivery] = useState(false);
-
+  console.log("user", user);
+  const router = useRouter();
   const fetchAllBuyerInfo = async () => {
     try {
       const url = `${Back_End_url}/BuyersData`;
@@ -25,7 +27,6 @@ export default function Home() {
       console.log(err);
     }
   };
-
   // format(new Date(2014, 1, 11), "MM/dd/yyyy");
   const dates = [
     new Date(1995, 6, 2),
@@ -65,9 +66,17 @@ export default function Home() {
       transform: "rotateY(360deg)",
     }),
   };
+
   useEffect(() => {
     fetchAllBuyerInfo();
   }, []);
+  useEffect(() => {
+    // if (user?.email) {
+    //   if (user.email !== "damdinnymg@gmail.com") {
+    //     router.push("/");
+    //   }
+    // }
+  }, [user]);
   return (
     <div
       //onClick={() => back(currentRef)}
@@ -77,8 +86,16 @@ export default function Home() {
         <title>Chocolate</title>
       </Head>
       <div className="header1 h-[100px]">
-        <p className="text-3xl text-white hiAdmin ml-2">Hi Admin!</p>
-        <div className="w-full text-[#010391] ml-2">{user.name}</div>
+        <div className="flex gap-4">
+          <p className="text-3xl text-white hiAdmin ml-2">Hi Admin!</p>
+          <button
+            onClick={() => router.push("/HandleAddChocolate")}
+            className={`text-xl rounded-2xl text-[#010391] border-b-[2px] w-40 py-1 border-white  bg-white`}
+          >
+            Бүтээгдэхүүн
+          </button>
+        </div>
+
         <div className="bttn1 gap-2">
           <button
             onClick={Users}
@@ -114,6 +131,7 @@ export default function Home() {
                   e={e}
                   confirmDelivery={confirmDelivery}
                   setConfirmDelivery={setConfirmDelivery}
+                  fetchAllBuyerInfo={fetchAllBuyerInfo}
                 />
               ))}
             </div>
@@ -173,8 +191,13 @@ export default function Home() {
                       <td className="border-r-2 border-[#BE9131] border-b-2">
                         {buyer.datenow}
                       </td>
-                      <td className="border-r-2 border-[#BE9131] border-b-2">
-                        Germany
+                      <td className="border-r-2 border-[#BE9131] border-b-2 ">
+                        {buyer.chocolateName.map((choco) => (
+                          <h className="flex gap-2">
+                            <p>{choco.name}</p>
+                            <p className="font-semibold">{choco.count}ш,</p>
+                          </h>
+                        ))}
                       </td>
                       <td className="border-b-2 border-[#BE9131] border-r-2">
                         {buyer.pay}₮

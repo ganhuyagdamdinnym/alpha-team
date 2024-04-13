@@ -1,4 +1,6 @@
 import express from "express";
+import { checkAdminToken } from "../middleware/checkAdmin.js";
+import { verifyToken } from "../middleware/auto.js";
 import {
   getAllBuyerInfo,
   UserBought,
@@ -7,6 +9,6 @@ import {
 } from "../controllers/buyer-control.js";
 export const BuyerRouter = express.Router();
 BuyerRouter.get("/BuyersData", getAllBuyerInfo);
-BuyerRouter.post("/userBought", UserBought);
-BuyerRouter.post("/removePurchase", removePurchase);
-BuyerRouter.post("/confirmDelivery", confirmDelivery);
+BuyerRouter.post("/userBought", verifyToken, UserBought);
+BuyerRouter.post("/removePurchase", checkAdminToken, removePurchase);
+BuyerRouter.post("/confirmDelivery", checkAdminToken, confirmDelivery);

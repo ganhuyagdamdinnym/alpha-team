@@ -23,6 +23,19 @@ export const AuthProvider = ({ children }) => {
       }
     }
   };
+  // const checkAdminToken = () => {
+  //   if (window?.location?.pathname == "/admin") {
+
+  //   } else {
+  //     const localToken = localStorage.getItem("token");
+  //     if (localToken === null) {
+  //       router.push("/");
+  //     } else {
+  //       setToken(localToken);
+  //       getUserData(localToken);
+  //     }
+  //   }
+  // };
   const getUserData = async (token) => {
     try {
       if (token) {
@@ -42,7 +55,6 @@ export const AuthProvider = ({ children }) => {
       console.log("err", err);
     }
   };
-
   useEffect(() => {
     if (token) getUserData(token);
   }, [token]);

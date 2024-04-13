@@ -9,6 +9,7 @@ export const getAllBuyerInfo = async (req, res) => {
 export const UserBought = async (req, res) => {
   const { email, allBuy } = req.body;
   const date = new Date();
+  console.log("working");
   try {
     const user = await BuyerModel.findOne({ email: email });
     const randomNumber = Math.floor(100000 + Math.random() * 900000);
@@ -109,5 +110,21 @@ export const removePurchase = async (req, res) => {
   }
 };
 export const confirmDelivery = async (req, res) => {
-  const { id, deliveryId } = req.body;
+  const { id, deliveryId, index } = req.body;
+  // console.log("index", index);
+  // console.log("working??/");
+  try {
+    const response = await BuyerModel.updateOne(
+      { "allBuy.deliveryId": deliveryId },
+      { $set: { "allBuy.$.deliveryStatus": true } }
+    );
+    // const lastBuyers = await PurchaseModel.findOneAndDelete({
+    //   deliveryId: deliveryId,
+    // });
+    res
+      .status(200)
+      .json({ success: true, message: "Purchase removed successfully" });
+  } catch (err) {
+    console.log(err);
+  }
 };
