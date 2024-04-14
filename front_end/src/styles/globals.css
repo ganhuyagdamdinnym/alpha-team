@@ -53,7 +53,11 @@ body {
 .chocolateSortBuy:hover {
   background-color: #000391;
 }
-
+.SalePart {
+  text-align: center;
+  border-top: 120px solid green;
+  border-left: 120px solid transparent;
+}
 .buy {
   padding: 10px;
   background-color: white;
@@ -197,6 +201,9 @@ body {
   }
   .Div2font {
     font-size: 2vh;
+  }
+  .purchaseButton {
+    font-size: 15px;
   }
 }
 @media only screen and (max-width: 1500px) {

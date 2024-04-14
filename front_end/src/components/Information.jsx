@@ -67,6 +67,7 @@ const Hello = ({ element, e, fetchAllBuyerInfo }) => {
       console.log(err);
     }
     fetchAllBuyerInfo();
+    setConfirmDelivery(false);
   };
   const HandleConfirmDelivery = async (id, deliveryId, index) => {
     console.log("hi", id, deliveryId);
@@ -82,6 +83,8 @@ const Hello = ({ element, e, fetchAllBuyerInfo }) => {
     } catch (err) {
       console.log(err);
     }
+    fetchAllBuyerInfo();
+    setConfirmDelivery(false);
   };
   return (
     <div

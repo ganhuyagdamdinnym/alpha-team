@@ -122,7 +122,11 @@ export default function Basket() {
             className="cashPart  "
             ref={currentRef}
           >
-            <CashPart allPrice={price} />
+            <CashPart
+              allPrice={price}
+              BuyStatus={BuyStatus}
+              setBuyStatus={setBuyStatus}
+            />
           </div>
         </div>
       ) : (

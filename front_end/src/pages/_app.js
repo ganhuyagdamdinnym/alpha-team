@@ -4,6 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { AuthProvider } from "@/hook/authProvider";
+import { ClerkProvider } from "@clerk/nextjs";
 // const firebaseConfig = {
 //   apiKey: "AIzaSyDPVatrQKiEBy2xZlRVwyFLxg9YCI8uJIA",
 //   authDomain: "test-a3593.firebaseapp.com",
@@ -19,8 +20,10 @@ import { AuthProvider } from "@/hook/authProvider";
 // auth.languageCode = "it";
 export default function App({ Component, pageProps }) {
   return (
-    <AuthProvider>
-      <Component {...pageProps} />
-    </AuthProvider>
+    <ClerkProvider>
+      <AuthProvider>
+        <Component {...pageProps} />
+      </AuthProvider>
+    </ClerkProvider>
   );
 }
