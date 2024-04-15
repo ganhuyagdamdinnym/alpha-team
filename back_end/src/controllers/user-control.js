@@ -16,7 +16,6 @@ export const getUserData = async (req, res) => {
   }
 };
 //email
-
 //const password = process.env.APP_HOST_EMAIL_PASSWORD;
 const transport = nodemailer.createTransport({
   service: "gmail",
@@ -87,17 +86,7 @@ export const loginByCode = async (req, res) => {
 
   //bcrypt
 };
-export const UserBought = (req, res) => {
-  // const { email, price } = req.body;
-  // try {
-  //   const options = {
-  //     from: "amaraaamarbileg06@gmail.com",
-  //     to: "damdinnymg@gmail.com",
-  //     subject: "Password reset",
-  //     text: `${email} хэрэглэгч `,
-  //   };
-  // } catch (err) {
-  //   console.log(err);
-  // }
-  // console.log("hi");
+export const userLoginWithGoogle = async (req, res) => {
+  const { email } = req.body;
+  console.log(email);
 };

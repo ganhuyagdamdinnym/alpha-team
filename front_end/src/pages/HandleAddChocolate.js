@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
-
+import { useRouter } from "next/navigation";
 export default function AddChocolate() {
   const [imageUrl, setImageUrl] = useState(null); // Initial state for image URL
   const [name, setName] = useState();
   const [base64, setBase64] = useState();
   const [fullData, setFullData] = useState();
-
+  const router = useRouter();
   function handleName(e) {
     setName(e.target.value);
   }
@@ -111,7 +111,10 @@ export default function AddChocolate() {
             width={96}
           />
         </button>
-        <button className="text-white text-2xl w-60 font-medium flex justify-center items-center">
+        <button
+          onClick={() => Jump()}
+          className="text-white text-2xl w-60 font-medium flex justify-center items-center"
+        >
           <p>Хөнгөлөлт</p>
         </button>
       </div>

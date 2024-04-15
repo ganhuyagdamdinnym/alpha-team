@@ -7,6 +7,7 @@ import { UserHead } from "@/components/UserHead";
 import { ChocolateImfo } from "@/components/ChocolateImfo";
 import { Back_End_url } from "@/utils/back-url";
 import { AuthContext } from "@/hook/authProvider";
+// import { currentUser } from "@clerk/nextjs";
 export default function Buy() {
   const currentRef = useRef(null);
   const { token, curUser: user } = useContext(AuthContext);
@@ -14,6 +15,26 @@ export default function Buy() {
   const [data, setData] = useState();
   const [sorts, setSorts] = useState();
   const [handleSortName, setHandleSortName] = useState();
+  //get user
+
+  const getUserInfo = async () => {
+    // const user = await currentUser();
+    // res.json({ user });
+    try {
+      const result = await axios.get("/api/handleWithGoogle");
+      const email = result.data?.user.emailAddresses[0].emailAddress;
+      console.log("result", result.data?.user.emailAddresses[0].emailAddress);
+      const token = localStorage.getItem("clerk-db-jwt");
+      if (token !== null) {
+        const url = `${Back_End_url}/userLoginWithGoogle`;
+        await axios.post(url, {
+          email: email,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const fetchChocolateData = async () => {
     try {
       const url = `${Back_End_url}/getChocolatedata`;
@@ -24,6 +45,7 @@ export default function Buy() {
       console.log("err", err);
     }
   };
+
   const HandleSort = (sort, name) => {
     console.log("hi", sorts);
     if (sort == "all") {
@@ -38,9 +60,11 @@ export default function Buy() {
     router.push("/basket");
   };
   useEffect(() => {
+    getUserInfo();
     fetchChocolateData();
   }, []);
   useEffect(() => {}, [token]);
+  ///
   return (
     <div className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-white`}>
       <div

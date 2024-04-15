@@ -4,7 +4,9 @@ import { useState, useEffect, useContext } from "react";
 import { Back_End_url } from "@/utils/back-url";
 import axios from "axios";
 import Link from "next/link";
+import { SignInButton } from "@clerk/nextjs";
 import { AuthContext } from "@/hook/authProvider";
+
 export const Login = (props) => {
   const { relogin, email, setEmail, setCodeStatus, setLoginStat, loginStat } =
     props;
@@ -84,9 +86,9 @@ export const Login = (props) => {
             НЭВТРЭХ
           </button>
         </form>
-        <Link href="/sign-in">
-          <button>contiune with google</button>
-        </Link>
+        <SignInButton afterSignInUrl="/buy" afterSignUpUrl="/buy">
+          Sign in
+        </SignInButton>
       </div>
       <div id="sign-in-button"></div>
     </div>

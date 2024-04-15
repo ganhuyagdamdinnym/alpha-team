@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Login } from "./Login";
 import { useState } from "react";
 import { EnterCode } from "./EnterCode";
+
 export const Header = (props) => {
   const router = useRouter();
   // const { LoginButtonPress } = props;
@@ -61,7 +62,7 @@ export const Header = (props) => {
         </button>
         <Image
           onClick={jumptoHome}
-          className="cursor-pointer logoInBasket"
+          className="cursor-pointer logoInBasket mt-[5px]"
           priority={true}
           alt="logo"
           src="logo.svg"

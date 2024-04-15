@@ -13,7 +13,6 @@ import { Data } from "./data";
 export default function MainPageGlitchFix() {
   const [swiperRef, setSwiperRef] = useState(null);
   const [mainStreamPipeForState, setMainStreamPipeForState] = useState({});
-
   const MainStreamDataForSwiperCover = [
     {
       name: "COLOURFUL VARIETY",
@@ -107,7 +106,7 @@ export default function MainPageGlitchFix() {
         className="w-[100vw] h-[100vh] flex flex-col"
         style={{ backgroundColor: mainStreamPipeForState.color }}
       >
-        <div className="mt-[-20px]">
+        <div className="mt-[-50px]">
           <Header />
         </div>
         <div className="w-[100%] mt-[60px] h-[50%]">
