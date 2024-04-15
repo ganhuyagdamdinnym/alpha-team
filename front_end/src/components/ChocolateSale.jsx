@@ -3,7 +3,7 @@ import Image from "next/image";
 import axios from "axios";
 import { Back_End_url } from "@/utils/back-url";
 export const ChocolateSale = (props) => {
-  const { name, unit_price, box_price, count_in_box, image, id ,status,percent} = props;
+  const { name, unit_price, box_price, count_in_box, image, id ,status,percent, fetchChocolateData} = props;
   const [salePercent, setSalePercent] = useState(0);
   const [saleStatus, setSaleStatus] = useState(false);
   const HandleAbdicateSale = () => {
@@ -26,6 +26,7 @@ export const ChocolateSale = (props) => {
   const HandleConfirmSale = async () => {
     const url = `${Back_End_url}/handleSale`;
     const token = localStorage.getItem("token");
+    fetchChocolateData()
     try {
       await axios.post(url, {
         chocolateId: id,
@@ -35,6 +36,7 @@ export const ChocolateSale = (props) => {
     } catch (err) {
       console.log(err);
     }
+    
   };
   const refuseSale=async()=>{
     const url = `${Back_End_url}/refuseSale`;
@@ -42,10 +44,12 @@ export const ChocolateSale = (props) => {
   try{
 await axios.post(url,{
   chocolateId: id,
+  token:token
 })
   }catch(err){
     console.log(err)
   }
+  fetchChocolateData()
   }
   return (
     <div className="border-[3.5px] border-[#DCDAD7] rounded-[12px] buyBorder bg-white z-0 ">

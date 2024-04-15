@@ -44,6 +44,7 @@ export default function Sell() {
             id={e._id}
             status={e.saleStatus}
             percent={e.salePercent}
+            fetchChocolateData={ fetchChocolateData}
             //currentRef={currentRef}
           />
         ))}

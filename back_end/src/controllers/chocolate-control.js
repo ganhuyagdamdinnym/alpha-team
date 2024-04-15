@@ -9,7 +9,6 @@ export const getChocolatedata = async (req, res) => {
   }
 };
 export const getChocolate = async (req, res) => {
-  //console.log("sss");
   const body = req.body;
   const newChocolate = ChocolateModel.create({
     id: body.id,
@@ -36,13 +35,15 @@ export const confirmSale = async (req, res) => {
       salePrice_box: saleBox,
       salePercent: salePercent,
     });
-    res.status(200).json({ message: "successfully" });
+    res.status(200).json({ message: "successfully saled" });
   } catch (err) {
     console.log(err);
   }
 };
 export const refuseSale=async(req,res)=>{
   const {chocolateId}=req.body
-  await ChocolateModel.findByIdAndDelete(chocolateId)
+  await ChocolateModel.findByIdAndUpdate(chocolateId,{
+    saleStatus:false
+  })
   res.status(200).json({message:"succeed refused"})
 }
