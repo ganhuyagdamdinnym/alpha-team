@@ -1,7 +1,6 @@
 import { HomeChocolate } from "../components/HomeChocolate";
 import { HomeAboutCompany } from "../components/HomeAboutCompany";
-// import { useEffect } from "react";
-import { currentUser } from "@clerk/nextjs";
+import { useEffect } from "react";
 export default function Home() {
   // const user = await currentUser();
   // console.log(user, "üserr");

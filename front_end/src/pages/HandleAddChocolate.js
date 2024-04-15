@@ -5,6 +5,7 @@ export default function AddChocolate() {
   const [imageUrl, setImageUrl] = useState(null); // Initial state for image URL
   const [name, setName] = useState();
   const [base64, setBase64] = useState();
+  const [fullData, setFullData] = useState();
 
   function handleName(e) {
     setName(e.target.value);
@@ -26,13 +27,16 @@ export default function AddChocolate() {
     const imageBaseProccessoro = await resizeAndConvertToBase64(base64);
     console.log(name, imageBaseProccessoro);
     axios
-      .post("http://localhost:8002/handleChocolateImage", {
-        base64: imageBaseProccessoro,
+      .post("http://localhost:8002/getchocolate", {
+        image: imageBaseProccessoro,
         name: name,
+        unit_price: fullData.pricePerUnit,
+        box_price: fullData.pricePerBox,
+        count_in_box: fullData.countInBox,
       })
       .catch((e) => console.log(e));
+    console.log("command compiled successfully");
   }
-  console.log("command compiled successfully");
 
   const resizeAndConvertToBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -83,7 +87,15 @@ export default function AddChocolate() {
       reader.readAsDataURL(file);
     });
   };
-
+  function handlePriceBox(e) {
+    setFullData({ ...fullData, pricePerBox: e.target.value });
+  }
+  function handlePricePerUnit(e) {
+    setFullData({ ...fullData, pricePerUnit: e.target.value });
+  }
+  function countInBox(e) {
+    setFullData({ ...fullData, countInBox: e.target.value });
+  }
   return (
     <div className="w-[100vw] h-[100vh]">
       <div className="w-full h-[100px] bg-[#BE9131] flex justify-between px-4">
@@ -130,14 +142,17 @@ export default function AddChocolate() {
             placeholder="Та шоколадний нэрээ оруулна уу."
           />
           <input
+            onChange={handlePricePerUnit}
             className="p-[20px] w-[400px] h-[30px] border-solid border-2 rounded border-[#be9131]"
             placeholder="Та шоколадний ширхэгийн үнийг оруулна уу."
           />
           <input
+            onChange={handlePriceBox}
             className="p-[20px] w-[400px] h-[30px] border-solid border-2 rounded border-[#be9131]"
             placeholder="Та шоколадний хайрцгийн үнийг оруулна уу."
           />
           <input
+            onChange={countInBox}
             className="p-[20px] w-[400px] h-[30px] border-solid border-2 rounded border-[#be9131]"
             placeholder="Та шоколадний хайрцган дахь тоог оруулна уу."
           />

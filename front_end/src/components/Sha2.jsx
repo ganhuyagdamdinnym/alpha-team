@@ -64,7 +64,7 @@ export default function MainPageGlitchFix() {
     {
       name: "250G BARS",
       color: "rgb(24, 36, 98)",
-      image: "/sortPhoto/250g.webp",
+      image: "/250g_productslider.webp",
       title: "SOMETIMES SIZE MATTERS",
       accentColor: "#6fb8dd",
       content:
@@ -90,12 +90,19 @@ export default function MainPageGlitchFix() {
       console.error("Item not found in data array");
     }
   }
-
+  console.log(mainStreamPipeForState);
   function providerNameFilter(content) {
     return content.replace("RITTER SPORT ", "");
   }
   return (
     <div className="">
+      {mainStreamPipeForState.activeImage && !null ? (
+        <div className="w-[90vw] h-[90vh] ">
+          {Data[mainStreamPipeForState.activeImage].name}
+        </div>
+      ) : (
+        <div>hoosn</div>
+      )}
       <div
         className="w-[100vw] h-[100vh] flex flex-col"
         style={{ backgroundColor: mainStreamPipeForState.color }}
@@ -153,7 +160,7 @@ export default function MainPageGlitchFix() {
                   }}
                   className="w-[100%] flex justify-center"
                 >
-                  <img src={e.image}></img>
+                  <img height="600px" width="600px" src={e.image}></img>
                 </div>
               </SwiperSlide>
             ))}
@@ -178,13 +185,13 @@ export default function MainPageGlitchFix() {
         <div
           style={{ backgroundColor: mainStreamPipeForState.accentColor }}
           className={
-            "fixed z-[99999999] w-[100vw] top-[95vh] gap-[20px] overflow-x-scroll flex justify-evenly"
+            "fixed z-[99999999] chocolteSelectionBarResponsive  w-[100vw] top-[95vh] gap-[20px] overflow-x-scroll flex justify-evenly"
           }
         >
           {MainStreamDataForSwiperCover.map((e, index) =>
             e.name === mainStreamPipeForState.name ? (
               <button
-                className=" chocolateSortBuy text-[20px]  w-[16%]"
+                className="w-[16%]"
                 key={index}
                 style={{
                   height: "5vh",
@@ -205,7 +212,7 @@ export default function MainPageGlitchFix() {
               </button>
             ) : (
               <button
-                className=" chocolateSortBuy text-[20px] w-[16%] "
+                className="w-[16%] "
                 style={{
                   paddingLeft: "20px",
                   paddingRight: "20px",
@@ -228,20 +235,18 @@ export default function MainPageGlitchFix() {
           return e.sort == mainStreamPipeForState.name ? (
             <div
               key={index}
+              onClick={() => {
+                setMainStreamPipeForState({
+                  ...mainStreamPipeForState,
+                  activeImage: e.id,
+                });
+              }}
               className={
                 "flex transition-all duration-300 w-[20%] min-w-max-[300px] h-[20%] justify-center max-[1000px]:w-[50%] bg-cover overflow-hidden"
               }
             >
               <img className="chocolate-card-image" src={e.image} />
 
-              {/* <img className="chocolate-card-image" src={e.hover} /> */}
-              {/* {document
-                .querySelector("image" + index)
-                .addEventListener("mouseover") ? (
-                <img src={e.image}></img>
-              ) : (
-                <img src={e.hover}></img>
-              )} <3 */}
               <p className="absolute z-[2000] text-[white] max-[1000px]:text-[14px] max-[1000px]:mt-[42%] mt-[17%]">
                 {providerNameFilter(e.name)}
               </p>
