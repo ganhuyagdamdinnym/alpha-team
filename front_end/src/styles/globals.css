@@ -48,7 +48,6 @@ body {
   /* background-color: ; */
 }
 .chocolateSortBuy {
-  transition: all 400ms;
 }
 .chocolateSortBuy:hover {
   background-color: #000391;
@@ -588,4 +587,11 @@ svg {
 } */
 td {
   text-align: center;
+}
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  cursor: pointer;
 }
