@@ -3,7 +3,7 @@ import Image from "next/image";
 import { faLess } from "@fortawesome/free-brands-svg-icons";
 import axios from "axios";
 import { Back_End_url } from "@/utils/back-url";
-export function Info({ e }) {
+export function Info({ e, fetchAllBuyerInfo }) {
   const [show, setShow] = useState(false);
 
   function handlShow() {
@@ -29,15 +29,20 @@ export function Info({ e }) {
       </div>
       {show && (
         <div className="flex flex-col gap-4 ">
-          {e.allBuy?.map((element) => (
-            <Hello element={element} e={e} />
+          {e.allBuy?.map((element, index) => (
+            <Hello
+              element={element}
+              e={e}
+              fetchAllBuyerInfo={fetchAllBuyerInfo}
+              index={index}
+            />
           ))}
         </div>
       )}
     </div>
   );
 }
-const Hello = ({ element, e }) => {
+const Hello = ({ element, e, fetchAllBuyerInfo }) => {
   const [confirmDelivery, setConfirmDelivery] = useState(false);
   const currentRef = useRef(null);
   const handleEdith = () => {
@@ -48,25 +53,31 @@ const Hello = ({ element, e }) => {
       setConfirmDelivery(false);
     }
   };
-  const handleRemovePurchase = async (id, deliveryId) => {
-    console.log(id, deliveryId);
+  const handleRemovePurchase = async (id, deliveryId, index) => {
+    const token = localStorage.getItem("token");
     try {
       const url = `${Back_End_url}/removePurchase`;
       await axios.post(url, {
         id: id,
         deliveryId: deliveryId,
+        token: token,
+        index: index,
       });
     } catch (err) {
       console.log(err);
     }
+    fetchAllBuyerInfo();
   };
-  const HandleConfirmDelivery = async (id, deliveryId) => {
-    console.log(id, deliveryId);
+  const HandleConfirmDelivery = async (id, deliveryId, index) => {
+    console.log("hi", id, deliveryId);
+    const token = localStorage.getItem("token");
     try {
       const url = `${Back_End_url}/confirmDelivery`;
       await axios.post(url, {
         id: id,
         deliveryId: deliveryId,
+        token: token,
+        index: index,
       });
     } catch (err) {
       console.log(err);
@@ -77,7 +88,7 @@ const Hello = ({ element, e }) => {
       onClick={() => back(currentRef)}
       className="border-solid border-2  border-[#BE9131] px-4 pb-[30px] pt-2 rounded-xl flex relative text-[20px] flex flex-col "
     >
-      <div className="absolute bottom-4 right-4 h-4 z-0  font-medium">
+      <div className="absolute bottom-4 right-4 h-4 z-0  font-medium ">
         {element.deliveryStatus == false ? (
           <Image src="notDelivery.svg" height={24} width={24} />
         ) : (
@@ -119,6 +130,7 @@ const Hello = ({ element, e }) => {
           {element.chocolateName.map((el) => (
             <div className="flex gap-2 textInAdminPage">
               <p>{el.name}</p>
+              {console.log("his")}
               <p>{el.count}ш,</p>
             </div>
           ))}

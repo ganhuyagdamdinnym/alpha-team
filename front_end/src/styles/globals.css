@@ -437,8 +437,8 @@ body {
 }
 @media only screen and (max-width: 650px) {
   .buttonInAdminPageHeader {
-    width: 80px;
-    font-size: 12px;
+    width: 60px;
+    font-size: 8px;
   }
   .textStatusInAdminPage {
     font-size: 15px;
@@ -592,4 +592,11 @@ svg {
 } */
 td {
   text-align: center;
+}
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  cursor: pointer;
 }

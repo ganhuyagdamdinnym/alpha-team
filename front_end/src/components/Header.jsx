@@ -54,7 +54,7 @@ export const Header = (props) => {
         <button onClick={() => jumptomain()}>
           <p
             style={{ color: "#160d98" }}
-            className="font-medium border-b-[0.5px] border-[#160d98] px-1 header-choco  w-36 headerText"
+            className="font-semibold border-b-[0.5px] border-[#160d98] px-1 header-choco  w-36 headerText"
           >
             ШОКОЛАД
           </p>
@@ -71,7 +71,7 @@ export const Header = (props) => {
         <button onClick={jumptoAbout}>
           <p
             style={{ color: "#160d98" }}
-            className="font-medium border-b-[0.5px] border-[#160d98] px-1 header-choco w-36 headerText"
+            className="font-semibold border-b-[0.5px] border-[#160d98] px-1 header-choco w-36 headerText"
           >
             ТУХАЙ
           </p>
