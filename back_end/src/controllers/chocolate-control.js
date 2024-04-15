@@ -28,11 +28,12 @@ export const confirmSale = async (req, res) => {
     const chocolate = await ChocolateModel.findById(chocolateId);
     const sale = (chocolate.unit_price / 100) * salePercent;
     const salePrice = chocolate.unit_price - sale;
-    const BoxSale = salePrice * chocolate.count_in_box;
+    const BoxSale = (chocolate.box_price / 100) * salePercent;
+    const saleBox=chocolate.box_price-BoxSale
     await ChocolateModel.findByIdAndUpdate(chocolateId, {
       saleStatus: true,
       salePrice_unit: salePrice,
-      salePrice_box: BoxSale,
+      salePrice_box: saleBox,
       salePercent: salePercent,
     });
     res.status(200).json({ message: "successfully" });
@@ -40,3 +41,8 @@ export const confirmSale = async (req, res) => {
     console.log(err);
   }
 };
+export const refuseSale=async(req,res)=>{
+  const {chocolateId}=req.body
+  await ChocolateModel.findByIdAndDelete(chocolateId)
+  res.status(200).json({message:"succeed refused"})
+}

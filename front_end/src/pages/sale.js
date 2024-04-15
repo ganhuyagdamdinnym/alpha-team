@@ -42,6 +42,8 @@ export default function Sell() {
             count_in_box={e.count_in_box}
             image={e.image}
             id={e._id}
+            status={e.saleStatus}
+            percent={e.salePercent}
             //currentRef={currentRef}
           />
         ))}

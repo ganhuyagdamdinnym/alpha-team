@@ -3,11 +3,12 @@ import Image from "next/image";
 import axios from "axios";
 import { Back_End_url } from "@/utils/back-url";
 export const ChocolateSale = (props) => {
-  const { name, unit_price, box_price, count_in_box, image, id } = props;
+  const { name, unit_price, box_price, count_in_box, image, id ,status,percent} = props;
   const [salePercent, setSalePercent] = useState(0);
   const [saleStatus, setSaleStatus] = useState(false);
   const HandleAbdicateSale = () => {
     setSaleStatus(false);
+    setSalePercent(0)
   };
   const statusSale = () => {
     setSaleStatus(true);
@@ -19,7 +20,7 @@ export const ChocolateSale = (props) => {
   };
   const handleSalePlus = () => {
     if (salePercent < 100) {
-      setSalePercent(salePercent + 1);
+      setSalePercent(Number(salePercent) + 1);
     }
   };
   const HandleConfirmSale = async () => {
@@ -35,6 +36,17 @@ export const ChocolateSale = (props) => {
       console.log(err);
     }
   };
+  const refuseSale=async()=>{
+    const url = `${Back_End_url}/refuseSale`;
+    const token = localStorage.getItem("token");
+  try{
+await axios.post(url,{
+  chocolateId: id,
+})
+  }catch(err){
+    console.log(err)
+  }
+  }
   return (
     <div className="border-[3.5px] border-[#DCDAD7] rounded-[12px] buyBorder bg-white z-0 ">
       <img
@@ -73,7 +85,7 @@ export const ChocolateSale = (props) => {
                   value={salePercent}
                   type="Number"
                   className="w-[50px] h-[30px] text-[20px] text-center flex items-center justify-center border-black border-2"
-                />
+                /> 
                 %
               </div>
               <Image
@@ -97,12 +109,22 @@ export const ChocolateSale = (props) => {
             </button>
           </div>
         ) : (
+          <div className="flex justify-between w-full">
           <button
             onClick={() => statusSale()}
-            className="px-2 py-1 border-[#BE9131] border-2 rounded-2xl"
+            className="px-2 py-1 border-[#BE9131] border-2 rounded-2xl font-medium"
           >
-            Хямдруулах
+            {
+            status==true?(<p>{percent}% Хямдруулсан</p>):  <p>
+              Хямдруулах
+            </p>
+            }
           </button>
+            {
+              status==true?(<button onClick={()=>refuseSale()} className="px-2 py-1 border-[#BE9131] border-2 rounded-2xl font-medium"
+              >Цуцлах</button>):null
+            }
+          </div>
         )}
       </div>
     </div>
