@@ -2,6 +2,8 @@ import { HomeChocolate } from "../components/HomeChocolate";
 import { HomeAboutCompany } from "../components/HomeAboutCompany";
 import { useEffect } from "react";
 export default function Home() {
+  // const user = await currentUser();
+  // console.log(user, "üserr");
   //hereg bolj magadgui
   // const first = async () => {
   //   try {
@@ -24,7 +26,16 @@ export default function Home() {
   const relogin = () => {
     // setLoginStat(false);
   };
-
+  // const Tester = async () => {
+  //   const user = await currentUser();
+  //   console.log("user", user);
+  //   res.json({ user });
+  // };
+  // Tester();
+  // useEffect(() => {
+  //   //first();
+  //   Tester();
+  // }, []);
   // const [data, setData] = useState();
   // const fetchChocolateData = async () => {
   //alert("hi");
@@ -61,7 +72,7 @@ export default function Home() {
     <div className={`overflow-y-auto `}>
       <div></div>
       <HomeChocolate relogin={relogin} />
-      <HomeAboutCompany />
+      <HomeAboutCompany />s
     </div>
   );
 }

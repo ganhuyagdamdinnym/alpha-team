@@ -2,8 +2,19 @@ import { useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 export const ChocolateImfo = (props) => {
-  const { name, unit_price, box_price, count_in_box, image, id, currentRef } =
-    props;
+  const {
+    name,
+    unit_price,
+    box_price,
+    count_in_box,
+    image,
+    id,
+    currentRef,
+    saleStatus,
+    salePercent,
+    salePrice_unit,
+    salePrice_box,
+  } = props;
   const [handleCount, setHandleCount] = useState(false);
   const [count, setCount] = useState(1);
   const [bag, setBag] = useState([]);
@@ -25,17 +36,25 @@ export const ChocolateImfo = (props) => {
     if (count > 0) {
       if (localStorage.getItem("basket") == null) {
         const newBag = [...bag];
-        newBag.push({
-          chocolate: id,
-          count: count,
-          price: box_price,
-          name: name,
-          image: image,
-        });
-
-        // alert(name);
+        if (saleStatus == true) {
+          alert(salePrice_box);
+          newBag.push({
+            chocolate: id,
+            count: count,
+            price: salePrice_box,
+            name: name,
+            image: image,
+          });
+        } else {
+          newBag.push({
+            chocolate: id,
+            count: count,
+            price: box_price,
+            name: name,
+            image: image,
+          });
+        }
         localStorage.setItem("basket", JSON.stringify(newBag));
-        // const basket = localStorage.getItem("basket");
       } else {
         const rawNewBag = localStorage.getItem("basket");
         const newBag = JSON.parse(rawNewBag);
@@ -43,38 +62,69 @@ export const ChocolateImfo = (props) => {
         newBag.map((e) => {
           if (e.chocolate === id) {
             status = true;
-            //alert("hi");
           }
         });
         if (status == true) {
           const updateBag = newBag.map((e) => {
-            if (e.chocolate === id)
-              return {
-                ...e,
-                count: e.count + count,
-                price: e.price + price,
-                name: name,
-                image: image,
-              };
-            return e;
+            if (saleStatus == true) {
+              if (e.chocolate === id)
+                return {
+                  ...e,
+                  count: e.count + count,
+                  price: e.price + salePrice_box,
+                  name: name,
+                  image: image,
+                };
+              return e;
+            } else {
+              if (e.chocolate === id)
+                return {
+                  ...e,
+                  count: e.count + count,
+                  price: e.price + price,
+                  name: name,
+                  image: image,
+                };
+              return e;
+            }
           });
           localStorage.setItem("basket", JSON.stringify(updateBag));
         } else {
-          newBag.push({
-            chocolate: id,
-            count: count,
-            price: price,
-            name: name,
-            image: image,
-          });
-          localStorage.setItem("basket", JSON.stringify(newBag));
+          if (saleStatus == true) {
+            newBag.push({
+              chocolate: id,
+              count: count,
+              price: salePrice_box,
+              name: name,
+              image: image,
+            });
+            localStorage.setItem("basket", JSON.stringify(newBag));
+          } else {
+            newBag.push({
+              chocolate: id,
+              count: count,
+              price: price,
+              name: name,
+              image: image,
+            });
+            localStorage.setItem("basket", JSON.stringify(newBag));
+          }
         }
       }
     }
     setHandleCount(false);
   };
   return (
-    <div className="border-[3.5px] border-[#DCDAD7] rounded-[12px] buyBorder bg-white z-0 ">
+    <div className="border-[3.5px] border-[#DCDAD7] rounded-[12px] buyBorder bg-white z-0 relative">
+      {saleStatus ? (
+        <div>
+          <div className="absolute w-24 right-0 h-24 SalePart rounded-tr-lg"></div>
+          <p className="absolute top-0 right-0 z-20 text-white text-2xl flex flex-col justify-end">
+            <p className="mr-1">Sale</p>
+            <p className="">{salePercent}%</p>
+          </p>
+        </div>
+      ) : null}
       <img
         src={`${image}`}
         className="w-full rounded-t-[8px]"
@@ -82,8 +132,26 @@ export const ChocolateImfo = (props) => {
       />
       <div className="w-full h-[130px] border-[#AD70E] px-4 ">
         <h1 className="text-[#2C261F] h-12 font-semibold">{name}</h1>
-        <h1 className="text-[#2C261F]">Ширхэгийн үнэ: {unit_price} ₮</h1>
-        <h1 className="text-[#2C261F]">Хайрцгийн үнэ: {box_price} ₮</h1>
+        <h1 className="text-[#2C261F] flex gap-1">
+          Ширхэгийн үнэ:
+          <p className="relative">
+            {unit_price}₮
+            {saleStatus ? (
+              <p className="absolute w-full bg-[red] h-[2px] top-3 -rotate-12"></p>
+            ) : null}
+          </p>
+          {saleStatus ? <p className="">{salePrice_unit}₮</p> : null}
+        </h1>
+        <h1 className="text-[#2C261F] flex gap-1">
+          Хайрцгийн үнэ:
+          <p className="relative">
+            {box_price}₮
+            {saleStatus ? (
+              <p className="absolute w-full bg-[red] h-[2px] top-3 -rotate-12"></p>
+            ) : null}
+          </p>
+          {saleStatus ? <p className="">{salePrice_box}₮</p> : null}
+        </h1>
         <h1 className="">Хайрцаг дахь ширхэг: {count_in_box}ш</h1>
       </div>
       <div className="w-full flex h-[50px] items-center">

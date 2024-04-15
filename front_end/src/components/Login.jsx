@@ -3,13 +3,13 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect, useContext } from "react";
 import { Back_End_url } from "@/utils/back-url";
 import axios from "axios";
+import Link from "next/link";
 import { AuthContext } from "@/hook/authProvider";
 export const Login = (props) => {
   const { relogin, email, setEmail, setCodeStatus, setLoginStat, loginStat } =
     props;
   //const { token } = useContext(AuthContext);
   const { token, curUser: user } = useContext(AuthContext);
-
   const router = useRouter();
   const loginCurrentUser = () => {
     if (token) {
@@ -84,8 +84,9 @@ export const Login = (props) => {
             НЭВТРЭХ
           </button>
         </form>
-
-        <button></button>
+        <Link href="/sign-in">
+          <button>contiune with google</button>
+        </Link>
       </div>
       <div id="sign-in-button"></div>
     </div>

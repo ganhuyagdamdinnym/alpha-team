@@ -62,6 +62,10 @@ export default function Buy() {
             image={e.image}
             id={e._id}
             currentRef={currentRef}
+            saleStatus={e.saleStatus}
+            salePercent={e.salePercent}
+            salePrice_unit={e.salePrice_unit}
+            salePrice_box={e.salePrice_box}
           />
         ))}
       </div>
