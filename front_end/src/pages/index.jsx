@@ -24,9 +24,7 @@ export default function Home() {
   const relogin = () => {
     // setLoginStat(false);
   };
-  useEffect(() => {
-    //first();
-  }, []);
+
   // const [data, setData] = useState();
   // const fetchChocolateData = async () => {
   //alert("hi");

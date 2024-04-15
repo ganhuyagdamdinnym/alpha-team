@@ -90,12 +90,19 @@ export default function MainPageGlitchFix() {
       console.error("Item not found in data array");
     }
   }
-
+  console.log(mainStreamPipeForState);
   function providerNameFilter(content) {
     return content.replace("RITTER SPORT ", "");
   }
   return (
     <div className="">
+      {mainStreamPipeForState.activeImage && !null ? (
+        <div className="w-[90vw] h-[90vh] ">
+          {Data[mainStreamPipeForState.activeImage].name}
+        </div>
+      ) : (
+        <div>hoosn</div>
+      )}
       <div
         className="w-[100vw] h-[100vh] flex flex-col"
         style={{ backgroundColor: mainStreamPipeForState.color }}
@@ -228,20 +235,18 @@ export default function MainPageGlitchFix() {
           return e.sort == mainStreamPipeForState.name ? (
             <div
               key={index}
+              onClick={() => {
+                setMainStreamPipeForState({
+                  ...mainStreamPipeForState,
+                  activeImage: e.id,
+                });
+              }}
               className={
                 "flex transition-all duration-300 w-[20%] min-w-max-[300px] h-[20%] justify-center max-[1000px]:w-[50%] bg-cover overflow-hidden"
               }
             >
               <img className="chocolate-card-image" src={e.image} />
 
-              {/* <img className="chocolate-card-image" src={e.hover} /> */}
-              {/* {document
-                .querySelector("image" + index)
-                .addEventListener("mouseover") ? (
-                <img src={e.image}></img>
-              ) : (
-                <img src={e.hover}></img>
-              )} <3 */}
               <p className="absolute z-[2000] text-[white] max-[1000px]:text-[14px] max-[1000px]:mt-[42%] mt-[17%]">
                 {providerNameFilter(e.name)}
               </p>
