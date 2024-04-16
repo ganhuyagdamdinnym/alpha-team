@@ -26,18 +26,33 @@ export const ChocolateSale = (props) => {
   const HandleConfirmSale = async () => {
     const url = `${Back_End_url}/handleSale`;
     const token = localStorage.getItem("token");
-    fetchChocolateData()
-    try {
-      await axios.post(url, {
-        chocolateId: id,
-        salePercent: salePercent,
-        token: token,
-      });
-    } catch (err) {
-      console.log(err);
+    if(salePercent>0){
+      try {
+        await axios.post(url, {
+          chocolateId: id,
+          salePercent: salePercent,
+          token: token,
+        });
+      } catch (err) {
+        console.log(err);
+      }
+      fetchChocolateData()
     }
-    
+    setSaleStatus(false)
   };
+  const HandleChocolateDelete=async()=>{
+    const url=`${Back_End_url}/deleteChocolate`
+    const token=localStorage.getItem("token")
+    try{
+      await axios.post(url,{
+        id:id,
+        token:token,
+      })
+    }catch(err){
+      console.log(err)
+    }
+    fetchChocolateData()
+  }
   const refuseSale=async()=>{
     const url = `${Back_End_url}/refuseSale`;
     const token = localStorage.getItem("token");
@@ -130,6 +145,17 @@ await axios.post(url,{
             }
           </div>
         )}
+        <button
+                  onClick={() =>HandleChocolateDelete()}
+                  className="px-1 fixed top-1 right-0"
+                >
+                  <Image
+                    className="cursor-pointer"
+                    src="xmark.svg"
+                    height={24}
+                    width={24}
+                  />
+                </button>
       </div>
     </div>
   );

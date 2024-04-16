@@ -118,9 +118,9 @@ export const confirmDelivery = async (req, res) => {
       { "allBuy.deliveryId": deliveryId },
       { $set: { "allBuy.$.deliveryStatus": true } }
     );
-    // const lastBuyers = await PurchaseModel.findOneAndDelete({
-    //   deliveryId: deliveryId,
-    // });
+    await PurchaseModel.findOneAndUpdate({deliveryId:deliveryId},{
+      deliveryStatus:true
+    })
     res
       .status(200)
       .json({ success: true, message: "Purchase removed successfully" });

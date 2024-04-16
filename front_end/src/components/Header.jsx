@@ -10,7 +10,7 @@ export const Header = (props) => {
   const [loginStat, setLoginStat] = useState(false);
   const [codeStatus, setCodeStatus] = useState(true);
   const [email, setEmail] = useState("");
-
+  
   const header = ["About", "Our Chocolate", "Login"];
   const jumptomain = () => {
     router.push("/main");
@@ -51,7 +51,7 @@ export const Header = (props) => {
           <EnterCode email={email} back={back} />
         </div>
       )}
-      <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] bg-white py-1">
+      <div className="w-full flex justify-center text-white text-2xl gap-8 items-center mt-[20px] bg-[#be9131] py-1 border-b-8 border-[#1e2097]">
         <button onClick={() => jumptomain()}>
           <p
             style={{ color: "#160d98" }}
@@ -77,7 +77,7 @@ export const Header = (props) => {
             ТУХАЙ
           </p>
         </button>
-        <button onClick={() => LoginButtonPress()} className="buy rounded-xl ">
+        <button onClick={() => LoginButtonPress()} className="buy rounded-xl">
           <p>ХУДАЛДАА ХИЙХ</p>
         </button>
       </div>

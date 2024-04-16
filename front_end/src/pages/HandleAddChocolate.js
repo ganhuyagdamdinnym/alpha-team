@@ -37,7 +37,9 @@ export default function AddChocolate() {
       .catch((e) => console.log(e));
     console.log("command compiled successfully");
   }
-
+const Jump=()=>{
+  router.push("/sale")
+}
   const resizeAndConvertToBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();

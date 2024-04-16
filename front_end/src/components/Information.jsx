@@ -105,15 +105,14 @@ const Hello = ({ element, e, fetchAllBuyerInfo }) => {
         >
           <button
             onClick={() => handleRemovePurchase(e._id, element.deliveryId)}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 w-full justify-between"
           >
             Худалдан авалт цуцлах
             <Image src="trash.svg" height={16} width={16} />
           </button>
           <button
             onClick={() => HandleConfirmDelivery(e._id, element.deliveryId)}
-            className="flex items-center gap-2"
-          >
+            className="flex items-center gap-2 w-full justify-between">
             Хүргэлт баталгаажуулах
             <Image src="succeedDelivery.svg" height={24} width={24} />
           </button>

@@ -47,3 +47,12 @@ export const refuseSale = async (req, res) => {
   });
   res.status(200).json({ message: "succeed refused" });
 };
+export const deleteChocolate=async(req,res)=>{
+  const{id}=req.body
+  try{
+   await ChocolateModel.findByIdAndDelete(id )
+   res.status(200).json({message:"successfully deleted"})
+  }catch(errror){
+    console.log(errror)
+  }
+}

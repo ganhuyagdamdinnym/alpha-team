@@ -25,11 +25,17 @@ export default function Buy() {
       const email = result.data?.user.emailAddresses[0].emailAddress;
       console.log("result", result.data?.user.emailAddresses[0].emailAddress);
       const token = localStorage.getItem("clerk-db-jwt");
+      console.log("tt",token)
       if (token !== null) {
         const url = `${Back_End_url}/userLoginWithGoogle`;
-        await axios.post(url, {
+       const res= await axios.post(url, {
           email: email,
         });
+       // console.log("res",res.data.token)
+        localStorage.setItem("token", res.data.token)
+        if(res){
+         // window.location.reload()
+        }
       }
     } catch (err) {
       console.log(err);
@@ -63,7 +69,9 @@ export default function Buy() {
     getUserInfo();
     fetchChocolateData();
   }, []);
-  useEffect(() => {}, [token]);
+  // useEffect(() => {
+  //   window.location.reload()
+  // }, [token]);
   ///
   return (
     <div className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-white`}>

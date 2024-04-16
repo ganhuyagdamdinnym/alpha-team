@@ -88,5 +88,25 @@ export const loginByCode = async (req, res) => {
 };
 export const userLoginWithGoogle = async (req, res) => {
   const { email } = req.body;
-  console.log(email);
+  try {
+    const OneUser = await UserModel.findOne({ email: email });
+    console.log("user", OneUser);
+    if (OneUser == null) {
+      await UserModel.create({
+        email: email,
+      });
+      const token = jwt.sign({ id: email }, "SomeSecretKey", {
+        expiresIn: "2d",
+      });
+      res.status(200).json({token})
+    } else {
+      const token = jwt.sign({ id: email }, "SomeSecretKey", {
+        expiresIn: "2d",
+      });
+      res.status(200).json({token})
+    }
+    res.status(200).json({ message: "Email sent" });
+  } catch (err) {
+    console.log(err);
+  }
 };
