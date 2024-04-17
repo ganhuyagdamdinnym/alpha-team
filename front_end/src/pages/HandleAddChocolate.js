@@ -6,6 +6,8 @@ export default function AddChocolate() {
   const [name, setName] = useState();
   const [base64, setBase64] = useState();
   const [fullData, setFullData] = useState();
+  const [thereAintSingleShiThtsValid, setThereAintSingleShiThtsValid] =
+    useState(false);
   const router = useRouter();
   function handleName(e) {
     setName(e.target.value);
@@ -26,20 +28,29 @@ export default function AddChocolate() {
   async function handleSend() {
     const imageBaseProccessoro = await resizeAndConvertToBase64(base64);
     console.log(name, imageBaseProccessoro);
-    axios
-      .post("http://localhost:8002/getchocolate", {
-        image: imageBaseProccessoro,
-        name: name,
-        unit_price: fullData.pricePerUnit,
-        box_price: fullData.pricePerBox,
-        count_in_box: fullData.countInBox,
-      })
-      .catch((e) => console.log(e));
-    console.log("command compiled successfully");
+    if (
+      imageBaseProccessoro ||
+      name ||
+      fullData.pricePerBox ||
+      fullData.pricePerUnit ||
+      fullData.countInBox === undefined
+    ) {
+      setThereAintSingleShiThtsValid(true);
+    } else {
+      axios
+        .post("http://localhost:8002/getchocolate", {
+          image: imageBaseProccessoro,
+          name: name,
+          unit_price: fullData.pricePerUnit,
+          box_price: fullData.pricePerBox,
+          count_in_box: fullData.countInBox,
+        })
+        .catch((e) => console.log(e));
+    }
   }
-const Jump=()=>{
-  router.push("/sale")
-}
+  const Jump = () => {
+    router.push("/sale");
+  };
   const resizeAndConvertToBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -85,8 +96,11 @@ const Jump=()=>{
       reader.onerror = (error) => {
         reject(error);
       };
-
-      reader.readAsDataURL(file);
+      try {
+        reader.readAsDataURL(file);
+      } catch {
+        setThereAintSingleShiThtsValid(true);
+      }
     });
   };
   function handlePriceBox(e) {
@@ -141,6 +155,12 @@ const Jump=()=>{
           <h1 className="text-[grey]">Upload or paste your image</h1>
         </div>
         <div className="flex flex-col gap-16">
+          {thereAintSingleShiThtsValid ? (
+            <h1 className="text-[red] text-[35px] absolute top-[35vh]">
+              butneern orulc
+            </h1>
+          ) : null}
+
           <input
             onChange={handleName}
             className="p-[20px] w-[400px] h-[30px] border-solid border-2 rounded border-[#be9131]"
