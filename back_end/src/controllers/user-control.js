@@ -88,6 +88,7 @@ export const loginByCode = async (req, res) => {
 };
 export const userLoginWithGoogle = async (req, res) => {
   const { email } = req.body;
+  console.log("ssss", email);
   try {
     const OneUser = await UserModel.findOne({ email: email });
     console.log("user", OneUser);
@@ -98,12 +99,12 @@ export const userLoginWithGoogle = async (req, res) => {
       const token = jwt.sign({ id: email }, "SomeSecretKey", {
         expiresIn: "2d",
       });
-      res.status(200).json({token})
+      res.status(200).json({ token });
     } else {
       const token = jwt.sign({ id: email }, "SomeSecretKey", {
         expiresIn: "2d",
       });
-      res.status(200).json({token})
+      res.status(200).json({ token });
     }
     res.status(200).json({ message: "Email sent" });
   } catch (err) {

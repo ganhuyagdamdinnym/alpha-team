@@ -7,34 +7,36 @@ import { UserHead } from "@/components/UserHead";
 import { ChocolateImfo } from "@/components/ChocolateImfo";
 import { Back_End_url } from "@/utils/back-url";
 import { AuthContext } from "@/hook/authProvider";
-// import { currentUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs";
+
 export default function Buy() {
   const currentRef = useRef(null);
-  const { token, curUser: user } = useContext(AuthContext);
+  const { token, curUser: user, getUserData } = useContext(AuthContext);
   const router = useRouter();
   const [data, setData] = useState();
   const [sorts, setSorts] = useState();
   const [handleSortName, setHandleSortName] = useState();
   //get user
-
   const getUserInfo = async () => {
-    // const user = await currentUser();
     // res.json({ user });
     try {
       const result = await axios.get("/api/handleWithGoogle");
+      console.log(result);
       const email = result.data?.user.emailAddresses[0].emailAddress;
       console.log("result", result.data?.user.emailAddresses[0].emailAddress);
       const token = localStorage.getItem("clerk-db-jwt");
-      console.log("tt",token)
+      console.log("tt", token);
       if (token !== null) {
         const url = `${Back_End_url}/userLoginWithGoogle`;
-       const res= await axios.post(url, {
+        const res = await axios.post(url, {
           email: email,
         });
-       // console.log("res",res.data.token)
-        localStorage.setItem("token", res.data.token)
-        if(res){
-         // window.location.reload()
+        // console.log("res",res.data.token)
+        localStorage.setItem("token", res.data.token);
+
+        getUserData(res.data.token);
+        if (res) {
+          // window.location.reload()
         }
       }
     } catch (err) {
@@ -57,7 +59,7 @@ export default function Buy() {
     if (sort == "all") {
       setData(sorts);
     } else {
-      const category = sorts.filter((e) => e.sort == sort);
+      const category = sorts?.filter((e) => e.sort == sort);
       setData(category);
       setHandleSortName(name);
     }

@@ -31,7 +31,7 @@ export const Login = (props) => {
       }
     }
   };
-  
+
   return (
     <div className="w-[500px] h-[600px] bg-[#F06742] flex flex-col gap-4  rounded-xl z-10 loginPart">
       <div className="w-full text-white  flex flex-row-reverse px-2 ">
@@ -86,18 +86,18 @@ export const Login = (props) => {
             НЭВТРЭХ
           </button>
         </form>
-        {
-        token?null:<SignInButton afterSignInUrl="/buy" afterSignUpUrl="/buy" >
-        <div className="flex bg-white w-3/4 h-[36px] items-center gap-2 justify-center rounded-xl text-[20px]" >
-         <div>
-           <img src="googleIcon.png" className="h-[20px] w-[20px]" />
-         </div>
-         <p>
-           continue with google 
-         </p>
-        </div>
-         </SignInButton>
-        }
+        {token ? null : (
+          <SignInButton afterSignInUrl="/buy" afterSignUpUrl="/buy">
+            <div className="flex bg-white w-3/4 h-[36px] items-center gap-2 justify-center rounded-xl text-[20px]">
+              <div>
+                <img src="googleIcon.png" className="h-[20px] w-[20px]" />
+              </div>
+              <p className="font-medium text-2xl signInButton">
+                Continue with google
+              </p>
+            </div>
+          </SignInButton>
+        )}
       </div>
       <div id="sign-in-button"></div>
     </div>

@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
     checkToken();
   }, []);
 
-  const value = { token, curUser, setToken };
+  const value = { token, curUser, setToken, getUserData };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

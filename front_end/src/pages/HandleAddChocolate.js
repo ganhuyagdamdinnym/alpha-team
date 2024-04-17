@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 export default function AddChocolate() {
   const [imageUrl, setImageUrl] = useState(null); // Initial state for image URL
   const [name, setName] = useState();
@@ -112,29 +113,23 @@ export default function AddChocolate() {
   function countInBox(e) {
     setFullData({ ...fullData, countInBox: e.target.value });
   }
+
   return (
     <div className="w-[100vw] h-[100vh]">
-      <div className="w-full h-[100px] bg-[#BE9131] flex justify-between px-4">
-        <button className="text-white text-2xl w-60 font-medium flex justify-center items-center">
-          <p className="">Бүтээгдэхүүн нэмэх</p>
+      <div className="w-full h-[100px] bg-[#BE9131] flex justify-between px-4 fixed top-0 z-20 items-center">
+        <button className="text-[#000391] text-2xl w-60 font-medium flex justify-center items-center bg-white h-[35px] rounded-xl">
+          <p className="saleText">Бүтээгдэхүүн нэмэх</p>
         </button>
         <button>
-          <img
-            priority={true}
-            alt="icon"
-            src="logo.svg"
-            height={96}
-            width={96}
-          />
+          <Image src="logo.svg" height={96} width={96} />
         </button>
-        <button
-          onClick={() => Jump()}
-          className="text-white text-2xl w-60 font-medium flex justify-center items-center"
-        >
-          <p>Хөнгөлөлт</p>
+        <button className="text-[#000391] rounded-xl text-2xl w-60 font-medium flex justify-center items-center bg-white h-[35px]">
+          <p onClick={Jump} className="saleText">
+            Хөнгөлөлт
+          </p>
         </button>
       </div>
-      <div className="h-screen w-full flex items-center justify-center gap-5">
+      <div className="h-full w-full flex items-center justify-center gap-5">
         <div className="felx flex-col justify-center ">
           <label
             htmlFor="file-upload"
