@@ -12,7 +12,7 @@ export default function AddChocolate() {
   function handleName(e) {
     setName(e.target.value);
   }
-
+  const color = [];
   async function handleImageUpload(e) {
     const file = e.target.files[0];
     setBase64(file);
@@ -29,10 +29,10 @@ export default function AddChocolate() {
     const imageBaseProccessoro = await resizeAndConvertToBase64(base64);
     console.log(name, imageBaseProccessoro);
     if (
-      imageBaseProccessoro ||
-      name ||
-      fullData.pricePerBox ||
-      fullData.pricePerUnit ||
+      imageBaseProccessoro === undefined ||
+      name === undefined ||
+      fullData.pricePerBox === undefined ||
+      fullData.pricePerUnit === undefined ||
       fullData.countInBox === undefined
     ) {
       setThereAintSingleShiThtsValid(true);
@@ -98,7 +98,7 @@ export default function AddChocolate() {
       };
       try {
         reader.readAsDataURL(file);
-      } catch {
+      } catch (e) {
         setThereAintSingleShiThtsValid(true);
       }
     });
