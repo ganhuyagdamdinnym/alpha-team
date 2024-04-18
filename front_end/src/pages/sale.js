@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Back_End_url } from "@/utils/back-url";
 import { ChocolateSale } from "@/components/ChocolateSale";
-import { useRouter } from "next/navigation";
 // import { ChocolateImfo } from "@/components/ChocolateI ;
-import Image from "next/image";
 import axios from "axios";
 export default function Sell() {
   const [data, setData] = useState();
@@ -28,7 +26,6 @@ export default function Sell() {
   const [fullData, setFullData] = useState();
   const [thereAintSingleShiThtsValid, setThereAintSingleShiThtsValid] =
     useState(false);
-  const router = useRouter();
   function handleName(e) {
     setName(e.target.value);
   }
@@ -39,14 +36,18 @@ export default function Sell() {
     reader.onload = (event) => {
       setImageUrl(event.target.result);
     };
-    reader.readAsDataURL(file);
+    try {
+      reader.readAsDataURL(file);
+    } catch {
+      console.log("empty");
+    }
   }
 
   // magic happens here ;)
 
   async function handleSend() {
     const imageBaseProccessoro = await resizeAndConvertToBase64(base64);
-    console.log(name, imageBaseProccessoro);
+    alert("ilgeesn tul reload hiij haruul");
     if (
       imageBaseProccessoro === undefined ||
       name === undefined ||
@@ -136,7 +137,7 @@ export default function Sell() {
           <p className="saleText">Бүтээгдэхүүн нэмэх</p>
         </button>
         <button>
-          <Image src="logo.svg" height={96} width={96} />
+          <img src="logo.svg" height={96} width={96} />
         </button>
         <button className="text-[#000391] rounded-xl text-2xl w-60 font-medium flex justify-center items-center bg-white h-[35px]">
           <p className="saleText">Хөнгөлөлт</p>
@@ -157,37 +158,62 @@ export default function Sell() {
             //currentRef={currentRef}
           />
         ))}
-          <div className="border-[3.5px] border-[#de8526] rounded-[12px] buyBorder bg-white z-0">
+        <div className="border-[3.5px] border-[#de8526] rounded-[12px]  bg-white z-0">
+          <label
+            htmlFor="file-upload"
+            className="custom-file-upload h-[300px] rounded-xl flex items-center justify-center "
+          >
             {imageUrl ? (
-              <img src={imageUrl} alt="uploaded chocolate"  className="w-full rounded-t-[8px]"/>
+              <img
+                src={imageUrl}
+                alt="uploaded chocolate"
+                className=" rounded-[8px] h-[auto]"
+              />
             ) : (
-              <div className="w-full rounded-t-[8px] flex items-center justify-center h-[67%] border-b-[3.5px] border-[#de8526]">
-              <img src="camera.svg"  className="w-[50%] rounded-t-[8px]"/>
+              <div className="w-full rounded-t-[8px] flex items-center justify-center h-[67%] ">
+                <img src="camera.svg" alt="photo" height={50} width={50} />
               </div>
             )}
-            <div className="w-full h-[130px] border-[#AD70E] px-4 flex flex-col justify-between h-[33%] py-4">
-              <input
-                className="text-[#2C261F] font-semibold"
-                placeholder="Шоколадны нэр"
-                onChange={handleName}
-              ></input>
-              <input
-                placeholder="Ширхэгийн үнэ:  ₮"
-                className="text-[#2C261F]"
-                onChange={handlePricePerUnit}
-              ></input>
-              <input
-                placeholder="Хайрцгийн үнэ: ₮"
-                className="text-[#2C261F]"
-                onChange={handlePriceBox}
-              ></input>
-              <input
-                placeholder="Хайрцаг дахь ширхэг:"
-                onChange={countInBox}
-                className="text-[#2C261F]"
-              ></input>
+          </label>
+          <p className="ml-[35%]">butneern sha</p>
+          <input
+            onChange={handleImageUpload}
+            id="file-upload"
+            type="file"
+            accept=".png, .jpg, .jpeg, .webp"
+          />
+          <div className="w-full border-[#AD70E] gap-[10px] px-4 flex flex-col justify-between py-4">
+            <input
+              className="border-2 border-[#de8526] rounded-[10px] p-[5px] outline-2 text-[#2C261F] font-semibold "
+              placeholder="Шоколадны нэр"
+              onChange={handleName}
+            ></input>
+            <input
+              placeholder="Ширхэгийн үнэ:  ₮"
+              className="border-2 border-[#de8526] rounded-[10px] p-[5px] outline-2 text-[#2C261F]"
+              onChange={handlePricePerUnit}
+            ></input>
+            <input
+              placeholder="Хайрцгийн үнэ: ₮"
+              className="border-2 border-[#de8526] rounded-[10px] p-[5px] outline-2 text-[#2C261F]"
+              onChange={handlePriceBox}
+            ></input>
+            <input
+              placeholder="Хайрцаг дахь ширхэг:"
+              onChange={countInBox}
+              className="border-2 border-[#de8526] rounded-[10px] p-[5px] outline-2 text-[#2C261F]"
+            ></input>
+            <div className="flex justify-center">
+              <button
+                onClick={handleSend}
+                className="bg-[#de8526] p-[10px] w-[100px] rounded-[10px]"
+              >
+                send
+              </button>
             </div>
           </div>
+        </div>
+
         {/* </div> */}
       </div>
     </div>

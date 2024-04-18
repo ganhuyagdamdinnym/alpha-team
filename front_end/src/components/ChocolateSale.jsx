@@ -88,8 +88,8 @@ export const ChocolateSale = (props) => {
     <div className="border-[3.5px] border-[#DCDAD7] rounded-[12px] buyBorder bg-white z-0 ">
       <img
         src={`${image}`}
-        className="w-full rounded-t-[8px]"
-        style={{ aspectRatio: "1" }}
+        className="w-[auto] rounded-t-[8px]"
+        // style={{ aspectRatio: "1" }}
       />
       <div className="w-full h-[130px] border-[#AD70E] px-4 ">
         <h1 className="text-[#2C261F] h-12 font-semibold">{name}</h1>
