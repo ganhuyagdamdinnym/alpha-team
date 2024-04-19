@@ -33,7 +33,7 @@ export const Login = (props) => {
   };
 
   return (
-    <div className="w-[500px] h-[600px] bg-[#F06742] flex flex-col gap-4  rounded-xl z-10 loginPart">
+    <div className="w-[400px] h-[500px] bg-[#F06742] flex flex-col gap-4  rounded-xl z-10 loginPart items-between">
       <div className="w-full text-white  flex flex-row-reverse px-2 ">
         <Image
           alt="photo"
@@ -92,7 +92,7 @@ export const Login = (props) => {
               <div>
                 <img src="googleIcon.png" className="h-[20px] w-[20px]" />
               </div>
-              <p className="font-medium text-2xl signInButton">
+              <p className="font-medium text-[20px] signInButton">
                 Continue with google
               </p>
             </div>
