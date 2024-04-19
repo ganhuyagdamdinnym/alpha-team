@@ -89,7 +89,7 @@ export default function Home() {
         <div className="flex gap-4">
           <p className="text-3xl text-white hiAdmin ml-2">Hi Admin!</p>
           <button
-            onClick={() => router.push("/HandleAddChocolate")}
+            onClick={() => router.push("/sale")}
             className={`text-xl rounded-2xl text-[#010391] border-b-[2px] w-40 py-1 border-white  bg-white`}
           >
             Бүтээгдэхүүн

@@ -4,10 +4,10 @@ import { ChocolateSale } from "@/components/ChocolateSale";
 
 import { useRouter } from "next/navigation";
 // import { ChocolateImfo } from "@/components/ChocolateI ;
-import Image from "next/image";
 import axios from "axios";
 export default function Sell() {
   const [data, setData] = useState();
+  const router = useRouter();
   const fetchChocolateData = async () => {
     try {
       const url = `${Back_End_url}/getChocolatedata`;
@@ -29,7 +29,6 @@ export default function Sell() {
   const [fullData, setFullData] = useState();
   const [thereAintSingleShiThtsValid, setThereAintSingleShiThtsValid] =
     useState(false);
-  const router = useRouter();
   function handleName(e) {
     setName(e.target.value);
   }
@@ -40,14 +39,17 @@ export default function Sell() {
     reader.onload = (event) => {
       setImageUrl(event.target.result);
     };
-    reader.readAsDataURL(file);
+    try {
+      reader.readAsDataURL(file);
+    } catch {
+      console.log("empty");
+    }
   }
 
   // magic happens here ;)
 
   async function handleSend() {
     const imageBaseProccessoro = await resizeAndConvertToBase64(base64);
-    console.log(name, imageBaseProccessoro);
     if (
       imageBaseProccessoro === undefined ||
       name === undefined ||
@@ -67,6 +69,8 @@ export default function Sell() {
         })
         .catch((e) => console.log(e));
     }
+    window.location.reload();
+    fetchChocolateData();
   }
 
   const resizeAndConvertToBase64 = (file) => {
@@ -121,6 +125,9 @@ export default function Sell() {
       }
     });
   };
+  const jump = () => {
+    router.push("/admin");
+  };
   function handlePriceBox(e) {
     setFullData({ ...fullData, pricePerBox: e.target.value });
   }
@@ -134,10 +141,12 @@ export default function Sell() {
     <div className={`w-[100wv] h-[100hv] flex flex-col gap-2 tester bg-white`}>
       <div className="w-full h-[100px] bg-[#BE9131] flex justify-between px-4 fixed top-0 z-20 items-center">
         <button className="text-[#000391] text-2xl w-60 font-medium flex justify-center items-center bg-white h-[35px] rounded-xl">
-          <p className="saleText">Бүтээгдэхүүн нэмэх</p>
+          <p onClick={() => jump()} className="saleText">
+            Бүтээгдэхүүн нэмэх
+          </p>
         </button>
         <button>
-          <Image src="logo.svg" height={96} width={96} />
+          <img src="logo.svg" height={96} width={96} />
         </button>
         <button className="text-[#000391] rounded-xl text-2xl w-60 font-medium flex justify-center items-center bg-white h-[35px]">
           <p className="saleText">Хөнгөлөлт</p>
@@ -158,50 +167,64 @@ export default function Sell() {
             //currentRef={currentRef}
           />
         ))}
-        <div className="grid-container mt-32 mb-16 min-w-88 bg-white ">
-          <div className="border-[3.5px] border-[#DCDAD7]  w-[311px] h-[498px]">
-            {imageUrl ? (
-              <img src={imageUrl} alt="uploaded chocolate" />
-            ) : (
-              <img src="camera.svg" alt="photo" />
-            )}
-            <div className="w-full h-[130px] border-[#AD70E] px-4 ">
+        {data ? (
+          <div className="border-[3.5px] border-[#de8526] rounded-[12px]  bg-white z-0">
+            <label
+              htmlFor="file-upload"
+              className="custom-file-upload h-[350px] rounded-xl flex items-center justify-center "
+            >
+              {imageUrl ? (
+                <img
+                  src={imageUrl}
+                  alt="uploaded chocolate"
+                  className=" rounded-[8px] h-[auto]"
+                />
+              ) : (
+                <div className="w-full rounded-t-[8px] flex items-center justify-center h-[67%] ">
+                  <img src="camera.svg" alt="photo" height={50} width={50} />
+                </div>
+              )}
+            </label>
+            <input
+              onChange={handleImageUpload}
+              id="file-upload"
+              type="file"
+              accept=".png, .jpg, .jpeg, .webp"
+            />
+            <div className="w-full border-[#AD70E] gap-[10px] px-4 flex flex-col justify-between py-4">
               <input
-                className="text-[#2C261F] font-semibold"
-                placeholder="ner"
+                className="border-2 border-[#de8526] rounded-[10px] p-[5px] outline-2 text-[#2C261F] font-semibold "
+                placeholder="Шоколадны нэр"
                 onChange={handleName}
               ></input>
               <input
                 placeholder="Ширхэгийн үнэ:  ₮"
-                className="text-[#2C261F]"
+                className="border-2 border-[#de8526] rounded-[10px] p-[5px] outline-2 text-[#2C261F]"
                 onChange={handlePricePerUnit}
               ></input>
               <input
                 placeholder="Хайрцгийн үнэ: ₮"
-                className="text-[#2C261F]"
+                className="border-2 border-[#de8526] rounded-[10px] p-[5px] outline-2 text-[#2C261F]"
                 onChange={handlePriceBox}
               ></input>
               <input
                 placeholder="Хайрцаг дахь ширхэг:"
                 onChange={countInBox}
-                className="text-[#2C261F]"
+                className="border-2 border-[#de8526] rounded-[10px] p-[5px] outline-2 text-[#2C261F]"
               ></input>
-            </div>
-            <div className="w-full flex h-[50px] items-center px-4">
-              <button
-                onClick={() => HandleChocolateDelete()}
-                className="px-1 fixed top-1 right-0"
-              >
-                <Image
-                  className="cursor-pointer"
-                  src="xmark.svg"
-                  height={24}
-                  width={24}
-                />
-              </button>
+              <div className="flex justify-center">
+                <button
+                  onClick={handleSend}
+                  className="bg-[#de8526] p-[5px] w-[100px] rounded-[10px]"
+                >
+                  send
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
+
+        {/* </div> */}
       </div>
     </div>
   );

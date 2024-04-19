@@ -11,21 +11,20 @@ export default async function handler(req, res) {
   //   // const result = await axios.get("/api/handleWithGoogle");
   //   // const email = result.data?.user.emailAddresses[0].emailAddress;
   //   console.log("result", user.data?.user.emailAddresses[0].emailAddress);
-  //   const email=user.data?.user.emailAddresses[0].emailAddress
+  //   const email = user.data?.user.emailAddresses[0].emailAddress;
   //   const token = localStorage.getItem("clerk-db-jwt");
-  //   console.log("tt",token)
-  //   if (token !== null) {
-  //     const url = `${Back_End_url}/userLoginWithGoogle`;
-  //    const res= await axios.post(url, {
-  //       email: email,
-  //     });
-  //    // console.log("res",res.data.token)
-  //     localStorage.setItem("token", res.data.token)
-  //   }
+  //   console.log("tt", emil);
+  //   // if (token !== null) {
+  //   const url = `${Back_End_url}/userLoginWithGoogle`;
+  //   const res = await axios.post(url, {
+  //     email: email,
+  //     // type: "clerk",
+  //   });
+  //   // console.log("res",res.data.token)
+  //   localStorage.setItem("token", res.data.token);
+  //   // }
   // } catch (err) {
   //   console.log(err);
-  // } 
-
-
+  // }
   res.json({ user });
 }

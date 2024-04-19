@@ -167,7 +167,7 @@ export const EnterCode = (props) => {
           <input
             value=""
             ref={input1Ref}
-            className="w-[30px] text-center rounded-[5px] py-2"
+            className="w-[30px] text-center rounded-[5px] py-2 hideNumberArrows"
             onKeyUpCapture={(e) => HandleChange(e, input1Ref, 1)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
@@ -179,7 +179,7 @@ export const EnterCode = (props) => {
             onKeyUpCapture={(e) => HandleChange(e, input2Ref, 2)}
             onKeyDown={(e) => HandleBackspace(e)}
             onClick={(e) => HandleNextInput(e)}
-            className="w-[30px] text-center rounded-[5px]"
+            className="w-[30px] text-center rounded-[5px] hideNumberArrows"
             type="Number"
           />
           <input
@@ -187,12 +187,12 @@ export const EnterCode = (props) => {
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
             ref={input3Ref}
-            className="w-[30px] text-center rounded-[5px]"
+            className="w-[30px] text-center rounded-[5px] hideNumberArrows"
             type="Number"
           />
           <input
             ref={input4Ref}
-            className="w-[30px] text-center rounded-[5px]"
+            className="w-[30px] text-center rounded-[5px] hideNumberArrows"
             onKeyUpCapture={(e) => HandleChange(e, input4Ref, 4)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
@@ -200,7 +200,7 @@ export const EnterCode = (props) => {
           />
           <input
             ref={input5Ref}
-            className="w-[30px] text-center rounded-[5px]"
+            className="w-[30px] text-center rounded-[5px] hideNumberArrows"
             onKeyUpCapture={(e) => HandleChange(e, input5Ref, 5)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}
@@ -208,7 +208,7 @@ export const EnterCode = (props) => {
           />
           <input
             ref={input6Ref}
-            className="w-[30px] text-center rounded-[5px]"
+            className="w-[30px] text-center rounded-[5px] hideNumberArrows"
             onKeyUpCapture={(e) => HandleChange(e, input6Ref, 6)}
             onClick={(e) => HandleNextInput(e)}
             onKeyDown={(e) => HandleBackspace(e)}

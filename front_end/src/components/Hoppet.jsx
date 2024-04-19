@@ -45,7 +45,7 @@ export const Hoppet = (props) => {
     const newbag = bag.map((e) => {
       const onePrice = e.price / e.count;
       if (e.chocolate === id)
-        return { ...e, count: e.count + 1, price: e.price + onePrice };
+        return { ...e, count: e.count + 1, price: e.price + Number(onePrice) };
       return e;
     });
     localStorage.setItem("basket", JSON.stringify(newbag));

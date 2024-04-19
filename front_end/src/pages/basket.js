@@ -15,7 +15,6 @@ export default function Basket() {
   const [BuyStatus, setBuyStatus] = useState(false);
   const [price, setPrice] = useState(0);
   const router = useRouter();
-  const [cutEmail, setCutEmail] = useState("");
   const fetchLocalstorage = () => {
     //alert("hi");
     if (localStorage.getItem("basket") !== null) {
@@ -23,12 +22,13 @@ export default function Basket() {
       const Bag = JSON.parse(rawBag);
       let sum = 0;
       Bag.map((e) => {
-        sum = sum + e.price;
+        sum = sum + Number(e.price);
       });
       setPrice(sum);
       setBag(Bag);
     }
   };
+  console.log("price", price);
   const backToBuyPart = () => {
     router.push("/buy");
   };
