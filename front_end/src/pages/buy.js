@@ -68,7 +68,10 @@ export default function Buy() {
     router.push("/basket");
   };
   useEffect(() => {
-    getUserInfo();
+    console.log("toktok", token);
+    if (!token) {
+      getUserInfo();
+    }
     fetchChocolateData();
   }, []);
   // useEffect(() => {

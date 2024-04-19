@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
     } else {
       const localToken = localStorage.getItem("token");
       if (localToken === null) {
-        // router.push("/");
+        router.push("/");
       } else {
         setToken(localToken);
         getUserData(localToken);

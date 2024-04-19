@@ -5,11 +5,9 @@ import axios from "axios";
 import { Back_End_url } from "@/utils/back-url";
 export function Info({ e, fetchAllBuyerInfo }) {
   const [show, setShow] = useState(false);
-
   function handlShow() {
     setShow(!show);
   }
-
   return (
     <div className="flex flex-col px-8 py-2 bg-white w-[80%] rounded-2xl overflow-y-scroll gap-2 AdminHeader bg-[red]">
       <div
@@ -112,7 +110,8 @@ const Hello = ({ element, e, fetchAllBuyerInfo }) => {
           </button>
           <button
             onClick={() => HandleConfirmDelivery(e._id, element.deliveryId)}
-            className="flex items-center gap-2 w-full justify-between">
+            className="flex items-center gap-2 w-full justify-between"
+          >
             Хүргэлт баталгаажуулах
             <Image src="succeedDelivery.svg" height={24} width={24} />
           </button>
