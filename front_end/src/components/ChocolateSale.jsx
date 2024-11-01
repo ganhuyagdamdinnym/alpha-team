@@ -76,14 +76,6 @@ export const ChocolateSale = (props) => {
     }
     fetchChocolateData();
   };
-  const inputStyle = {
-    "-moz-appearance": "textfield" /* Firefox */,
-    appearance: "none" /* Webkit */,
-    width: "100%" /* Adjust as needed */,
-    padding: "5px" /* Adjust as needed */,
-    border: "1px solid #ccc" /* Adjust as needed */,
-    borderRadius: "4px" /* Adjust as needed */,
-  };
   return (
     <div className="border-[3.5px] border-[#DCDAD7] rounded-[12px] buyBorder bg-white z-0 ">
       <img
@@ -121,7 +113,7 @@ export const ChocolateSale = (props) => {
                   onChange={(e) => setSalePercent(e.target.value)}
                   value={salePercent}
                   type="Number"
-                  className="w-[50px] h-[30px] text-[20px] text-center flex items-center justify-center border-black border-2 hideNumberArrows"
+                  className="w-[50px] h-[30px] text-[20px] text-center flex items-center justify-center border-black border-2"
                 />
                 %
               </div>
@@ -152,9 +144,7 @@ export const ChocolateSale = (props) => {
               className="px-2 py-1 border-[#BE9131] border-2 rounded-2xl font-medium"
             >
               {status == true ? (
-                <p className="h-[20px] flex items-center">
-                  {percent}% Хямдруулсан
-                </p>
+                <p>{percent}% Хямдруулсан</p>
               ) : (
                 <p>Хямдруулах</p>
               )}
@@ -162,7 +152,7 @@ export const ChocolateSale = (props) => {
             {status == true ? (
               <button
                 onClick={() => refuseSale()}
-                className="px-2 py-1 border-[#BE9131] border-2 rounded-2xl font-medium "
+                className="px-2 py-1 border-[#BE9131] border-2 rounded-2xl font-medium"
               >
                 Цуцлах
               </button>
